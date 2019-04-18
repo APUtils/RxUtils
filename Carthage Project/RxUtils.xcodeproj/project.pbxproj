@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		E202681822117D03004CC28A /* RxUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = E202681622117D03004CC28A /* RxUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E26D80BA2268FCB8001F80BB /* RxSwift+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D80B02268FCB8001F80BB /* RxSwift+Extension.swift */; };
+		E26D80BB2268FCB8001F80BB /* RxSwift+Weak+FlatMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D80B22268FCB8001F80BB /* RxSwift+Weak+FlatMap.swift */; };
+		E26D80BC2268FCB8001F80BB /* RxSwift+Weak+Do.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D80B32268FCB8001F80BB /* RxSwift+Weak+Do.swift */; };
+		E26D80BD2268FCB8001F80BB /* RxSwift+Weak+Subscribe.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D80B42268FCB8001F80BB /* RxSwift+Weak+Subscribe.swift */; };
+		E26D80BE2268FCB8001F80BB /* RxSwift+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D80B52268FCB8001F80BB /* RxSwift+Error.swift */; };
+		E26D80BF2268FCB8001F80BB /* RxSwift+Deffered.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D80B62268FCB8001F80BB /* RxSwift+Deffered.swift */; };
+		E26D80C02268FCB8001F80BB /* RxSwift+Subscribe.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D80B72268FCB8001F80BB /* RxSwift+Subscribe.swift */; };
+		E26D80C12268FCB8001F80BB /* RxSwift+CompactMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D80B82268FCB8001F80BB /* RxSwift+CompactMap.swift */; };
+		E26D80C22268FCB8001F80BB /* RxSwift+Do.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D80B92268FCB8001F80BB /* RxSwift+Do.swift */; };
 		E2A7394E2260CFC700E97D55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A7394D2260CFC700E97D55 /* AppDelegate.swift */; };
 		E2A739502260CFC700E97D55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A7394F2260CFC700E97D55 /* ViewController.swift */; };
 		E2A739532260CFC700E97D55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2A739512260CFC700E97D55 /* Main.storyboard */; };
@@ -29,22 +38,31 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2770B41F10ACCC97B30DDC5B /* DEPLOY PROCESS.md */ = {isa = PBXFileReference; includeInIndex = 1; name = "DEPLOY PROCESS.md"; path = "../DEPLOY PROCESS.md"; sourceTree = "<group>"; };
+		2770B41F10ACCC97B30DDC5B /* DEPLOY PROCESS.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = "DEPLOY PROCESS.md"; path = "../DEPLOY PROCESS.md"; sourceTree = "<group>"; };
 		27A65933230C2FF4F758F562 /* carthageUpdate.command */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = carthageUpdate.command; path = Scripts/Carthage/carthageUpdate.command; sourceTree = "<group>"; };
-		35423192BBCD2485C59FBA90 /* .gitignore */ = {isa = PBXFileReference; includeInIndex = 1; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
-		3905247AED19C828B2F93C0F /* CHANGELOG.md */ = {isa = PBXFileReference; includeInIndex = 1; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
-		4DC06729D5797C0C4726CA51 /* checkBuild.command */ = {isa = PBXFileReference; includeInIndex = 1; name = checkBuild.command; path = ../checkBuild.command; sourceTree = "<group>"; };
+		35423192BBCD2485C59FBA90 /* .gitignore */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
+		3905247AED19C828B2F93C0F /* CHANGELOG.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
+		4DC06729D5797C0C4726CA51 /* checkBuild.command */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = checkBuild.command; path = ../checkBuild.command; sourceTree = "<group>"; };
 		722BFDE9DE58393B9D916719 /* carthageRemove.command */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = carthageRemove.command; path = Scripts/Carthage/carthageRemove.command; sourceTree = "<group>"; };
-		72FEC47699AE93FA694446C1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		72FEC47699AE93FA694446C1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		75997ED1E9FAC56B9BEC3F0E /* carthageAdd.command */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = carthageAdd.command; path = Scripts/Carthage/carthageAdd.command; sourceTree = "<group>"; };
-		95B46D3F3B9CA6A1557CD626 /* RxUtils.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = RxUtils.podspec; path = ../RxUtils.podspec; sourceTree = "<group>"; };
-		A3734D274A5AF65E369A7857 /* podCheck.command */ = {isa = PBXFileReference; includeInIndex = 1; name = podCheck.command; path = ../podCheck.command; sourceTree = "<group>"; };
-		B2292C95DD780A49B6CE8C21 /* .cocoadocs.yml */ = {isa = PBXFileReference; includeInIndex = 1; name = .cocoadocs.yml; path = ../.cocoadocs.yml; sourceTree = "<group>"; };
-		C8E58B988872E31FAA300F03 /* podPush.command */ = {isa = PBXFileReference; includeInIndex = 1; name = podPush.command; path = ../podPush.command; sourceTree = "<group>"; };
-		D19FB5503222C40AEF519FF9 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		95B46D3F3B9CA6A1557CD626 /* RxUtils.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = RxUtils.podspec; path = ../RxUtils.podspec; sourceTree = "<group>"; };
+		A3734D274A5AF65E369A7857 /* podCheck.command */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = podCheck.command; path = ../podCheck.command; sourceTree = "<group>"; };
+		B2292C95DD780A49B6CE8C21 /* .cocoadocs.yml */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = .cocoadocs.yml; path = ../.cocoadocs.yml; sourceTree = "<group>"; };
+		C8E58B988872E31FAA300F03 /* podPush.command */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = podPush.command; path = ../podPush.command; sourceTree = "<group>"; };
+		D19FB5503222C40AEF519FF9 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		E202681322117D03004CC28A /* RxUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E202681622117D03004CC28A /* RxUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RxUtils.h; sourceTree = "<group>"; };
 		E202681722117D03004CC28A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E26D80B02268FCB8001F80BB /* RxSwift+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "RxSwift+Extension.swift"; path = "RxSwift/RxSwift+Extension.swift"; sourceTree = "<group>"; };
+		E26D80B22268FCB8001F80BB /* RxSwift+Weak+FlatMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxSwift+Weak+FlatMap.swift"; sourceTree = "<group>"; };
+		E26D80B32268FCB8001F80BB /* RxSwift+Weak+Do.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxSwift+Weak+Do.swift"; sourceTree = "<group>"; };
+		E26D80B42268FCB8001F80BB /* RxSwift+Weak+Subscribe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxSwift+Weak+Subscribe.swift"; sourceTree = "<group>"; };
+		E26D80B52268FCB8001F80BB /* RxSwift+Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "RxSwift+Error.swift"; path = "RxSwift/RxSwift+Error.swift"; sourceTree = "<group>"; };
+		E26D80B62268FCB8001F80BB /* RxSwift+Deffered.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "RxSwift+Deffered.swift"; path = "RxSwift/RxSwift+Deffered.swift"; sourceTree = "<group>"; };
+		E26D80B72268FCB8001F80BB /* RxSwift+Subscribe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "RxSwift+Subscribe.swift"; path = "RxSwift/RxSwift+Subscribe.swift"; sourceTree = "<group>"; };
+		E26D80B82268FCB8001F80BB /* RxSwift+CompactMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "RxSwift+CompactMap.swift"; path = "RxSwift/RxSwift+CompactMap.swift"; sourceTree = "<group>"; };
+		E26D80B92268FCB8001F80BB /* RxSwift+Do.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "RxSwift+Do.swift"; path = "RxSwift/RxSwift+Do.swift"; sourceTree = "<group>"; };
 		E2A7394B2260CFC700E97D55 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2A7394D2260CFC700E97D55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2A7394F2260CFC700E97D55 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,7 +75,7 @@
 		E2A739642260CFC800E97D55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2A7396C2260D99900E97D55 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		E2A7396D2260D99900E97D55 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
-		E3A3C326AA2806CD63667A60 /* .travis.yml */ = {isa = PBXFileReference; includeInIndex = 1; name = .travis.yml; path = ../.travis.yml; sourceTree = "<group>"; };
+		E3A3C326AA2806CD63667A60 /* .travis.yml */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = .travis.yml; path = ../.travis.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,9 +147,27 @@
 			path = RxUtils;
 			sourceTree = "<group>";
 		};
+		E26D80B12268FCB8001F80BB /* _Weak */ = {
+			isa = PBXGroup;
+			children = (
+				E26D80B32268FCB8001F80BB /* RxSwift+Weak+Do.swift */,
+				E26D80B22268FCB8001F80BB /* RxSwift+Weak+FlatMap.swift */,
+				E26D80B42268FCB8001F80BB /* RxSwift+Weak+Subscribe.swift */,
+			);
+			name = _Weak;
+			path = RxSwift/_Weak;
+			sourceTree = "<group>";
+		};
 		E2766F332260FFF7003BDA19 /* _Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E26D80B12268FCB8001F80BB /* _Weak */,
+				E26D80B82268FCB8001F80BB /* RxSwift+CompactMap.swift */,
+				E26D80B62268FCB8001F80BB /* RxSwift+Deffered.swift */,
+				E26D80B92268FCB8001F80BB /* RxSwift+Do.swift */,
+				E26D80B52268FCB8001F80BB /* RxSwift+Error.swift */,
+				E26D80B02268FCB8001F80BB /* RxSwift+Extension.swift */,
+				E26D80B72268FCB8001F80BB /* RxSwift+Subscribe.swift */,
 			);
 			name = _Classes;
 			path = ../../RxUtils/Classes;
@@ -269,6 +305,7 @@
 				TargetAttributes = {
 					E202681222117D03004CC28A = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 					E2A7394A2260CFC700E97D55 = {
 						CreatedOnToolsVersion = 10.1;
@@ -279,7 +316,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E202680D22117D03004CC28A /* Build configuration list for PBXProject "PROJECTNAME" */;
+			buildConfigurationList = E202680D22117D03004CC28A /* Build configuration list for PBXProject "RxUtils" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -388,6 +425,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E26D80C22268FCB8001F80BB /* RxSwift+Do.swift in Sources */,
+				E26D80C02268FCB8001F80BB /* RxSwift+Subscribe.swift in Sources */,
+				E26D80BF2268FCB8001F80BB /* RxSwift+Deffered.swift in Sources */,
+				E26D80C12268FCB8001F80BB /* RxSwift+CompactMap.swift in Sources */,
+				E26D80BC2268FCB8001F80BB /* RxSwift+Weak+Do.swift in Sources */,
+				E26D80BA2268FCB8001F80BB /* RxSwift+Extension.swift in Sources */,
+				E26D80BD2268FCB8001F80BB /* RxSwift+Weak+Subscribe.swift in Sources */,
+				E26D80BE2268FCB8001F80BB /* RxSwift+Error.swift in Sources */,
+				E26D80BB2268FCB8001F80BB /* RxSwift+Weak+FlatMap.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -563,6 +609,7 @@
 		E202681C22117D03004CC28A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -583,6 +630,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.convene.Elevate.RxUtils;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -591,6 +639,7 @@
 		E202681D22117D03004CC28A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -711,7 +760,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E202680D22117D03004CC28A /* Build configuration list for PBXProject "PROJECTNAME" */ = {
+		E202680D22117D03004CC28A /* Build configuration list for PBXProject "RxUtils" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E202681922117D03004CC28A /* Debug */,
