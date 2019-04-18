@@ -14,25 +14,6 @@ import RxSwift
 // ******************************* MARK: - ObservableType
 
 extension ObservableType {
-    // TODO: Doc update
-    /**
-     Subscribes an element handler to an observable sequence.
-     - parameter onSubscribe: Function to invoke on `weak` for each element in the observable sequence.
-     - returns: Subscription object used to unsubscribe from the observable sequence.
-     */
-    func subscribeOnSubscribe(_ onSubscribe: @escaping (E) -> Void) -> Disposable {
-        return subscribe(onNext: onSubscribe)
-    }
-    
-    // TODO: Doc update
-    /**
-     Subscribes an element handler to an observable sequence.
-     - parameter onSubscribed: Function to invoke on `weak` for each element in the observable sequence.
-     - returns: Subscription object used to unsubscribe from the observable sequence.
-     */
-    func subscribeOnSubscribed(_ onSubscribed: @escaping (E) -> Void) -> Disposable {
-        return subscribe(onSubscribed: onSubscribed)
-    }
     
     /**
      Subscribes an element handler to an observable sequence.

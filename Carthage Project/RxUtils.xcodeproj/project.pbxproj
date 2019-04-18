@@ -19,6 +19,8 @@
 		E26D80C02268FCB8001F80BB /* RxSwift+Subscribe.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D80B72268FCB8001F80BB /* RxSwift+Subscribe.swift */; };
 		E26D80C12268FCB8001F80BB /* RxSwift+CompactMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D80B82268FCB8001F80BB /* RxSwift+CompactMap.swift */; };
 		E26D80C22268FCB8001F80BB /* RxSwift+Do.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D80B92268FCB8001F80BB /* RxSwift+Do.swift */; };
+		E26D80C32268FFA4001F80BB /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 351C0C5F43DEE45C165C941A /* RxCocoa.framework */; };
+		E26D80C42268FFA4001F80BB /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B89DEB5F58DE4DE076F19770 /* RxSwift.framework */; };
 		E2A7394E2260CFC700E97D55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A7394D2260CFC700E97D55 /* AppDelegate.swift */; };
 		E2A739502260CFC700E97D55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A7394F2260CFC700E97D55 /* ViewController.swift */; };
 		E2A739532260CFC700E97D55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2A739512260CFC700E97D55 /* Main.storyboard */; };
@@ -87,6 +89,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E26D80C32268FFA4001F80BB /* RxCocoa.framework in Frameworks */,
+				E26D80C42268FFA4001F80BB /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
