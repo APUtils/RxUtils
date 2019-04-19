@@ -128,7 +128,7 @@ public extension ObservableType {
 
 // ******************************* MARK: - Void Support
 
-extension ObservableType where E == Void {
+public extension ObservableType where E == Void {
     
     private func weakify<A: AnyObject, O: ObservableConvertibleType>(_ obj: A, method: @escaping (A) -> () throws -> O) -> (() throws -> Observable<O.E>) {
         return { [weak obj] in

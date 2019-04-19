@@ -69,7 +69,7 @@ public extension ObservableType {
 
 // ******************************* MARK: - doOnError
 
-extension ObservableType {
+public extension ObservableType {
     private func weakify<A: AnyObject>(_ obj: A, method: @escaping (A) -> (Error) throws -> Void) -> ((Error) throws -> Void) {
         return { [weak obj] value throws -> Void in
             guard let obj = obj else { return }
@@ -125,7 +125,7 @@ extension ObservableType {
 
 // ******************************* MARK: - doOnCompleted
 
-extension ObservableType {
+public extension ObservableType {
     private func weakify<A: AnyObject>(_ obj: A, method: @escaping (A) -> () throws -> Void) -> (() throws -> Void) {
         return { [weak obj] () throws -> Void in
             guard let obj = obj else { return }

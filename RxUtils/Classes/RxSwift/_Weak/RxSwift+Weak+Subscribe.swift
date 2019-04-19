@@ -69,7 +69,7 @@ public extension ObservableType {
 
 // ******************************* MARK: - Void Support
 
-extension ObservableType where E == Void {
+public extension ObservableType where E == Void {
     
     /**
      Subscribes and invokes an action on `weak` for each event in the observable sequence, and propagates all observer messages through the result sequence.
