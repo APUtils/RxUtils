@@ -12,7 +12,7 @@ import RxCocoa
 import RxSwift
 
 
-extension ObservableType {
+public extension ObservableType {
     /// Maps error into other error.
     /// - parameter transform: A transform function to apply to source error.
     func mapError(_ transform: @escaping (Error) -> Error) -> Observable<E> {

@@ -12,7 +12,7 @@ import RxSwift
 
 // ******************************* MARK: - ObservableType
 
-extension ObservableType {
+public extension ObservableType {
     /**
      Invokes an action for each event in the observable sequence, and propagates all observer messages through the result sequence.
      

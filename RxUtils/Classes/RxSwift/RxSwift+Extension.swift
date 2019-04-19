@@ -12,7 +12,7 @@ import RxCocoa
 import RxSwift
 
 
-extension ObservableType {
+public extension ObservableType {
     
     /// Apply filter to sequence using second sequence.
     /// - parameter second: Sequence to use for comparison.
@@ -25,7 +25,7 @@ extension ObservableType {
     }
 }
 
-extension ObservableType where E: Equatable {
+public extension ObservableType where E: Equatable {
     
     /// Filters out element if it equals to the latest from provided sequence.
     /// - parameter second: Sequence to use for comparison.

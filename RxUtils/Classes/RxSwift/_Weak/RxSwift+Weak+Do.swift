@@ -13,7 +13,7 @@ import RxSwift
 
 // ******************************* MARK: - doOnNext
 
-extension ObservableType {
+public extension ObservableType {
     private func weakify<A: AnyObject>(_ obj: A, method: @escaping (A) -> (E) throws -> Void) -> ((E) throws -> Void) {
         return { [weak obj] value throws -> Void in
             guard let obj = obj else { return }

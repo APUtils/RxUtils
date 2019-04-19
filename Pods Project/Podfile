@@ -8,6 +8,9 @@ use_frameworks!
 
 target 'RxUtils_Example' do
     pod 'RxUtils', :path => '../'
+    
+    pod 'RxSwift'
+    pod 'RxOptional'
 
     target 'RxUtils_Tests' do
         inherit! :search_paths

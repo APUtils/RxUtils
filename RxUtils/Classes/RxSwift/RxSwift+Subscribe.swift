@@ -13,7 +13,7 @@ import RxSwift
 
 // ******************************* MARK: - ObservableType
 
-extension ObservableType {
+public extension ObservableType {
     
     /**
      Subscribes an element handler to an observable sequence.

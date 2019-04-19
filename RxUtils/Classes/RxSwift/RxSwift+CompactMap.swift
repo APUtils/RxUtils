@@ -14,7 +14,7 @@ import RxSwift
 
 // ******************************* MARK: - Compact Map
 
-extension ObservableType {
+public extension ObservableType {
     /**
      Projects each element of an observable sequence into a new form. If transforms produces a `nil` those elements are filtered out.
      

@@ -12,7 +12,7 @@ import RxCocoa
 import RxSwift
 
 
-extension ObservableType {
+public extension ObservableType {
     
     /// Evaluates startWith expression on subscribe and pass it as element to a sequence.
     /// Do not emit anything if evaluates to nil.
