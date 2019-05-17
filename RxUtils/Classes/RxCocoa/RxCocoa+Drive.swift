@@ -12,7 +12,7 @@ import RxSwift
 
 // ******************************* MARK: - Driver
 
-extension SharedSequenceConvertibleType where SharingStrategy == DriverSharingStrategy {
+public extension SharedSequenceConvertibleType where SharingStrategy == DriverSharingStrategy {
     
     /**
      Subscribes an element handler to an observable sequence.
@@ -33,7 +33,7 @@ extension SharedSequenceConvertibleType where SharingStrategy == DriverSharingSt
      gracefully completed, errored, or if the generation is canceled by disposing subscription)
      - returns: Subscription object used to unsubscribe from the observable sequence.
      */
-    func driveOnCompleted(_ onCompleted: @escaping (E) -> Void) -> Disposable {
+    func driveOnCompleted(_ onCompleted: @escaping () -> Void) -> Disposable {
         return drive(onCompleted: onCompleted)
     }
     
@@ -45,7 +45,7 @@ extension SharedSequenceConvertibleType where SharingStrategy == DriverSharingSt
      gracefully completed, errored, or if the generation is canceled by disposing subscription)
      - returns: Subscription object used to unsubscribe from the observable sequence.
      */
-    func driveOnDisposed(_ onDisposed: @escaping (E) -> Void) -> Disposable {
+    func driveOnDisposed(_ onDisposed: @escaping () -> Void) -> Disposable {
         return drive(onDisposed: onDisposed)
     }
 }

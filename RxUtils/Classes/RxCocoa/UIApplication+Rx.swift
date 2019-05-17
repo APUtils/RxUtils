@@ -12,7 +12,7 @@ import RxCocoa
 import RxSwift
 
 
-extension Reactive where Base: UIApplication {
+public extension Reactive where Base: UIApplication {
     
     /// UIApplication's state observable.
     /// Starts with current application's state.
