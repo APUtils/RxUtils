@@ -3,6 +3,15 @@ All notable changes to this project will be documented in this file.
 `RxUtils` adheres to [Semantic Versioning](http://semver.org/).
 
 
+## [1.0.3](https://github.com/APUtils/RxUtils/releases/tag/1.0.3)
+Released on 05/17/2019.
+
+#### Added
+- RxCocoa .driveOnNext(_:)
+- RxCocoa .driveOnCompleted(_:)
+- RxCocoa .driveOnDisposed(_:)
+
+
 ## [1.0.2](https://github.com/APUtils/RxUtils/releases/tag/1.0.2)
 Released on 04/19/2019.
 

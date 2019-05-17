@@ -11,15 +11,6 @@
 		543A082E950A41FC2BA96D73 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B89DEB5F58DE4DE076F19770 /* RxSwift.framework */; };
 		98CAE18C87F757E0D000E4D8 /* RxOptional.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F338E826D6C0B8E2AD5C0E36 /* RxOptional.framework */; };
 		E202681822117D03004CC28A /* RxUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = E202681622117D03004CC28A /* RxUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E26D80BA2268FCB8001F80BB /* RxSwift+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D80B02268FCB8001F80BB /* RxSwift+Extension.swift */; };
-		E26D80BB2268FCB8001F80BB /* RxSwift+Weak+FlatMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D80B22268FCB8001F80BB /* RxSwift+Weak+FlatMap.swift */; };
-		E26D80BC2268FCB8001F80BB /* RxSwift+Weak+Do.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D80B32268FCB8001F80BB /* RxSwift+Weak+Do.swift */; };
-		E26D80BD2268FCB8001F80BB /* RxSwift+Weak+Subscribe.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D80B42268FCB8001F80BB /* RxSwift+Weak+Subscribe.swift */; };
-		E26D80BE2268FCB8001F80BB /* RxSwift+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D80B52268FCB8001F80BB /* RxSwift+Error.swift */; };
-		E26D80BF2268FCB8001F80BB /* RxSwift+Deffered.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D80B62268FCB8001F80BB /* RxSwift+Deffered.swift */; };
-		E26D80C02268FCB8001F80BB /* RxSwift+Subscribe.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D80B72268FCB8001F80BB /* RxSwift+Subscribe.swift */; };
-		E26D80C12268FCB8001F80BB /* RxSwift+CompactMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D80B82268FCB8001F80BB /* RxSwift+CompactMap.swift */; };
-		E26D80C22268FCB8001F80BB /* RxSwift+Do.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D80B92268FCB8001F80BB /* RxSwift+Do.swift */; };
 		E26D80C32268FFA4001F80BB /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 351C0C5F43DEE45C165C941A /* RxCocoa.framework */; };
 		E26D80C42268FFA4001F80BB /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B89DEB5F58DE4DE076F19770 /* RxSwift.framework */; };
 		E2A7394E2260CFC700E97D55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A7394D2260CFC700E97D55 /* AppDelegate.swift */; };
@@ -31,6 +22,17 @@
 		E2A7396E2260D99900E97D55 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2A7396C2260D99900E97D55 /* Quick.framework */; };
 		E2A7396F2260D99900E97D55 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2A7396D2260D99900E97D55 /* Nimble.framework */; };
 		E2DCAD43226900E500EE108B /* RxOptional.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F338E826D6C0B8E2AD5C0E36 /* RxOptional.framework */; };
+		E2E4B843228EAE3600107EEB /* UIApplication+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E4B836228EAE3600107EEB /* UIApplication+Rx.swift */; };
+		E2E4B844228EAE3600107EEB /* RxSwift+CompactMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E4B838228EAE3600107EEB /* RxSwift+CompactMap.swift */; };
+		E2E4B845228EAE3600107EEB /* RxCocoa+Drive.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E4B839228EAE3600107EEB /* RxCocoa+Drive.swift */; };
+		E2E4B846228EAE3600107EEB /* RxSwift+Weak+FlatMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E4B83B228EAE3600107EEB /* RxSwift+Weak+FlatMap.swift */; };
+		E2E4B847228EAE3600107EEB /* RxSwift+Weak+Do.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E4B83C228EAE3600107EEB /* RxSwift+Weak+Do.swift */; };
+		E2E4B848228EAE3600107EEB /* RxSwift+Weak+Subscribe.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E4B83D228EAE3600107EEB /* RxSwift+Weak+Subscribe.swift */; };
+		E2E4B849228EAE3600107EEB /* RxSwift+Subscribe.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E4B83E228EAE3600107EEB /* RxSwift+Subscribe.swift */; };
+		E2E4B84A228EAE3600107EEB /* RxSwift+Do.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E4B83F228EAE3600107EEB /* RxSwift+Do.swift */; };
+		E2E4B84B228EAE3600107EEB /* RxSwift+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E4B840228EAE3600107EEB /* RxSwift+Extension.swift */; };
+		E2E4B84C228EAE3600107EEB /* RxSwift+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E4B841228EAE3600107EEB /* RxSwift+Error.swift */; };
+		E2E4B84D228EAE3600107EEB /* RxSwift+Deffered.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E4B842228EAE3600107EEB /* RxSwift+Deffered.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,15 +64,6 @@
 		E202681322117D03004CC28A /* RxUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E202681622117D03004CC28A /* RxUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RxUtils.h; sourceTree = "<group>"; };
 		E202681722117D03004CC28A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E26D80B02268FCB8001F80BB /* RxSwift+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "RxSwift+Extension.swift"; path = "RxSwift/RxSwift+Extension.swift"; sourceTree = "<group>"; };
-		E26D80B22268FCB8001F80BB /* RxSwift+Weak+FlatMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxSwift+Weak+FlatMap.swift"; sourceTree = "<group>"; };
-		E26D80B32268FCB8001F80BB /* RxSwift+Weak+Do.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxSwift+Weak+Do.swift"; sourceTree = "<group>"; };
-		E26D80B42268FCB8001F80BB /* RxSwift+Weak+Subscribe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxSwift+Weak+Subscribe.swift"; sourceTree = "<group>"; };
-		E26D80B52268FCB8001F80BB /* RxSwift+Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "RxSwift+Error.swift"; path = "RxSwift/RxSwift+Error.swift"; sourceTree = "<group>"; };
-		E26D80B62268FCB8001F80BB /* RxSwift+Deffered.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "RxSwift+Deffered.swift"; path = "RxSwift/RxSwift+Deffered.swift"; sourceTree = "<group>"; };
-		E26D80B72268FCB8001F80BB /* RxSwift+Subscribe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "RxSwift+Subscribe.swift"; path = "RxSwift/RxSwift+Subscribe.swift"; sourceTree = "<group>"; };
-		E26D80B82268FCB8001F80BB /* RxSwift+CompactMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "RxSwift+CompactMap.swift"; path = "RxSwift/RxSwift+CompactMap.swift"; sourceTree = "<group>"; };
-		E26D80B92268FCB8001F80BB /* RxSwift+Do.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "RxSwift+Do.swift"; path = "RxSwift/RxSwift+Do.swift"; sourceTree = "<group>"; };
 		E2A7394B2260CFC700E97D55 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2A7394D2260CFC700E97D55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2A7394F2260CFC700E97D55 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +76,17 @@
 		E2A739642260CFC800E97D55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2A7396C2260D99900E97D55 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		E2A7396D2260D99900E97D55 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		E2E4B836228EAE3600107EEB /* UIApplication+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+Rx.swift"; sourceTree = "<group>"; };
+		E2E4B838228EAE3600107EEB /* RxSwift+CompactMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxSwift+CompactMap.swift"; sourceTree = "<group>"; };
+		E2E4B839228EAE3600107EEB /* RxCocoa+Drive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxCocoa+Drive.swift"; sourceTree = "<group>"; };
+		E2E4B83B228EAE3600107EEB /* RxSwift+Weak+FlatMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxSwift+Weak+FlatMap.swift"; sourceTree = "<group>"; };
+		E2E4B83C228EAE3600107EEB /* RxSwift+Weak+Do.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxSwift+Weak+Do.swift"; sourceTree = "<group>"; };
+		E2E4B83D228EAE3600107EEB /* RxSwift+Weak+Subscribe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxSwift+Weak+Subscribe.swift"; sourceTree = "<group>"; };
+		E2E4B83E228EAE3600107EEB /* RxSwift+Subscribe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxSwift+Subscribe.swift"; sourceTree = "<group>"; };
+		E2E4B83F228EAE3600107EEB /* RxSwift+Do.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxSwift+Do.swift"; sourceTree = "<group>"; };
+		E2E4B840228EAE3600107EEB /* RxSwift+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxSwift+Extension.swift"; sourceTree = "<group>"; };
+		E2E4B841228EAE3600107EEB /* RxSwift+Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxSwift+Error.swift"; sourceTree = "<group>"; };
+		E2E4B842228EAE3600107EEB /* RxSwift+Deffered.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxSwift+Deffered.swift"; sourceTree = "<group>"; };
 		E3A3C326AA2806CD63667A60 /* .travis.yml */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = .travis.yml; path = ../.travis.yml; sourceTree = "<group>"; };
 		F338E826D6C0B8E2AD5C0E36 /* RxOptional.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxOptional.framework; path = Carthage/Build/iOS/RxOptional.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -162,27 +166,11 @@
 			path = RxUtils;
 			sourceTree = "<group>";
 		};
-		E26D80B12268FCB8001F80BB /* _Weak */ = {
-			isa = PBXGroup;
-			children = (
-				E26D80B32268FCB8001F80BB /* RxSwift+Weak+Do.swift */,
-				E26D80B22268FCB8001F80BB /* RxSwift+Weak+FlatMap.swift */,
-				E26D80B42268FCB8001F80BB /* RxSwift+Weak+Subscribe.swift */,
-			);
-			name = _Weak;
-			path = RxSwift/_Weak;
-			sourceTree = "<group>";
-		};
 		E2766F332260FFF7003BDA19 /* _Classes */ = {
 			isa = PBXGroup;
 			children = (
-				E26D80B12268FCB8001F80BB /* _Weak */,
-				E26D80B82268FCB8001F80BB /* RxSwift+CompactMap.swift */,
-				E26D80B62268FCB8001F80BB /* RxSwift+Deffered.swift */,
-				E26D80B92268FCB8001F80BB /* RxSwift+Do.swift */,
-				E26D80B52268FCB8001F80BB /* RxSwift+Error.swift */,
-				E26D80B02268FCB8001F80BB /* RxSwift+Extension.swift */,
-				E26D80B72268FCB8001F80BB /* RxSwift+Subscribe.swift */,
+				E2E4B835228EAE3600107EEB /* RxCocoa */,
+				E2E4B837228EAE3600107EEB /* RxSwift */,
 			);
 			name = _Classes;
 			path = ../../RxUtils/Classes;
@@ -226,6 +214,39 @@
 				C8E58B988872E31FAA300F03 /* podPush.command */,
 			);
 			name = _;
+			sourceTree = "<group>";
+		};
+		E2E4B835228EAE3600107EEB /* RxCocoa */ = {
+			isa = PBXGroup;
+			children = (
+				E2E4B839228EAE3600107EEB /* RxCocoa+Drive.swift */,
+				E2E4B836228EAE3600107EEB /* UIApplication+Rx.swift */,
+			);
+			path = RxCocoa;
+			sourceTree = "<group>";
+		};
+		E2E4B837228EAE3600107EEB /* RxSwift */ = {
+			isa = PBXGroup;
+			children = (
+				E2E4B83A228EAE3600107EEB /* _Weak */,
+				E2E4B838228EAE3600107EEB /* RxSwift+CompactMap.swift */,
+				E2E4B842228EAE3600107EEB /* RxSwift+Deffered.swift */,
+				E2E4B83F228EAE3600107EEB /* RxSwift+Do.swift */,
+				E2E4B841228EAE3600107EEB /* RxSwift+Error.swift */,
+				E2E4B840228EAE3600107EEB /* RxSwift+Extension.swift */,
+				E2E4B83E228EAE3600107EEB /* RxSwift+Subscribe.swift */,
+			);
+			path = RxSwift;
+			sourceTree = "<group>";
+		};
+		E2E4B83A228EAE3600107EEB /* _Weak */ = {
+			isa = PBXGroup;
+			children = (
+				E2E4B83B228EAE3600107EEB /* RxSwift+Weak+FlatMap.swift */,
+				E2E4B83C228EAE3600107EEB /* RxSwift+Weak+Do.swift */,
+				E2E4B83D228EAE3600107EEB /* RxSwift+Weak+Subscribe.swift */,
+			);
+			path = _Weak;
 			sourceTree = "<group>";
 		};
 		F1BD9B4AF93178888C20C526 /* Frameworks */ = {
@@ -449,15 +470,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E26D80C22268FCB8001F80BB /* RxSwift+Do.swift in Sources */,
-				E26D80C02268FCB8001F80BB /* RxSwift+Subscribe.swift in Sources */,
-				E26D80BF2268FCB8001F80BB /* RxSwift+Deffered.swift in Sources */,
-				E26D80C12268FCB8001F80BB /* RxSwift+CompactMap.swift in Sources */,
-				E26D80BC2268FCB8001F80BB /* RxSwift+Weak+Do.swift in Sources */,
-				E26D80BA2268FCB8001F80BB /* RxSwift+Extension.swift in Sources */,
-				E26D80BD2268FCB8001F80BB /* RxSwift+Weak+Subscribe.swift in Sources */,
-				E26D80BE2268FCB8001F80BB /* RxSwift+Error.swift in Sources */,
-				E26D80BB2268FCB8001F80BB /* RxSwift+Weak+FlatMap.swift in Sources */,
+				E2E4B84A228EAE3600107EEB /* RxSwift+Do.swift in Sources */,
+				E2E4B849228EAE3600107EEB /* RxSwift+Subscribe.swift in Sources */,
+				E2E4B844228EAE3600107EEB /* RxSwift+CompactMap.swift in Sources */,
+				E2E4B84B228EAE3600107EEB /* RxSwift+Extension.swift in Sources */,
+				E2E4B847228EAE3600107EEB /* RxSwift+Weak+Do.swift in Sources */,
+				E2E4B845228EAE3600107EEB /* RxCocoa+Drive.swift in Sources */,
+				E2E4B84D228EAE3600107EEB /* RxSwift+Deffered.swift in Sources */,
+				E2E4B843228EAE3600107EEB /* UIApplication+Rx.swift in Sources */,
+				E2E4B848228EAE3600107EEB /* RxSwift+Weak+Subscribe.swift in Sources */,
+				E2E4B84C228EAE3600107EEB /* RxSwift+Error.swift in Sources */,
+				E2E4B846228EAE3600107EEB /* RxSwift+Weak+FlatMap.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -560,7 +583,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -619,7 +642,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -699,7 +722,6 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Example/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -720,7 +742,6 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Example/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
