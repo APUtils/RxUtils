@@ -14,7 +14,7 @@ import RxSwift
 // ******************************* MARK: - subscribeOnNext
 
 public extension ObservableType {
-    private func weakify<A: AnyObject>(_ obj: A, method: @escaping (A) -> (E) -> Void) -> ((E) -> Void) {
+    private func weakify<A: AnyObject>(_ obj: A, method: @escaping (A) -> (Element) -> Void) -> ((Element) -> Void) {
         return { [weak obj] value -> Void in
             guard let obj = obj else { return }
             return method(obj)(value)
@@ -30,7 +30,7 @@ public extension ObservableType {
      - parameter onNext: Action to invoke on `weak` for each element in the observable sequence.
      - returns: Subscription object used to unsubscribe from the observable sequence.
      */
-    func subscribeOnNext<A: AnyObject>(weak obj: A, _ onNext: @escaping (A) -> (E) -> Void) -> Disposable {
+    func subscribeOnNext<A: AnyObject>(weak obj: A, _ onNext: @escaping (A) -> (Element) -> Void) -> Disposable {
         return subscribe(onNext: weakify(obj, method: onNext))
     }
     
@@ -43,7 +43,7 @@ public extension ObservableType {
      - parameter onNext: Action to invoke on `weak` for each element in the observable sequence.
      - returns: Subscription object used to unsubscribe from the observable sequence.
      */
-    func subscribeOnNext<A: AnyObject>(weak obj: A, _ onNext: @escaping (A, E) -> Void) -> Disposable {
+    func subscribeOnNext<A: AnyObject>(weak obj: A, _ onNext: @escaping (A, Element) -> Void) -> Disposable {
         return subscribeOnNext { [weak obj] element -> Void in
             guard let obj = obj else { return }
             return onNext(obj, element)
@@ -69,7 +69,7 @@ public extension ObservableType {
 
 // ******************************* MARK: - Void Support
 
-public extension ObservableType where E == Void {
+public extension ObservableType where Element == Void {
     
     /**
      Subscribes and invokes an action on `weak` for each event in the observable sequence, and propagates all observer messages through the result sequence.

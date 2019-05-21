@@ -18,19 +18,19 @@ public extension ObservableType {
     /// - parameter second: Sequence to use for comparison.
     /// - parameter comparer: Equality comparer for computed key values.
     /// - returns: Filtered sequence.
-    func filterWithLatestFrom<T>(_ second: Observable<T>, _ comparer: @escaping (E, T) -> Bool) -> Observable<E> {
+    func filterWithLatestFrom<T>(_ second: Observable<T>, _ comparer: @escaping (Element, T) -> Bool) -> Observable<Element> {
         return withLatestFrom(second) { ($0, $1) }
             .filter { comparer($0.0, $0.1) }
             .map { $0.0 }
     }
 }
 
-public extension ObservableType where E: Equatable {
+public extension ObservableType where Element: Equatable {
     
     /// Filters out element if it equals to the latest from provided sequence.
     /// - parameter second: Sequence to use for comparison.
     /// - returns: Filtered sequence.
-    func filterEqualWithLatestFrom(_ second: Observable<E>) -> Observable<E> {
+    func filterEqualWithLatestFrom(_ second: Observable<Element>) -> Observable<Element> {
         return withLatestFrom(second) { ($0, $1) }
             .filter { $0 != $1 }
             .map { $0.0 }

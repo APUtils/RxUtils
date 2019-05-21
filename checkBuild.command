@@ -7,11 +7,11 @@ cd "$base_dir"
 
 echo ""
 
-set -o pipefail && xcodebuild -workspace "Pods Project/RxUtils.xcworkspace" -scheme "RxUtils-Example" -configuration "Release" -sdk iphonesimulator12.2 | xcpretty
+set -o pipefail && xcodebuild -workspace "Pods Project/RxUtils.xcworkspace" -scheme "RxUtils-Example" -configuration "Release" -sdk iphonesimulator | xcpretty
 
 echo ""
 
-xcodebuild -project "Carthage Project/RxUtils.xcodeproj" -alltargets -sdk iphonesimulator12.1 | xcpretty
+xcodebuild -project "Carthage Project/RxUtils.xcodeproj" -target "Example" -sdk iphonesimulator | xcpretty
 
 echo ""
 echo "SUCCESS!"

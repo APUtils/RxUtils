@@ -12,8 +12,8 @@ import RxSwift
 
 public extension ObservableType {
     
-    private func weakify<A: AnyObject, B, O: ObservableConvertibleType>(_ obj: A, method: @escaping (A) -> (B) throws -> O) -> ((B) throws -> Observable<O.E>) {
-        return { [weak obj] value throws -> Observable<O.E> in
+    private func weakify<A: AnyObject, B, O: ObservableConvertibleType>(_ obj: A, method: @escaping (A) -> (B) throws -> O) -> ((B) throws -> Observable<O.Element>) {
+        return { [weak obj] value throws -> Observable<O.Element> in
             guard let obj = obj else { return .empty() }
             return try method(obj)(value).asObservable()
         }
@@ -31,7 +31,7 @@ public extension ObservableType {
      - parameter selector: A transform function to apply to element that was observed while no observable is executing in parallel.
      - returns: An observable sequence whose elements are the result of invoking the one-to-many transform function on each element of the input sequence that was received while no other sequence was being calculated.
      */
-    func flatMapFirst<A: AnyObject, O: ObservableConvertibleType>(weak obj: A, _ selector: @escaping (A) -> (Self.E) throws -> O) -> Observable<O.E> {
+    func flatMapFirst<A: AnyObject, O: ObservableConvertibleType>(weak obj: A, _ selector: @escaping (A) -> (Self.Element) throws -> O) -> Observable<O.Element> {
         return flatMapFirst(weakify(obj, method: selector))
     }
     
@@ -48,8 +48,8 @@ public extension ObservableType {
      - returns: An observable sequence whose elements are the result of invoking the transform function on each element of source producing an
      Observable of Observable sequences and that at any point in time produces the elements of the most recent inner observable sequence that has been received.
      */
-    func flatMapFirst<A: AnyObject, O: ObservableConvertibleType>(weak obj: A, _ selector: @escaping (A, E) throws -> O) -> Observable<O.E> {
-        return flatMapFirst { [weak obj] element -> Observable<O.E> in
+    func flatMapFirst<A: AnyObject, O: ObservableConvertibleType>(weak obj: A, _ selector: @escaping (A, Element) throws -> O) -> Observable<O.Element> {
+        return flatMapFirst { [weak obj] element -> Observable<O.Element> in
             guard let obj = obj else { return .empty() }
             return try selector(obj, element).asObservable()
         }
@@ -70,7 +70,7 @@ public extension ObservableType {
      - returns: An observable sequence whose elements are the result of invoking the transform function on each element of source producing an
      Observable of Observable sequences and that at any point in time produces the elements of the most recent inner observable sequence that has been received.
      */
-    func flatMapLatest<A: AnyObject, O: ObservableConvertibleType>(weak obj: A, _ selector: @escaping (A) -> (Self.E) throws -> O) -> Observable<O.E> {
+    func flatMapLatest<A: AnyObject, O: ObservableConvertibleType>(weak obj: A, _ selector: @escaping (A) -> (Self.Element) throws -> O) -> Observable<O.Element> {
         return flatMapLatest(weakify(obj, method: selector))
     }
     
@@ -87,8 +87,8 @@ public extension ObservableType {
      - returns: An observable sequence whose elements are the result of invoking the transform function on each element of source producing an
      Observable of Observable sequences and that at any point in time produces the elements of the most recent inner observable sequence that has been received.
      */
-    func flatMapLatest<A: AnyObject, O: ObservableConvertibleType>(weak obj: A, _ selector: @escaping (A, E) throws -> O) -> Observable<O.E> {
-        return flatMapLatest { [weak obj] element -> Observable<O.E> in
+    func flatMapLatest<A: AnyObject, O: ObservableConvertibleType>(weak obj: A, _ selector: @escaping (A, Element) throws -> O) -> Observable<O.Element> {
+        return flatMapLatest { [weak obj] element -> Observable<O.Element> in
             guard let obj = obj else { return .empty() }
             return try selector(obj, element).asObservable()
         }
@@ -105,7 +105,7 @@ public extension ObservableType {
      - parameter selector: Transform function to apply on `weak` to each element in the observable sequence.
      - returns: An observable sequence whose elements are the result of invoking the one-to-many transform function on each element of the input sequence.
      */
-    func flatMap<A: AnyObject, O: ObservableConvertibleType>(weak obj: A, _ selector: @escaping (A) -> (Self.E) throws -> O) -> Observable<O.E> {
+    func flatMap<A: AnyObject, O: ObservableConvertibleType>(weak obj: A, _ selector: @escaping (A) -> (Self.Element) throws -> O) -> Observable<O.Element> {
         return flatMap(weakify(obj, method: selector))
     }
     
@@ -118,8 +118,8 @@ public extension ObservableType {
      - parameter selector: Transform function to apply on `weak` to each element in the observable sequence.
      - returns: An observable sequence whose elements are the result of invoking the one-to-many transform function on each element of the input sequence.
      */
-    func flatMap<A: AnyObject, O: ObservableConvertibleType>(weak obj: A, _ selector: @escaping (A, E) throws -> O) -> Observable<O.E> {
-        return flatMap { [weak obj] element -> Observable<O.E> in
+    func flatMap<A: AnyObject, O: ObservableConvertibleType>(weak obj: A, _ selector: @escaping (A, Element) throws -> O) -> Observable<O.Element> {
+        return flatMap { [weak obj] element -> Observable<O.Element> in
             guard let obj = obj else { return .empty() }
             return try selector(obj, element).asObservable()
         }
@@ -128,9 +128,9 @@ public extension ObservableType {
 
 // ******************************* MARK: - Void Support
 
-public extension ObservableType where E == Void {
+public extension ObservableType where Element == Void {
     
-    private func weakify<A: AnyObject, O: ObservableConvertibleType>(_ obj: A, method: @escaping (A) -> () throws -> O) -> (() throws -> Observable<O.E>) {
+    private func weakify<A: AnyObject, O: ObservableConvertibleType>(_ obj: A, method: @escaping (A) -> () throws -> O) -> (() throws -> Observable<O.Element>) {
         return { [weak obj] in
             guard let obj = obj else { return .empty() }
             return try method(obj)().asObservable()
@@ -150,7 +150,7 @@ public extension ObservableType where E == Void {
      - returns: An observable sequence whose elements are the result of invoking the transform function on each element of source producing an
      Observable of Observable sequences and that at any point in time produces the elements of the most recent inner observable sequence that has been received.
      */
-    func flatMapLatest<A: AnyObject, O: ObservableConvertibleType>(weak obj: A, _ selector: @escaping (A) -> () throws -> O) -> Observable<O.E> {
+    func flatMapLatest<A: AnyObject, O: ObservableConvertibleType>(weak obj: A, _ selector: @escaping (A) -> () throws -> O) -> Observable<O.Element> {
         return flatMapLatest(weakify(obj, method: selector))
     }
     
@@ -163,7 +163,7 @@ public extension ObservableType where E == Void {
      - parameter selector: Transform function to apply on `weak` to each element in the observable sequence.
      - returns: An observable sequence whose elements are the result of invoking the one-to-many transform function on each element of the input sequence.
      */
-    func flatMap<A: AnyObject, O: ObservableConvertibleType>(weak obj: A, _ selector: @escaping (A) -> () throws -> O) -> Observable<O.E> {
+    func flatMap<A: AnyObject, O: ObservableConvertibleType>(weak obj: A, _ selector: @escaping (A) -> () throws -> O) -> Observable<O.Element> {
         return flatMap(weakify(obj, method: selector))
     }
     
@@ -176,8 +176,8 @@ public extension ObservableType where E == Void {
      - parameter selector: Transform function to apply on `weak` to each element in the observable sequence.
      - returns: An observable sequence whose elements are the result of invoking the one-to-many transform function on each element of the input sequence.
      */
-    func flatMap<A: AnyObject, O: ObservableConvertibleType>(weak obj: A, _ selector: @escaping (A) throws -> O) -> Observable<O.E> {
-        return flatMap { [weak obj] _ -> Observable<O.E> in
+    func flatMap<A: AnyObject, O: ObservableConvertibleType>(weak obj: A, _ selector: @escaping (A) throws -> O) -> Observable<O.Element> {
+        return flatMap { [weak obj] _ -> Observable<O.Element> in
             guard let obj = obj else { return .empty() }
             return try selector(obj).asObservable()
         }

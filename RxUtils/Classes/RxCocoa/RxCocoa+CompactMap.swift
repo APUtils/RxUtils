@@ -1,17 +1,18 @@
 //
-//  RxSwift+CompactMap.swift
+//  RxCocoa+CompactMap.swift
 //  RxUtils
 //
-//  Created by Anton Plebanovich on 4/11/19.
+//  Created by Anton Plebanovich on 5/21/19.
 //  Copyright © 2019 Anton Plebanovich. All rights reserved.
 //
 
 import Foundation
+import RxCocoa
 import RxOptional
 import RxSwift
 
 
-public extension ObservableType {
+public extension SharedSequenceConvertibleType where SharingStrategy == DriverSharingStrategy {
     /**
      Projects each element of an observable sequence into a new form. If transforms produces a `nil` those elements are filtered out.
      
@@ -21,7 +22,7 @@ public extension ObservableType {
      - returns: An observable sequence whose elements are the result of invoking the transform function on each element of source.
      
      */
-    func compactMap<T>(_ transform: @escaping (Element) throws -> T?) -> Observable<T> {
+    func compactMap<T>(_ transform: @escaping (Element) -> T?) -> Driver<T> {
         return map(transform)
             .filterNil()
     }

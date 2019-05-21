@@ -3,6 +3,23 @@ All notable changes to this project will be documented in this file.
 `RxUtils` adheres to [Semantic Versioning](http://semver.org/).
 
 
+## [1.1.0](https://github.com/APUtils/RxUtils/releases/tag/1.1.0)
+Released on 05/21/2019.
+
+#### Added
+- RxCocoa .compactMap(_:)
+- RxCocoa .map(weak:_:)
+- RxSwift .map(weak:_:)
+- RxSwift latest support
+- Swift 5 support
+
+#### Fixed
+- Deprecation warnings
+
+#### Dropped
+- iOS 8.0 is no longer supported
+
+
 ## [1.0.3](https://github.com/APUtils/RxUtils/releases/tag/1.0.3)
 Released on 05/17/2019.
 

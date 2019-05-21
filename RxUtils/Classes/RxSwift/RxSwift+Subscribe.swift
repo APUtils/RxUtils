@@ -20,7 +20,7 @@ public extension ObservableType {
      - parameter onNext: Function to invoke on `weak` for each element in the observable sequence.
      - returns: Subscription object used to unsubscribe from the observable sequence.
      */
-    func subscribeOnNext(_ onNext: @escaping (E) -> Void) -> Disposable {
+    func subscribeOnNext(_ onNext: @escaping (Element) -> Void) -> Disposable {
         return subscribe(onNext: onNext)
     }
     

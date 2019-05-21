@@ -1,7 +1,8 @@
 - Assure `Carthage Project/RxUtils.xcodeproj` and `Pods Project/RxUtils.xcworkspace` have all dependencies added.
+- Run `carthageUpdate.command` in `Carthage Project/RxUtils.xcodeproj`
+- Run `podUpdate.command` in `Pods Project/RxUtils.xcworkspace`
 - Run `checkBuild.command`
 - Change version in podspec
-- Run `podUpdate.command`
 - Update CHANGELOG.md
 - Update README.md with new version if needed
 - Push changes in git

@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1FE27E9F9B95B17313CE0E91 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 456D72B53221CA16C8A42395 /* RxRelay.framework */; };
 		2E3969D4FAEC1BC07F9BAE7E /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 351C0C5F43DEE45C165C941A /* RxCocoa.framework */; };
 		543A082E950A41FC2BA96D73 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B89DEB5F58DE4DE076F19770 /* RxSwift.framework */; };
 		98CAE18C87F757E0D000E4D8 /* RxOptional.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F338E826D6C0B8E2AD5C0E36 /* RxOptional.framework */; };
 		E202681822117D03004CC28A /* RxUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = E202681622117D03004CC28A /* RxUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E26D80C32268FFA4001F80BB /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 351C0C5F43DEE45C165C941A /* RxCocoa.framework */; };
 		E26D80C42268FFA4001F80BB /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B89DEB5F58DE4DE076F19770 /* RxSwift.framework */; };
+		E286EA822293FFD100868FF7 /* RxSwift+Weak+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = E286EA812293FFD100868FF7 /* RxSwift+Weak+Map.swift */; };
+		E286EA842294037500868FF7 /* RxCocoa+CompactMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = E286EA832294037500868FF7 /* RxCocoa+CompactMap.swift */; };
+		E286EA87229408E900868FF7 /* RxCocoa+Weak+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = E286EA86229408E900868FF7 /* RxCocoa+Weak+Map.swift */; };
 		E2A7394E2260CFC700E97D55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A7394D2260CFC700E97D55 /* AppDelegate.swift */; };
 		E2A739502260CFC700E97D55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A7394F2260CFC700E97D55 /* ViewController.swift */; };
 		E2A739532260CFC700E97D55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2A739512260CFC700E97D55 /* Main.storyboard */; };
@@ -51,6 +55,7 @@
 		351C0C5F43DEE45C165C941A /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		35423192BBCD2485C59FBA90 /* .gitignore */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
 		3905247AED19C828B2F93C0F /* CHANGELOG.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
+		456D72B53221CA16C8A42395 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 		4DC06729D5797C0C4726CA51 /* checkBuild.command */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = checkBuild.command; path = ../checkBuild.command; sourceTree = "<group>"; };
 		722BFDE9DE58393B9D916719 /* carthageRemove.command */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = carthageRemove.command; path = Scripts/Carthage/carthageRemove.command; sourceTree = "<group>"; };
 		72FEC47699AE93FA694446C1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -64,6 +69,9 @@
 		E202681322117D03004CC28A /* RxUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E202681622117D03004CC28A /* RxUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RxUtils.h; sourceTree = "<group>"; };
 		E202681722117D03004CC28A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E286EA812293FFD100868FF7 /* RxSwift+Weak+Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+Weak+Map.swift"; sourceTree = "<group>"; };
+		E286EA832294037500868FF7 /* RxCocoa+CompactMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxCocoa+CompactMap.swift"; sourceTree = "<group>"; };
+		E286EA86229408E900868FF7 /* RxCocoa+Weak+Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxCocoa+Weak+Map.swift"; sourceTree = "<group>"; };
 		E2A7394B2260CFC700E97D55 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2A7394D2260CFC700E97D55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2A7394F2260CFC700E97D55 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +116,7 @@
 			files = (
 				2E3969D4FAEC1BC07F9BAE7E /* RxCocoa.framework in Frameworks */,
 				98CAE18C87F757E0D000E4D8 /* RxOptional.framework in Frameworks */,
+				1FE27E9F9B95B17313CE0E91 /* RxRelay.framework in Frameworks */,
 				543A082E950A41FC2BA96D73 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -176,6 +185,14 @@
 			path = ../../RxUtils/Classes;
 			sourceTree = "<group>";
 		};
+		E286EA85229408C800868FF7 /* _Weak */ = {
+			isa = PBXGroup;
+			children = (
+				E286EA86229408E900868FF7 /* RxCocoa+Weak+Map.swift */,
+			);
+			path = _Weak;
+			sourceTree = "<group>";
+		};
 		E2A7394C2260CFC700E97D55 /* Example */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +236,8 @@
 		E2E4B835228EAE3600107EEB /* RxCocoa */ = {
 			isa = PBXGroup;
 			children = (
+				E286EA85229408C800868FF7 /* _Weak */,
+				E286EA832294037500868FF7 /* RxCocoa+CompactMap.swift */,
 				E2E4B839228EAE3600107EEB /* RxCocoa+Drive.swift */,
 				E2E4B836228EAE3600107EEB /* UIApplication+Rx.swift */,
 			);
@@ -242,8 +261,9 @@
 		E2E4B83A228EAE3600107EEB /* _Weak */ = {
 			isa = PBXGroup;
 			children = (
-				E2E4B83B228EAE3600107EEB /* RxSwift+Weak+FlatMap.swift */,
 				E2E4B83C228EAE3600107EEB /* RxSwift+Weak+Do.swift */,
+				E2E4B83B228EAE3600107EEB /* RxSwift+Weak+FlatMap.swift */,
+				E286EA812293FFD100868FF7 /* RxSwift+Weak+Map.swift */,
 				E2E4B83D228EAE3600107EEB /* RxSwift+Weak+Subscribe.swift */,
 			);
 			path = _Weak;
@@ -257,6 +277,7 @@
 				E2A7396C2260D99900E97D55 /* Quick.framework */,
 				351C0C5F43DEE45C165C941A /* RxCocoa.framework */,
 				F338E826D6C0B8E2AD5C0E36 /* RxOptional.framework */,
+				456D72B53221CA16C8A42395 /* RxRelay.framework */,
 				B89DEB5F58DE4DE076F19770 /* RxSwift.framework */,
 			);
 			name = Frameworks;
@@ -431,6 +452,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxOptional.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxRelay.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 			);
 			name = "Carthage Copy";
@@ -439,6 +461,7 @@
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxCocoa.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxOptional.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxRelay.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -470,8 +493,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E286EA87229408E900868FF7 /* RxCocoa+Weak+Map.swift in Sources */,
+				E286EA822293FFD100868FF7 /* RxSwift+Weak+Map.swift in Sources */,
 				E2E4B84A228EAE3600107EEB /* RxSwift+Do.swift in Sources */,
 				E2E4B849228EAE3600107EEB /* RxSwift+Subscribe.swift in Sources */,
+				E286EA842294037500868FF7 /* RxCocoa+CompactMap.swift in Sources */,
 				E2E4B844228EAE3600107EEB /* RxSwift+CompactMap.swift in Sources */,
 				E2E4B84B228EAE3600107EEB /* RxSwift+Extension.swift in Sources */,
 				E2E4B847228EAE3600107EEB /* RxSwift+Weak+Do.swift in Sources */,

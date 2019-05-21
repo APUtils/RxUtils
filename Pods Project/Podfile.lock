@@ -1,13 +1,16 @@
 PODS:
   - Nimble (8.0.1)
-  - Quick (2.0.0)
-  - RxCocoa (4.5.0):
-    - RxSwift (>= 4.4.2, ~> 4.4)
-  - RxOptional (3.6.2):
-    - RxCocoa (~> 4.0)
-    - RxSwift (~> 4.0)
-  - RxSwift (4.5.0)
-  - RxUtils (1.0.0):
+  - Quick (2.1.0)
+  - RxCocoa (5.0.0):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxOptional (4.0.0):
+    - RxCocoa (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.0.0):
+    - RxSwift (~> 5)
+  - RxSwift (5.0.0)
+  - RxUtils (1.1.0):
     - RxOptional
     - RxSwift
 
@@ -24,6 +27,7 @@ SPEC REPOS:
     - Quick
     - RxCocoa
     - RxOptional
+    - RxRelay
     - RxSwift
 
 EXTERNAL SOURCES:
@@ -32,12 +36,13 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Nimble: 45f786ae66faa9a709624227fae502db55a8bdd0
-  Quick: ce1276c7c27ba2da3cb2fd0cde053c3648b3b22d
-  RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
-  RxOptional: 80426a0ddbd092573e4c482d8cc13302078c4d5e
-  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
-  RxUtils: bc18ce66bc243b165fec79b79dfcca7a4619f095
+  Quick: 4be43f6634acfa727dd106bdf3929ce125ffa79d
+  RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
+  RxOptional: 9904e2219d59260c3c171273d475b2126de187e8
+  RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
+  RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
+  RxUtils: f6098b66b1d3cc0bae3dc1440e285ec543d6c24c
 
-PODFILE CHECKSUM: 125de14078fde8a59e5dbfdceddfcdc9180caf61
+PODFILE CHECKSUM: a19f0cc9777d060c0cf03eaa7247673665eff148
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.6.2

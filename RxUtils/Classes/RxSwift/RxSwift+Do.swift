@@ -21,7 +21,7 @@ public extension ObservableType {
      - parameter onSubscribe: Action to invoke before subscribing to source observable sequence.
      - returns: The source sequence with the side-effecting behavior applied.
      */
-    func doOnSubscribe(_ onSubscribe: @escaping () -> Void) -> Observable<E> {
+    func doOnSubscribe(_ onSubscribe: @escaping () -> Void) -> Observable<Element> {
         return self.do(onSubscribe: onSubscribe)
     }
     
@@ -33,7 +33,7 @@ public extension ObservableType {
      - parameter onSubscribed: Action to invoke after subscribing to source observable sequence.
      - returns: The source sequence with the side-effecting behavior applied.
      */
-    func doOnSubscribed(_ onSubscribed: @escaping () -> Void) -> Observable<E> {
+    func doOnSubscribed(_ onSubscribed: @escaping () -> Void) -> Observable<Element> {
         return self.do(onSubscribed: onSubscribed)
     }
     
@@ -45,7 +45,7 @@ public extension ObservableType {
      - parameter onNext: Action to invoke for each element in the observable sequence.
      - returns: The source sequence with the side-effecting behavior applied.
      */
-    func doOnNext(_ onNext: @escaping (E) throws -> Void) -> Observable<E> {
+    func doOnNext(_ onNext: @escaping (Element) throws -> Void) -> Observable<Element> {
         return self.do(onNext: onNext)
     }
     
@@ -57,7 +57,7 @@ public extension ObservableType {
      - parameter onNext: Action to invoke for each element in the observable sequence. Takes no arguments so can be used in a places where we do not need it.
      - returns: The source sequence with the side-effecting behavior applied.
      */
-    func doOnNext(_ onNext: @escaping () throws -> Void) -> Observable<E> {
+    func doOnNext(_ onNext: @escaping () throws -> Void) -> Observable<Element> {
         return self.do(onNext: { _ in try onNext() })
     }
     
@@ -69,7 +69,7 @@ public extension ObservableType {
      - parameter onError: Action to invoke upon errored termination of the observable sequence.
      - returns: The source sequence with the side-effecting behavior applied.
      */
-    func doOnError(_ onError: @escaping (Error) throws -> Void) -> Observable<E> {
+    func doOnError(_ onError: @escaping (Error) throws -> Void) -> Observable<Element> {
         return self.do(onError: onError)
     }
     
@@ -81,7 +81,7 @@ public extension ObservableType {
      - parameter onCompleted: Action to invoke upon graceful termination of the observable sequence.
      - returns: The source sequence with the side-effecting behavior applied.
      */
-    func doOnCompleted(_ onCompleted: @escaping () throws -> Swift.Void) -> Observable<E> {
+    func doOnCompleted(_ onCompleted: @escaping () throws -> Swift.Void) -> Observable<Element> {
         return self.do(onCompleted: onCompleted)
     }
     
@@ -93,7 +93,7 @@ public extension ObservableType {
      - parameter onDispose: Action to invoke after subscription to source observable has been disposed for any reason. It can be either because sequence terminates for some reason or observer subscription being disposed.
      - returns: The source sequence with the side-effecting behavior applied.
      */
-    func doOnDispose(_ onDispose: @escaping () -> Void) -> Observable<E> {
+    func doOnDispose(_ onDispose: @escaping () -> Void) -> Observable<Element> {
         return self.do(onDispose: onDispose)
     }
 }

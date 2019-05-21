@@ -15,13 +15,13 @@ import RxSwift
 public extension ObservableType {
     /// Maps error into other error.
     /// - parameter transform: A transform function to apply to source error.
-    func mapError(_ transform: @escaping (Error) -> Error) -> Observable<E> {
-        return self.catchError { error -> Observable<E> in .error(transform(error)) }
+    func mapError(_ transform: @escaping (Error) -> Error) -> Observable<Element> {
+        return self.catchError { error -> Observable<Element> in .error(transform(error)) }
     }
     
     /// Maps error into other error.
     /// - parameter error: Error to transform to.
-    func mapErrorTo(_ error: Error) -> Observable<E> {
-        return self.catchError { error -> Observable<E> in .error(error) }
+    func mapErrorTo(_ error: Error) -> Observable<Element> {
+        return self.catchError { error -> Observable<Element> in .error(error) }
     }
 }

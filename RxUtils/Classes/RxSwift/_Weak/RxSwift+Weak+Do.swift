@@ -14,7 +14,7 @@ import RxSwift
 // ******************************* MARK: - doOnNext
 
 public extension ObservableType {
-    private func weakify<A: AnyObject>(_ obj: A, method: @escaping (A) -> (E) throws -> Void) -> ((E) throws -> Void) {
+    private func weakify<A: AnyObject>(_ obj: A, method: @escaping (A) -> (Element) throws -> Void) -> ((Element) throws -> Void) {
         return { [weak obj] value throws -> Void in
             guard let obj = obj else { return }
             return try method(obj)(value)
@@ -30,7 +30,7 @@ public extension ObservableType {
      - parameter onNext: Action to invoke on `weak` for each element in the observable sequence.
      - returns: The source sequence with the side-effecting behavior applied.
      */
-    func doOnNext<A: AnyObject>(weak obj: A, _ onNext: @escaping (A) -> (E) throws -> Void) -> Observable<E> {
+    func doOnNext<A: AnyObject>(weak obj: A, _ onNext: @escaping (A) -> (Element) throws -> Void) -> Observable<Element> {
         return self.do(onNext: weakify(obj, method: onNext))
     }
     
@@ -43,7 +43,7 @@ public extension ObservableType {
      - parameter onNext: Action to invoke on `weak` for each element in the observable sequence.
      - returns: The source sequence with the side-effecting behavior applied.
      */
-    func doOnNext<A: AnyObject>(weak obj: A, _ onNext: @escaping (A, E) throws -> Void) -> Observable<E> {
+    func doOnNext<A: AnyObject>(weak obj: A, _ onNext: @escaping (A, Element) throws -> Void) -> Observable<Element> {
         return doOnNext { [weak obj] element -> Void in
             guard let obj = obj else { return }
             return try onNext(obj, element)
@@ -59,7 +59,7 @@ public extension ObservableType {
      - parameter onNext: Action to invoke on `weak` for each element in the observable sequence.
      - returns: The source sequence with the side-effecting behavior applied.
      */
-    func doOnNext<A: AnyObject>(weak obj: A, _ onNext: @escaping (A) -> () throws -> Void) -> Observable<E> {
+    func doOnNext<A: AnyObject>(weak obj: A, _ onNext: @escaping (A) -> () throws -> Void) -> Observable<Element> {
         return doOnNext { [weak obj] _ in
             guard let obj = obj else { return }
             return try onNext(obj)()
@@ -86,7 +86,7 @@ public extension ObservableType {
      - parameter onError: Action to invoke on `weak` upon errored termination of the observable sequence.
      - returns: The source sequence with the side-effecting behavior applied.
      */
-    func doOnError<A: AnyObject>(weak obj: A, _ onError: @escaping (A) -> (Error) throws -> Void) -> Observable<E> {
+    func doOnError<A: AnyObject>(weak obj: A, _ onError: @escaping (A) -> (Error) throws -> Void) -> Observable<Element> {
         return self.do(onError: weakify(obj, method: onError))
     }
     
@@ -99,7 +99,7 @@ public extension ObservableType {
      - parameter onError: Action to invoke on `weak` upon errored termination of the observable sequence.
      - returns: The source sequence with the side-effecting behavior applied.
      */
-    func doOnError<A: AnyObject>(weak obj: A, _ onError: @escaping (A, Error) throws -> Void) -> Observable<E> {
+    func doOnError<A: AnyObject>(weak obj: A, _ onError: @escaping (A, Error) throws -> Void) -> Observable<Element> {
         return doOnError { [weak obj] error -> Void in
             guard let obj = obj else { return }
             return try onError(obj, error)
@@ -115,7 +115,7 @@ public extension ObservableType {
      - parameter onError: Action to invoke on `weak` upon errored termination of the observable sequence.
      - returns: The source sequence with the side-effecting behavior applied.
      */
-    func doOnError<A: AnyObject>(weak obj: A, _ onError: @escaping (A) -> () throws -> Void) -> Observable<E> {
+    func doOnError<A: AnyObject>(weak obj: A, _ onError: @escaping (A) -> () throws -> Void) -> Observable<Element> {
         return doOnError { [weak obj] _ in
             guard let obj = obj else { return }
             return try onError(obj)()
@@ -142,7 +142,7 @@ public extension ObservableType {
      - parameter onCompleted: Action to invoke on `weak` for completed event in the observable sequence.
      - returns: The source sequence with the side-effecting behavior applied.
      */
-    func doOnCompleted<A: AnyObject>(weak obj: A, _ onCompleted: @escaping (A) -> () throws -> Void) -> Observable<E> {
+    func doOnCompleted<A: AnyObject>(weak obj: A, _ onCompleted: @escaping (A) -> () throws -> Void) -> Observable<Element> {
         return self.do(onCompleted: weakify(obj, method: onCompleted))
     }
     
@@ -155,7 +155,7 @@ public extension ObservableType {
      - parameter onCompleted: Action to invoke on `weak` for completed event in the observable sequence.
      - returns: The source sequence with the side-effecting behavior applied.
      */
-    func doOnCompleted<A: AnyObject>(weak obj: A, _ onCompleted: @escaping (A) throws -> Void) -> Observable<E> {
+    func doOnCompleted<A: AnyObject>(weak obj: A, _ onCompleted: @escaping (A) throws -> Void) -> Observable<Element> {
         return doOnCompleted { [weak obj] () -> Void in
             guard let obj = obj else { return }
             return try onCompleted(obj)

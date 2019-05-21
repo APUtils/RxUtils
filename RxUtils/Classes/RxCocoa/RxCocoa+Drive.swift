@@ -21,7 +21,7 @@ public extension SharedSequenceConvertibleType where SharingStrategy == DriverSh
      - parameter onNext: Action to invoke for each element in the observable sequence.
      - returns: Subscription object used to unsubscribe from the observable sequence.
      */
-    func driveOnNext(_ onNext: @escaping (E) -> Void) -> Disposable {
+    func driveOnNext(_ onNext: @escaping (Element) -> Void) -> Disposable {
         return drive(onNext: onNext)
     }
     
