@@ -3,4 +3,4 @@
 base_dir=$(dirname "$0")
 cd "$base_dir"
 
-carthage bootstrap --platform iOS --cache-builds
+carthage update --platform iOS --cache-builds

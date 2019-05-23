@@ -1,0 +1,4 @@
+github "Quick/Nimble"
+github "Quick/Quick"
+github "ReactiveX/RxSwift"
+github "RxSwiftCommunity/RxOptional"
