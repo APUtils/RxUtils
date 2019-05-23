@@ -3,6 +3,14 @@ All notable changes to this project will be documented in this file.
 `RxUtils` adheres to [Semantic Versioning](http://semver.org/).
 
 
+## [1.1.3](https://github.com/APUtils/RxUtils/releases/tag/1.1.3)
+Released on 05/23/2019.
+
+#### Removed
+- RxSwift .compactMap(_:) because RxSwift already have it
+
+
+
 ## [1.1.1](https://github.com/APUtils/RxUtils/releases/tag/1.1.1)
 Released on 05/21/2019.
 

@@ -10,9 +10,10 @@ PODS:
   - RxRelay (5.0.0):
     - RxSwift (~> 5)
   - RxSwift (5.0.0)
-  - RxUtils (1.1.0):
-    - RxOptional
-    - RxSwift
+  - RxUtils (1.1.2):
+    - RxCocoa (~> 5)
+    - RxOptional (~> 4)
+    - RxSwift (~> 5)
 
 DEPENDENCIES:
   - Nimble
@@ -41,8 +42,8 @@ SPEC CHECKSUMS:
   RxOptional: 9904e2219d59260c3c171273d475b2126de187e8
   RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
   RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
-  RxUtils: f6098b66b1d3cc0bae3dc1440e285ec543d6c24c
+  RxUtils: afe78ce38bf928e038465daa8afd9e8f1cc8a2cd
 
 PODFILE CHECKSUM: a19f0cc9777d060c0cf03eaa7247673665eff148
 
-COCOAPODS: 1.6.2
+COCOAPODS: 1.7.0

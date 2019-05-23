@@ -27,7 +27,6 @@
 		E2A7396F2260D99900E97D55 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2A7396D2260D99900E97D55 /* Nimble.framework */; };
 		E2DCAD43226900E500EE108B /* RxOptional.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F338E826D6C0B8E2AD5C0E36 /* RxOptional.framework */; };
 		E2E4B843228EAE3600107EEB /* UIApplication+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E4B836228EAE3600107EEB /* UIApplication+Rx.swift */; };
-		E2E4B844228EAE3600107EEB /* RxSwift+CompactMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E4B838228EAE3600107EEB /* RxSwift+CompactMap.swift */; };
 		E2E4B845228EAE3600107EEB /* RxCocoa+Drive.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E4B839228EAE3600107EEB /* RxCocoa+Drive.swift */; };
 		E2E4B846228EAE3600107EEB /* RxSwift+Weak+FlatMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E4B83B228EAE3600107EEB /* RxSwift+Weak+FlatMap.swift */; };
 		E2E4B847228EAE3600107EEB /* RxSwift+Weak+Do.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E4B83C228EAE3600107EEB /* RxSwift+Weak+Do.swift */; };
@@ -85,7 +84,6 @@
 		E2A7396C2260D99900E97D55 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		E2A7396D2260D99900E97D55 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		E2E4B836228EAE3600107EEB /* UIApplication+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+Rx.swift"; sourceTree = "<group>"; };
-		E2E4B838228EAE3600107EEB /* RxSwift+CompactMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxSwift+CompactMap.swift"; sourceTree = "<group>"; };
 		E2E4B839228EAE3600107EEB /* RxCocoa+Drive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxCocoa+Drive.swift"; sourceTree = "<group>"; };
 		E2E4B83B228EAE3600107EEB /* RxSwift+Weak+FlatMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxSwift+Weak+FlatMap.swift"; sourceTree = "<group>"; };
 		E2E4B83C228EAE3600107EEB /* RxSwift+Weak+Do.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxSwift+Weak+Do.swift"; sourceTree = "<group>"; };
@@ -248,7 +246,6 @@
 			isa = PBXGroup;
 			children = (
 				E2E4B83A228EAE3600107EEB /* _Weak */,
-				E2E4B838228EAE3600107EEB /* RxSwift+CompactMap.swift */,
 				E2E4B842228EAE3600107EEB /* RxSwift+Deffered.swift */,
 				E2E4B83F228EAE3600107EEB /* RxSwift+Do.swift */,
 				E2E4B841228EAE3600107EEB /* RxSwift+Error.swift */,
@@ -498,7 +495,6 @@
 				E2E4B84A228EAE3600107EEB /* RxSwift+Do.swift in Sources */,
 				E2E4B849228EAE3600107EEB /* RxSwift+Subscribe.swift in Sources */,
 				E286EA842294037500868FF7 /* RxCocoa+CompactMap.swift in Sources */,
-				E2E4B844228EAE3600107EEB /* RxSwift+CompactMap.swift in Sources */,
 				E2E4B84B228EAE3600107EEB /* RxSwift+Extension.swift in Sources */,
 				E2E4B847228EAE3600107EEB /* RxSwift+Weak+Do.swift in Sources */,
 				E2E4B845228EAE3600107EEB /* RxCocoa+Drive.swift in Sources */,
