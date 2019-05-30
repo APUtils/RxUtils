@@ -3,7 +3,7 @@ All notable changes to this project will be documented in this file.
 `RxUtils` adheres to [Semantic Versioning](http://semver.org/).
 
 
-## [1.1.4](https://github.com/APUtils/RxUtils/releases/tag/1.1.4)
+## [1.1.5](https://github.com/APUtils/RxUtils/releases/tag/1.1.5)
 Released on 05/30/2019.
 
 #### Added
