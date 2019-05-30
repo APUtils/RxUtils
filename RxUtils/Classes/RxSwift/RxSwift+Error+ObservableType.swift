@@ -1,5 +1,5 @@
 //
-//  RxSwift+Error.swift
+//  RxSwift+Error+ObservableType.swift
 //  RxUtils
 //
 //  Created by Anton Plebanovich on 4/11/19.

@@ -1,5 +1,5 @@
 //
-//  RxSwift+Weak+Map.swift
+//  RxSwift+Weak+Map+ObservableType.swift
 //  RxUtils
 //
 //  Created by Anton Plebanovich on 5/21/19.

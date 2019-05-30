@@ -1,5 +1,5 @@
 //
-//  RxCocoa+Weak+Map.swift
+//  RxCocoa+Weak+Map+Driver.swift
 //  RxUtils
 //
 //  Created by Anton Plebanovich on 5/21/19.
@@ -8,7 +8,6 @@
 
 import Foundation
 import RxCocoa
-import RxOptional
 import RxSwift
 
 

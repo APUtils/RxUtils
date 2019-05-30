@@ -1,5 +1,5 @@
 //
-//  RxSwift+Do.swift
+//  RxSwift+Do+ObservableType.swift
 //  RxUtils
 //
 //  Created by Anton Plebanovich on 4/11/19.
