@@ -3,6 +3,14 @@ All notable changes to this project will be documented in this file.
 `RxUtils` adheres to [Semantic Versioning](http://semver.org/).
 
 
+## [1.1.4](https://github.com/APUtils/RxUtils/releases/tag/1.1.4)
+Released on 05/30/2019.
+
+#### Added
+- Single .doOnSuccess(weak:_:)
+- Single .doOnError(weak:_:)
+
+
 ## [1.1.3](https://github.com/APUtils/RxUtils/releases/tag/1.1.3)
 Released on 05/23/2019.
 
