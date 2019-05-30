@@ -28,6 +28,21 @@ cd "$base_dir"
 cd ..
 cd ..
 
+# Try one level up if didn't find Cartfile.
+if [ ! -f "Cartfile" ]; then
+    cd ..
+
+    if [ ! -f "Cartfile" ]; then
+        printf >&2 "\n${red_color}Unable to locate 'Cartfile'${no_color}\n\n"
+        exit 1
+    fi
+
+    scripts_dir="${PWD##*/}/Scripts/Carthage/"
+
+else
+    scripts_dir="Scripts/Carthage/"
+fi
+
 mkdir -p "Carthage"
 touch "Carthage/cartSum.txt"
 if [ ! -f "Carthage/cartSum.txt" ]; then
