@@ -1,8 +1,8 @@
 //
-//  RxSwift+Do+ObservableType.swift
+//  RxSwift+Do+Single.swift
 //  RxUtils
 //
-//  Created by Anton Plebanovich on 4/11/19.
+//  Created by Anton Plebanovich on 5/31/19.
 //  Copyright © 2019 Anton Plebanovich. All rights reserved.
 //
 
@@ -10,7 +10,7 @@ import Foundation
 import RxCocoa
 import RxSwift
 
-public extension ObservableType {
+public extension PrimitiveSequence where Trait == SingleTrait {
     /**
      Invokes an action for each event in the observable sequence, and propagates all observer messages through the result sequence.
      
@@ -19,7 +19,7 @@ public extension ObservableType {
      - parameter onSubscribe: Action to invoke before subscribing to source observable sequence.
      - returns: The source sequence with the side-effecting behavior applied.
      */
-    func doOnSubscribe(_ onSubscribe: @escaping () -> Void) -> Observable<Element> {
+    func doOnSubscribe(_ onSubscribe: @escaping () -> Void) -> Single<Element> {
         return self.do(onSubscribe: onSubscribe)
     }
     
@@ -31,7 +31,7 @@ public extension ObservableType {
      - parameter onSubscribed: Action to invoke after subscribing to source observable sequence.
      - returns: The source sequence with the side-effecting behavior applied.
      */
-    func doOnSubscribed(_ onSubscribed: @escaping () -> Void) -> Observable<Element> {
+    func doOnSubscribed(_ onSubscribed: @escaping () -> Void) -> Single<Element> {
         return self.do(onSubscribed: onSubscribed)
     }
     
@@ -40,11 +40,11 @@ public extension ObservableType {
      
      - seealso: [do operator on reactivex.io](http://reactivex.io/documentation/operators/do.html)
      
-     - parameter onNext: Action to invoke for each element in the observable sequence.
+     - parameter onSuccess: Action to invoke for each element in the observable sequence.
      - returns: The source sequence with the side-effecting behavior applied.
      */
-    func doOnNext(_ onNext: @escaping (Element) throws -> Void) -> Observable<Element> {
-        return self.do(onNext: onNext)
+    func doOnSuccess(_ onSuccess: @escaping (Element) throws -> Void) -> Single<Element> {
+        return self.do(onSuccess: onSuccess)
     }
     
     /**
@@ -52,11 +52,11 @@ public extension ObservableType {
      
      - seealso: [do operator on reactivex.io](http://reactivex.io/documentation/operators/do.html)
      
-     - parameter onNext: Action to invoke for each element in the observable sequence. Takes no arguments so can be used in a places where we do not need it.
+     - parameter onSuccess: Action to invoke for each element in the observable sequence. Takes no arguments so can be used in a places where we do not need it.
      - returns: The source sequence with the side-effecting behavior applied.
      */
-    func doOnNext(_ onNext: @escaping () throws -> Void) -> Observable<Element> {
-        return self.do(onNext: { _ in try onNext() })
+    func doOnSuccess(_ onSuccess: @escaping () throws -> Void) -> Single<Element> {
+        return self.do(onSuccess: { _ in try onSuccess() })
     }
     
     /**
@@ -67,20 +67,8 @@ public extension ObservableType {
      - parameter onError: Action to invoke upon errored termination of the observable sequence.
      - returns: The source sequence with the side-effecting behavior applied.
      */
-    func doOnError(_ onError: @escaping (Error) throws -> Void) -> Observable<Element> {
+    func doOnError(_ onError: @escaping (Error) throws -> Void) -> Single<Element> {
         return self.do(onError: onError)
-    }
-    
-    /**
-     Invokes an action for each event in the observable sequence, and propagates all observer messages through the result sequence.
-     
-     - seealso: [do operator on reactivex.io](http://reactivex.io/documentation/operators/do.html)
-     
-     - parameter onCompleted: Action to invoke upon graceful termination of the observable sequence.
-     - returns: The source sequence with the side-effecting behavior applied.
-     */
-    func doOnCompleted(_ onCompleted: @escaping () throws -> Swift.Void) -> Observable<Element> {
-        return self.do(onCompleted: onCompleted)
     }
     
     /**
@@ -91,7 +79,7 @@ public extension ObservableType {
      - parameter onDispose: Action to invoke after subscription to source observable has been disposed for any reason. It can be either because sequence terminates for some reason or observer subscription being disposed.
      - returns: The source sequence with the side-effecting behavior applied.
      */
-    func doOnDispose(_ onDispose: @escaping () -> Void) -> Observable<Element> {
+    func doOnDispose(_ onDispose: @escaping () -> Void) -> Single<Element> {
         return self.do(onDispose: onDispose)
     }
 }
