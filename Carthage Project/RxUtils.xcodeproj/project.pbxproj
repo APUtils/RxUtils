@@ -12,6 +12,7 @@
 		543A082E950A41FC2BA96D73 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B89DEB5F58DE4DE076F19770 /* RxSwift.framework */; };
 		98CAE18C87F757E0D000E4D8 /* RxOptional.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F338E826D6C0B8E2AD5C0E36 /* RxOptional.framework */; };
 		E202681822117D03004CC28A /* RxUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = E202681622117D03004CC28A /* RxUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E24FE50722D8EC0E00D1F71F /* RxCocoa+Weak+Subscribe+Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24FE50622D8EC0E00D1F71F /* RxCocoa+Weak+Subscribe+Driver.swift */; };
 		E26D80C32268FFA4001F80BB /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 351C0C5F43DEE45C165C941A /* RxCocoa.framework */; };
 		E26D80C42268FFA4001F80BB /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B89DEB5F58DE4DE076F19770 /* RxSwift.framework */; };
 		E275E07D22A0360000E9900C /* RxSwift+Weak+Do+Single.swift in Sources */ = {isa = PBXBuildFile; fileRef = E275E07C22A0360000E9900C /* RxSwift+Weak+Do+Single.swift */; };
@@ -93,6 +94,7 @@
 		E202681322117D03004CC28A /* RxUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E202681622117D03004CC28A /* RxUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RxUtils.h; sourceTree = "<group>"; };
 		E202681722117D03004CC28A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E24FE50622D8EC0E00D1F71F /* RxCocoa+Weak+Subscribe+Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxCocoa+Weak+Subscribe+Driver.swift"; sourceTree = "<group>"; };
 		E275E07C22A0360000E9900C /* RxSwift+Weak+Do+Single.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+Weak+Do+Single.swift"; sourceTree = "<group>"; };
 		E275E08822A03F3800E9900C /* podUpdate.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = podUpdate.command; path = "../Pods Project/Scripts/Cocoapods/podUpdate.command"; sourceTree = "<group>"; };
 		E275E08D22A1853B00E9900C /* RxSwift+Do+Single.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+Do+Single.swift"; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				E286EA86229408E900868FF7 /* RxCocoa+Weak+Map+Driver.swift */,
+				E24FE50622D8EC0E00D1F71F /* RxCocoa+Weak+Subscribe+Driver.swift */,
 			);
 			path = _Weak;
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 				E286EA822293FFD100868FF7 /* RxSwift+Weak+Map+ObservableType.swift in Sources */,
 				E275E07D22A0360000E9900C /* RxSwift+Weak+Do+Single.swift in Sources */,
 				E2E4B84A228EAE3600107EEB /* RxSwift+Do+ObservableType.swift in Sources */,
+				E24FE50722D8EC0E00D1F71F /* RxCocoa+Weak+Subscribe+Driver.swift in Sources */,
 				E275E08E22A1853B00E9900C /* RxSwift+Do+Single.swift in Sources */,
 				E2E4B849228EAE3600107EEB /* RxSwift+Subscribe+ObservableType.swift in Sources */,
 				E286EA842294037500868FF7 /* RxCocoa+CompactMap+Driver.swift in Sources */,

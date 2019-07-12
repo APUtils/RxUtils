@@ -3,6 +3,18 @@ All notable changes to this project will be documented in this file.
 `RxUtils` adheres to [Semantic Versioning](http://semver.org/).
 
 
+## [1.1.6](https://github.com/APUtils/RxUtils/releases/tag/1.1.6)
+Released on 07/12/2019.
+
+#### Added
+- Driver .doOnNext(weak:_:)
+- Single .doOnSubscribe(_:)
+- Single .doOnSubscribed(_:)
+- Single .doOnSuccess(_:)
+- Single .doOnError(_:)
+- Single .doOnDispose(_:)
+
+
 ## [1.1.5](https://github.com/APUtils/RxUtils/releases/tag/1.1.5)
 Released on 05/30/2019.
 
