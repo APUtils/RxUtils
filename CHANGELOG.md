@@ -3,6 +3,16 @@ All notable changes to this project will be documented in this file.
 `RxUtils` adheres to [Semantic Versioning](http://semver.org/).
 
 
+## [1.2.0](https://github.com/APUtils/RxUtils/releases/tag/1.2.0)
+Released on 07/15/2019.
+
+#### Added
+- ObservableType .compareWithPrevious(_:)
+- ObservableType .compareWithPrevious()
+- Driver .compareWithPrevious(_:)
+- Driver .compareWithPrevious()
+
+
 ## [1.1.6](https://github.com/APUtils/RxUtils/releases/tag/1.1.6)
 Released on 07/12/2019.
 
