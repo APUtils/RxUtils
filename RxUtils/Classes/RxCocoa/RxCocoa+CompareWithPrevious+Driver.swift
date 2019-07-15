@@ -20,7 +20,7 @@ public extension SharedSequenceConvertibleType where SharingStrategy == DriverSh
             defer { _previous = new }
             if let previous = _previous {
                 if comparator(previous, new) {
-                    return .same(value: new)
+                    return .same(previous: previous, new: new)
                 } else {
                     return .new(previous: previous, new: new)
                 }
@@ -41,7 +41,7 @@ public extension SharedSequenceConvertibleType where SharingStrategy == DriverSh
             defer { _previous = new }
             if let previous = _previous {
                 if previous == new {
-                    return .same(value: new)
+                    return .same(previous: previous, new: new)
                 } else {
                     return .new(previous: previous, new: new)
                 }

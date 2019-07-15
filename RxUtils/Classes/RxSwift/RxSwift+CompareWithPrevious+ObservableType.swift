@@ -13,10 +13,59 @@ import RxSwift
 
 // ******************************* MARK: - Enum
 
+/// Comparation result
 public enum CompareResult<T> {
+    
+    /// Initial value
     case initial(value: T)
-    case same(value: T)
+    
+    /// Previous value is the same as current
+    case same(previous: T, new: T)
+    
+    /// New value distinguish from previous
     case new(previous: T, new: T)
+    
+    /// Is it an initial result?
+    public var isInitial: Bool {
+        switch self {
+        case .initial: return true
+        default: return false
+        }
+    }
+    
+    /// Is previous value the same as new?
+    public var isSame: Bool {
+        switch self {
+        case .initial: return true
+        default: return false
+        }
+    }
+    
+    /// Is previous value distinguish from new?
+    public var isNew: Bool {
+        switch self {
+        case .initial: return true
+        default: return false
+        }
+    }
+    
+    /// Returns value for initial state and previous for same and new states.
+    public var previous: T {
+        switch self {
+        case .initial(let value): return value
+        case .same(let previous, _): return previous
+        case .new(let previous, _): return previous
+        }
+    }
+    
+    /// Returns value for initial state and new for same and new states.
+    public var new: T {
+        switch self {
+        case .initial(let value): return value
+        case .same(_, let new): return new
+        case .new(_, let new): return new
+        }
+    }
 }
 
 // ******************************* MARK: - Any Element
@@ -29,7 +78,7 @@ public extension ObservableType {
             defer { _previous = new }
             if let previous = _previous {
                 if comparator(previous, new) {
-                    return .same(value: new)
+                    return .same(previous: previous, new: new)
                 } else {
                     return .new(previous: previous, new: new)
                 }
@@ -50,7 +99,7 @@ public extension ObservableType where Element: Equatable {
             defer { _previous = new }
             if let previous = _previous {
                 if previous == new {
-                    return .same(value: new)
+                    return .same(previous: previous, new: new)
                 } else {
                     return .new(previous: previous, new: new)
                 }
