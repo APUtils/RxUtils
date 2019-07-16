@@ -6,11 +6,9 @@
 //  Copyright © 2019 Turvo. All rights reserved.
 //
 
-import UIKit
-
 import RxCocoa
 import RxSwift
-
+import UIKit
 
 public extension Reactive where Base: UIApplication {
     
