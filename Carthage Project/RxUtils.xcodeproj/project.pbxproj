@@ -45,6 +45,7 @@
 		E2E4B84B228EAE3600107EEB /* RxSwift+Extension+ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E4B840228EAE3600107EEB /* RxSwift+Extension+ObservableType.swift */; };
 		E2E4B84C228EAE3600107EEB /* RxSwift+Error+ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E4B841228EAE3600107EEB /* RxSwift+Error+ObservableType.swift */; };
 		E2E4B84D228EAE3600107EEB /* RxSwift+Deffered+ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E4B842228EAE3600107EEB /* RxSwift+Deffered+ObservableType.swift */; };
+		E2FD624422F03FF7000F9971 /* RxSwift+Weak+CatchError+ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FD624322F03FF7000F9971 /* RxSwift+Weak+CatchError+ObservableType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +132,7 @@
 		E2E4B840228EAE3600107EEB /* RxSwift+Extension+ObservableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxSwift+Extension+ObservableType.swift"; sourceTree = "<group>"; };
 		E2E4B841228EAE3600107EEB /* RxSwift+Error+ObservableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxSwift+Error+ObservableType.swift"; sourceTree = "<group>"; };
 		E2E4B842228EAE3600107EEB /* RxSwift+Deffered+ObservableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxSwift+Deffered+ObservableType.swift"; sourceTree = "<group>"; };
+		E2FD624322F03FF7000F9971 /* RxSwift+Weak+CatchError+ObservableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+Weak+CatchError+ObservableType.swift"; sourceTree = "<group>"; };
 		E3A3C326AA2806CD63667A60 /* .travis.yml */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = .travis.yml; path = ../.travis.yml; sourceTree = "<group>"; };
 		F338E826D6C0B8E2AD5C0E36 /* RxOptional.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxOptional.framework; path = Carthage/Build/iOS/RxOptional.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -304,6 +306,7 @@
 		E2E4B83A228EAE3600107EEB /* _Weak */ = {
 			isa = PBXGroup;
 			children = (
+				E2FD624322F03FF7000F9971 /* RxSwift+Weak+CatchError+ObservableType.swift */,
 				E2E4B83C228EAE3600107EEB /* RxSwift+Weak+Do+ObservableType.swift */,
 				E275E07C22A0360000E9900C /* RxSwift+Weak+Do+Single.swift */,
 				E2E4B83B228EAE3600107EEB /* RxSwift+Weak+FlatMap+ObservableType.swift */,
@@ -539,6 +542,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2FD624422F03FF7000F9971 /* RxSwift+Weak+CatchError+ObservableType.swift in Sources */,
 				E286EA87229408E900868FF7 /* RxCocoa+Weak+Map+Driver.swift in Sources */,
 				E286EA822293FFD100868FF7 /* RxSwift+Weak+Map+ObservableType.swift in Sources */,
 				E275E07D22A0360000E9900C /* RxSwift+Weak+Do+Single.swift in Sources */,
