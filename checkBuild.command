@@ -17,7 +17,7 @@ echo -e "\nBuilding with Carthage..."
 carthage build --no-skip-current --cache-builds
 
 echo -e "\nPerforming tests..."
-set -o pipefail && xcodebuild -workspace "Carthage Project/RxUtils.xcodeproj" -sdk iphonesimulator -scheme "Example" -destination "platform=iOS Simulator,name=iPhone SE,OS=12.4" test | xcpretty
+set -o pipefail && xcodebuild -project "Carthage Project/RxUtils.xcodeproj" -sdk iphonesimulator -scheme "Example" -destination "platform=iOS Simulator,name=iPhone SE,OS=12.4" test | xcpretty
 
 echo ""
 echo "SUCCESS!"
