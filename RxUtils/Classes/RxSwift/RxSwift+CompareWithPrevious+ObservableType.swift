@@ -36,7 +36,7 @@ public enum CompareResult<T> {
     /// Is previous value the same as new?
     public var isSame: Bool {
         switch self {
-        case .initial: return true
+        case .same: return true
         default: return false
         }
     }
@@ -44,7 +44,7 @@ public enum CompareResult<T> {
     /// Is previous value distinguish from new?
     public var isNew: Bool {
         switch self {
-        case .initial: return true
+        case .new: return true
         default: return false
         }
     }

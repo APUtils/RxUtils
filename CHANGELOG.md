@@ -3,6 +3,21 @@ All notable changes to this project will be documented in this file.
 `RxUtils` adheres to [Semantic Versioning](http://semver.org/).
 
 
+## [1.3.1](https://github.com/APUtils/RxUtils/releases/tag/1.3.1)
+Released on 08/09/2019.
+
+#### Added
+- ObservableType .mapToVoid()
+- ObservableType .withPrevious()
+- RxSwift+Weak+CatchError+ObservableType
+- Signal .emitOnCompleted(_:)
+- Signal .emitOnDisposed(_:)
+- Signal .emitOnNext(_:)
+
+#### Fixed
+- CompareResult .isNew and .isSame computation
+
+
 ## [1.3.0](https://github.com/APUtils/RxUtils/releases/tag/1.3.0)
 Released on 07/15/2019.
 
