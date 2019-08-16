@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 `RxUtils` adheres to [Semantic Versioning](http://semver.org/).
 
 
+## [1.3.2](https://github.com/APUtils/RxUtils/releases/tag/1.3.2)
+Released on 08/09/2019.
+
+#### Added
+- Timer .rx.scheduledTimer(withTimeInterval:repeats:)
+
+
 ## [1.3.1](https://github.com/APUtils/RxUtils/releases/tag/1.3.1)
 Released on 08/09/2019.
 
