@@ -26,7 +26,6 @@
 		E286EA822293FFD100868FF7 /* RxSwift+Weak+Map+ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E286EA812293FFD100868FF7 /* RxSwift+Weak+Map+ObservableType.swift */; };
 		E286EA842294037500868FF7 /* RxCocoa+CompactMap+Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E286EA832294037500868FF7 /* RxCocoa+CompactMap+Driver.swift */; };
 		E286EA87229408E900868FF7 /* RxCocoa+Weak+Map+Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E286EA86229408E900868FF7 /* RxCocoa+Weak+Map+Driver.swift */; };
-		E295F7142306FE350022AAA8 /* Timer+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = E295F7132306FE350022AAA8 /* Timer+Rx.swift */; };
 		E29600DD22FD8CB2008321BF /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E2A7396D2260D99900E97D55 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E29600DE22FD8CB2008321BF /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E2A7396C2260D99900E97D55 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E2A7394E2260CFC700E97D55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A7394D2260CFC700E97D55 /* AppDelegate.swift */; };
@@ -125,7 +124,6 @@
 		E286EA812293FFD100868FF7 /* RxSwift+Weak+Map+ObservableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+Weak+Map+ObservableType.swift"; sourceTree = "<group>"; };
 		E286EA832294037500868FF7 /* RxCocoa+CompactMap+Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxCocoa+CompactMap+Driver.swift"; sourceTree = "<group>"; };
 		E286EA86229408E900868FF7 /* RxCocoa+Weak+Map+Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxCocoa+Weak+Map+Driver.swift"; sourceTree = "<group>"; };
-		E295F7132306FE350022AAA8 /* Timer+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Timer+Rx.swift"; sourceTree = "<group>"; };
 		E2A7394B2260CFC700E97D55 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2A7394D2260CFC700E97D55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2A7394F2260CFC700E97D55 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -299,7 +297,6 @@
 				E25AD22422DC8D4600BD13B4 /* RxCocoa+CompareWithPrevious+Driver.swift */,
 				E2E4B839228EAE3600107EEB /* RxCocoa+Drive.swift */,
 				E2C3134222DDF21600D6797A /* RxCocoa+Signal.swift */,
-				E295F7132306FE350022AAA8 /* Timer+Rx.swift */,
 				E2E4B836228EAE3600107EEB /* UIApplication+Rx.swift */,
 			);
 			path = RxCocoa;
@@ -563,7 +560,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2FD624422F03FF7000F9971 /* RxSwift+Weak+CatchError+ObservableType.swift in Sources */,
-				E295F7142306FE350022AAA8 /* Timer+Rx.swift in Sources */,
 				E286EA87229408E900868FF7 /* RxCocoa+Weak+Map+Driver.swift in Sources */,
 				E286EA822293FFD100868FF7 /* RxSwift+Weak+Map+ObservableType.swift in Sources */,
 				E275E07D22A0360000E9900C /* RxSwift+Weak+Do+Single.swift in Sources */,

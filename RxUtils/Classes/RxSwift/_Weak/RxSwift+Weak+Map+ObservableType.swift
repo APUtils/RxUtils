@@ -12,7 +12,7 @@ import RxCocoa
 import RxSwift
 
 
-extension ObservableType {
+public extension ObservableType {
     fileprivate func weakify<A: AnyObject, B>(_ obj: A, method: @escaping (A) -> (Element) throws -> B) -> ((Element) throws -> B?) {
         return { [weak obj] value throws -> B? in
             guard let obj = obj else { return nil }
@@ -50,7 +50,7 @@ extension ObservableType {
     }
 }
 
-extension ObservableType where Element == Void {
+public extension ObservableType where Element == Void {
     
     private func weakify<A: AnyObject, B>(_ obj: A, method: @escaping (A) -> () throws -> B) -> (() throws -> B?) {
         return { [weak obj] in
