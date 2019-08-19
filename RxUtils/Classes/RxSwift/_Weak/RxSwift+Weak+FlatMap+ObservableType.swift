@@ -138,6 +138,20 @@ public extension ObservableType where Element == Void {
     }
     
     /**
+     Projects each element of an observable sequence to an observable sequence and merges the resulting observable sequences into one observable sequence.
+     If element is received while there is some projected observable sequence being merged it will simply be ignored.
+     
+     - seealso: [flatMapFirst operator on reactivex.io](http://reactivex.io/documentation/operators/flatmap.html)
+     
+     - parameter weak: Weakly referenced object containing the target function.
+     - parameter selector: A transform function to apply to element that was observed while no observable is executing in parallel.
+     - returns: An observable sequence whose elements are the result of invoking the one-to-many transform function on each element of the input sequence that was received while no other sequence was being calculated.
+     */
+    func flatMapFirst<A: AnyObject, O: ObservableConvertibleType>(weak obj: A, _ selector: @escaping (A) -> () throws -> O) -> Observable<O.Element> {
+        return flatMapFirst(weakify(obj, method: selector))
+    }
+    
+    /**
      Projects each element of an observable sequence into a new sequence of observable sequences and then
      transforms an observable sequence of observable sequences into an observable sequence producing values only from the most recent observable sequence.
      

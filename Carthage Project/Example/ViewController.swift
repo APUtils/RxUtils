@@ -14,7 +14,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        _ = Timer.rx.scheduledTimer(withTimeInterval: 1, repeats: false)
-            .subscribe()
+        
     }
 }
