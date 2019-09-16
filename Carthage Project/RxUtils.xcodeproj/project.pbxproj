@@ -13,6 +13,7 @@
 		98CAE18C87F757E0D000E4D8 /* RxOptional.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F338E826D6C0B8E2AD5C0E36 /* RxOptional.framework */; };
 		E202681822117D03004CC28A /* RxUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = E202681622117D03004CC28A /* RxUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E221254022F1E50600DCD338 /* RxSwift+WithPrevious+ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E221253F22F1E50600DCD338 /* RxSwift+WithPrevious+ObservableType.swift */; };
+		E23FCC49232FB31000DC4EF3 /* RxSwift+Optional+ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23FCC48232FB31000DC4EF3 /* RxSwift+Optional+ObservableType.swift */; };
 		E24FE50722D8EC0E00D1F71F /* RxCocoa+Weak+Subscribe+Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24FE50622D8EC0E00D1F71F /* RxCocoa+Weak+Subscribe+Driver.swift */; };
 		E25AD22322DC8CD300BD13B4 /* RxSwift+CompareWithPrevious+ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25AD22222DC8CD300BD13B4 /* RxSwift+CompareWithPrevious+ObservableType.swift */; };
 		E25AD22522DC8D4600BD13B4 /* RxCocoa+CompareWithPrevious+Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25AD22422DC8D4600BD13B4 /* RxCocoa+CompareWithPrevious+Driver.swift */; };
@@ -115,6 +116,7 @@
 		E202681622117D03004CC28A /* RxUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RxUtils.h; sourceTree = "<group>"; };
 		E202681722117D03004CC28A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E221253F22F1E50600DCD338 /* RxSwift+WithPrevious+ObservableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+WithPrevious+ObservableType.swift"; sourceTree = "<group>"; };
+		E23FCC48232FB31000DC4EF3 /* RxSwift+Optional+ObservableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+Optional+ObservableType.swift"; sourceTree = "<group>"; };
 		E24FE50622D8EC0E00D1F71F /* RxCocoa+Weak+Subscribe+Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxCocoa+Weak+Subscribe+Driver.swift"; sourceTree = "<group>"; };
 		E25AD22222DC8CD300BD13B4 /* RxSwift+CompareWithPrevious+ObservableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+CompareWithPrevious+ObservableType.swift"; sourceTree = "<group>"; };
 		E25AD22422DC8D4600BD13B4 /* RxCocoa+CompareWithPrevious+Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxCocoa+CompareWithPrevious+Driver.swift"; sourceTree = "<group>"; };
@@ -324,6 +326,7 @@
 				E2E4B841228EAE3600107EEB /* RxSwift+Error+ObservableType.swift */,
 				E2E4B840228EAE3600107EEB /* RxSwift+Extension+ObservableType.swift */,
 				E25AD22622DCC02B00BD13B4 /* RxSwift+Operators+ObservableType.swift */,
+				E23FCC48232FB31000DC4EF3 /* RxSwift+Optional+ObservableType.swift */,
 				E2E4B83E228EAE3600107EEB /* RxSwift+Subscribe+ObservableType.swift */,
 				E221253F22F1E50600DCD338 /* RxSwift+WithPrevious+ObservableType.swift */,
 			);
@@ -580,6 +583,7 @@
 				E275E08E22A1853B00E9900C /* RxSwift+Do+Single.swift in Sources */,
 				E2E4B849228EAE3600107EEB /* RxSwift+Subscribe+ObservableType.swift in Sources */,
 				E2868EB3231EA03100E450E8 /* OptionalType.swift in Sources */,
+				E23FCC49232FB31000DC4EF3 /* RxSwift+Optional+ObservableType.swift in Sources */,
 				E286EA842294037500868FF7 /* RxCocoa+CompactMap+Driver.swift in Sources */,
 				E2E4B84B228EAE3600107EEB /* RxSwift+Extension+ObservableType.swift in Sources */,
 				E25AD22322DC8CD300BD13B4 /* RxSwift+CompareWithPrevious+ObservableType.swift in Sources */,
