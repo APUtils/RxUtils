@@ -106,7 +106,7 @@
 		722BFDE9DE58393B9D916719 /* carthageRemove.command */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = carthageRemove.command; path = Scripts/Carthage/carthageRemove.command; sourceTree = "<group>"; };
 		72FEC47699AE93FA694446C1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		75997ED1E9FAC56B9BEC3F0E /* carthageAdd.command */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = carthageAdd.command; path = Scripts/Carthage/carthageAdd.command; sourceTree = "<group>"; };
-		95B46D3F3B9CA6A1557CD626 /* RxUtils.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = RxUtils.podspec; path = ../RxUtils.podspec; sourceTree = "<group>"; };
+		95B46D3F3B9CA6A1557CD626 /* RxUtils.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = RxUtils.podspec; path = ../RxUtils.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A3734D274A5AF65E369A7857 /* podCheck.command */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = podCheck.command; path = ../podCheck.command; sourceTree = "<group>"; };
 		B2292C95DD780A49B6CE8C21 /* .cocoadocs.yml */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = .cocoadocs.yml; path = ../.cocoadocs.yml; sourceTree = "<group>"; };
 		B89DEB5F58DE4DE076F19770 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
@@ -227,7 +227,6 @@
 			isa = PBXGroup;
 			children = (
 				E2766F332260FFF7003BDA19 /* _Classes */,
-				E2868EB1231EA00200E450E8 /* _Protocols */,
 				E202681722117D03004CC28A /* Info.plist */,
 				E202681622117D03004CC28A /* RxUtils.h */,
 			);
@@ -237,6 +236,7 @@
 		E2766F332260FFF7003BDA19 /* _Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E2868EB1231EA00200E450E8 /* Protocols */,
 				E2E4B835228EAE3600107EEB /* RxCocoa */,
 				E2E4B837228EAE3600107EEB /* RxSwift */,
 			);
@@ -244,12 +244,12 @@
 			path = ../../RxUtils/Classes;
 			sourceTree = "<group>";
 		};
-		E2868EB1231EA00200E450E8 /* _Protocols */ = {
+		E2868EB1231EA00200E450E8 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
 				E2868EB2231EA03100E450E8 /* OptionalType.swift */,
 			);
-			path = _Protocols;
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		E286EA85229408C800868FF7 /* _Weak */ = {
