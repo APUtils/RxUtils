@@ -14,6 +14,7 @@
 		E202681822117D03004CC28A /* RxUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = E202681622117D03004CC28A /* RxUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E221254022F1E50600DCD338 /* RxSwift+WithPrevious+ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E221253F22F1E50600DCD338 /* RxSwift+WithPrevious+ObservableType.swift */; };
 		E23FCC49232FB31000DC4EF3 /* RxSwift+Optional+ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23FCC48232FB31000DC4EF3 /* RxSwift+Optional+ObservableType.swift */; };
+		E24D66B02333CAF6006AC0A6 /* UIDevice+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24D66AF2333CAF6006AC0A6 /* UIDevice+Rx.swift */; };
 		E24FE50722D8EC0E00D1F71F /* RxCocoa+Weak+Subscribe+Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24FE50622D8EC0E00D1F71F /* RxCocoa+Weak+Subscribe+Driver.swift */; };
 		E25AD22322DC8CD300BD13B4 /* RxSwift+CompareWithPrevious+ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25AD22222DC8CD300BD13B4 /* RxSwift+CompareWithPrevious+ObservableType.swift */; };
 		E25AD22522DC8D4600BD13B4 /* RxCocoa+CompareWithPrevious+Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25AD22422DC8D4600BD13B4 /* RxCocoa+CompareWithPrevious+Driver.swift */; };
@@ -117,6 +118,7 @@
 		E202681722117D03004CC28A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E221253F22F1E50600DCD338 /* RxSwift+WithPrevious+ObservableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+WithPrevious+ObservableType.swift"; sourceTree = "<group>"; };
 		E23FCC48232FB31000DC4EF3 /* RxSwift+Optional+ObservableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+Optional+ObservableType.swift"; sourceTree = "<group>"; };
+		E24D66AF2333CAF6006AC0A6 /* UIDevice+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Rx.swift"; sourceTree = "<group>"; };
 		E24FE50622D8EC0E00D1F71F /* RxCocoa+Weak+Subscribe+Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxCocoa+Weak+Subscribe+Driver.swift"; sourceTree = "<group>"; };
 		E25AD22222DC8CD300BD13B4 /* RxSwift+CompareWithPrevious+ObservableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+CompareWithPrevious+ObservableType.swift"; sourceTree = "<group>"; };
 		E25AD22422DC8D4600BD13B4 /* RxCocoa+CompareWithPrevious+Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxCocoa+CompareWithPrevious+Driver.swift"; sourceTree = "<group>"; };
@@ -233,6 +235,15 @@
 			path = RxUtils;
 			sourceTree = "<group>";
 		};
+		E24D66AE2333CAE0006AC0A6 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				E2E4B836228EAE3600107EEB /* UIApplication+Rx.swift */,
+				E24D66AF2333CAF6006AC0A6 /* UIDevice+Rx.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
 		E2766F332260FFF7003BDA19 /* _Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -305,12 +316,12 @@
 		E2E4B835228EAE3600107EEB /* RxCocoa */ = {
 			isa = PBXGroup;
 			children = (
+				E24D66AE2333CAE0006AC0A6 /* UIKit */,
 				E286EA85229408C800868FF7 /* _Weak */,
 				E286EA832294037500868FF7 /* RxCocoa+CompactMap+Driver.swift */,
 				E25AD22422DC8D4600BD13B4 /* RxCocoa+CompareWithPrevious+Driver.swift */,
 				E2E4B839228EAE3600107EEB /* RxCocoa+Drive.swift */,
 				E2C3134222DDF21600D6797A /* RxCocoa+Signal.swift */,
-				E2E4B836228EAE3600107EEB /* UIApplication+Rx.swift */,
 			);
 			path = RxCocoa;
 			sourceTree = "<group>";
@@ -583,6 +594,7 @@
 				E275E08E22A1853B00E9900C /* RxSwift+Do+Single.swift in Sources */,
 				E2E4B849228EAE3600107EEB /* RxSwift+Subscribe+ObservableType.swift in Sources */,
 				E2868EB3231EA03100E450E8 /* OptionalType.swift in Sources */,
+				E24D66B02333CAF6006AC0A6 /* UIDevice+Rx.swift in Sources */,
 				E23FCC49232FB31000DC4EF3 /* RxSwift+Optional+ObservableType.swift in Sources */,
 				E286EA842294037500868FF7 /* RxCocoa+CompactMap+Driver.swift in Sources */,
 				E2E4B84B228EAE3600107EEB /* RxSwift+Extension+ObservableType.swift in Sources */,
