@@ -73,9 +73,15 @@ public enum CompareResult<T> {
 public extension ObservableType {
     /// Compares with previous element using `comparator` closure and wraps sequence into CompareResult.
     func compareWithPrevious(_ comparator: @escaping (Element, Element) -> Bool) -> Observable<CompareResult<Element>> {
+        let lock = NSRecursiveLock()
         var _previous: Element?
         return map { new in
-            defer { _previous = new }
+            lock.lock()
+            defer {
+                _previous = new
+                lock.unlock()
+            }
+            
             if let previous = _previous {
                 if comparator(previous, new) {
                     return .same(previous: previous, new: new)
@@ -94,9 +100,15 @@ public extension ObservableType {
 public extension ObservableType where Element: Equatable {
     /// Compares with previous element and wraps sequence into CompareResult.
     func compareWithPrevious() -> Observable<CompareResult<Element>> {
+        let lock = NSRecursiveLock()
         var _previous: Element?
         return map { new in
-            defer { _previous = new }
+            lock.lock()
+            defer {
+                _previous = new
+                lock.unlock()
+            }
+            
             if let previous = _previous {
                 if previous == new {
                     return .same(previous: previous, new: new)
