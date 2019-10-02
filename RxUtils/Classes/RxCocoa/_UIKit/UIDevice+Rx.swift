@@ -11,21 +11,21 @@ import RxSwift
 
 public extension Reactive where Base: UIDevice {
     
-    /// Reactive wrapper for a `batteryState`.
+    /// Reactive wrapper for a `batteryState` property.
     /// Be sure to set `UIDevice.current.isBatteryMonitoringEnabled = true` to be able to observe updates.
     var batteryState: Observable<UIDevice.BatteryState> {
         return NotificationCenter.default.rx.notification(UIDevice.batteryStateDidChangeNotification)
-            .map { _ in UIDevice.current.batteryState }
-            .startWithDeferred(UIDevice.current.batteryState)
+            .map { [base] _ in base.batteryState }
+            .startWithDeferred(self.base.batteryState)
             .distinctUntilChanged()
     }
     
-    /// Reactive wrapper for a `batteryLevel`.
+    /// Reactive wrapper for a `batteryLevel` property.
     /// Be sure to set `UIDevice.current.isBatteryMonitoringEnabled = true` to be able to observe updates.
     var batteryLevel: Observable<Float> {
         return NotificationCenter.default.rx.notification(UIDevice.batteryLevelDidChangeNotification)
-            .map { _ in UIDevice.current.batteryLevel }
-            .startWithDeferred(UIDevice.current.batteryLevel)
+            .map { [base] _ in base.batteryLevel }
+            .startWithDeferred(self.base.batteryLevel)
             .distinctUntilChanged()
     }
 }

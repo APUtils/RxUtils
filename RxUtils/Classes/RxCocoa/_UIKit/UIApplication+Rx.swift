@@ -16,26 +16,26 @@ public extension Reactive where Base: UIApplication {
     /// Starts with current application's state.
     var applicationState: Observable<UIApplication.State> {
         return Observable
-            .create { observer in
+            .create { [base] observer in
                 let didEnterBackground = NotificationCenter.default.rx.notification(UIApplication.didEnterBackgroundNotification)
                 let didEnterBackgroundDisposable = didEnterBackground
-                    .map { _ in UIApplication.shared.applicationState }
+                    .map { _ in base.applicationState }
                     .subscribeOnNext(observer.onNext)
                 
                 let didBecomeActive = NotificationCenter.default.rx.notification(UIApplication.didBecomeActiveNotification)
                 let didBecomeActiveDisposable = didBecomeActive
-                    .map { _ in UIApplication.shared.applicationState }
+                    .map { _ in base.applicationState }
                     .subscribeOnNext(observer.onNext)
                 
                 let willResignActive = NotificationCenter.default.rx.notification(UIApplication.willResignActiveNotification)
                 let willResignActiveDisposable = willResignActive
                     .observeOn(MainScheduler.asyncInstance)
-                    .map { _ in UIApplication.shared.applicationState }
+                    .map { _ in base.applicationState }
                     .subscribeOnNext(observer.onNext)
                 
                 return CompositeDisposable(didEnterBackgroundDisposable, didBecomeActiveDisposable, willResignActiveDisposable)
             }
-            .startWithDeferred(UIApplication.shared.applicationState)
+            .startWithDeferred(self.base.applicationState)
             .distinctUntilChanged()
     }
 }
