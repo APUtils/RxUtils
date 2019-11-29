@@ -13,6 +13,7 @@
 		98CAE18C87F757E0D000E4D8 /* RxOptional.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F338E826D6C0B8E2AD5C0E36 /* RxOptional.framework */; };
 		E202681822117D03004CC28A /* RxUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = E202681622117D03004CC28A /* RxUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E221254022F1E50600DCD338 /* RxSwift+WithPrevious+ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E221253F22F1E50600DCD338 /* RxSwift+WithPrevious+ObservableType.swift */; };
+		E22FD59A23914FFA005948EF /* RxUtilsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22FD59923914FFA005948EF /* RxUtilsError.swift */; };
 		E23FCC49232FB31000DC4EF3 /* RxSwift+Optional+ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23FCC48232FB31000DC4EF3 /* RxSwift+Optional+ObservableType.swift */; };
 		E24D66B02333CAF6006AC0A6 /* UIDevice+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24D66AF2333CAF6006AC0A6 /* UIDevice+Rx.swift */; };
 		E24FE50722D8EC0E00D1F71F /* RxCocoa+Weak+Subscribe+Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24FE50622D8EC0E00D1F71F /* RxCocoa+Weak+Subscribe+Driver.swift */; };
@@ -118,6 +119,7 @@
 		E202681622117D03004CC28A /* RxUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RxUtils.h; sourceTree = "<group>"; };
 		E202681722117D03004CC28A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E221253F22F1E50600DCD338 /* RxSwift+WithPrevious+ObservableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+WithPrevious+ObservableType.swift"; sourceTree = "<group>"; };
+		E22FD59923914FFA005948EF /* RxUtilsError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxUtilsError.swift; sourceTree = "<group>"; };
 		E23FCC48232FB31000DC4EF3 /* RxSwift+Optional+ObservableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+Optional+ObservableType.swift"; sourceTree = "<group>"; };
 		E24D66AF2333CAF6006AC0A6 /* UIDevice+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Rx.swift"; sourceTree = "<group>"; };
 		E24FE50622D8EC0E00D1F71F /* RxCocoa+Weak+Subscribe+Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxCocoa+Weak+Subscribe+Driver.swift"; sourceTree = "<group>"; };
@@ -237,6 +239,14 @@
 			path = RxUtils;
 			sourceTree = "<group>";
 		};
+		E22FD59823914FFA005948EF /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				E22FD59923914FFA005948EF /* RxUtilsError.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
 		E24D66AE2333CAE0006AC0A6 /* _UIKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,6 +259,7 @@
 		E2766F332260FFF7003BDA19 /* _Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E22FD59823914FFA005948EF /* Error */,
 				E2868EB1231EA00200E450E8 /* Protocols */,
 				E2E4B835228EAE3600107EEB /* RxCocoa */,
 				E2E4B837228EAE3600107EEB /* RxSwift */,
@@ -617,6 +628,7 @@
 				E2E4B84D228EAE3600107EEB /* RxSwift+Deffered+ObservableType.swift in Sources */,
 				E2C3134322DDF21600D6797A /* RxCocoa+Signal.swift in Sources */,
 				E221254022F1E50600DCD338 /* RxSwift+WithPrevious+ObservableType.swift in Sources */,
+				E22FD59A23914FFA005948EF /* RxUtilsError.swift in Sources */,
 				E2E4B843228EAE3600107EEB /* UIApplication+Rx.swift in Sources */,
 				E2E4B848228EAE3600107EEB /* RxSwift+Weak+Subscribe+ObservableType.swift in Sources */,
 				E2E4B84C228EAE3600107EEB /* RxSwift+Error+ObservableType.swift in Sources */,
