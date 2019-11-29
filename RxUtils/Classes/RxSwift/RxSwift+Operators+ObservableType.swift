@@ -21,7 +21,7 @@ public extension ObservableType {
     }
     
     /// Throws `RxUtilsError.noElements` if sequence completed without emitting any elements.
-    func errorIfNoElements() -> Observable<E> {
+    func errorIfNoElements() -> Observable<Element> {
         var gotElement = false
         
         return self
