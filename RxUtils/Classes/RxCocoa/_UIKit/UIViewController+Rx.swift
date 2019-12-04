@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 import UIKit
 
-extension Reactive where Base: UIViewController {
+public extension Reactive where Base: UIViewController {
     
     /// Reactive wrapper for `viewDidLoad` method invoke.
     var viewDidLoad: Observable<Void> {
