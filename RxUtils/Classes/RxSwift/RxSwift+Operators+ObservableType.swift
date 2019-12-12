@@ -15,6 +15,14 @@ public extension RxUtilsError {
 
 public extension ObservableType {
     
+    /// Same as `asSingle()` but completes right after gets the first element.
+    /// Ordinary `asSingle()` waits for the completion event.
+    func asSafeSingle() -> Single<Element> {
+        return self
+            .take(1)
+            .asSingle()
+    }
+    
     /// Projects each element of an observable sequence into Void
     func mapToVoid() -> Observable<Void> {
         return map { _ in () }
