@@ -7,10 +7,8 @@
 //
 
 import Foundation
-
 import RxCocoa
 import RxSwift
-
 
 public extension ObservableType {
     /// Maps error into other error.
