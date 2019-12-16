@@ -23,11 +23,6 @@ public extension ObservableType {
             .asSingle()
     }
     
-    /// Projects each element of an observable sequence into Void
-    func mapToVoid() -> Observable<Void> {
-        return map { _ in () }
-    }
-    
     /// Throws `RxUtilsError.noElements` if sequence completed without emitting any elements.
     func errorIfNoElements() -> Observable<Element> {
         var gotElement = false
@@ -41,5 +36,23 @@ public extension ObservableType {
                     throw RxUtilsError.noElements
                 }
             }
+    }
+    
+    /// Projects each element of an observable sequence into Void
+    func mapToVoid() -> Observable<Void> {
+        return map { _ in () }
+    }
+    
+    /// Creates sequence that can not be canceled
+    func preventCancellation() -> Observable<Element> {
+        return .create { observer in
+            _ = self.subscribe(observer)
+            return Disposables.create()
+        }
+    }
+    
+    /// Wraps element into optional
+    func wrapIntoOptional() -> Observable<Element?> {
+        return self.map { $0 }
     }
 }

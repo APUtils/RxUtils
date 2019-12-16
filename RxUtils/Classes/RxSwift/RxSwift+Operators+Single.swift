@@ -15,4 +15,17 @@ public extension PrimitiveSequence where Trait == SingleTrait {
     func mapToVoid() -> Single<Void> {
         return map { _ in () }
     }
+
+    /// Creates sequence that can not be canceled
+    func preventCancellation() -> Single<Element> {
+        return .create { observer in
+            _ = self.subscribe(observer)
+            return Disposables.create()
+        }
+    }
+    
+    /// Wraps element into optional
+    func wrapIntoOptional() -> Single<Element?> {
+        return map { $0 }
+    }
 }
