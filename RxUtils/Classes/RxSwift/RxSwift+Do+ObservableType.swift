@@ -76,6 +76,20 @@ public extension ObservableType {
      
      - seealso: [do operator on reactivex.io](http://reactivex.io/documentation/operators/do.html)
      
+     - parameter onEmpty: Action to invoke upon graceful termination of the observable sequence if sequence had no elements.
+     - returns: The source sequence with the side-effecting behavior applied.
+     */
+    func doOnEmpty(_ onEmpty: @escaping () throws -> Swift.Void) -> Observable<Element> {
+        var hadElements = false
+        return self.do(onNext: { _ in hadElements = true },
+                       onCompleted: { hadElements ? () : try onEmpty() })
+    }
+    
+    /**
+     Invokes an action for each event in the observable sequence, and propagates all observer messages through the result sequence.
+     
+     - seealso: [do operator on reactivex.io](http://reactivex.io/documentation/operators/do.html)
+     
      - parameter onCompleted: Action to invoke upon graceful termination of the observable sequence.
      - returns: The source sequence with the side-effecting behavior applied.
      */
