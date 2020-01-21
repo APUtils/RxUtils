@@ -16,7 +16,7 @@ public extension Reactive where Base: ProcessInfo {
     var lowPowerModeEnabled: Observable<Bool> {
         return NotificationCenter.default.rx.notification(.NSProcessInfoPowerStateDidChange)
             .map { [base] _ in base.isLowPowerModeEnabled }
-            .startWithDeferred(self.base.isLowPowerModeEnabled)
+            .startWithDeferred { [weak base] in base?.isLowPowerModeEnabled }
             .distinctUntilChanged()
     }
 }

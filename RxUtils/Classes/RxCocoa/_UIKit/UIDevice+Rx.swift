@@ -16,7 +16,7 @@ public extension Reactive where Base: UIDevice {
     var batteryState: Observable<UIDevice.BatteryState> {
         return NotificationCenter.default.rx.notification(UIDevice.batteryStateDidChangeNotification)
             .map { [base] _ in base.batteryState }
-            .startWithDeferred(self.base.batteryState)
+            .startWithDeferred { [weak base] in base?.batteryState }
             .distinctUntilChanged()
     }
     
@@ -25,7 +25,7 @@ public extension Reactive where Base: UIDevice {
     var batteryLevel: Observable<Float> {
         return NotificationCenter.default.rx.notification(UIDevice.batteryLevelDidChangeNotification)
             .map { [base] _ in base.batteryLevel }
-            .startWithDeferred(self.base.batteryLevel)
+            .startWithDeferred { [weak base] in base?.batteryLevel }
             .distinctUntilChanged()
     }
 }

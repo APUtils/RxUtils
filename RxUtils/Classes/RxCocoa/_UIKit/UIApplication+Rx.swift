@@ -35,7 +35,7 @@ public extension Reactive where Base: UIApplication {
                 
                 return CompositeDisposable(didEnterBackgroundDisposable, didBecomeActiveDisposable, willResignActiveDisposable)
             }
-            .startWithDeferred(self.base.applicationState)
+            .startWithDeferred { [weak base] in base?.applicationState }
             .distinctUntilChanged()
     }
 }
