@@ -1,5 +1,5 @@
 PODS:
-  - Nimble (8.0.4)
+  - Nimble (8.0.5)
   - Quick (2.2.0)
   - RxCocoa (5.0.1):
     - RxRelay (~> 5)
@@ -36,7 +36,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Nimble: 18d5360282923225d62b09d781f63abc1a0111fc
+  Nimble: 4ab1aeb9b45553c75b9687196b0fa0713170a332
   Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
   RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
   RxOptional: b1fcd60856807a564c0215c2184b8d33e7826dc2
