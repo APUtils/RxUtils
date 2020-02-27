@@ -56,6 +56,7 @@
 		E2E4B84B228EAE3600107EEB /* RxSwift+Extension+ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E4B840228EAE3600107EEB /* RxSwift+Extension+ObservableType.swift */; };
 		E2E4B84C228EAE3600107EEB /* RxSwift+Error+ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E4B841228EAE3600107EEB /* RxSwift+Error+ObservableType.swift */; };
 		E2E4B84D228EAE3600107EEB /* RxSwift+Deffered+ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E4B842228EAE3600107EEB /* RxSwift+Deffered+ObservableType.swift */; };
+		E2F369422407C978004DDD17 /* RxSwift+Operators+Maybe.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F369412407C978004DDD17 /* RxSwift+Operators+Maybe.swift */; };
 		E2FD624422F03FF7000F9971 /* RxSwift+Weak+CatchError+ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FD624322F03FF7000F9971 /* RxSwift+Weak+CatchError+ObservableType.swift */; };
 /* End PBXBuildFile section */
 
@@ -163,6 +164,7 @@
 		E2E4B840228EAE3600107EEB /* RxSwift+Extension+ObservableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxSwift+Extension+ObservableType.swift"; sourceTree = "<group>"; };
 		E2E4B841228EAE3600107EEB /* RxSwift+Error+ObservableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxSwift+Error+ObservableType.swift"; sourceTree = "<group>"; };
 		E2E4B842228EAE3600107EEB /* RxSwift+Deffered+ObservableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxSwift+Deffered+ObservableType.swift"; sourceTree = "<group>"; };
+		E2F369412407C978004DDD17 /* RxSwift+Operators+Maybe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+Operators+Maybe.swift"; sourceTree = "<group>"; };
 		E2FD624322F03FF7000F9971 /* RxSwift+Weak+CatchError+ObservableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+Weak+CatchError+ObservableType.swift"; sourceTree = "<group>"; };
 		E3A3C326AA2806CD63667A60 /* .travis.yml */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = .travis.yml; path = ../.travis.yml; sourceTree = "<group>"; };
 		F338E826D6C0B8E2AD5C0E36 /* RxOptional.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxOptional.framework; path = Carthage/Build/iOS/RxOptional.framework; sourceTree = "<group>"; };
@@ -366,6 +368,7 @@
 				E2E4B841228EAE3600107EEB /* RxSwift+Error+ObservableType.swift */,
 				E212C9AC23A2409400147166 /* RxSwift+Error+Single.swift */,
 				E2E4B840228EAE3600107EEB /* RxSwift+Extension+ObservableType.swift */,
+				E2F369412407C978004DDD17 /* RxSwift+Operators+Maybe.swift */,
 				E25AD22622DCC02B00BD13B4 /* RxSwift+Operators+ObservableType.swift */,
 				E28ADDEF23991B1000A8AE87 /* RxSwift+Operators+Single.swift */,
 				E2E4B83E228EAE3600107EEB /* RxSwift+Subscribe+ObservableType.swift */,
@@ -637,6 +640,7 @@
 				E2E4B847228EAE3600107EEB /* RxSwift+Weak+Do+ObservableType.swift in Sources */,
 				E2E4B845228EAE3600107EEB /* RxCocoa+Drive.swift in Sources */,
 				E25AD22722DCC02B00BD13B4 /* RxSwift+Operators+ObservableType.swift in Sources */,
+				E2F369422407C978004DDD17 /* RxSwift+Operators+Maybe.swift in Sources */,
 				E2E4B84D228EAE3600107EEB /* RxSwift+Deffered+ObservableType.swift in Sources */,
 				E2C3134322DDF21600D6797A /* RxCocoa+Signal.swift in Sources */,
 				E221254022F1E50600DCD338 /* RxSwift+WithPrevious+ObservableType.swift in Sources */,
