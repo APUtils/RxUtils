@@ -23,6 +23,28 @@ public extension ObservableType {
             .asSingle()
     }
     
+    /// Prevent error emission if observable chain had element.
+    func catchErrorIfHadElement() -> Observable<Element> {
+        let lock = NSRecursiveLock()
+        var element: Element?
+        
+        return self
+            .doOnNext {
+                lock.lock(); defer { lock.unlock() }
+                
+                element = $0
+            }
+            .catchError {
+                lock.lock(); defer { lock.unlock() }
+                
+                if element != nil {
+                    return .empty()
+                } else {
+                    return .error($0)
+                }
+            }
+    }
+    
     /// Throws `RxUtilsError.noElements` if sequence completed without emitting any elements.
     func errorIfNoElements() -> Observable<Element> {
         var gotElement = false

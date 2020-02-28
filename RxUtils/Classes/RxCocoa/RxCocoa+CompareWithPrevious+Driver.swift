@@ -15,9 +15,15 @@ import RxSwift
 public extension SharedSequenceConvertibleType where SharingStrategy == DriverSharingStrategy {
     /// Compares with previous element using `comparator` closure and wraps sequence into CompareResult.
     func compareWithPrevious(_ comparator: @escaping (Element, Element) -> Bool) -> Driver<CompareResult<Element>> {
+        let lock = NSRecursiveLock()
         var _previous: Element?
         return map { new in
-            defer { _previous = new }
+            lock.lock()
+            defer {
+                _previous = new
+                lock.unlock()
+            }
+            
             if let previous = _previous {
                 if comparator(previous, new) {
                     return .same(previous: previous, new: new)
@@ -36,9 +42,15 @@ public extension SharedSequenceConvertibleType where SharingStrategy == DriverSh
 public extension SharedSequenceConvertibleType where SharingStrategy == DriverSharingStrategy, Element: Equatable {
     /// Compares with previous element and wraps sequence into CompareResult.
     func compareWithPrevious() -> Driver<CompareResult<Element>> {
+        let lock = NSRecursiveLock()
         var _previous: Element?
         return map { new in
-            defer { _previous = new }
+            lock.lock()
+            defer {
+                _previous = new
+                lock.unlock()
+            }
+            
             if let previous = _previous {
                 if previous == new {
                     return .same(previous: previous, new: new)
