@@ -78,3 +78,25 @@ public extension ObservableType {
         return self.map { $0 }
     }
 }
+
+public extension ObservableType where Element: Collection {
+    
+    /**
+     Projects each element of an observable collection into a new form.
+     
+     - parameter transform: A transform function to apply to each element of the source collection.
+     - returns: An observable collection whose elements are the result of invoking the transform function on each element of source.
+     */
+    
+    /**
+     Filters each element of an observable collection based on a predicate.
+     
+     - seealso: [filter operator on reactivex.io](http://reactivex.io/documentation/operators/filter.html)
+     
+     - parameter predicate: A function to test each element of the source collection.
+     - returns: An observable collection that contains elements from the input an original collection that satisfy the condition.
+     */
+    func filterMany(_ predicate: @escaping (Element.Element) throws -> Bool) -> Observable<[Element.Element]> {
+        map { try $0.filter(predicate) }
+    }
+}
