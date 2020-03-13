@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import RxOptional
 
 public extension ObservableType {
     /// Combines element with previous element. Previous element is `nil` on first element.

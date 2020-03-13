@@ -30,7 +30,6 @@
 		E275E08E22A1853B00E9900C /* RxCocoa+Do+Single.swift in Sources */ = {isa = PBXBuildFile; fileRef = E275E08D22A1853B00E9900C /* RxCocoa+Do+Single.swift */; };
 		E27889FC2344DCFB0064A336 /* NSProcessInfo+Rx+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27889FB2344DCFB0064A336 /* NSProcessInfo+Rx+Utils.swift */; };
 		E27D3FD223A7BAA20032D279 /* RxCocoa+Subscribe+Single.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27D3FD123A7BAA20032D279 /* RxCocoa+Subscribe+Single.swift */; };
-		E2868EB3231EA03100E450E8 /* OptionalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2868EB2231EA03100E450E8 /* OptionalType.swift */; };
 		E286EA822293FFD100868FF7 /* RxSwift+Weak+Map+ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E286EA812293FFD100868FF7 /* RxSwift+Weak+Map+ObservableType.swift */; };
 		E286EA842294037500868FF7 /* RxCocoa+CompactMap+Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E286EA832294037500868FF7 /* RxCocoa+CompactMap+Driver.swift */; };
 		E286EA87229408E900868FF7 /* RxCocoa+Weak+Map+Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E286EA86229408E900868FF7 /* RxCocoa+Weak+Map+Driver.swift */; };
@@ -138,7 +137,6 @@
 		E275E08D22A1853B00E9900C /* RxCocoa+Do+Single.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxCocoa+Do+Single.swift"; sourceTree = "<group>"; };
 		E27889FB2344DCFB0064A336 /* NSProcessInfo+Rx+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSProcessInfo+Rx+Utils.swift"; sourceTree = "<group>"; };
 		E27D3FD123A7BAA20032D279 /* RxCocoa+Subscribe+Single.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxCocoa+Subscribe+Single.swift"; sourceTree = "<group>"; };
-		E2868EB2231EA03100E450E8 /* OptionalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalType.swift; sourceTree = "<group>"; };
 		E286EA812293FFD100868FF7 /* RxSwift+Weak+Map+ObservableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+Weak+Map+ObservableType.swift"; sourceTree = "<group>"; };
 		E286EA832294037500868FF7 /* RxCocoa+CompactMap+Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxCocoa+CompactMap+Driver.swift"; sourceTree = "<group>"; };
 		E286EA86229408E900868FF7 /* RxCocoa+Weak+Map+Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxCocoa+Weak+Map+Driver.swift"; sourceTree = "<group>"; };
@@ -271,7 +269,6 @@
 			isa = PBXGroup;
 			children = (
 				E22FD59823914FFA005948EF /* Error */,
-				E2868EB1231EA00200E450E8 /* Protocols */,
 				E2E4B835228EAE3600107EEB /* RxCocoa */,
 				E2E4B837228EAE3600107EEB /* RxSwift */,
 			);
@@ -285,14 +282,6 @@
 				E27889FB2344DCFB0064A336 /* NSProcessInfo+Rx+Utils.swift */,
 			);
 			path = _Foundation;
-			sourceTree = "<group>";
-		};
-		E2868EB1231EA00200E450E8 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				E2868EB2231EA03100E450E8 /* OptionalType.swift */,
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 		E286EA85229408C800868FF7 /* _Weak */ = {
@@ -632,7 +621,6 @@
 				E275E08E22A1853B00E9900C /* RxCocoa+Do+Single.swift in Sources */,
 				E2E4B849228EAE3600107EEB /* RxSwift+Subscribe+ObservableType.swift in Sources */,
 				E27D3FD223A7BAA20032D279 /* RxCocoa+Subscribe+Single.swift in Sources */,
-				E2868EB3231EA03100E450E8 /* OptionalType.swift in Sources */,
 				E24D66B02333CAF6006AC0A6 /* UIDevice+Rx.swift in Sources */,
 				E27889FC2344DCFB0064A336 /* NSProcessInfo+Rx+Utils.swift in Sources */,
 				E212C9AD23A2409400147166 /* RxCocoa+Error+Single.swift in Sources */,
@@ -837,6 +825,7 @@
 		E202681C22117D03004CC28A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -866,6 +855,7 @@
 		E202681D22117D03004CC28A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -895,6 +885,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -917,6 +908,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -939,6 +931,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -962,6 +955,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (

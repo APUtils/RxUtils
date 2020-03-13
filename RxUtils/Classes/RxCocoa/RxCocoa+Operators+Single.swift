@@ -8,6 +8,9 @@
 
 import Foundation
 import RxSwift
+import RxOptional
+
+// ******************************* MARK: - Single
 
 public extension PrimitiveSequence where Trait == SingleTrait {
     
@@ -27,5 +30,19 @@ public extension PrimitiveSequence where Trait == SingleTrait {
     /// Wraps element into optional
     func wrapIntoOptional() -> Single<Element?> {
         return map { $0 }
+    }
+}
+
+// ******************************* MARK: - Single of optional element
+
+public extension PrimitiveSequence where Trait == SingleTrait, Element: OptionalType {
+    
+    /**
+     Unwraps and filters out `nil` elements.
+     
+     - returns: `Maybe` of source `Single`'s elements, with `nil` elements filtered out.
+     */
+    func filterNil() -> Maybe<Element.Wrapped> {
+        asObservable().filterNil().asMaybe()
     }
 }

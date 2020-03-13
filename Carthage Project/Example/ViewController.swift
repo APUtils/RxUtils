@@ -14,6 +14,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Maybe.just(1).mapToVoid()
+        _ = Maybe.just(1).mapToVoid()
     }
 }
