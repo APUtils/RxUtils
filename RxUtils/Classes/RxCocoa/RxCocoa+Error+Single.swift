@@ -1,5 +1,5 @@
 //
-//  RxSwift+Error+Single.swift
+//  RxCocoa+Error+Single.swift
 //  RxUtils
 //
 //  Created by Anton Plebanovich on 12/12/19.

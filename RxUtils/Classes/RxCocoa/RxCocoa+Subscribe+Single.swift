@@ -1,5 +1,5 @@
 //
-//  RxSwift+Subscribe+Single.swift
+//  RxCocoa+Subscribe+Single.swift
 //  RxUtils
 //
 //  Created by Anton Plebanovich on 12/16/19.
