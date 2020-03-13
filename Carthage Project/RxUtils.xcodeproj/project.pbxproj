@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0DAAD1F5241BFF3400E7D8B1 /* RxCocoa+Do+Maybe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAAD1F4241BFF3400E7D8B1 /* RxCocoa+Do+Maybe.swift */; };
+		0DAAD1F7241BFFE400E7D8B1 /* RxCocoa+Subscribe+Maybe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAAD1F6241BFFE400E7D8B1 /* RxCocoa+Subscribe+Maybe.swift */; };
+		0DAAD1F9241C005D00E7D8B1 /* RxCocoa+Subscribe+Completable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAAD1F8241C005D00E7D8B1 /* RxCocoa+Subscribe+Completable.swift */; };
 		0DB80C8E241BC7DC00D67133 /* RxCocoa+Do+Completable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB80C8D241BC7DC00D67133 /* RxCocoa+Do+Completable.swift */; };
 		1FE27E9F9B95B17313CE0E91 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 456D72B53221CA16C8A42395 /* RxRelay.framework */; };
 		2E3969D4FAEC1BC07F9BAE7E /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 351C0C5F43DEE45C165C941A /* RxCocoa.framework */; };
@@ -103,6 +106,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0DAAD1F4241BFF3400E7D8B1 /* RxCocoa+Do+Maybe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxCocoa+Do+Maybe.swift"; sourceTree = "<group>"; };
+		0DAAD1F6241BFFE400E7D8B1 /* RxCocoa+Subscribe+Maybe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxCocoa+Subscribe+Maybe.swift"; sourceTree = "<group>"; };
+		0DAAD1F8241C005D00E7D8B1 /* RxCocoa+Subscribe+Completable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxCocoa+Subscribe+Completable.swift"; sourceTree = "<group>"; };
 		0DB80C8D241BC7DC00D67133 /* RxCocoa+Do+Completable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxCocoa+Do+Completable.swift"; sourceTree = "<group>"; };
 		2770B41F10ACCC97B30DDC5B /* DEPLOY PROCESS.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = "DEPLOY PROCESS.md"; path = "../DEPLOY PROCESS.md"; sourceTree = "<group>"; };
 		27A65933230C2FF4F758F562 /* carthageUpdate.command */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = carthageUpdate.command; path = Scripts/Carthage/carthageUpdate.command; sourceTree = "<group>"; };
@@ -342,13 +348,16 @@
 				E286EA85229408C800868FF7 /* _Weak */,
 				E286EA832294037500868FF7 /* RxCocoa+CompactMap+Driver.swift */,
 				E25AD22422DC8D4600BD13B4 /* RxCocoa+CompareWithPrevious+Driver.swift */,
+				0DB80C8D241BC7DC00D67133 /* RxCocoa+Do+Completable.swift */,
+				0DAAD1F4241BFF3400E7D8B1 /* RxCocoa+Do+Maybe.swift */,
 				E275E08D22A1853B00E9900C /* RxCocoa+Do+Single.swift */,
 				E2E4B839228EAE3600107EEB /* RxCocoa+Drive.swift */,
 				E212C9AC23A2409400147166 /* RxCocoa+Error+Single.swift */,
 				E28ADDEF23991B1000A8AE87 /* RxCocoa+Operators+Single.swift */,
 				E2C3134222DDF21600D6797A /* RxCocoa+Signal.swift */,
+				0DAAD1F8241C005D00E7D8B1 /* RxCocoa+Subscribe+Completable.swift */,
+				0DAAD1F6241BFFE400E7D8B1 /* RxCocoa+Subscribe+Maybe.swift */,
 				E27D3FD123A7BAA20032D279 /* RxCocoa+Subscribe+Single.swift */,
-				0DB80C8D241BC7DC00D67133 /* RxCocoa+Do+Completable.swift */,
 			);
 			path = RxCocoa;
 			sourceTree = "<group>";
@@ -621,6 +630,8 @@
 				E275E08E22A1853B00E9900C /* RxCocoa+Do+Single.swift in Sources */,
 				E2E4B849228EAE3600107EEB /* RxSwift+Subscribe+ObservableType.swift in Sources */,
 				E27D3FD223A7BAA20032D279 /* RxCocoa+Subscribe+Single.swift in Sources */,
+				0DAAD1F9241C005D00E7D8B1 /* RxCocoa+Subscribe+Completable.swift in Sources */,
+				0DAAD1F7241BFFE400E7D8B1 /* RxCocoa+Subscribe+Maybe.swift in Sources */,
 				E24D66B02333CAF6006AC0A6 /* UIDevice+Rx.swift in Sources */,
 				E27889FC2344DCFB0064A336 /* NSProcessInfo+Rx+Utils.swift in Sources */,
 				E212C9AD23A2409400147166 /* RxCocoa+Error+Single.swift in Sources */,
@@ -633,6 +644,7 @@
 				E2E4B845228EAE3600107EEB /* RxCocoa+Drive.swift in Sources */,
 				E25AD22722DCC02B00BD13B4 /* RxSwift+Operators+ObservableType.swift in Sources */,
 				E2F369422407C978004DDD17 /* RxSwift+Operators+Maybe.swift in Sources */,
+				0DAAD1F5241BFF3400E7D8B1 /* RxCocoa+Do+Maybe.swift in Sources */,
 				E2E4B84D228EAE3600107EEB /* RxSwift+Deffered+ObservableType.swift in Sources */,
 				E2C3134322DDF21600D6797A /* RxCocoa+Signal.swift in Sources */,
 				E221254022F1E50600DCD338 /* RxSwift+WithPrevious+ObservableType.swift in Sources */,
