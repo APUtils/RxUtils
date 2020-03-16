@@ -1,5 +1,5 @@
 //
-//  RxCocoa+Subscribe+Single.swift
+//  RxSwift+Subscribe+Single.swift
 //  RxUtils
 //
 //  Created by Anton Plebanovich on 12/16/19.
@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import RxCocoa
 import RxSwift
 
 public extension PrimitiveSequence where Trait == SingleTrait {

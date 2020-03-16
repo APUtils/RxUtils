@@ -1,16 +1,16 @@
 //
-//  RxCocoa+Do+Single.swift
+//  RxSwift+Do+Maybe.swift
 //  RxUtils
 //
-//  Created by Anton Plebanovich on 5/31/19.
-//  Copyright © 2019 Anton Plebanovich. All rights reserved.
+//  Created by Anton Plebanovich on 3/13/20.
+//  Copyright © 2020 Anton Plebanovich. All rights reserved.
 //
 
 import Foundation
-import RxCocoa
 import RxSwift
 
-public extension PrimitiveSequence where Trait == SingleTrait {
+public extension PrimitiveSequence where Trait == MaybeTrait {
+    
     /**
      Invokes an action for each event in the observable sequence, and propagates all observer messages through the result sequence.
      
@@ -19,7 +19,7 @@ public extension PrimitiveSequence where Trait == SingleTrait {
      - parameter onSubscribe: Action to invoke before subscribing to source observable sequence.
      - returns: The source sequence with the side-effecting behavior applied.
      */
-    func doOnSubscribe(_ onSubscribe: @escaping () -> Void) -> Single<Element> {
+    func doOnSubscribe(_ onSubscribe: @escaping () -> Void) -> Maybe<Element> {
         return self.do(onSubscribe: onSubscribe)
     }
     
@@ -31,7 +31,7 @@ public extension PrimitiveSequence where Trait == SingleTrait {
      - parameter onSubscribed: Action to invoke after subscribing to source observable sequence.
      - returns: The source sequence with the side-effecting behavior applied.
      */
-    func doOnSubscribed(_ onSubscribed: @escaping () -> Void) -> Single<Element> {
+    func doOnSubscribed(_ onSubscribed: @escaping () -> Void) -> Maybe<Element> {
         return self.do(onSubscribed: onSubscribed)
     }
     
@@ -40,11 +40,11 @@ public extension PrimitiveSequence where Trait == SingleTrait {
      
      - seealso: [do operator on reactivex.io](http://reactivex.io/documentation/operators/do.html)
      
-     - parameter onSuccess: Action to invoke for each element in the observable sequence.
+     - parameter onNext: Action to invoke for each element in the observable sequence.
      - returns: The source sequence with the side-effecting behavior applied.
      */
-    func doOnSuccess(_ onSuccess: @escaping (Element) throws -> Void) -> Single<Element> {
-        return self.do(onSuccess: onSuccess)
+    func doOnNext(_ onNext: @escaping (Element) throws -> Void) -> Maybe<Element> {
+        return self.do(onNext: onNext)
     }
     
     /**
@@ -52,11 +52,11 @@ public extension PrimitiveSequence where Trait == SingleTrait {
      
      - seealso: [do operator on reactivex.io](http://reactivex.io/documentation/operators/do.html)
      
-     - parameter onSuccess: Action to invoke for each element in the observable sequence. Takes no arguments so can be used in a places where we do not need it.
+     - parameter onNext: Action to invoke for each element in the observable sequence.
      - returns: The source sequence with the side-effecting behavior applied.
      */
-    func doOnSuccess(_ onSuccess: @escaping () throws -> Void) -> Single<Element> {
-        return self.do(onSuccess: { _ in try onSuccess() })
+    func doOnNext(_ onNext: @escaping () throws -> Void) -> Maybe<Element> {
+        return self.do(onNext: { _ in try onNext() })
     }
     
     /**
@@ -67,7 +67,7 @@ public extension PrimitiveSequence where Trait == SingleTrait {
      - parameter onError: Action to invoke upon errored termination of the observable sequence.
      - returns: The source sequence with the side-effecting behavior applied.
      */
-    func doOnError(_ onError: @escaping (Error) throws -> Void) -> Single<Element> {
+    func doOnError(_ onError: @escaping (Error) throws -> Void) -> Maybe<Element> {
         return self.do(onError: onError)
     }
     
@@ -79,7 +79,7 @@ public extension PrimitiveSequence where Trait == SingleTrait {
      - parameter onDispose: Action to invoke after subscription to source observable has been disposed for any reason. It can be either because sequence terminates for some reason or observer subscription being disposed.
      - returns: The source sequence with the side-effecting behavior applied.
      */
-    func doOnDispose(_ onDispose: @escaping () -> Void) -> Single<Element> {
+    func doOnDispose(_ onDispose: @escaping () -> Void) -> Maybe<Element> {
         return self.do(onDispose: onDispose)
     }
 }

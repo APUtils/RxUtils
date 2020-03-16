@@ -1,14 +1,12 @@
 //
 //  RxCocoa+Error+Single.swift
-//  RxUtils
+//  RxSwift
 //
 //  Created by Anton Plebanovich on 12/12/19.
 //  Copyright © 2019 Anton Plebanovich. All rights reserved.
 //
 
-
 import Foundation
-import RxCocoa
 import RxSwift
 
 public extension PrimitiveSequence where Trait == SingleTrait {

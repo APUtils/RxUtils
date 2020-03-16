@@ -1,5 +1,5 @@
 //
-//  RxCocoa+Subscribe+Maybe.swift
+//  RxSwift+Subscribe+Completable.swift
 //  RxUtils
 //
 //  Created by Anton Plebanovich on 3/13/20.
@@ -7,19 +7,9 @@
 //
 
 import Foundation
-import RxCocoa
 import RxSwift
 
-public extension PrimitiveSequence where Trait == MaybeTrait {
-    
-    /**
-     Subscribes a success handler for this sequence.
-     - parameter onSuccess: Action to invoke for each element in the observable sequence.
-     - returns: Subscription object used to unsubscribe from the observable sequence.
-     */
-    func subscribeOnSuccess(_ onSuccess: @escaping (Element) -> Void) -> Disposable {
-        return subscribe(onSuccess: onSuccess)
-    }
+public extension PrimitiveSequence where Trait == CompletableTrait, Element == Never {
     
     /**
      Subscribes an error handler for this sequence.
