@@ -1,6 +1,8 @@
 # Deployment Target
 platform :ios, '9.0'
 
+source 'https://github.com/CocoaPods/Specs.git'
+source 'https://github.com/Artsy/Specs.git'
 
 # Add pods as frameworks so we could add obj-c and swift 3.0 pods
 use_frameworks!

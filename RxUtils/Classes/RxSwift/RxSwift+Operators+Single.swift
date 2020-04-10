@@ -9,6 +9,7 @@
 import Foundation
 import RxSwift
 import RxOptional
+import RxSwiftExt
 
 // ******************************* MARK: - Single
 
@@ -30,6 +31,24 @@ public extension PrimitiveSequence where Trait == SingleTrait {
     /// Wraps element into optional
     func wrapIntoOptional() -> Single<Element?> {
         return map { $0 }
+    }
+    
+    /**
+     Pauses the elements of the source single sequence based on the latest element from the second observable sequence.
+     
+     While paused, elements from the source are buffered, limited to a single element.
+     
+     When resumed, the buffered element, if present, is flushed.
+     
+     - seealso: [pausable operator on reactivex.io](http://reactivex.io/documentation/operators/backpressure.html)
+     
+     - parameter pauser: The observable sequence used to pause the source observable sequence.
+     - returns: The single sequence which is paused and resumed based upon the pauser observable sequence.
+     */
+    func pausableBuffered<Pauser: ObservableType>(_ pauser: Pauser) -> Single<Element> where Pauser.Element == Bool {
+        asObservable()
+            .pausableBuffered(pauser)
+            .asSingle()
     }
 }
 

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D210C7624409F20002F5304 /* RxSwiftExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D210C7524409F20002F5304 /* RxSwiftExt.framework */; };
+		0D210C7724409F20002F5304 /* RxSwiftExt.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0D210C7524409F20002F5304 /* RxSwiftExt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0D210C7A24409F2F002F5304 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D210C7924409F2F002F5304 /* RxRelay.framework */; };
+		0D210C7B24409F2F002F5304 /* RxRelay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0D210C7924409F2F002F5304 /* RxRelay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0DAAD1F5241BFF3400E7D8B1 /* RxSwift+Do+Maybe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAAD1F4241BFF3400E7D8B1 /* RxSwift+Do+Maybe.swift */; };
 		0DAAD1F7241BFFE400E7D8B1 /* RxSwift+Subscribe+Maybe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAAD1F6241BFFE400E7D8B1 /* RxSwift+Subscribe+Maybe.swift */; };
 		0DAAD1F9241C005D00E7D8B1 /* RxSwift+Subscribe+Completable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAAD1F8241C005D00E7D8B1 /* RxSwift+Subscribe+Completable.swift */; };
@@ -81,6 +85,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		0D210C7824409F20002F5304 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0D210C7B24409F2F002F5304 /* RxRelay.framework in Embed Frameworks */,
+				0D210C7724409F20002F5304 /* RxSwiftExt.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E275E08222A03A4B00E9900C /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -106,6 +122,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0D210C7424409A12002F5304 /* carthageUpdate.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = carthageUpdate.command; path = Scripts/Carthage/carthageUpdate.command; sourceTree = "<group>"; };
+		0D210C7524409F20002F5304 /* RxSwiftExt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwiftExt.framework; path = ../Carthage/Build/iOS/RxSwiftExt.framework; sourceTree = "<group>"; };
+		0D210C7924409F2F002F5304 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = ../Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 		0DAAD1F4241BFF3400E7D8B1 /* RxSwift+Do+Maybe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+Do+Maybe.swift"; sourceTree = "<group>"; };
 		0DAAD1F6241BFFE400E7D8B1 /* RxSwift+Subscribe+Maybe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+Subscribe+Maybe.swift"; sourceTree = "<group>"; };
 		0DAAD1F8241C005D00E7D8B1 /* RxSwift+Subscribe+Completable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+Subscribe+Completable.swift"; sourceTree = "<group>"; };
@@ -181,9 +200,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D210C7624409F20002F5304 /* RxSwiftExt.framework in Frameworks */,
 				E26D80C32268FFA4001F80BB /* RxCocoa.framework in Frameworks */,
 				E2DCAD43226900E500EE108B /* RxOptional.framework in Frameworks */,
 				E26D80C42268FFA4001F80BB /* RxSwift.framework in Frameworks */,
+				0D210C7A24409F2F002F5304 /* RxRelay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +357,7 @@
 				A3734D274A5AF65E369A7857 /* podCheck.command */,
 				C8E58B988872E31FAA300F03 /* podPush.command */,
 				E275E08822A03F3800E9900C /* podUpdate.command */,
+				0D210C7424409A12002F5304 /* carthageUpdate.command */,
 			);
 			name = _;
 			sourceTree = "<group>";
@@ -400,8 +422,10 @@
 				E2A7396C2260D99900E97D55 /* Quick.framework */,
 				351C0C5F43DEE45C165C941A /* RxCocoa.framework */,
 				F338E826D6C0B8E2AD5C0E36 /* RxOptional.framework */,
+				0D210C7924409F2F002F5304 /* RxRelay.framework */,
 				456D72B53221CA16C8A42395 /* RxRelay.framework */,
 				B89DEB5F58DE4DE076F19770 /* RxSwift.framework */,
+				0D210C7524409F20002F5304 /* RxSwiftExt.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -428,6 +452,7 @@
 				E202680F22117D03004CC28A /* Sources */,
 				E202681022117D03004CC28A /* Frameworks */,
 				E202681122117D03004CC28A /* Resources */,
+				0D210C7824409F20002F5304 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

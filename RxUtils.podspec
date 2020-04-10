@@ -41,4 +41,5 @@ A helpful collection of RxSwift utils.
   s.dependency 'RxSwift', '~> 5'
   s.dependency 'RxCocoa', '~> 5'
   s.dependency 'RxOptional', '~> 4'
+  s.dependency 'RxSwiftExt', '~> 5'
 end
