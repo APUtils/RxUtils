@@ -9,11 +9,20 @@
 import UIKit
 import RxUtils
 import RxSwift
+import RxRelay
 
 class ViewController: UIViewController {
+    
+    private let pauser = BehaviorRelay(value: false)
+    private let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        _ = Maybe.just(1).mapToVoid()
+        Single.just(())
+            .pausableBuffered(pauser)
+            .debug()
+            .subscribe()
+            .disposed(by: disposeBag)
     }
 }
