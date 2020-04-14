@@ -8,14 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		0D210C7624409F20002F5304 /* RxSwiftExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D210C7524409F20002F5304 /* RxSwiftExt.framework */; };
-		0D210C7724409F20002F5304 /* RxSwiftExt.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0D210C7524409F20002F5304 /* RxSwiftExt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		0D210C7A24409F2F002F5304 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D210C7924409F2F002F5304 /* RxRelay.framework */; };
-		0D210C7B24409F2F002F5304 /* RxRelay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0D210C7924409F2F002F5304 /* RxRelay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0DAAD1F5241BFF3400E7D8B1 /* RxSwift+Do+Maybe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAAD1F4241BFF3400E7D8B1 /* RxSwift+Do+Maybe.swift */; };
 		0DAAD1F7241BFFE400E7D8B1 /* RxSwift+Subscribe+Maybe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAAD1F6241BFFE400E7D8B1 /* RxSwift+Subscribe+Maybe.swift */; };
 		0DAAD1F9241C005D00E7D8B1 /* RxSwift+Subscribe+Completable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAAD1F8241C005D00E7D8B1 /* RxSwift+Subscribe+Completable.swift */; };
 		0DB80C8E241BC7DC00D67133 /* RxSwift+Do+Completable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB80C8D241BC7DC00D67133 /* RxSwift+Do+Completable.swift */; };
-		1FE27E9F9B95B17313CE0E91 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 456D72B53221CA16C8A42395 /* RxRelay.framework */; };
+		0DF810FA2445B00A00A25A81 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DF810F92445B00A00A25A81 /* RxRelay.framework */; };
+		0DF810FC2445B01300A25A81 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DF810F92445B00A00A25A81 /* RxRelay.framework */; };
+		0DF810FD2445B01A00A25A81 /* RxSwiftExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D210C7524409F20002F5304 /* RxSwiftExt.framework */; };
 		2E3969D4FAEC1BC07F9BAE7E /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 351C0C5F43DEE45C165C941A /* RxCocoa.framework */; };
 		543A082E950A41FC2BA96D73 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B89DEB5F58DE4DE076F19770 /* RxSwift.framework */; };
 		98CAE18C87F757E0D000E4D8 /* RxOptional.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F338E826D6C0B8E2AD5C0E36 /* RxOptional.framework */; };
@@ -85,18 +84,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		0D210C7824409F20002F5304 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				0D210C7B24409F2F002F5304 /* RxRelay.framework in Embed Frameworks */,
-				0D210C7724409F20002F5304 /* RxSwiftExt.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		E275E08222A03A4B00E9900C /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -124,17 +111,16 @@
 /* Begin PBXFileReference section */
 		0D210C7424409A12002F5304 /* carthageUpdate.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = carthageUpdate.command; path = Scripts/Carthage/carthageUpdate.command; sourceTree = "<group>"; };
 		0D210C7524409F20002F5304 /* RxSwiftExt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwiftExt.framework; path = ../Carthage/Build/iOS/RxSwiftExt.framework; sourceTree = "<group>"; };
-		0D210C7924409F2F002F5304 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = ../Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 		0DAAD1F4241BFF3400E7D8B1 /* RxSwift+Do+Maybe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+Do+Maybe.swift"; sourceTree = "<group>"; };
 		0DAAD1F6241BFFE400E7D8B1 /* RxSwift+Subscribe+Maybe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+Subscribe+Maybe.swift"; sourceTree = "<group>"; };
 		0DAAD1F8241C005D00E7D8B1 /* RxSwift+Subscribe+Completable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+Subscribe+Completable.swift"; sourceTree = "<group>"; };
 		0DB80C8D241BC7DC00D67133 /* RxSwift+Do+Completable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+Do+Completable.swift"; sourceTree = "<group>"; };
+		0DF810F92445B00A00A25A81 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = ../Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 		2770B41F10ACCC97B30DDC5B /* DEPLOY PROCESS.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = "DEPLOY PROCESS.md"; path = "../DEPLOY PROCESS.md"; sourceTree = "<group>"; };
 		27A65933230C2FF4F758F562 /* carthageUpdate.command */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = carthageUpdate.command; path = Scripts/Carthage/carthageUpdate.command; sourceTree = "<group>"; };
 		351C0C5F43DEE45C165C941A /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		35423192BBCD2485C59FBA90 /* .gitignore */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
 		3905247AED19C828B2F93C0F /* CHANGELOG.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
-		456D72B53221CA16C8A42395 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 		4DC06729D5797C0C4726CA51 /* checkBuild.command */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = checkBuild.command; path = ../checkBuild.command; sourceTree = "<group>"; };
 		722BFDE9DE58393B9D916719 /* carthageRemove.command */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = carthageRemove.command; path = Scripts/Carthage/carthageRemove.command; sourceTree = "<group>"; };
 		72FEC47699AE93FA694446C1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -204,7 +190,7 @@
 				E26D80C32268FFA4001F80BB /* RxCocoa.framework in Frameworks */,
 				E2DCAD43226900E500EE108B /* RxOptional.framework in Frameworks */,
 				E26D80C42268FFA4001F80BB /* RxSwift.framework in Frameworks */,
-				0D210C7A24409F2F002F5304 /* RxRelay.framework in Frameworks */,
+				0DF810FA2445B00A00A25A81 /* RxRelay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,9 +200,10 @@
 			files = (
 				2E3969D4FAEC1BC07F9BAE7E /* RxCocoa.framework in Frameworks */,
 				98CAE18C87F757E0D000E4D8 /* RxOptional.framework in Frameworks */,
-				1FE27E9F9B95B17313CE0E91 /* RxRelay.framework in Frameworks */,
 				E275E07E22A03A4B00E9900C /* RxUtils.framework in Frameworks */,
 				543A082E950A41FC2BA96D73 /* RxSwift.framework in Frameworks */,
+				0DF810FD2445B01A00A25A81 /* RxSwiftExt.framework in Frameworks */,
+				0DF810FC2445B01300A25A81 /* RxRelay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,8 +409,7 @@
 				E2A7396C2260D99900E97D55 /* Quick.framework */,
 				351C0C5F43DEE45C165C941A /* RxCocoa.framework */,
 				F338E826D6C0B8E2AD5C0E36 /* RxOptional.framework */,
-				0D210C7924409F2F002F5304 /* RxRelay.framework */,
-				456D72B53221CA16C8A42395 /* RxRelay.framework */,
+				0DF810F92445B00A00A25A81 /* RxRelay.framework */,
 				B89DEB5F58DE4DE076F19770 /* RxSwift.framework */,
 				0D210C7524409F20002F5304 /* RxSwiftExt.framework */,
 			);
@@ -452,7 +438,6 @@
 				E202680F22117D03004CC28A /* Sources */,
 				E202681022117D03004CC28A /* Frameworks */,
 				E202681122117D03004CC28A /* Resources */,
-				0D210C7824409F20002F5304 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -605,6 +590,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxOptional.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxRelay.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwiftExt.framework",
 			);
 			name = "Carthage Copy";
 			outputFileListPaths = (
@@ -614,6 +600,7 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxOptional.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxRelay.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwiftExt.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
