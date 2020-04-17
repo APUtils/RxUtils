@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0D210C7624409F20002F5304 /* RxSwiftExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D210C7524409F20002F5304 /* RxSwiftExt.framework */; };
+		0D85A2982449E2EB0061FDDD /* RxSwift+Error+Completable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D85A2972449E2EB0061FDDD /* RxSwift+Error+Completable.swift */; };
 		0DAAD1F5241BFF3400E7D8B1 /* RxSwift+Do+Maybe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAAD1F4241BFF3400E7D8B1 /* RxSwift+Do+Maybe.swift */; };
 		0DAAD1F7241BFFE400E7D8B1 /* RxSwift+Subscribe+Maybe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAAD1F6241BFFE400E7D8B1 /* RxSwift+Subscribe+Maybe.swift */; };
 		0DAAD1F9241C005D00E7D8B1 /* RxSwift+Subscribe+Completable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAAD1F8241C005D00E7D8B1 /* RxSwift+Subscribe+Completable.swift */; };
@@ -111,6 +112,7 @@
 /* Begin PBXFileReference section */
 		0D210C7424409A12002F5304 /* carthageUpdate.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = carthageUpdate.command; path = Scripts/Carthage/carthageUpdate.command; sourceTree = "<group>"; };
 		0D210C7524409F20002F5304 /* RxSwiftExt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwiftExt.framework; path = ../Carthage/Build/iOS/RxSwiftExt.framework; sourceTree = "<group>"; };
+		0D85A2972449E2EB0061FDDD /* RxSwift+Error+Completable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+Error+Completable.swift"; sourceTree = "<group>"; };
 		0DAAD1F4241BFF3400E7D8B1 /* RxSwift+Do+Maybe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+Do+Maybe.swift"; sourceTree = "<group>"; };
 		0DAAD1F6241BFFE400E7D8B1 /* RxSwift+Subscribe+Maybe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+Subscribe+Maybe.swift"; sourceTree = "<group>"; };
 		0DAAD1F8241C005D00E7D8B1 /* RxSwift+Subscribe+Completable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+Subscribe+Completable.swift"; sourceTree = "<group>"; };
@@ -373,6 +375,7 @@
 				0DAAD1F4241BFF3400E7D8B1 /* RxSwift+Do+Maybe.swift */,
 				E2E4B83F228EAE3600107EEB /* RxSwift+Do+ObservableType.swift */,
 				E275E08D22A1853B00E9900C /* RxSwift+Do+Single.swift */,
+				0D85A2972449E2EB0061FDDD /* RxSwift+Error+Completable.swift */,
 				E2E4B841228EAE3600107EEB /* RxSwift+Error+ObservableType.swift */,
 				E212C9AC23A2409400147166 /* RxSwift+Error+Single.swift */,
 				E2E4B840228EAE3600107EEB /* RxSwift+Extension+ObservableType.swift */,
@@ -643,6 +646,7 @@
 				E2E4B849228EAE3600107EEB /* RxSwift+Subscribe+ObservableType.swift in Sources */,
 				E27D3FD223A7BAA20032D279 /* RxSwift+Subscribe+Single.swift in Sources */,
 				0DAAD1F9241C005D00E7D8B1 /* RxSwift+Subscribe+Completable.swift in Sources */,
+				0D85A2982449E2EB0061FDDD /* RxSwift+Error+Completable.swift in Sources */,
 				0DAAD1F7241BFFE400E7D8B1 /* RxSwift+Subscribe+Maybe.swift in Sources */,
 				E24D66B02333CAF6006AC0A6 /* UIDevice+Rx.swift in Sources */,
 				E27889FC2344DCFB0064A336 /* NSProcessInfo+Rx+Utils.swift in Sources */,
