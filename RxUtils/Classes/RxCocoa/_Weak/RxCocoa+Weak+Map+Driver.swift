@@ -10,7 +10,6 @@ import Foundation
 import RxCocoa
 import RxSwift
 
-
 public extension SharedSequenceConvertibleType where SharingStrategy == DriverSharingStrategy {
     
     fileprivate func weakify<A: AnyObject, B>(_ obj: A, method: @escaping (A) -> (Element) -> B) -> ((Element) -> B?) {

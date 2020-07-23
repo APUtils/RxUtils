@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D1C2CCB24C961A700699A15 /* RxCocoa+Do+Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C2CCA24C961A700699A15 /* RxCocoa+Do+Driver.swift */; };
 		0D210C7624409F20002F5304 /* RxSwiftExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D210C7524409F20002F5304 /* RxSwiftExt.framework */; };
 		0D85A2982449E2EB0061FDDD /* RxSwift+Error+Completable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D85A2972449E2EB0061FDDD /* RxSwift+Error+Completable.swift */; };
 		0DAAD1F5241BFF3400E7D8B1 /* RxSwift+Do+Maybe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAAD1F4241BFF3400E7D8B1 /* RxSwift+Do+Maybe.swift */; };
@@ -110,6 +111,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0D1C2CCA24C961A700699A15 /* RxCocoa+Do+Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxCocoa+Do+Driver.swift"; sourceTree = "<group>"; };
 		0D210C7424409A12002F5304 /* carthageUpdate.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = carthageUpdate.command; path = Scripts/Carthage/carthageUpdate.command; sourceTree = "<group>"; };
 		0D210C7524409F20002F5304 /* RxSwiftExt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwiftExt.framework; path = ../Carthage/Build/iOS/RxSwiftExt.framework; sourceTree = "<group>"; };
 		0D85A2972449E2EB0061FDDD /* RxSwift+Error+Completable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+Error+Completable.swift"; sourceTree = "<group>"; };
@@ -359,6 +361,7 @@
 				E286EA85229408C800868FF7 /* _Weak */,
 				E286EA832294037500868FF7 /* RxCocoa+CompactMap+Driver.swift */,
 				E25AD22422DC8D4600BD13B4 /* RxCocoa+CompareWithPrevious+Driver.swift */,
+				0D1C2CCA24C961A700699A15 /* RxCocoa+Do+Driver.swift */,
 				E2E4B839228EAE3600107EEB /* RxCocoa+Drive.swift */,
 				E2C3134222DDF21600D6797A /* RxCocoa+Signal.swift */,
 			);
@@ -499,7 +502,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1160;
 				ORGANIZATIONNAME = "Anton Plebanovich";
 				TargetAttributes = {
 					E202681222117D03004CC28A = {
@@ -662,6 +665,7 @@
 				E2F369422407C978004DDD17 /* RxSwift+Operators+Maybe.swift in Sources */,
 				0DAAD1F5241BFF3400E7D8B1 /* RxSwift+Do+Maybe.swift in Sources */,
 				E2E4B84D228EAE3600107EEB /* RxSwift+Deffered+ObservableType.swift in Sources */,
+				0D1C2CCB24C961A700699A15 /* RxCocoa+Do+Driver.swift in Sources */,
 				E2C3134322DDF21600D6797A /* RxCocoa+Signal.swift in Sources */,
 				E221254022F1E50600DCD338 /* RxSwift+WithPrevious+ObservableType.swift in Sources */,
 				E22FD59A23914FFA005948EF /* RxUtilsError.swift in Sources */,

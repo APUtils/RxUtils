@@ -11,7 +11,6 @@ import RxCocoa
 import RxOptional
 import RxSwift
 
-
 public extension SharedSequenceConvertibleType where SharingStrategy == DriverSharingStrategy {
     /**
      Projects each element of an observable sequence into a new form. If transforms produces a `nil` those elements are filtered out.

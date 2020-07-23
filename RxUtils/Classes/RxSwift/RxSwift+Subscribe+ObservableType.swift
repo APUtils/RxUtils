@@ -9,7 +9,6 @@
 import Foundation
 import RxSwift
 
-
 // ******************************* MARK: - ObservableType
 
 public extension ObservableType {

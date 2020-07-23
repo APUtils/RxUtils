@@ -11,7 +11,6 @@ import Foundation
 import RxCocoa
 import RxSwift
 
-
 public extension ObservableType {
     
     /// Apply filter to sequence using second sequence.

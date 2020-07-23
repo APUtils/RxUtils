@@ -11,7 +11,6 @@ import Foundation
 import RxCocoa
 import RxSwift
 
-
 public extension ObservableType {
     fileprivate func weakify<A: AnyObject, B>(_ obj: A, method: @escaping (A) -> (Element) throws -> B) -> ((Element) throws -> B?) {
         return { [weak obj] value throws -> B? in

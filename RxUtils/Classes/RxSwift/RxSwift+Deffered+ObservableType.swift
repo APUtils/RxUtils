@@ -11,7 +11,6 @@ import Foundation
 import RxCocoa
 import RxSwift
 
-
 public extension ObservableType {
     
     /// Prepends and evaluates element expression to an observable sequence on subscription.
