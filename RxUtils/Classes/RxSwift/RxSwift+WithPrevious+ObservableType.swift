@@ -23,7 +23,7 @@ public extension ObservableType {
     }
     
     /// Combines element with previous element. First element with `nil` previous is ignored.
-    func withRequiredPrevious() -> Observable<(Element?, Element)> {
+    func withRequiredPrevious() -> Observable<(Element, Element)> {
         self.withPrevious()
             .compactMap { previous, current -> (Element, Element)? in
                 guard let previous = previous else { return nil }
