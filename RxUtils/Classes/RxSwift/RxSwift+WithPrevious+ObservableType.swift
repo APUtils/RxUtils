@@ -11,14 +11,23 @@ import RxSwift
 import RxOptional
 
 public extension ObservableType {
+    
     /// Combines element with previous element. Previous element is `nil` on first element.
     func withPrevious() -> Observable<(Element?, Element)> {
-        return self
-            .scan([]) { previous, current in
+        self.scan([]) { previous, current in
                 Array(previous + [current]).suffix(2)
             }
             .map { arr -> (previous: Element?, current: Element) in
                 (arr.count > 1 ? arr.first : nil, arr.last!)
+        }
+    }
+    
+    /// Combines element with previous element. First element with `nil` previous is ignored.
+    func withRequiredPrevious() -> Observable<(Element?, Element)> {
+        self.withPrevious()
+            .compactMap { previous, current -> (Element, Element)? in
+                guard let previous = previous else { return nil }
+                return (previous, current)
         }
     }
 }
@@ -28,8 +37,7 @@ public extension ObservableType {
 public extension ObservableType where Element: OptionalType {
     /// Combines element with previous element. Previous element is `nil` on first element.
     func withPrevious() -> Observable<(Element.Wrapped?, Element.Wrapped?)> {
-        return self
-            .scan([]) { previous, current in
+        self.scan([]) { previous, current in
                 Array(previous + [current]).suffix(2)
             }
             .map { arr -> (previous: Element.Wrapped?, current: Element.Wrapped?) in
