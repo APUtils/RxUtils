@@ -52,18 +52,6 @@ public extension ObservableType {
      
      - seealso: [do operator on reactivex.io](http://reactivex.io/documentation/operators/do.html)
      
-     - parameter onNext: Action to invoke for each element in the observable sequence. Takes no arguments so can be used in a places where we do not need it.
-     - returns: The source sequence with the side-effecting behavior applied.
-     */
-    func doOnNext(_ onNext: @escaping () throws -> Void) -> Observable<Element> {
-        return self.do(onNext: { _ in try onNext() })
-    }
-    
-    /**
-     Invokes an action for each event in the observable sequence, and propagates all observer messages through the result sequence.
-     
-     - seealso: [do operator on reactivex.io](http://reactivex.io/documentation/operators/do.html)
-     
      - parameter afterNext: Action to invoke for each element after the observable has passed an onNext event along to its downstream.
      - returns: The source sequence with the side-effecting behavior applied.
      */

@@ -47,22 +47,6 @@ public extension ObservableType {
             return try onNext(obj, element)
         }
     }
-    
-    /**
-     Invokes an action on `weak` for each event in the observable sequence, and propagates all observer messages through the result sequence.
-     
-     - seealso: [do operator on reactivex.io](http://reactivex.io/documentation/operators/do.html)
-     
-     - parameter weak: Weakly referenced object containing the target function.
-     - parameter onNext: Action to invoke on `weak` for each element in the observable sequence.
-     - returns: The source sequence with the side-effecting behavior applied.
-     */
-    func doOnNext<A: AnyObject>(weak obj: A, _ onNext: @escaping (A) -> () throws -> Void) -> Observable<Element> {
-        return doOnNext { [weak obj] _ in
-            guard let obj = obj else { return }
-            return try onNext(obj)()
-        }
-    }
 }
 
 // ******************************* MARK: - doOnError
@@ -101,22 +85,6 @@ public extension ObservableType {
         return doOnError { [weak obj] error -> Void in
             guard let obj = obj else { return }
             return try onError(obj, error)
-        }
-    }
-    
-    /**
-     Invokes an action on `weak` for error in the observable sequence, and propagates all observer messages through the result sequence.
-     
-     - seealso: [do operator on reactivex.io](http://reactivex.io/documentation/operators/do.html)
-     
-     - parameter weak: Weakly referenced object containing the target function.
-     - parameter onError: Action to invoke on `weak` upon errored termination of the observable sequence.
-     - returns: The source sequence with the side-effecting behavior applied.
-     */
-    func doOnError<A: AnyObject>(weak obj: A, _ onError: @escaping (A) -> () throws -> Void) -> Observable<Element> {
-        return doOnError { [weak obj] _ in
-            guard let obj = obj else { return }
-            return try onError(obj)()
         }
     }
 }

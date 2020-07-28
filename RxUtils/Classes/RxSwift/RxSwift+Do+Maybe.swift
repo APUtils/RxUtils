@@ -52,18 +52,6 @@ public extension PrimitiveSequence where Trait == MaybeTrait {
      
      - seealso: [do operator on reactivex.io](http://reactivex.io/documentation/operators/do.html)
      
-     - parameter onNext: Action to invoke for each element in the observable sequence.
-     - returns: The source sequence with the side-effecting behavior applied.
-     */
-    func doOnNext(_ onNext: @escaping () throws -> Void) -> Maybe<Element> {
-        return self.do(onNext: { _ in try onNext() })
-    }
-    
-    /**
-     Invokes an action for each event in the observable sequence, and propagates all observer messages through the result sequence.
-     
-     - seealso: [do operator on reactivex.io](http://reactivex.io/documentation/operators/do.html)
-     
      - parameter onError: Action to invoke upon errored termination of the observable sequence.
      - returns: The source sequence with the side-effecting behavior applied.
      */
