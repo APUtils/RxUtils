@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0D1C2CCB24C961A700699A15 /* RxCocoa+Do+Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C2CCA24C961A700699A15 /* RxCocoa+Do+Driver.swift */; };
 		0D210C7624409F20002F5304 /* RxSwiftExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D210C7524409F20002F5304 /* RxSwiftExt.framework */; };
+		0D4D052324D177B40084526B /* RxSwift+Operators+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4D052224D177B40084526B /* RxSwift+Operators+Signal.swift */; };
 		0D85A2982449E2EB0061FDDD /* RxSwift+Error+Completable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D85A2972449E2EB0061FDDD /* RxSwift+Error+Completable.swift */; };
 		0DAAD1F5241BFF3400E7D8B1 /* RxSwift+Do+Maybe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAAD1F4241BFF3400E7D8B1 /* RxSwift+Do+Maybe.swift */; };
 		0DAAD1F7241BFFE400E7D8B1 /* RxSwift+Subscribe+Maybe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAAD1F6241BFFE400E7D8B1 /* RxSwift+Subscribe+Maybe.swift */; };
@@ -114,6 +115,7 @@
 		0D1C2CCA24C961A700699A15 /* RxCocoa+Do+Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxCocoa+Do+Driver.swift"; sourceTree = "<group>"; };
 		0D210C7424409A12002F5304 /* carthageUpdate.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = carthageUpdate.command; path = Scripts/Carthage/carthageUpdate.command; sourceTree = "<group>"; };
 		0D210C7524409F20002F5304 /* RxSwiftExt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwiftExt.framework; path = ../Carthage/Build/iOS/RxSwiftExt.framework; sourceTree = "<group>"; };
+		0D4D052224D177B40084526B /* RxSwift+Operators+Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+Operators+Signal.swift"; sourceTree = "<group>"; };
 		0D85A2972449E2EB0061FDDD /* RxSwift+Error+Completable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+Error+Completable.swift"; sourceTree = "<group>"; };
 		0DAAD1F4241BFF3400E7D8B1 /* RxSwift+Do+Maybe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+Do+Maybe.swift"; sourceTree = "<group>"; };
 		0DAAD1F6241BFFE400E7D8B1 /* RxSwift+Subscribe+Maybe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+Subscribe+Maybe.swift"; sourceTree = "<group>"; };
@@ -364,6 +366,7 @@
 				0D1C2CCA24C961A700699A15 /* RxCocoa+Do+Driver.swift */,
 				E2E4B839228EAE3600107EEB /* RxCocoa+Drive.swift */,
 				E2C3134222DDF21600D6797A /* RxCocoa+Signal.swift */,
+				0D4D052224D177B40084526B /* RxSwift+Operators+Signal.swift */,
 			);
 			path = RxCocoa;
 			sourceTree = "<group>";
@@ -643,6 +646,7 @@
 				E275E07D22A0360000E9900C /* RxSwift+Weak+Do+Single.swift in Sources */,
 				E2E4B84A228EAE3600107EEB /* RxSwift+Do+ObservableType.swift in Sources */,
 				E25AD22522DC8D4600BD13B4 /* RxCocoa+CompareWithPrevious+Driver.swift in Sources */,
+				0D4D052324D177B40084526B /* RxSwift+Operators+Signal.swift in Sources */,
 				E2245FE92397F9D2007DB83F /* UIViewController+Rx.swift in Sources */,
 				E24FE50722D8EC0E00D1F71F /* RxCocoa+Weak+Subscribe+Driver.swift in Sources */,
 				E275E08E22A1853B00E9900C /* RxSwift+Do+Single.swift in Sources */,
