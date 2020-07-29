@@ -100,3 +100,30 @@ public extension ObservableType where Element: Collection {
         map { try $0.filter(predicate) }
     }
 }
+
+// ******************************* MARK: - Filter with latest
+
+public extension ObservableType {
+    
+    /// Apply filter to sequence using second sequence.
+    /// - parameter second: Sequence to use for comparison.
+    /// - parameter comparer: Equality comparer for computed key values.
+    /// - returns: Filtered sequence.
+    func filterWithLatestFrom<T: ObservableConvertibleType>(_ second: T, _ comparer: @escaping (Element, T.Element) -> Bool) -> Observable<Element> {
+        return withLatestFrom(second) { ($0, $1) }
+            .filter { comparer($0.0, $0.1) }
+            .map { $0.0 }
+    }
+}
+
+public extension ObservableType where Element: Equatable {
+    
+    /// Filters out element if it equals to the latest from provided sequence.
+    /// - parameter second: Sequence to use for comparison.
+    /// - returns: Filtered sequence.
+    func filterEqualWithLatestFrom(_ second: Observable<Element>) -> Observable<Element> {
+        return withLatestFrom(second) { ($0, $1) }
+            .filter { $0 != $1 }
+            .map { $0.0 }
+    }
+}
