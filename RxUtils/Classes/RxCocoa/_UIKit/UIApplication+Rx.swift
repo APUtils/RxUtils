@@ -38,4 +38,12 @@ public extension Reactive where Base: UIApplication {
             .startWithDeferred { [weak base] in base?.applicationState }
             .distinctUntilChanged()
     }
+    
+    /// Background refresh status observable.
+    var backgroundRefreshStatus: Observable<UIBackgroundRefreshStatus> {
+        NotificationCenter.default.rx.notification(UIApplication.backgroundRefreshStatusDidChangeNotification)
+            .compactMap { [weak base] _ in base?.backgroundRefreshStatus }
+            .startWithDeferred { [weak base] in base?.backgroundRefreshStatus }
+            .distinctUntilChanged()
+    }
 }
