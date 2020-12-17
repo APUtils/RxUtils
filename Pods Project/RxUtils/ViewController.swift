@@ -13,14 +13,13 @@ import RxRelay
 
 class ViewController: UIViewController {
     
-    private let pauser = BehaviorRelay(value: false)
     private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Single.just(())
-            .pausableBuffered(pauser)
+        UIApplication.shared.rx
+            .isProtectedDataAvailable
             .debug()
             .subscribe()
             .disposed(by: disposeBag)

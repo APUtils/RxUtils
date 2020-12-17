@@ -15,6 +15,7 @@
 		0DAAD1F7241BFFE400E7D8B1 /* RxSwift+Subscribe+Maybe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAAD1F6241BFFE400E7D8B1 /* RxSwift+Subscribe+Maybe.swift */; };
 		0DAAD1F9241C005D00E7D8B1 /* RxSwift+Subscribe+Completable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAAD1F8241C005D00E7D8B1 /* RxSwift+Subscribe+Completable.swift */; };
 		0DB80C8E241BC7DC00D67133 /* RxSwift+Do+Completable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB80C8D241BC7DC00D67133 /* RxSwift+Do+Completable.swift */; };
+		0DDD205D258B02D400C9B9AB /* RxSwift+SkipFirst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDD205C258B02D400C9B9AB /* RxSwift+SkipFirst.swift */; };
 		0DF810FA2445B00A00A25A81 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DF810F92445B00A00A25A81 /* RxRelay.framework */; };
 		0DF810FC2445B01300A25A81 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DF810F92445B00A00A25A81 /* RxRelay.framework */; };
 		0DF810FD2445B01A00A25A81 /* RxSwiftExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D210C7524409F20002F5304 /* RxSwiftExt.framework */; };
@@ -120,6 +121,7 @@
 		0DAAD1F6241BFFE400E7D8B1 /* RxSwift+Subscribe+Maybe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+Subscribe+Maybe.swift"; sourceTree = "<group>"; };
 		0DAAD1F8241C005D00E7D8B1 /* RxSwift+Subscribe+Completable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+Subscribe+Completable.swift"; sourceTree = "<group>"; };
 		0DB80C8D241BC7DC00D67133 /* RxSwift+Do+Completable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+Do+Completable.swift"; sourceTree = "<group>"; };
+		0DDD205C258B02D400C9B9AB /* RxSwift+SkipFirst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxSwift+SkipFirst.swift"; sourceTree = "<group>"; };
 		0DF810F92445B00A00A25A81 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = ../Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 		2770B41F10ACCC97B30DDC5B /* DEPLOY PROCESS.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = "DEPLOY PROCESS.md"; path = "../DEPLOY PROCESS.md"; sourceTree = "<group>"; };
 		27A65933230C2FF4F758F562 /* carthageUpdate.command */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = carthageUpdate.command; path = Scripts/Carthage/carthageUpdate.command; sourceTree = "<group>"; };
@@ -385,6 +387,7 @@
 				E2F369412407C978004DDD17 /* RxSwift+Operators+Maybe.swift */,
 				E25AD22622DCC02B00BD13B4 /* RxSwift+Operators+ObservableType.swift */,
 				E28ADDEF23991B1000A8AE87 /* RxSwift+Operators+Single.swift */,
+				0DDD205C258B02D400C9B9AB /* RxSwift+SkipFirst.swift */,
 				0DAAD1F8241C005D00E7D8B1 /* RxSwift+Subscribe+Completable.swift */,
 				0DAAD1F6241BFFE400E7D8B1 /* RxSwift+Subscribe+Maybe.swift */,
 				E2E4B83E228EAE3600107EEB /* RxSwift+Subscribe+ObservableType.swift */,
@@ -502,7 +505,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1160;
+				LastUpgradeCheck = 1230;
 				ORGANIZATIONNAME = "Anton Plebanovich";
 				TargetAttributes = {
 					E202681222117D03004CC28A = {
@@ -658,6 +661,7 @@
 				E286EA842294037500868FF7 /* RxCocoa+CompactMap+Driver.swift in Sources */,
 				0DB80C8E241BC7DC00D67133 /* RxSwift+Do+Completable.swift in Sources */,
 				E28ADDF023991B1000A8AE87 /* RxSwift+Operators+Single.swift in Sources */,
+				0DDD205D258B02D400C9B9AB /* RxSwift+SkipFirst.swift in Sources */,
 				E25AD22322DC8CD300BD13B4 /* RxSwift+CompareWithPrevious+ObservableType.swift in Sources */,
 				E2E4B847228EAE3600107EEB /* RxSwift+Weak+Do+ObservableType.swift in Sources */,
 				E2E4B845228EAE3600107EEB /* RxCocoa+Drive.swift in Sources */,
@@ -925,7 +929,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Example/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -948,7 +952,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Example/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
