@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0D1C2CCB24C961A700699A15 /* RxCocoa+Do+Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C2CCA24C961A700699A15 /* RxCocoa+Do+Driver.swift */; };
+		0D20D6F62607660800767851 /* Single+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D20D6F52607660800767851 /* Single+Extension.swift */; };
 		0D210C7624409F20002F5304 /* RxSwiftExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D210C7524409F20002F5304 /* RxSwiftExt.framework */; };
 		0D4D052324D177B40084526B /* RxSwift+Operators+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4D052224D177B40084526B /* RxSwift+Operators+Signal.swift */; };
 		0D85A2982449E2EB0061FDDD /* RxSwift+Error+Completable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D85A2972449E2EB0061FDDD /* RxSwift+Error+Completable.swift */; };
@@ -113,6 +114,7 @@
 
 /* Begin PBXFileReference section */
 		0D1C2CCA24C961A700699A15 /* RxCocoa+Do+Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxCocoa+Do+Driver.swift"; sourceTree = "<group>"; };
+		0D20D6F52607660800767851 /* Single+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Single+Extension.swift"; sourceTree = "<group>"; };
 		0D210C7424409A12002F5304 /* carthageUpdate.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = carthageUpdate.command; path = Scripts/Carthage/carthageUpdate.command; sourceTree = "<group>"; };
 		0D210C7524409F20002F5304 /* RxSwiftExt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwiftExt.framework; path = ../Carthage/Build/iOS/RxSwiftExt.framework; sourceTree = "<group>"; };
 		0D4D052224D177B40084526B /* RxSwift+Operators+Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+Operators+Signal.swift"; sourceTree = "<group>"; };
@@ -393,6 +395,7 @@
 				E2E4B83E228EAE3600107EEB /* RxSwift+Subscribe+ObservableType.swift */,
 				E27D3FD123A7BAA20032D279 /* RxSwift+Subscribe+Single.swift */,
 				E221253F22F1E50600DCD338 /* RxSwift+WithPrevious+ObservableType.swift */,
+				0D20D6F52607660800767851 /* Single+Extension.swift */,
 			);
 			path = RxSwift;
 			sourceTree = "<group>";
@@ -443,6 +446,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E202681B22117D03004CC28A /* Build configuration list for PBXNativeTarget "RxUtils" */;
 			buildPhases = (
+				0D20D6F72607670A00767851 /* Carthage Install */,
 				E202680E22117D03004CC28A /* Headers */,
 				E202680F22117D03004CC28A /* Sources */,
 				E202681022117D03004CC28A /* Frameworks */,
@@ -505,7 +509,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1230;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = "Anton Plebanovich";
 				TargetAttributes = {
 					E202681222117D03004CC28A = {
@@ -569,6 +573,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0D20D6F72607670A00767851 /* Carthage Install */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Carthage Install";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "source ~/.bash_profile\nenv -i GITHUB_ACCESS_TOKEN=\"$GITHUB_ACCESS_TOKEN\" DEVELOPER_DIR=\"$DEVELOPER_DIR\" PATH=\"$PATH\" bash \"Scripts/Carthage/carthageInstall.command\"\n";
+		};
 		6960B3CE5722CE5FDD8F8F8D /* Carthage Install */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -661,6 +683,7 @@
 				E286EA842294037500868FF7 /* RxCocoa+CompactMap+Driver.swift in Sources */,
 				0DB80C8E241BC7DC00D67133 /* RxSwift+Do+Completable.swift in Sources */,
 				E28ADDF023991B1000A8AE87 /* RxSwift+Operators+Single.swift in Sources */,
+				0D20D6F62607660800767851 /* Single+Extension.swift in Sources */,
 				0DDD205D258B02D400C9B9AB /* RxSwift+SkipFirst.swift in Sources */,
 				E25AD22322DC8CD300BD13B4 /* RxSwift+CompareWithPrevious+ObservableType.swift in Sources */,
 				E2E4B847228EAE3600107EEB /* RxSwift+Weak+Do+ObservableType.swift in Sources */,
