@@ -18,6 +18,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print(UIApplication.KeychainState.notReadable(status: 2))
+        
         UIApplication.shared.rx
             .isProtectedDataAvailable
             .debug()

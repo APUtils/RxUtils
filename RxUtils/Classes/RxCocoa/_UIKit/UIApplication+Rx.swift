@@ -112,10 +112,17 @@ public extension UIApplication {
         case readable
         case notReadable(status: OSStatus)
         
-        var isReadable: Bool {
+        public var isReadable: Bool {
             switch self {
             case .readable: return true
             default: return false
+            }
+        }
+        
+        public var status: OSStatus {
+            switch self {
+            case .readable: return errSecSuccess
+            case .notReadable(let status): return status
             }
         }
     }
