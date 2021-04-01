@@ -87,3 +87,54 @@ fileprivate extension UIApplication {
         }
     }
 }
+
+// ******************************* MARK: - Keychain
+
+public extension Reactive where Base: UIApplication {
+    
+    /// Each second checks for the keychain readable state and fires an event if it changes.
+    /// Starts with the current value.
+    /// Completes after emitting `.readable`.
+    var isKeychainReadable: Observable<Base.KeychainState> {
+        Observable<Int>.timer(.seconds(1),
+                         period: .seconds(1),
+                         scheduler: MainScheduler.instance)
+            .map { [base] _ in base.keychainState }
+            .startWithDeferred { [base] in base.keychainState }
+            .distinctUntilChanged()
+            .takeUntil(.inclusive) { $0.isReadable }
+    }
+}
+
+public extension UIApplication {
+    
+    enum KeychainState: Equatable, Comparable {
+        case readable
+        case notReadable(status: OSStatus)
+        
+        var isReadable: Bool {
+            switch self {
+            case .readable: return true
+            default: return false
+            }
+        }
+    }
+    
+    fileprivate var keychainState: KeychainState {
+        var query: [String: Any] = [:]
+        query[String(kSecClass)] = String(kSecClassGenericPassword)
+        query[String(kSecAttrSynchronizable)] = kSecAttrSynchronizableAny
+        query[String(kSecAttrService)] = "RxUtils_service"
+        query[String(kSecMatchLimit)] = kSecMatchLimitOne
+        query[String(kSecReturnData)] = kCFBooleanTrue
+        query[String(kSecAttrAccount)] = "RxUtils_is_keychain_accessible_key"
+        
+        var result: AnyObject?
+        let status = SecItemCopyMatching(query as CFDictionary, &result)
+        if status == errSecSuccess || status == errSecItemNotFound {
+            return .readable
+        } else {
+            return .notReadable(status: status)
+        }
+    }
+}
