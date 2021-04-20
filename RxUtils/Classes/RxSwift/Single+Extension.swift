@@ -46,7 +46,10 @@ public extension PrimitiveSequence where Trait == SingleTrait {
      - parameter shouldRetry: Custom optional closure for checking error (if returns true, repeat will be performed)
      - returns: Single sequence that will be automatically repeat if error occurred
      */
-    func retry(_ behavior: RepeatBehavior, scheduler: SchedulerType, shouldRetry: RetryPredicate?) -> Single<Element> {
+    func retry(_ behavior: RepeatBehavior,
+               scheduler: SchedulerType = MainScheduler.instance,
+               shouldRetry: RetryPredicate? = nil) -> Single<Element> {
+        
         asObservable()
             .retry(behavior, scheduler: scheduler, shouldRetry: shouldRetry)
             .asSingle()
