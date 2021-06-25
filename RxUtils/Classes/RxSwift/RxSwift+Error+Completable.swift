@@ -13,6 +13,6 @@ public extension PrimitiveSequence where Trait == RxSwift.CompletableTrait, Elem
     
     /// Just completes a sequence on an error.
     func catchErrorJustComplete() -> Completable {
-        catchError { _ in Completable.empty() }
+        self.catch { _ in Completable.empty() }
     }
 }

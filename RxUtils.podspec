@@ -38,8 +38,8 @@ A helpful collection of RxSwift utils.
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'Foundation', 'UIKit'
-  s.dependency 'RxSwift', '~> 5'
-  s.dependency 'RxCocoa', '~> 5'
-  s.dependency 'RxOptional', '~> 4'
-  s.dependency 'RxSwiftExt', '~> 5'
+  s.dependency 'RxSwift', '~> 6'
+  s.dependency 'RxCocoa', '~> 6'
+  s.dependency 'RxOptional', '~> 5'
+  s.dependency 'RxSwiftExt', '~> 6'
 end

@@ -27,7 +27,7 @@ public extension ObservableType {
      - parameter onError: Function to invoke on `weak` upon errored termination of the observable sequence.
      - returns: Subscription object used to unsubscribe from the observable sequence.
      */
-    func subscribeOnError(_ onError: @escaping (Error) -> Void) -> Disposable {
+    func subscribeOnFailure(_ onError: @escaping (Error) -> Void) -> Disposable {
         return subscribe(onError: onError)
     }
     

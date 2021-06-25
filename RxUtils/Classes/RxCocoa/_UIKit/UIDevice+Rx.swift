@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import UIKit
 
 public extension Reactive where Base: UIDevice {
     

@@ -29,7 +29,7 @@ public extension Reactive where Base: UIApplication {
                 
                 let willResignActive = NotificationCenter.default.rx.notification(UIApplication.willResignActiveNotification)
                 let willResignActiveDisposable = willResignActive
-                    .observeOn(MainScheduler.asyncInstance)
+                    .observe(on: MainScheduler.asyncInstance)
                     .map { _ in base.applicationState }
                     .subscribeOnNext(observer.onNext)
                 
@@ -54,7 +54,7 @@ public extension Reactive where Base: UIApplication {
         NotificationCenter.default.rx.notification(UIApplication.protectedDataDidBecomeAvailableNotification)
             .mapTo(true)
             .startWithDeferred { [weak base] in base?.isFirstUnlockHappened }
-            .takeUntil(.inclusive) { $0 }
+            .take(until: { $0 }, behavior: .inclusive)
     }
     
     /// Reactive wrapper for `isProtectedDataAvailable` property.
@@ -102,7 +102,7 @@ public extension Reactive where Base: UIApplication {
             .map { [base] _ in base.keychainState }
             .startWithDeferred { [base] in base.keychainState }
             .distinctUntilChanged()
-            .takeUntil(.inclusive) { $0.isReadable }
+            .take(until: { $0.isReadable }, behavior: .inclusive)
     }
 }
 

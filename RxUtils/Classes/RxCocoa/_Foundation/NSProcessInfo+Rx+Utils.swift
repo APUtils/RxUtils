@@ -19,6 +19,6 @@ public extension Reactive where Base: ProcessInfo {
             .startWithDeferred { [weak base] in base?.isLowPowerModeEnabled }
             .distinctUntilChanged()
             // Notification isn't comming from the main thread =\
-            .observeOn(ConcurrentMainScheduler.instance)
+            .observe(on: ConcurrentMainScheduler.instance)
     }
 }

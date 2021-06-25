@@ -34,7 +34,7 @@ public extension ObservableType {
                 
                 element = $0
             }
-            .catchError {
+            .catch {
                 lock.lock(); defer { lock.unlock() }
                 
                 if element != nil {

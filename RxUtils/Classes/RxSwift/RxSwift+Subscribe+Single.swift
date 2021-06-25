@@ -25,7 +25,7 @@ public extension PrimitiveSequence where Trait == SingleTrait {
      - parameter onError: Action to invoke upon errored termination of the observable sequence.
      - returns: Subscription object used to unsubscribe from the observable sequence.
      */
-    func subscribeOnError(_ onError: @escaping (Error) -> Void) -> Disposable {
-        return subscribe(onError: onError)
+    func subscribeOnFailure(_ onFailure: @escaping (Error) -> Void) -> Disposable {
+        return subscribe(onFailure: onFailure)
     }
 }

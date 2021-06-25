@@ -20,7 +20,7 @@ public extension ObservableType {
      - returns: An observable sequence containing the source sequence's elements, followed by the elements produced by the handler's resulting observable sequence in case an error occurred.
      */
     func catchError<A: AnyObject>(weak obj: A, _ handler: @escaping (A) -> (Error) throws -> Observable<Element>) -> Observable<Element> {
-        return self.catchError { [weak obj] error throws -> Observable<Element> in
+        return self.catch { [weak obj] error throws -> Observable<Element> in
             guard let obj = obj else { return .empty() }
             return try handler(obj)(error)
         }
@@ -36,7 +36,7 @@ public extension ObservableType {
      - returns: An observable sequence containing the source sequence's elements, followed by the elements produced by the handler's resulting observable sequence in case an error occurred.
      */
     func catchError<A: AnyObject>(weak obj: A, _ handler: @escaping (A, Error) throws -> Observable<Element>) -> Observable<Element> {
-        return self.catchError { [weak obj] error throws -> Observable<Element> in
+        return self.catch { [weak obj] error throws -> Observable<Element> in
             guard let obj = obj else { return .empty() }
             return try handler(obj, error)
         }
@@ -52,7 +52,7 @@ public extension ObservableType {
      - returns: An observable sequence containing the source sequence's elements, followed by the elements produced by the handler's resulting observable sequence in case an error occurred.
      */
     func catchError<A: AnyObject>(weak obj: A, _ handler: @escaping (A) -> () throws -> Observable<Element>) -> Observable<Element> {
-        return self.catchError { [weak obj] error throws -> Observable<Element> in
+        return self.catch { [weak obj] error throws -> Observable<Element> in
             guard let obj = obj else { return .empty() }
             return try handler(obj)()
         }
