@@ -128,18 +128,36 @@ public extension UIApplication {
     }
     
     fileprivate var keychainState: KeychainState {
-        var query: [String: Any] = [:]
-        query[String(kSecClass)] = String(kSecClassGenericPassword)
-        query[String(kSecAttrSynchronizable)] = kSecAttrSynchronizableAny
-        query[String(kSecAttrService)] = "RxUtils_service"
-        query[String(kSecMatchLimit)] = kSecMatchLimitOne
-        query[String(kSecReturnData)] = kCFBooleanTrue
-        query[String(kSecAttrAccount)] = "RxUtils_is_keychain_accessible_key"
+        var commonQuery: [String: Any] = [:]
+        commonQuery[String(kSecClass)] = String(kSecClassGenericPassword)
+        commonQuery[String(kSecAttrSynchronizable)] = kSecAttrSynchronizableAny
+        commonQuery[String(kSecAttrService)] = "RxUtils_service"
+        commonQuery[String(kSecAttrAccount)] = "RxUtils_is_keychain_accessible_key"
+        
+        var readQuery: [String: Any] = commonQuery
+        readQuery[String(kSecMatchLimit)] = kSecMatchLimitOne
+        readQuery[String(kSecReturnData)] = kCFBooleanTrue
         
         var result: AnyObject?
-        let status = SecItemCopyMatching(query as CFDictionary, &result)
-        if status == errSecSuccess || status == errSecItemNotFound {
+        let status = SecItemCopyMatching(readQuery as CFDictionary, &result)
+        
+        if status == errSecSuccess {
             return .readable
+            
+        } else if status == errSecItemNotFound {
+            // Add
+            var writeQuery: [String: Any] = commonQuery
+            writeQuery[String(kSecValueData)] = "value".data(using: .utf8, allowLossyConversion: true)
+            writeQuery[String(kSecAttrAccessible)] = String(kSecAttrAccessibleAfterFirstUnlock)
+            
+            var result: AnyObject?
+            let status = SecItemAdd(writeQuery as CFDictionary, &result)
+            if status == errSecSuccess {
+                return .readable
+            } else {
+                return .notReadable(status: status)
+            }
+            
         } else {
             return .notReadable(status: status)
         }

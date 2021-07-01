@@ -18,11 +18,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(UIApplication.KeychainState.notReadable(status: 2))
+        UIApplication.shared.rx
+            .isKeychainReadable
+            .debug("isKeychainReadable")
+            .subscribe()
+            .disposed(by: disposeBag)
         
         UIApplication.shared.rx
             .isProtectedDataAvailable
-            .debug()
+            .debug("isProtectedDataAvailable")
             .subscribe()
             .disposed(by: disposeBag)
     }
