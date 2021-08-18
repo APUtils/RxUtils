@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import RxSwiftExt
 
 public extension ObservableType {
     /// Maps error into other error.
@@ -20,5 +21,17 @@ public extension ObservableType {
     /// - parameter error: Error to transform to.
     func mapErrorTo(_ error: Error) -> Observable<Element> {
         return self.catch { error -> Observable<Element> in .error(error) }
+    }
+    
+    /// Catches error and just completes if `check` passes.
+    /// - Parameter check: Check to execute on received error.
+    func catchErrorJustComplete(_ check: @escaping (Error) -> Bool) -> Observable<Element> {
+        return self.catch { error -> Observable<Element> in
+            if check(error) {
+                return .empty()
+            } else {
+                return .error(error)
+            }
+        }
     }
 }
