@@ -14,6 +14,7 @@ public extension Reactive where Base: UIApplication {
     
     /// UIApplication's state observable.
     /// Starts with current application's state.
+    /// - note: Subscribe happens on the main thread.
     var applicationState: Observable<UIApplication.State> {
         return Observable
             .create { [base] observer in
@@ -36,14 +37,17 @@ public extension Reactive where Base: UIApplication {
                 return CompositeDisposable(didEnterBackgroundDisposable, didBecomeActiveDisposable, willResignActiveDisposable)
             }
             .startWithDeferred { [weak base] in base?.applicationState }
+            .subscribe(on: ConcurrentMainScheduler.instance)
             .distinctUntilChanged()
     }
     
     /// Background refresh status observable.
+    /// - note: Subscribe happens on the main thread.
     var backgroundRefreshStatus: Observable<UIBackgroundRefreshStatus> {
         NotificationCenter.default.rx.notification(UIApplication.backgroundRefreshStatusDidChangeNotification)
             .compactMap { [weak base] _ in base?.backgroundRefreshStatus }
             .startWithDeferred { [weak base] in base?.backgroundRefreshStatus }
+            .subscribe(on: ConcurrentMainScheduler.instance)
             .distinctUntilChanged()
     }
     
@@ -68,6 +72,7 @@ public extension Reactive where Base: UIApplication {
         
         return Observable.merge(available, unavailable)
             .startWithDeferred { [weak base] in base?.isProtectedDataAvailable }
+            .subscribe(on: ConcurrentMainScheduler.instance)
             .distinctUntilChanged()
     }
 }
