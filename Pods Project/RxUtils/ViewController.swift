@@ -18,6 +18,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        checkKeychain()
+        checkFlatMapThrottle()
+    }
+    
+    private func checkKeychain() {
         UIApplication.shared.rx
             .isKeychainReadable
             .debug("isKeychainReadable")
@@ -28,6 +33,31 @@ class ViewController: UIViewController {
             .isProtectedDataAvailable
             .debug("isProtectedDataAvailable")
             .subscribe()
+            .disposed(by: disposeBag)
+    }
+    
+    private func checkFlatMapThrottle() {
+        let processingQueue = DispatchQueue(label: "RxUtils.processing", qos: .userInteractive)
+        let processingScheduler = DispatchQueueScheduler(queue: processingQueue)
+        
+        let executeQueue = DispatchQueue(label: "RxUtils.execute", qos: .userInteractive)
+        let executeScheduler = DispatchQueueScheduler(queue: executeQueue)
+        Observable<Int>.timer(.seconds(0), period: .seconds(1), scheduler: processingScheduler)
+            .observe(on: processingScheduler)
+            .doOnNext { print("Process - \($0)") }
+            .flatMapThrottle(scheduler: executeScheduler) { i -> Observable<Int> in
+                Observable.just(i)
+                    .doOnNext { print("Execute - \($0).1") }
+                    .doOnNext { _ in sleep(1) }
+                    .doOnNext { print("Execute - \($0).2") }
+                    .doOnNext { _ in sleep(1) }
+                    .doOnNext { print("Execute - \($0).3") }
+                    .doOnNext { _ in sleep(1) }
+                    .doOnNext { print("Execute - \($0).4") }
+            }
+            .subscribeOnNext {
+                print("Finish - \($0)")
+            }
             .disposed(by: disposeBag)
     }
 }

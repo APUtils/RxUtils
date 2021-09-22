@@ -10,6 +10,8 @@ import Foundation
 import RxCocoa
 import RxSwift
 
+// ******************************* MARK: - Emit
+
 public extension SharedSequenceConvertibleType where SharingStrategy == SignalSharingStrategy {
     
     /**
@@ -39,5 +41,15 @@ public extension SharedSequenceConvertibleType where SharingStrategy == SignalSh
      */
     func emitOnDisposed(_ onDisposed: @escaping () -> Void) -> Disposable {
         return emit(onDisposed: onDisposed)
+    }
+}
+
+// ******************************* MARK: - Operators
+
+public extension SharedSequenceConvertibleType where SharingStrategy == SignalSharingStrategy {
+    
+    /// Projects each element of an signal sequence into Void
+    func mapToVoid() -> Signal<Void> {
+        return map { _ in () }
     }
 }

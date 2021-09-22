@@ -1,5 +1,5 @@
 //
-//  Single+Extension.swift
+//  RxSwift+Single.swift
 //  RxUtils
 //
 //  Created by Anton Plebanovich on 3/21/21.
