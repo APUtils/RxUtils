@@ -33,6 +33,7 @@ public extension ObservableConvertibleType {
             _lock.lock(); defer { _lock.unlock() }
             
             if let throttledElement = _throttledElement {
+                _throttledElement = nil
                 return Observable.just(throttledElement)
                     .observe(on: scheduler)
                     .flatMap { try selector($0) }
