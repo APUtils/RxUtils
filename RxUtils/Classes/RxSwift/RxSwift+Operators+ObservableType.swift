@@ -82,13 +82,6 @@ public extension ObservableType {
 public extension ObservableType where Element: Collection {
     
     /**
-     Projects each element of an observable collection into a new form.
-     
-     - parameter transform: A transform function to apply to each element of the source collection.
-     - returns: An observable collection whose elements are the result of invoking the transform function on each element of source.
-     */
-    
-    /**
      Filters each element of an observable collection based on a predicate.
      
      - seealso: [filter operator on reactivex.io](http://reactivex.io/documentation/operators/filter.html)
