@@ -57,7 +57,7 @@ public extension PrimitiveSequence where Trait == SingleTrait {
 public extension PrimitiveSequence where Trait == SingleTrait, Element: Collection {
     
     /**
-     Filters each element of an observable collection based on a predicate.
+     Filters each element of a single collection based on a predicate.
      
      - seealso: [filter operator on reactivex.io](http://reactivex.io/documentation/operators/filter.html)
      
@@ -66,6 +66,18 @@ public extension PrimitiveSequence where Trait == SingleTrait, Element: Collecti
      */
     func filterMany(_ predicate: @escaping (Element.Element) throws -> Bool) -> Single<[Element.Element]> {
         map { try $0.filter(predicate) }
+    }
+    
+    /**
+     Projects each element of a single collection into a new form.
+     
+     - parameter transform: A transform function to apply to each element of the source collection.
+     - returns: A single collection whose elements are the result of invoking the transform function on each element of source.
+     */
+    func mapMany<Result>(_ transform: @escaping (Element.Element) throws -> Result) -> Single<[Result]> {
+        return map { collection -> [Result] in
+            try collection.map(transform)
+        }
     }
 }
 
