@@ -60,4 +60,17 @@ class ViewController: UIViewController {
             }
             .disposed(by: disposeBag)
     }
+    
+    @IBAction fileprivate func onShowAlertTap(_ sender: Any) {
+//        _ = Single.just(())
+//            .showContinueAlert(message: "Are you sure want to continue?")
+//            .timeout(.seconds(5), scheduler: MainScheduler.instance)
+//            .debug("showContinueAlert")
+//            .subscribe()
+        
+        _ = Single.just(())
+            .showOkAlert(message: "Execution will continue")
+            .debug("showOkAlert")
+            .subscribe()
+    }
 }
