@@ -14,11 +14,13 @@ public extension ObservableType {
     
     /// Combines element with previous element. Previous element is `nil` on first element.
     func withPrevious() -> Observable<(Element?, Element)> {
-        self.scan([]) { previous, current in
-                Array(previous + [current]).suffix(2)
-            }
-            .map { arr -> (previous: Element?, current: Element) in
-                (arr.count > 1 ? arr.first : nil, arr.last!)
+        var _previous: Element?
+        let _recursiveLock = NSRecursiveLock()
+        
+        return map { element -> (previous: Element?, current: Element) in
+            _recursiveLock.lock(); defer { _recursiveLock.unlock() }
+            defer { _previous = element }
+            return (_previous, element)
         }
     }
     
@@ -37,11 +39,13 @@ public extension ObservableType {
 public extension ObservableType where Element: OptionalType {
     /// Combines element with previous element. Previous element is `nil` on first element.
     func withPrevious() -> Observable<(Element.Wrapped?, Element.Wrapped?)> {
-        self.scan([]) { previous, current in
-                Array(previous + [current]).suffix(2)
-            }
-            .map { arr -> (previous: Element.Wrapped?, current: Element.Wrapped?) in
-                (arr.first?.value, arr.last?.value)
+        var _previous: Element.Wrapped?
+        let _recursiveLock = NSRecursiveLock()
+        
+        return map { element -> (previous: Element.Wrapped?, current: Element.Wrapped?) in
+            _recursiveLock.lock(); defer { _recursiveLock.unlock() }
+            defer { _previous = element.value }
+            return (_previous, element.value)
         }
     }
 }
