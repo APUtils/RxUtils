@@ -11,7 +11,7 @@ import RxCocoa
 import RxSwift
 import UIKit
 
-extension Reactive where Base: UIScrollView {
+public extension Reactive where Base: UIScrollView {
     
     /// Reactive wrapper for contentInset
     var contentInset: ControlProperty<UIEdgeInsets> {

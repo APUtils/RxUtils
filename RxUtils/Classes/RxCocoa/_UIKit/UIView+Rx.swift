@@ -10,7 +10,7 @@ import RxCocoa
 import RxSwift
 import UIKit
 
-extension Reactive where Base: UIView {
+public extension Reactive where Base: UIView {
     /// Reactive wrapper for `load(_:)`
     var tintColor: Binder<UIColor> {
         return Binder(base, binding: { (view, tintColor) -> Void in
