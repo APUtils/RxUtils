@@ -3,6 +3,97 @@ All notable changes to this project will be documented in this file.
 `RxUtils` adheres to [Semantic Versioning](http://semver.org/).
 
 
+## [2.0.0](https://github.com/APUtils/RxUtils/releases/tag/2.0.0)
+Released on 11/01/2021.
+
+#### Added
+- .withPrevious() for optional Element
+- Added .filterMany for ObservableType of collections of elements
+- Added ObservableType .catchErrorIfHadElement()
+- Completable .catchErrorJustComplete()
+- Completable .mapError
+- Completable .mapErrorTo
+- Completable .showContinueAlert(title:message:continue:cancel:)
+- Completable .showOkAlert(title:message:ok:)
+- DispatchQueueScheduler
+- Do operations for Maybe
+- Do operators for Completable trait
+- Driver + Do operators
+- flatMapFirst for Void element
+- Maybe .mapToVoid()
+- Maybe .preventCancellation()
+- Maybe .wrapIntoOptional()
+- Observable + do after operators
+- Observable .preventCancellation()
+- ObservableConvertibleType .flatMapAlert(title:message:actions:_:)
+- ObservableConvertibleType .flatMapThrottle(scheduler:selector:)
+- ObservableConvertibleType .showContinueAlert(title:message:continue:cancel:)
+- ObservableConvertibleType .showOkAlert(title:message:ok:)
+- ObservableType .asSafeSingle()
+- ObservableType .catchErrorJustComplete(_:)
+- ObservableType .doOnEmpty
+- ObservableType .errorIfNoElements()
+- ObservableType .skipFirstIf(_:)
+- ObservableType .skipFirstIfFalse()
+- ObservableType .withRequiredPrevious()
+- ObservableType .wrapIntoOptional()
+- OptionalType to work with extensions for optional Elements
+- preventCancellation -> preventDisposal
+- ProcessInfo .rx.lowPowerModeEnabled
+- RxSwiftExt dependency
+- Signal .mapToVoid()
+- Single .filterMany(_:)
+- Single .filterNil()
+- Single .flatMapCompletable(_:)
+- Single .flatMapObservable(_:)
+- Single .mapError
+- Single .mapErrorTo
+- Single .mapMany(_:)
+- Single .mapToVoid()
+- Single .pausableBuffered(_:)
+- Single .preventCancellation()
+- Single .retry(_:scheduler:shouldRetry:)
+- Single .showContinueAlert(title:message:continue:cancel:)
+- Single .showOkAlert(title:message:ok:)
+- Single .subscribeOnError(_:)
+- Single .subscribeOnSuccess(_:)
+- Single .wrapIntoOptional()
+- SPM support
+- Subscribe operators for Completable
+- Subscribe operators for Maybe
+- UIApplication .rx.backgroundRefreshStatus
+- UIApplication .rx.isKeychainReadable
+- UIApplication.shared.rx.isFirstUnlockHappened
+- UIApplication.shared.rx.isProtectedDataAvailable
+- UIDevice .rx.batteryLevel
+- UIDevice .rx.batteryState
+- UIScrollView .rx.contentInset
+- UIScrollView .rx.contentSize
+- UIScrollView .rx.currentPage
+- UIScrollView .rx.numberOfPages
+- UIScrollView .rx.pageSize
+- UIView .rx.bounds
+- UIView .rx.tintColor
+- UIViewController .rx.viewDidAppear
+- UIViewController .rx.viewDidDisappear
+- UIViewController .rx.viewDidLayoutSubviews
+- UIViewController .rx.viewDidLoad
+- UIViewController .rx.viewWillAppear
+- UIViewController .rx.viewWillDisappear
+- UIViewController .rx.viewWillLayoutSubviews
+
+#### Changed
+- .subscribe(on: ConcurrentMainScheduler.instance) for UI extensions
+- compareWithPrevious thread safety
+- distinctUntilChanged for applicationState
+- Removed @autoclosure for .startWithDeferred(_:) so it'll be obvious that parameter is captured
+- Removed OptionalType protocol and using RxOptional one instead
+
+#### Fixed
+- Better memory usage for .withPrevious() operators
+- preventDisposal unexpected observer capture fix
+
+
 ## [1.3.3](https://github.com/APUtils/RxUtils/releases/tag/1.3.3)
 Released on 08/16/2019.
 
