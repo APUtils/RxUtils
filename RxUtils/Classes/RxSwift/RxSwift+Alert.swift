@@ -11,6 +11,7 @@ import UIKit
 
 // ******************************* MARK: - Single
 
+@available(iOSApplicationExtension, unavailable)
 public extension PrimitiveSequence where Trait == SingleTrait {
     
     /// Shows a notification alert which will pause element processing until OK button is pressed.
@@ -48,6 +49,7 @@ public extension PrimitiveSequence where Trait == SingleTrait {
 
 // ******************************* MARK: - Completable
 
+@available(iOSApplicationExtension, unavailable)
 public extension PrimitiveSequence where Trait == CompletableTrait, Element == Never {
     
     /// Shows a notification alert which will pause element processing until OK button is pressed.
@@ -85,6 +87,7 @@ public extension PrimitiveSequence where Trait == CompletableTrait, Element == N
 
 // ******************************* MARK: - ObservableConvertibleType
 
+@available(iOSApplicationExtension, unavailable)
 public extension ObservableConvertibleType {
     
     /// Shows a notification alert which will pause element processing until OK button is pressed.
@@ -145,6 +148,7 @@ public extension ObservableConvertibleType {
 
 // ******************************* MARK: - AlertController
 
+@available(iOSApplicationExtension, unavailable)
 public extension UIAlertController {
     struct Action: Equatable {
         var title: String
@@ -163,6 +167,7 @@ public extension UIAlertController {
     }
 }
 
+@available(iOSApplicationExtension, unavailable)
 public extension Reactive where Base: UIAlertController {
     
     /// Shows an alert in a separate window.
@@ -195,6 +200,7 @@ public extension Reactive where Base: UIAlertController {
     }
 }
 
+@available(iOSApplicationExtension, unavailable)
 private final class AlertController: UIAlertController {
     
     private lazy var alertWindow: UIWindow? = {
@@ -210,6 +216,7 @@ private final class AlertController: UIAlertController {
         
         view.removeFromSuperview()
         
+        alertWindow?.rootViewController?.view.removeFromSuperview()
         alertWindow?.rootViewController = nil
         alertWindow?.isHidden = true
         
@@ -240,6 +247,7 @@ private final class AlertController: UIAlertController {
 
 // ******************************* MARK: - AppearanceCaptureViewController
 
+@available(iOSApplicationExtension, unavailable)
 private final class AppearanceCaptureViewController: UIViewController {
     private var customPreferredStatusBarStyle = UIStatusBarStyle.lightContent
     private var customPrefersStatusBarHidden = false
@@ -281,11 +289,24 @@ private final class AppearanceCaptureViewController: UIViewController {
 
 // ******************************* MARK: - Private Functions
 
+/// Returns top most view controller that handles status bar style.
+/// This property might be more accurate than `topViewController` if custom container view controllers configured properly to return their top most controllers for status bar appearance.
+@available(iOSApplicationExtension, unavailable)
+private var g_statusBarStyleTopViewController: UIViewController? {
+    var currentVc = g_topViewController()
+    while let newTopVc = currentVc?.childForStatusBarStyle {
+        currentVc = g_topViewController(base: newTopVc)
+    }
+    
+    return currentVc
+}
+
 /// Returns top view controller from `base` controller.
 /// - note: In case you are using custom container controllers in your application this method won't be able to process them.
 /// - parameters:
 ///   - base: Base controller from which to start. If not specified or nil then application delegate window's rootViewController will be used.
 ///   - shouldCheckPresented: Should it check for presented controllers?
+@available(iOSApplicationExtension, unavailable)
 private func g_topViewController(base: UIViewController? = nil, shouldCheckPresented: Bool = true) -> UIViewController? {
     let base = base ?? UIApplication.shared.delegate?.window??.rootViewController
     
@@ -304,17 +325,6 @@ private func g_topViewController(base: UIViewController? = nil, shouldCheckPrese
     }
     
     return base
-}
-
-/// Returns top most view controller that handles status bar style.
-/// This property might be more accurate than `topViewController` if custom container view controllers configured properly to return their top most controllers for status bar appearance.
-private var g_statusBarStyleTopViewController: UIViewController? {
-    var currentVc = g_topViewController()
-    while let newTopVc = currentVc?.childForStatusBarStyle {
-        currentVc = g_topViewController(base: newTopVc)
-    }
-    
-    return currentVc
 }
 
 private func g_performInMain(_ closure: @escaping () -> Void) {
