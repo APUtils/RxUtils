@@ -66,6 +66,8 @@ public extension ObservableType {
     }
     
     /// Creates sequence that can not be disposed
+    /// - note: Please keep in mind that subscription is not disposed if sequence never ends.
+    /// This may lead to infinite memory grow. 
     func preventDisposal() -> Observable<Element> {
         return .create { observer in
             let lock = NSLock()
