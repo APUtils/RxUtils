@@ -16,11 +16,20 @@ public extension PrimitiveSequence where Trait == MaybeTrait {
         return map { _ in () }
     }
     
-    /// Creates sequence that can not be canceled
-    func preventCancellation() -> Maybe<Element> {
+    /// Creates sequence that can not be disposed
+    func preventDisposal() -> Maybe<Element> {
         return .create { observer in
-            _ = self.subscribe(observer)
-            return Disposables.create()
+            let lock = NSLock()
+            var observer: ((MaybeEvent<Element>) -> Void)? = observer
+            _ = self.subscribe { event in
+                lock.lock(); defer { lock.unlock() }
+                observer?(event)
+            }
+            
+            return Disposables.create {
+                lock.lock(); defer { lock.unlock() }
+                observer = nil
+            }
         }
     }
     

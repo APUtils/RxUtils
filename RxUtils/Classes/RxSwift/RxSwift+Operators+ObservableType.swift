@@ -65,11 +65,20 @@ public extension ObservableType {
         return map { _ in () }
     }
     
-    /// Creates sequence that can not be canceled
-    func preventCancellation() -> Observable<Element> {
+    /// Creates sequence that can not be disposed
+    func preventDisposal() -> Observable<Element> {
         return .create { observer in
-            _ = self.subscribe(observer)
-            return Disposables.create()
+            let lock = NSLock()
+            var observer: AnyObserver<Self.Element>? = observer
+            _ = self.subscribe { event in
+                lock.lock(); defer { lock.unlock() }
+                observer?.on(event)
+            }
+            
+            return Disposables.create {
+                lock.lock(); defer { lock.unlock() }
+                observer = nil
+            }
         }
     }
     

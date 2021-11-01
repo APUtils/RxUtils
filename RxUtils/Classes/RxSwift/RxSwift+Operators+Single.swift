@@ -19,12 +19,21 @@ public extension PrimitiveSequence where Trait == SingleTrait {
     func mapToVoid() -> Single<Void> {
         return map { _ in () }
     }
-
-    /// Creates sequence that can not be canceled
-    func preventCancellation() -> Single<Element> {
+    
+    /// Creates sequence that can not be disposed
+    func preventDisposal() -> Single<Element> {
         return .create { observer in
-            _ = self.subscribe(observer)
-            return Disposables.create()
+            let lock = NSLock()
+            var observer: ((Result<Element, Error>) -> Void)? = observer
+            _ = self.subscribe { event in
+                lock.lock(); defer { lock.unlock() }
+                observer?(event)
+            }
+            
+            return Disposables.create {
+                lock.lock(); defer { lock.unlock() }
+                observer = nil
+            }
         }
     }
     
