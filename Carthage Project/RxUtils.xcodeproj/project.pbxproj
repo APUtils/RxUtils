@@ -20,6 +20,7 @@
 		0DAAD1F7241BFFE400E7D8B1 /* RxSwift+Subscribe+Maybe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAAD1F6241BFFE400E7D8B1 /* RxSwift+Subscribe+Maybe.swift */; };
 		0DAAD1F9241C005D00E7D8B1 /* RxSwift+Subscribe+Completable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAAD1F8241C005D00E7D8B1 /* RxSwift+Subscribe+Completable.swift */; };
 		0DB80C8E241BC7DC00D67133 /* RxSwift+Do+Completable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB80C8D241BC7DC00D67133 /* RxSwift+Do+Completable.swift */; };
+		0DBEAA66274060D000D49F7A /* RxSwift+Maybe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBEAA65274060D000D49F7A /* RxSwift+Maybe.swift */; };
 		0DDD205D258B02D400C9B9AB /* RxSwift+SkipFirst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDD205C258B02D400C9B9AB /* RxSwift+SkipFirst.swift */; };
 		0DF810FA2445B00A00A25A81 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DF810F92445B00A00A25A81 /* RxRelay.framework */; };
 		0DF810FD2445B01A00A25A81 /* RxSwiftExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D210C7524409F20002F5304 /* RxSwiftExt.framework */; };
@@ -136,6 +137,7 @@
 		0DAAD1F6241BFFE400E7D8B1 /* RxSwift+Subscribe+Maybe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+Subscribe+Maybe.swift"; sourceTree = "<group>"; };
 		0DAAD1F8241C005D00E7D8B1 /* RxSwift+Subscribe+Completable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+Subscribe+Completable.swift"; sourceTree = "<group>"; };
 		0DB80C8D241BC7DC00D67133 /* RxSwift+Do+Completable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+Do+Completable.swift"; sourceTree = "<group>"; };
+		0DBEAA65274060D000D49F7A /* RxSwift+Maybe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxSwift+Maybe.swift"; sourceTree = "<group>"; };
 		0DDD205C258B02D400C9B9AB /* RxSwift+SkipFirst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxSwift+SkipFirst.swift"; sourceTree = "<group>"; };
 		0DF810F92445B00A00A25A81 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = ../Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 		0DFC79EC272FBF790035DD43 /* UIView+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Rx.swift"; sourceTree = "<group>"; };
@@ -410,6 +412,7 @@
 				E2E4B841228EAE3600107EEB /* RxSwift+Error+ObservableType.swift */,
 				E212C9AC23A2409400147166 /* RxSwift+Error+Single.swift */,
 				0DFC79F4272FBFD60035DD43 /* RxSwift+FlatMapThrottle.swift */,
+				0DBEAA65274060D000D49F7A /* RxSwift+Maybe.swift */,
 				E2F369412407C978004DDD17 /* RxSwift+Operators+Maybe.swift */,
 				E25AD22622DCC02B00BD13B4 /* RxSwift+Operators+ObservableType.swift */,
 				E28ADDEF23991B1000A8AE87 /* RxSwift+Operators+Single.swift */,
@@ -697,6 +700,7 @@
 				E2E4B843228EAE3600107EEB /* UIApplication+Rx.swift in Sources */,
 				E2E4B848228EAE3600107EEB /* RxSwift+Weak+Subscribe+ObservableType.swift in Sources */,
 				E2E4B84C228EAE3600107EEB /* RxSwift+Error+ObservableType.swift in Sources */,
+				0DBEAA66274060D000D49F7A /* RxSwift+Maybe.swift in Sources */,
 				E2E4B846228EAE3600107EEB /* RxSwift+Weak+FlatMap+ObservableType.swift in Sources */,
 				0DFC79EE272FBF790035DD43 /* UIView+Rx.swift in Sources */,
 			);
