@@ -26,20 +26,6 @@ public extension PrimitiveSequence where Trait == SingleTrait {
     }
     
     /**
-     Projects success element of a single trait sequence to a completable sequence.
-     
-     - seealso: [flatMap operator on reactivex.io](http://reactivex.io/documentation/operators/flatmap.html)
-     
-     - parameter selector: A transform function to apply to an element.
-     - returns: A completable sequence.
-     */
-    func flatMapCompletable(_ selector: @escaping (Element) throws -> Completable) -> Completable {
-        asObservable()
-            .flatMap(selector)
-            .asCompletable()
-    }
-    
-    /**
      Repeats the source single sequence using given behavior in case of an error or until it successfully terminated
      - parameter behavior: Behavior that will be used in case of an error
      - parameter scheduler: Scheduler that will be used for delaying subscription after error

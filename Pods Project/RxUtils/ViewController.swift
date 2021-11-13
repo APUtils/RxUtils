@@ -20,6 +20,9 @@ class ViewController: UIViewController {
         
         checkKeychain()
         checkFlatMapThrottle()
+        
+        _ = Single.just(1).flatMapCompletable { _ in return .empty() }
+        _ = Maybe.just(1).flatMapCompletable { _ in return .empty() }
     }
     
     private func checkKeychain() {
