@@ -13,6 +13,8 @@ public extension RxUtilsError {
     static let noElements: RxUtilsError = .init(code: 1, message: "Subscription was completed without emmiting any elements.")
 }
 
+// ******************************* MARK: - ObservableType<Element>
+
 public extension ObservableType {
     
     /// Same as `asSingle()` but completes right after gets the first element.
@@ -88,7 +90,15 @@ public extension ObservableType {
     func wrapIntoOptional() -> Observable<Element?> {
         return self.map { $0 }
     }
+    
+    func flatMapLatestCompletable(_ selector: @escaping (Element) throws -> Completable) -> Completable {
+        asObservable()
+            .flatMapLatest(selector)
+            .asCompletable()
+    }
 }
+
+// ******************************* MARK: - ObservableType<[Element]>
 
 public extension ObservableType where Element: Collection {
     

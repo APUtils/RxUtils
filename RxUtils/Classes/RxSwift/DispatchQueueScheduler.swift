@@ -154,3 +154,9 @@ public extension DispatchQueueConfiguration {
         return cancelTimer
     }
 }
+
+// ******************************* MARK: - Main
+
+public extension DispatchQueueScheduler {
+    static let main = DispatchQueueScheduler(queue: .main)
+}

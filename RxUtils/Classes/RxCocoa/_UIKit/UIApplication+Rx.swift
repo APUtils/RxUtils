@@ -168,3 +168,59 @@ public extension UIApplication {
         }
     }
 }
+
+// ******************************* MARK: - Did Leave Background
+
+public extension Reactive where Base: UIApplication {
+    
+    /// Triggers event each time the app leaves the background.
+    /// Event is a time interval that app spent in the background.
+    /// - note: Useful to use for a refresh logic.
+    /// - note: It doesn't trigger on the app start so preventing excessive updates.
+    var didLeaveBackground: Observable<TimeInterval> {
+        
+        var _date = Date()
+        let _lock = NSRecursiveLock()
+        
+        return applicationState
+            .doOnNext { applicationState in
+                if applicationState == .background {
+                    _lock.lock(); defer { _lock.unlock() }
+                    _date = Date()
+                }
+            }
+            .withRequiredPrevious()
+            .filter { previous, _ in previous == .background }
+            .map { _ in
+                _lock.lock(); defer { _lock.unlock() }
+                return Date().timeIntervalSince(_date)
+            }
+            .doOnSubscribe {
+                _lock.lock(); defer { _lock.unlock() }
+                _date = Date()
+            }
+    }
+}
+
+public extension ObservableType {
+    
+    /// Produces duplicate events on app leave background so UI may be reloaded for example.
+    @available(iOSApplicationExtension, unavailable)
+    func reloadOnLeaveBackground() -> Observable<Element> {
+        Observable.combineLatest(UIApplication.shared.rx.didLeaveBackground.startWith(0),
+                                 self)
+            .map { $1 }
+    }
+}
+
+public extension SharedSequenceConvertibleType where SharingStrategy == DriverSharingStrategy {
+    
+    /// Produces duplicate events on app leave background so UI may be reloaded for example.
+    @available(iOSApplicationExtension, unavailable)
+    func reloadOnLeaveBackground() -> Driver<Element> {
+        asObservable()
+            .reloadOnLeaveBackground()
+            .asDriver(onErrorDriveWith: .empty())
+    }
+}
+
