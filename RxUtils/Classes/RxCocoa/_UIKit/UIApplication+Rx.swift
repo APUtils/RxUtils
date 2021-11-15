@@ -177,7 +177,7 @@ public extension Reactive where Base: UIApplication {
     /// Event is a time interval that app spent in the background.
     /// - note: Useful to use for a refresh logic.
     /// - note: It doesn't trigger on the app start so preventing excessive updates.
-    var didLeaveBackground: Observable<TimeInterval> {
+    var didLeaveBackgroundWithTimeInterval: Observable<TimeInterval> {
         
         var _date = Date()
         let _lock = NSRecursiveLock()
@@ -200,6 +200,13 @@ public extension Reactive where Base: UIApplication {
                 _date = Date()
             }
     }
+    
+    /// Triggers event each time the app leaves the background.
+    /// - note: Useful to use for a refresh logic.
+    /// - note: It doesn't trigger on the app start so preventing excessive updates.
+    var didLeaveBackground: Observable<Void> {
+        didLeaveBackgroundWithTimeInterval.mapToVoid()
+    }
 }
 
 public extension ObservableType {
@@ -207,7 +214,7 @@ public extension ObservableType {
     /// Produces duplicate events on app leave background so UI may be reloaded for example.
     @available(iOSApplicationExtension, unavailable)
     func reloadOnLeaveBackground() -> Observable<Element> {
-        Observable.combineLatest(UIApplication.shared.rx.didLeaveBackground.startWith(0),
+        Observable.combineLatest(UIApplication.shared.rx.didLeaveBackgroundWithTimeInterval.startWith(0),
                                  self)
             .map { $1 }
     }
