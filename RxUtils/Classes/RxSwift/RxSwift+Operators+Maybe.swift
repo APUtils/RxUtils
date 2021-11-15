@@ -23,15 +23,15 @@ public extension PrimitiveSequence where Trait == MaybeTrait {
     /// This may lead to infinite memory grow.
     func preventDisposal() -> Maybe<Element> {
         return .create { observer in
-            let lock = NSLock()
+            let recursiveLock = NSRecursiveLock()
             var observer: ((MaybeEvent<Element>) -> Void)? = observer
             _ = self.subscribe { event in
-                lock.lock(); defer { lock.unlock() }
+                recursiveLock.lock(); defer { recursiveLock.unlock() }
                 observer?(event)
             }
             
             return Disposables.create {
-                lock.lock(); defer { lock.unlock() }
+                recursiveLock.lock(); defer { recursiveLock.unlock() }
                 observer = nil
             }
         }
