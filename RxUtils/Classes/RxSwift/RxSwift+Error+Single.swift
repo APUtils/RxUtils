@@ -21,4 +21,11 @@ public extension PrimitiveSequence where Trait == SingleTrait {
     func mapErrorTo(_ error: Error) -> Single<Element> {
         return self.catch { error -> Single<Element> in .error(error) }
     }
+    
+    /// Retries sequence if condition is met.
+    func retryIf(_ if: @escaping (Error) -> Bool) -> Single<Element> {
+        asObservable()
+            .retryIf(`if`)
+            .asSingle()
+    }
 }

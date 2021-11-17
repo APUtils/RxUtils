@@ -14,13 +14,13 @@ public extension ObservableType {
     /// Skips the first element in a sequence if predicate matches.
     func skipFirstIf(_ predicate: @escaping (Element) -> Bool) -> Observable<Element> {
         
-        var first = true
-        let lock = NSRecursiveLock()
+        var _first = true
+        let _recursiveLock = NSRecursiveLock()
         
         return filter {
-            lock.lock(); defer { lock.unlock() }
-            let skip = first && predicate($0)
-            first = false
+            _recursiveLock.lock(); defer { _recursiveLock.unlock() }
+            let skip = _first && predicate($0)
+            _first = false
             return !skip
         }
     }

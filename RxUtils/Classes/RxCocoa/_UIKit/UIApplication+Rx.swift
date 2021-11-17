@@ -180,23 +180,23 @@ public extension Reactive where Base: UIApplication {
     var didLeaveBackgroundWithTimeInterval: Observable<TimeInterval> {
         
         var _date = Date()
-        let _lock = NSRecursiveLock()
+        let _recursiveLock = NSRecursiveLock()
         
         return applicationState
             .doOnNext { applicationState in
-                if applicationState == .background {
-                    _lock.lock(); defer { _lock.unlock() }
+                if applicationState == UIApplication.State.background {
+                    _recursiveLock.lock(); defer { _recursiveLock.unlock() }
                     _date = Date()
                 }
             }
             .withRequiredPrevious()
-            .filter { previous, _ in previous == .background }
+            .filter { previous, _ in previous == UIApplication.State.background }
             .map { _ in
-                _lock.lock(); defer { _lock.unlock() }
+                _recursiveLock.lock(); defer { _recursiveLock.unlock() }
                 return Date().timeIntervalSince(_date)
             }
             .doOnSubscribe {
-                _lock.lock(); defer { _lock.unlock() }
+                _recursiveLock.lock(); defer { _recursiveLock.unlock() }
                 _date = Date()
             }
     }

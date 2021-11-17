@@ -18,7 +18,7 @@ PODS:
   - RxSwiftExt/RxCocoa (6.0.1):
     - RxCocoa (~> 6.0)
     - RxSwiftExt/Core
-  - RxUtils (2.0.0):
+  - RxUtils (2.0.1):
     - RxCocoa (~> 6)
     - RxOptional (~> 5)
     - RxSwift (~> 6)
@@ -53,7 +53,7 @@ SPEC CHECKSUMS:
   RxRelay: e72dbfd157807478401ef1982e1c61c945c94b2f
   RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f
   RxSwiftExt: d61c4b9b06e0a448041b1c659e0f1b5c5a035afc
-  RxUtils: 20db3fe06c069cc4714ad31eac9a937bde4df328
+  RxUtils: c3f4d0580ee94c98339a5a7afd41b8810fc9801b
 
 PODFILE CHECKSUM: d0b1f2256041d96e69e85f19126f11abacb4049a
 

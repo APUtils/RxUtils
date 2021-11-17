@@ -27,19 +27,19 @@ public extension ObservableType {
     
     /// Prevent error emission if observable chain had element.
     func catchErrorIfHadElement() -> Observable<Element> {
-        let lock = NSRecursiveLock()
-        var element: Element?
+        let _recursiveLock = NSRecursiveLock()
+        var _element: Element?
         
         return self
             .doOnNext {
-                lock.lock(); defer { lock.unlock() }
+                _recursiveLock.lock(); defer { _recursiveLock.unlock() }
                 
-                element = $0
+                _element = $0
             }
             .catch {
-                lock.lock(); defer { lock.unlock() }
+                _recursiveLock.lock(); defer { _recursiveLock.unlock() }
                 
-                if element != nil {
+                if _element != nil {
                     return .empty()
                 } else {
                     return .error($0)

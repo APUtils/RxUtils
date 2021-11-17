@@ -23,14 +23,14 @@ public extension ObservableConvertibleType {
         
         var _throttledElement: Element? = nil
         var _executing: Bool = false
-        let _lock = NSRecursiveLock()
+        let _recursiveLock = NSRecursiveLock()
         let _backgroundQueueKey = DispatchSpecificKey<Void>()
         var _subscribeOnTheSameQueue = false
         
         scheduler.configuration.queue.setSpecific(key: _backgroundQueueKey, value: ())
         
         func executeNext(element: Source.Element) -> Observable<Source.Element> {
-            _lock.lock(); defer { _lock.unlock() }
+            _recursiveLock.lock(); defer { _recursiveLock.unlock() }
             
             if let throttledElement = _throttledElement {
                 _throttledElement = nil
@@ -48,7 +48,7 @@ public extension ObservableConvertibleType {
         
         return asObservable()
             .flatMap { element -> Observable<Source.Element> in
-                _lock.lock(); defer { _lock.unlock() }
+                _recursiveLock.lock(); defer { _recursiveLock.unlock() }
                 
                 if _executing {
                     _throttledElement = element
@@ -59,14 +59,14 @@ public extension ObservableConvertibleType {
                     return Observable.just(element)
                         .doOnNext { _ in
                             if DispatchQueue.getSpecific(key: _backgroundQueueKey) != nil {
-                                _lock.lock(); defer { _lock.unlock() }
+                                _recursiveLock.lock(); defer { _recursiveLock.unlock() }
                                 _subscribeOnTheSameQueue = true
                             }
                         }
                         .observe(on: scheduler)
                         .flatMap { try selector($0) }
                         .doOnNext { _ in
-                            _lock.lock(); defer { _lock.unlock() }
+                            _recursiveLock.lock(); defer { _recursiveLock.unlock() }
                             if _subscribeOnTheSameQueue {
                                 assertionFailure("Events and execution should not happen on the same queue or `flatMapThrottle` won't work.")
                             }

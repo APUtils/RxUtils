@@ -34,4 +34,18 @@ public extension ObservableType {
             }
         }
     }
+    
+    /// Retries sequence if condition is met.
+    func retryIf(_ if: @escaping (Error) -> Bool) -> Observable<Element> {
+        retry { observableError in
+            observableError
+                .map { error -> Bool in
+                    if `if`(error) {
+                        return true
+                    } else {
+                        throw error
+                    }
+                }
+        }
+    }
 }
