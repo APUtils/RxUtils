@@ -7,28 +7,22 @@
 [![Platform](https://img.shields.io/cocoapods/p/RxUtils.svg?style=flat)](http://cocoapods.org/pods/RxUtils)
 [![CI Status](http://img.shields.io/travis/APUtils/RxUtils.svg?style=flat)](https://travis-ci.org/APUtils/RxUtils)
 
-TODO
+A helpful collection of RxSwift utils.
 
 ## Example
 
 Clone the repo and then open `Carthage Project/RxUtils.xcodeproj`
 
-## GIF animation
-
-TODO
-
-<img src="Example/RxUtils/<#NAME#>.gif"/>
-
 ## Installation
 
-#### Carthage
+#### Carthage **DEPRECATED**
 
 Please check [official guide](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos)
 
 Cartfile:
 
 ```
-github "APUtils/RxUtils" ~> 1.3
+github "APUtils/RxUtils" ~> 3.0
 ```
 
 #### CocoaPods
@@ -37,7 +31,7 @@ RxUtils is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'RxUtils', '~> 1.3'
+pod 'RxUtils', '~> 3.0'
 ```
 
 #### Swift Package Manager
@@ -48,13 +42,11 @@ Once you have your Swift package set up, adding `RxUtils` as a dependency is as 
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/APUtils/RxUtils.git", .upToNextMajor(from: "1.3.0"))
+    .package(url: "https://github.com/APUtils/RxUtils.git", .upToNextMajor(from: "2.0.1"))
 ]
 ```
 
 ## Usage
-
-TODO
 
 See example and test projects for more details.
 

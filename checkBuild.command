@@ -28,9 +28,10 @@ if [ "${swift_files_count}" -ne "${swift_files_in_project_count}" ]; then
 fi
 echo ""
 
-echo -e "Building Swift Package..."
-swift build -Xswiftc "-sdk" -Xswiftc "`xcrun --sdk iphonesimulator --show-sdk-path`" -Xswiftc "-target" -Xswiftc "x86_64-apple-ios14.4-simulator"
-echo ""
+# TODO: Add support later
+#echo -e "Building Swift Package..."
+#swift build -Xswiftc "-sdk" -Xswiftc "`xcrun --sdk iphonesimulator --show-sdk-path`" -Xswiftc "-target" -Xswiftc "x86_64-apple-ios14.4-simulator"
+#echo ""
 
 echo -e "Building Pods project..."
 set -o pipefail && xcodebuild -workspace "Pods Project/RxUtils.xcworkspace" -scheme "RxUtils-Example" -configuration "Release" -sdk iphonesimulator | xcpretty
@@ -67,7 +68,7 @@ else
     fi
 fi
 
-set -o pipefail && xcodebuild -project "${carthage_xcodeproj_path}" -sdk iphonesimulator -scheme "Example" -destination "platform=iOS Simulator,id=${simulator_id}" test | xcpretty
+set -o pipefail && xcodebuild -workspace "Pods Project/RxUtils.xcworkspace" -scheme "RxUtils-Example" -sdk iphonesimulator -destination "platform=iOS Simulator,id=${simulator_id}" test | xcpretty
 
 echo ""
 echo "SUCCESS!"

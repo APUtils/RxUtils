@@ -3,6 +3,40 @@ All notable changes to this project will be documented in this file.
 `RxUtils` adheres to [Semantic Versioning](http://semver.org/).
 
 
+## [3.0.0](https://github.com/APUtils/RxUtils/releases/tag/3.0.0)
+Released on 11/18/2021.
+
+#### Added
+- Completable .retry(_:scheduler:shouldRetry:)
+- Completable .retryIf(_:)
+- DispatchQueueScheduler.main
+- Driver .mapMany(_:)
+- Driver .reloadOnLeaveBackground()
+- Maybe .filterMany(_:)
+- Maybe .flatMapCompletable(_:)
+- Maybe .flatMapObservable(_:)
+- Maybe .mapMany(_:)
+- ObservableType .flatMapLatestCompletable(_:)
+- ObservableType .reloadOnLeaveBackground()
+- ObservableType .retryIf(_:)
+- RxTimeInterval .asTimeInterval
+- RxTimeInterval: CustomStringConvertible
+- Single .errorOnNil(_:)
+- Single .retryIf(_:)
+- Single .share(scope:)
+- TimeInterval .asRxTimeInterval
+- UIApplication .didLeaveBackground
+- UIApplication .didLeaveBackgroundWithTimeInterval
+- UILabel .rx.textColor
+
+#### Changed
+- Carthage is deprecated
+- Dependency on APExtensions/Occupiable and APExtensions/OptionalType
+- Moved RxOptional code to the framework directly
+
+#### Fixed
+- .preventDisposal() deadlock fix
+
 ## [2.0.0](https://github.com/APUtils/RxUtils/releases/tag/2.0.0)
 Released on 11/01/2021.
 

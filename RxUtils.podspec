@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'RxUtils'
-  s.version          = '2.0.1'
+  s.version          = '3.0.0'
   s.summary          = 'RxSwift utils'
 
 # This description is used to generate tags and improve search results.
@@ -29,17 +29,12 @@ A helpful collection of RxSwift utils.
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '10.0'
-
   s.source_files = 'RxUtils/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'RxUtils' => ['RxUtils/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'Foundation', 'UIKit'
+  
+  s.dependency 'APExtensions/Occupiable', '~> 10.1.6'
+  s.dependency 'APExtensions/OptionalType', '~> 10.1.6'
   s.dependency 'RxSwift', '~> 6'
   s.dependency 'RxCocoa', '~> 6'
-  s.dependency 'RxOptional', '~> 5'
   s.dependency 'RxSwiftExt', '~> 6'
 end

@@ -1,8 +1,6 @@
 # Deployment Target
 platform :ios, '12.0'
-
-source 'https://github.com/CocoaPods/Specs.git'
-source 'https://github.com/Artsy/Specs.git'
+install! 'cocoapods', :warn_for_unused_master_specs_repo => false
 
 # Add pods as frameworks so we could add obj-c and swift 3.0 pods
 use_frameworks!
@@ -10,9 +8,6 @@ use_frameworks!
 
 target 'RxUtils_Example' do
     pod 'RxUtils', :path => '../'
-    
-    pod 'RxSwift'
-    pod 'RxOptional'
 
     target 'RxUtils_Tests' do
         inherit! :search_paths

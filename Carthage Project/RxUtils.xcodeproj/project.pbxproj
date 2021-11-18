@@ -11,12 +11,16 @@
 		0D210C7624409F20002F5304 /* RxSwiftExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D210C7524409F20002F5304 /* RxSwiftExt.framework */; };
 		0D2A2F2F268590AE00D5EB21 /* RxSwiftExt.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0D210C7524409F20002F5304 /* RxSwiftExt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0D2A2F30268590BA00D5EB21 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B89DEB5F58DE4DE076F19770 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		0D2A2F31268590C200D5EB21 /* RxOptional.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F338E826D6C0B8E2AD5C0E36 /* RxOptional.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0D2A2F32268590CC00D5EB21 /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 351C0C5F43DEE45C165C941A /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0D2A2F33268590FF00D5EB21 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DF810F92445B00A00A25A81 /* RxRelay.framework */; };
 		0D2A2F34268590FF00D5EB21 /* RxRelay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0DF810F92445B00A00A25A81 /* RxRelay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0D36C8A3274135CB0061D2F0 /* UILabel+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D36C8A2274135CB0061D2F0 /* UILabel+Rx.swift */; };
 		0D36C8A7274138700061D2F0 /* RxSwift+Operators+Completable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D36C8A6274138700061D2F0 /* RxSwift+Operators+Completable.swift */; };
+		0D3CD35E2746C22A000AFFB6 /* Observable+Occupiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3CD3592746C22A000AFFB6 /* Observable+Occupiable.swift */; };
+		0D3CD35F2746C22A000AFFB6 /* RxOptionalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3CD35A2746C22A000AFFB6 /* RxOptionalError.swift */; };
+		0D3CD3602746C22A000AFFB6 /* Observable+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3CD35B2746C22A000AFFB6 /* Observable+Optional.swift */; };
+		0D3CD3612746C22A000AFFB6 /* SharedSequence+Occupiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3CD35C2746C22A000AFFB6 /* SharedSequence+Occupiable.swift */; };
+		0D3CD3622746C22A000AFFB6 /* SharedSequence+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3CD35D2746C22A000AFFB6 /* SharedSequence+Optional.swift */; };
 		0D85A2982449E2EB0061FDDD /* RxSwift+Error+Completable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D85A2972449E2EB0061FDDD /* RxSwift+Error+Completable.swift */; };
 		0D86103F2741517F00C07D44 /* RxTimeInterval+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D86103E2741517F00C07D44 /* RxTimeInterval+Extension.swift */; };
 		0D8610412741520100C07D44 /* RxCocoa+Operators+Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8610402741520100C07D44 /* RxCocoa+Operators+Driver.swift */; };
@@ -34,7 +38,6 @@
 		0DFC79F7272FBFD60035DD43 /* RxSwift+FlatMapThrottle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFC79F4272FBFD60035DD43 /* RxSwift+FlatMapThrottle.swift */; };
 		2E3969D4FAEC1BC07F9BAE7E /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 351C0C5F43DEE45C165C941A /* RxCocoa.framework */; };
 		543A082E950A41FC2BA96D73 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B89DEB5F58DE4DE076F19770 /* RxSwift.framework */; };
-		98CAE18C87F757E0D000E4D8 /* RxOptional.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F338E826D6C0B8E2AD5C0E36 /* RxOptional.framework */; };
 		E202681822117D03004CC28A /* RxUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = E202681622117D03004CC28A /* RxUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E212C9AD23A2409400147166 /* RxSwift+Error+Single.swift in Sources */ = {isa = PBXBuildFile; fileRef = E212C9AC23A2409400147166 /* RxSwift+Error+Single.swift */; };
 		E221254022F1E50600DCD338 /* RxSwift+WithPrevious+ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E221253F22F1E50600DCD338 /* RxSwift+WithPrevious+ObservableType.swift */; };
@@ -57,18 +60,12 @@
 		E286EA842294037500868FF7 /* RxCocoa+CompactMap+Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E286EA832294037500868FF7 /* RxCocoa+CompactMap+Driver.swift */; };
 		E286EA87229408E900868FF7 /* RxCocoa+Weak+Map+Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E286EA86229408E900868FF7 /* RxCocoa+Weak+Map+Driver.swift */; };
 		E28ADDF023991B1000A8AE87 /* RxSwift+Operators+Single.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28ADDEF23991B1000A8AE87 /* RxSwift+Operators+Single.swift */; };
-		E29600DD22FD8CB2008321BF /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E2A7396D2260D99900E97D55 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E29600DE22FD8CB2008321BF /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E2A7396C2260D99900E97D55 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E2A7394E2260CFC700E97D55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A7394D2260CFC700E97D55 /* AppDelegate.swift */; };
 		E2A739502260CFC700E97D55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A7394F2260CFC700E97D55 /* ViewController.swift */; };
 		E2A739532260CFC700E97D55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2A739512260CFC700E97D55 /* Main.storyboard */; };
 		E2A739552260CFC800E97D55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2A739542260CFC800E97D55 /* Assets.xcassets */; };
 		E2A739582260CFC800E97D55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2A739562260CFC800E97D55 /* LaunchScreen.storyboard */; };
-		E2A739632260CFC800E97D55 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A739622260CFC800E97D55 /* Tests.swift */; };
-		E2A7396E2260D99900E97D55 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2A7396C2260D99900E97D55 /* Quick.framework */; };
-		E2A7396F2260D99900E97D55 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2A7396D2260D99900E97D55 /* Nimble.framework */; };
 		E2C3134322DDF21600D6797A /* RxCocoa+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C3134222DDF21600D6797A /* RxCocoa+Signal.swift */; };
-		E2DCAD43226900E500EE108B /* RxOptional.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F338E826D6C0B8E2AD5C0E36 /* RxOptional.framework */; };
 		E2E4B843228EAE3600107EEB /* UIApplication+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E4B836228EAE3600107EEB /* UIApplication+Rx.swift */; };
 		E2E4B845228EAE3600107EEB /* RxCocoa+Drive.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E4B839228EAE3600107EEB /* RxCocoa+Drive.swift */; };
 		E2E4B846228EAE3600107EEB /* RxSwift+Weak+FlatMap+ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E4B83B228EAE3600107EEB /* RxSwift+Weak+FlatMap+ObservableType.swift */; };
@@ -90,13 +87,6 @@
 			remoteGlobalIDString = E202681222117D03004CC28A;
 			remoteInfo = RxUtils;
 		};
-		E2A7395F2260CFC800E97D55 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E202680A22117D03004CC28A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E2A7394A2260CFC700E97D55;
-			remoteInfo = "RxUtils-Example";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -107,24 +97,12 @@
 			dstSubfolderSpec = 10;
 			files = (
 				0D2A2F32268590CC00D5EB21 /* RxCocoa.framework in Embed Frameworks */,
-				0D2A2F31268590C200D5EB21 /* RxOptional.framework in Embed Frameworks */,
 				0D2A2F34268590FF00D5EB21 /* RxRelay.framework in Embed Frameworks */,
 				0D2A2F30268590BA00D5EB21 /* RxSwift.framework in Embed Frameworks */,
 				0D2A2F2F268590AE00D5EB21 /* RxSwiftExt.framework in Embed Frameworks */,
 				E275E07F22A03A4B00E9900C /* RxUtils.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E29600DC22FD8CA4008321BF /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				E29600DD22FD8CB2008321BF /* Nimble.framework in CopyFiles */,
-				E29600DE22FD8CB2008321BF /* Quick.framework in CopyFiles */,
-			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -136,6 +114,13 @@
 		0D2A2F2E2685894600D5EB21 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Package.swift; path = ../Package.swift; sourceTree = "<group>"; };
 		0D36C8A2274135CB0061D2F0 /* UILabel+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Rx.swift"; sourceTree = "<group>"; };
 		0D36C8A6274138700061D2F0 /* RxSwift+Operators+Completable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+Operators+Completable.swift"; sourceTree = "<group>"; };
+		0D3CD3592746C22A000AFFB6 /* Observable+Occupiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Occupiable.swift"; sourceTree = "<group>"; };
+		0D3CD35A2746C22A000AFFB6 /* RxOptionalError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxOptionalError.swift; sourceTree = "<group>"; };
+		0D3CD35B2746C22A000AFFB6 /* Observable+Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Optional.swift"; sourceTree = "<group>"; };
+		0D3CD35C2746C22A000AFFB6 /* SharedSequence+Occupiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SharedSequence+Occupiable.swift"; sourceTree = "<group>"; };
+		0D3CD35D2746C22A000AFFB6 /* SharedSequence+Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SharedSequence+Optional.swift"; sourceTree = "<group>"; };
+		0D3CD3632746C249000AFFB6 /* Cartfile.private */ = {isa = PBXFileReference; lastKnownFileType = text; name = Cartfile.private; path = ../Cartfile.private; sourceTree = "<group>"; };
+		0D3CD3642746C249000AFFB6 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Cartfile; path = ../Cartfile; sourceTree = "<group>"; };
 		0D85A2972449E2EB0061FDDD /* RxSwift+Error+Completable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+Error+Completable.swift"; sourceTree = "<group>"; };
 		0D86103E2741517F00C07D44 /* RxTimeInterval+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxTimeInterval+Extension.swift"; sourceTree = "<group>"; };
 		0D8610402741520100C07D44 /* RxCocoa+Operators+Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxCocoa+Operators+Driver.swift"; sourceTree = "<group>"; };
@@ -193,11 +178,6 @@
 		E2A739542260CFC800E97D55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2A739572260CFC800E97D55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2A739592260CFC800E97D55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E2A7395E2260CFC800E97D55 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E2A739622260CFC800E97D55 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		E2A739642260CFC800E97D55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E2A7396C2260D99900E97D55 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
-		E2A7396D2260D99900E97D55 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		E2C3134222DDF21600D6797A /* RxCocoa+Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxCocoa+Signal.swift"; sourceTree = "<group>"; };
 		E2E4B836228EAE3600107EEB /* UIApplication+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+Rx.swift"; sourceTree = "<group>"; };
 		E2E4B839228EAE3600107EEB /* RxCocoa+Drive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxCocoa+Drive.swift"; sourceTree = "<group>"; };
@@ -211,7 +191,6 @@
 		E2F369412407C978004DDD17 /* RxSwift+Operators+Maybe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+Operators+Maybe.swift"; sourceTree = "<group>"; };
 		E2FD624322F03FF7000F9971 /* RxSwift+Weak+CatchError+ObservableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+Weak+CatchError+ObservableType.swift"; sourceTree = "<group>"; };
 		E3A3C326AA2806CD63667A60 /* .travis.yml */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = .travis.yml; path = ../.travis.yml; sourceTree = "<group>"; };
-		F338E826D6C0B8E2AD5C0E36 /* RxOptional.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxOptional.framework; path = Carthage/Build/iOS/RxOptional.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,7 +200,6 @@
 			files = (
 				0D210C7624409F20002F5304 /* RxSwiftExt.framework in Frameworks */,
 				E26D80C32268FFA4001F80BB /* RxCocoa.framework in Frameworks */,
-				E2DCAD43226900E500EE108B /* RxOptional.framework in Frameworks */,
 				E26D80C42268FFA4001F80BB /* RxSwift.framework in Frameworks */,
 				0DF810FA2445B00A00A25A81 /* RxRelay.framework in Frameworks */,
 			);
@@ -232,7 +210,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E3969D4FAEC1BC07F9BAE7E /* RxCocoa.framework in Frameworks */,
-				98CAE18C87F757E0D000E4D8 /* RxOptional.framework in Frameworks */,
 				0D2A2F33268590FF00D5EB21 /* RxRelay.framework in Frameworks */,
 				E275E07E22A03A4B00E9900C /* RxUtils.framework in Frameworks */,
 				543A082E950A41FC2BA96D73 /* RxSwift.framework in Frameworks */,
@@ -240,21 +217,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E2A7395B2260CFC800E97D55 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E2A7396E2260D99900E97D55 /* Quick.framework in Frameworks */,
-				E2A7396F2260D99900E97D55 /* Nimble.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D3CD3582746C22A000AFFB6 /* RxOptional */ = {
+			isa = PBXGroup;
+			children = (
+				0D3CD3592746C22A000AFFB6 /* Observable+Occupiable.swift */,
+				0D3CD35A2746C22A000AFFB6 /* RxOptionalError.swift */,
+				0D3CD35B2746C22A000AFFB6 /* Observable+Optional.swift */,
+				0D3CD35C2746C22A000AFFB6 /* SharedSequence+Occupiable.swift */,
+				0D3CD35D2746C22A000AFFB6 /* SharedSequence+Optional.swift */,
+			);
+			path = RxOptional;
+			sourceTree = "<group>";
+		};
 		1834AC72A69DC91E1F3B8EDA /* _Carthage */ = {
 			isa = PBXGroup;
 			children = (
+				0D3CD3642746C249000AFFB6 /* Cartfile */,
+				0D3CD3632746C249000AFFB6 /* Cartfile.private */,
 				75997ED1E9FAC56B9BEC3F0E /* carthageAdd.command */,
 				722BFDE9DE58393B9D916719 /* carthageRemove.command */,
 				27A65933230C2FF4F758F562 /* carthageUpdate.command */,
@@ -268,7 +250,6 @@
 				E2A7396B2260D5A400E97D55 /* _ */,
 				E202681522117D03004CC28A /* RxUtils */,
 				E2A7394C2260CFC700E97D55 /* Example */,
-				E2A739612260CFC800E97D55 /* Tests */,
 				E202681422117D03004CC28A /* Products */,
 				F1BD9B4AF93178888C20C526 /* Frameworks */,
 			);
@@ -279,7 +260,6 @@
 			children = (
 				E202681322117D03004CC28A /* RxUtils.framework */,
 				E2A7394B2260CFC700E97D55 /* Example.app */,
-				E2A7395E2260CFC800E97D55 /* Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -320,6 +300,7 @@
 			children = (
 				E22FD59823914FFA005948EF /* Error */,
 				E2E4B835228EAE3600107EEB /* RxCocoa */,
+				0D3CD3582746C22A000AFFB6 /* RxOptional */,
 				E2E4B837228EAE3600107EEB /* RxSwift */,
 			);
 			name = _Classes;
@@ -354,15 +335,6 @@
 				E2A739592260CFC800E97D55 /* Info.plist */,
 			);
 			path = Example;
-			sourceTree = "<group>";
-		};
-		E2A739612260CFC800E97D55 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				E2A739622260CFC800E97D55 /* Tests.swift */,
-				E2A739642260CFC800E97D55 /* Info.plist */,
-			);
-			path = Tests;
 			sourceTree = "<group>";
 		};
 		E2A7396B2260D5A400E97D55 /* _ */ = {
@@ -450,10 +422,7 @@
 			isa = PBXGroup;
 			children = (
 				1834AC72A69DC91E1F3B8EDA /* _Carthage */,
-				E2A7396D2260D99900E97D55 /* Nimble.framework */,
-				E2A7396C2260D99900E97D55 /* Quick.framework */,
 				351C0C5F43DEE45C165C941A /* RxCocoa.framework */,
-				F338E826D6C0B8E2AD5C0E36 /* RxOptional.framework */,
 				0DF810F92445B00A00A25A81 /* RxRelay.framework */,
 				B89DEB5F58DE4DE076F19770 /* RxSwift.framework */,
 				0D210C7524409F20002F5304 /* RxSwiftExt.framework */,
@@ -514,26 +483,6 @@
 			productReference = E2A7394B2260CFC700E97D55 /* Example.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E2A7395D2260CFC800E97D55 /* Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E2A7396A2260CFC800E97D55 /* Build configuration list for PBXNativeTarget "Tests" */;
-			buildPhases = (
-				E67432110B43CFE285604644 /* Carthage Install */,
-				E2A7395A2260CFC800E97D55 /* Sources */,
-				E2A7395B2260CFC800E97D55 /* Frameworks */,
-				E2A7395C2260CFC800E97D55 /* Resources */,
-				E29600DC22FD8CA4008321BF /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E2A739602260CFC800E97D55 /* PBXTargetDependency */,
-			);
-			name = Tests;
-			productName = "RxUtils-ExampleTests";
-			productReference = E2A7395E2260CFC800E97D55 /* Tests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -541,7 +490,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1310;
 				ORGANIZATIONNAME = "Anton Plebanovich";
 				TargetAttributes = {
 					E202681222117D03004CC28A = {
@@ -550,10 +499,6 @@
 					};
 					E2A7394A2260CFC700E97D55 = {
 						CreatedOnToolsVersion = 10.1;
-					};
-					E2A7395D2260CFC800E97D55 = {
-						CreatedOnToolsVersion = 10.1;
-						TestTargetID = E2A7394A2260CFC700E97D55;
 					};
 				};
 			};
@@ -572,7 +517,6 @@
 			targets = (
 				E202681222117D03004CC28A /* RxUtils */,
 				E2A7394A2260CFC700E97D55 /* Example */,
-				E2A7395D2260CFC800E97D55 /* Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -592,13 +536,6 @@
 				E2A739582260CFC800E97D55 /* LaunchScreen.storyboard in Resources */,
 				E2A739552260CFC800E97D55 /* Assets.xcassets in Resources */,
 				E2A739532260CFC700E97D55 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E2A7395C2260CFC800E97D55 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -641,24 +578,6 @@
 			shellPath = /bin/bash;
 			shellScript = "source ~/.bash_profile\nenv -i GITHUB_ACCESS_TOKEN=\"$GITHUB_ACCESS_TOKEN\" DEVELOPER_DIR=\"$DEVELOPER_DIR\" PATH=\"$PATH\" bash \"Scripts/Carthage/carthageInstall.command\"\n";
 		};
-		E67432110B43CFE285604644 /* Carthage Install */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Carthage Install";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/bash;
-			shellScript = "source ~/.bash_profile\nenv -i GITHUB_ACCESS_TOKEN=\"$GITHUB_ACCESS_TOKEN\" DEVELOPER_DIR=\"$DEVELOPER_DIR\" PATH=\"$PATH\" bash \"Scripts/Carthage/carthageInstallTests.command\"\n";
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -680,6 +599,7 @@
 				0D86103F2741517F00C07D44 /* RxTimeInterval+Extension.swift in Sources */,
 				0DAAD1F9241C005D00E7D8B1 /* RxSwift+Subscribe+Completable.swift in Sources */,
 				0D85A2982449E2EB0061FDDD /* RxSwift+Error+Completable.swift in Sources */,
+				0D3CD3612746C22A000AFFB6 /* SharedSequence+Occupiable.swift in Sources */,
 				0DAAD1F7241BFFE400E7D8B1 /* RxSwift+Subscribe+Maybe.swift in Sources */,
 				0D36C8A3274135CB0061D2F0 /* UILabel+Rx.swift in Sources */,
 				E24D66B02333CAF6006AC0A6 /* UIDevice+Rx.swift in Sources */,
@@ -690,8 +610,10 @@
 				0DFC79F2272FBFA80035DD43 /* DispatchQueueScheduler.swift in Sources */,
 				E28ADDF023991B1000A8AE87 /* RxSwift+Operators+Single.swift in Sources */,
 				0DDD205D258B02D400C9B9AB /* RxSwift+SkipFirst.swift in Sources */,
+				0D3CD3622746C22A000AFFB6 /* SharedSequence+Optional.swift in Sources */,
 				E25AD22322DC8CD300BD13B4 /* RxSwift+CompareWithPrevious+ObservableType.swift in Sources */,
 				E2E4B847228EAE3600107EEB /* RxSwift+Weak+Do+ObservableType.swift in Sources */,
+				0D3CD3602746C22A000AFFB6 /* Observable+Optional.swift in Sources */,
 				E2E4B845228EAE3600107EEB /* RxCocoa+Drive.swift in Sources */,
 				0D8610412741520100C07D44 /* RxCocoa+Operators+Driver.swift in Sources */,
 				E25AD22722DCC02B00BD13B4 /* RxSwift+Operators+ObservableType.swift in Sources */,
@@ -701,6 +623,8 @@
 				0DFC79EF272FBF790035DD43 /* UIScrollView+Rx.swift in Sources */,
 				E2E4B84D228EAE3600107EEB /* RxSwift+Deffered+ObservableType.swift in Sources */,
 				0D1C2CCB24C961A700699A15 /* RxCocoa+Do+Driver.swift in Sources */,
+				0D3CD35F2746C22A000AFFB6 /* RxOptionalError.swift in Sources */,
+				0D3CD35E2746C22A000AFFB6 /* Observable+Occupiable.swift in Sources */,
 				E2C3134322DDF21600D6797A /* RxCocoa+Signal.swift in Sources */,
 				0DFC79F6272FBFD60035DD43 /* RxSwift+Alert.swift in Sources */,
 				E221254022F1E50600DCD338 /* RxSwift+WithPrevious+ObservableType.swift in Sources */,
@@ -723,14 +647,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E2A7395A2260CFC800E97D55 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E2A739632260CFC800E97D55 /* Tests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -738,11 +654,6 @@
 			isa = PBXTargetDependency;
 			target = E202681222117D03004CC28A /* RxUtils */;
 			targetProxy = E275E08022A03A4B00E9900C /* PBXContainerItemProxy */;
-		};
-		E2A739602260CFC800E97D55 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E2A7394A2260CFC700E97D55 /* Example */;
-			targetProxy = E2A7395F2260CFC800E97D55 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -997,54 +908,6 @@
 			};
 			name = Release;
 		};
-		E2A739672260CFC800E97D55 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				APPLICATION_EXTENSION_API_ONLY = NO;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.anton-plebanovich.RxUtils-ExampleTests${DEVELOPMENT_TEAM}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Example.app/Example";
-			};
-			name = Debug;
-		};
-		E2A739682260CFC800E97D55 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				APPLICATION_EXTENSION_API_ONLY = NO;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.anton-plebanovich.RxUtils-ExampleTests${DEVELOPMENT_TEAM}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Example.app/Example";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1071,15 +934,6 @@
 			buildConfigurations = (
 				E2A739652260CFC800E97D55 /* Debug */,
 				E2A739662260CFC800E97D55 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E2A7396A2260CFC800E97D55 /* Build configuration list for PBXNativeTarget "Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E2A739672260CFC800E97D55 /* Debug */,
-				E2A739682260CFC800E97D55 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

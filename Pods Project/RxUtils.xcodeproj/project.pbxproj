@@ -28,7 +28,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0D1340BD27082CDD006385C4 /* RxUtils.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = RxUtils.podspec; path = ../RxUtils.podspec; sourceTree = "<group>"; };
+		0D1340BD27082CDD006385C4 /* RxUtils.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = RxUtils.podspec; path = ../RxUtils.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		0D3CD3652746CD36000AFFB6 /* checkBuild.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = checkBuild.command; path = ../checkBuild.command; sourceTree = "<group>"; };
+		0D3CD3662746CD36000AFFB6 /* podCheck.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = podCheck.command; path = ../podCheck.command; sourceTree = "<group>"; };
+		0D3CD3672746CD36000AFFB6 /* podPush.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = podPush.command; path = ../podPush.command; sourceTree = "<group>"; };
+		0D3CD3682746CD4E000AFFB6 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Package.swift; path = ../Package.swift; sourceTree = "<group>"; };
+		0D3CD3692746CDC5000AFFB6 /* DEPLOY PROCESS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = "DEPLOY PROCESS.md"; path = "../DEPLOY PROCESS.md"; sourceTree = "<group>"; };
+		0D3CD36A2746CDC5000AFFB6 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
+		0D3CD36B2746CE69000AFFB6 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		1B41999E41F6956B1E01FBBD /* Pods_RxUtils_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxUtils_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* RxUtils_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxUtils_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -67,6 +74,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D3CD36C2746D0EA000AFFB6 /* _Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				0D3CD3652746CD36000AFFB6 /* checkBuild.command */,
+				0D3CD3662746CD36000AFFB6 /* podCheck.command */,
+				0D3CD3672746CD36000AFFB6 /* podPush.command */,
+				0D1340BD27082CDD006385C4 /* RxUtils.podspec */,
+			);
+			name = _Scripts;
+			sourceTree = "<group>";
+		};
 		358A98E8003106F7994961C2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +97,7 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
+				0D3CD36C2746D0EA000AFFB6 /* _Scripts */,
 				607FACF51AFB993E008FA782 /* _ */,
 				607FACD21AFB9204008FA782 /* Example for RxUtils */,
 				607FACE81AFB9204008FA782 /* Tests */,
@@ -141,7 +160,10 @@
 		607FACF51AFB993E008FA782 /* _ */ = {
 			isa = PBXGroup;
 			children = (
-				0D1340BD27082CDD006385C4 /* RxUtils.podspec */,
+				0D3CD36A2746CDC5000AFFB6 /* CHANGELOG.md */,
+				0D3CD3692746CDC5000AFFB6 /* DEPLOY PROCESS.md */,
+				0D3CD3682746CD4E000AFFB6 /* Package.swift */,
+				0D3CD36B2746CE69000AFFB6 /* README.md */,
 			);
 			name = _;
 			sourceTree = "<group>";
@@ -220,7 +242,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 1300;
+				LastUpgradeCheck = 1310;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
@@ -345,8 +367,8 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-RxUtils_Example/Pods-RxUtils_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/APExtensions/APExtensions.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxOptional/RxOptional.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwiftExt/RxSwiftExt.framework",
@@ -354,8 +376,8 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/APExtensions.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxOptional.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwiftExt.framework",

@@ -1,12 +1,11 @@
 PODS:
+  - APExtensions/Occupiable (10.1.6)
+  - APExtensions/OptionalType (10.1.6)
   - Nimble (9.2.1)
   - Quick (4.0.0)
   - RxCocoa (6.2.0):
     - RxRelay (= 6.2.0)
     - RxSwift (= 6.2.0)
-  - RxOptional (5.0.2):
-    - RxCocoa (~> 6.0)
-    - RxSwift (~> 6.0)
   - RxRelay (6.2.0):
     - RxSwift (= 6.2.0)
   - RxSwift (6.2.0)
@@ -18,43 +17,43 @@ PODS:
   - RxSwiftExt/RxCocoa (6.0.1):
     - RxCocoa (~> 6.0)
     - RxSwiftExt/Core
-  - RxUtils (2.0.1):
+  - RxUtils (3.0.0):
+    - APExtensions/Occupiable (~> 10.1.6)
+    - APExtensions/OptionalType (~> 10.1.6)
     - RxCocoa (~> 6)
-    - RxOptional (~> 5)
     - RxSwift (~> 6)
     - RxSwiftExt (~> 6)
 
 DEPENDENCIES:
   - Nimble
   - Quick
-  - RxOptional
-  - RxSwift
   - RxUtils (from `../`)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - APExtensions
     - Nimble
     - Quick
     - RxCocoa
-    - RxOptional
     - RxRelay
-    - RxSwift
     - RxSwiftExt
+  trunk:
+    - RxSwift
 
 EXTERNAL SOURCES:
   RxUtils:
     :path: "../"
 
 SPEC CHECKSUMS:
+  APExtensions: 63f9f31f09a8b43a52c2207774568756e3bd489f
   Nimble: e7e615c0335ee4bf5b0d786685451e62746117d5
   Quick: 6473349e43b9271a8d43839d9ba1c442ed1b7ac4
   RxCocoa: 4baf94bb35f2c0ab31bc0cb9f1900155f646ba42
-  RxOptional: 3664964c96b69dd20c9cf78bdfe546615e26eca8
   RxRelay: e72dbfd157807478401ef1982e1c61c945c94b2f
   RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f
   RxSwiftExt: d61c4b9b06e0a448041b1c659e0f1b5c5a035afc
-  RxUtils: c3f4d0580ee94c98339a5a7afd41b8810fc9801b
+  RxUtils: 52302098ba621de4e9f0e47bf4a970543ef8a74c
 
-PODFILE CHECKSUM: d0b1f2256041d96e69e85f19126f11abacb4049a
+PODFILE CHECKSUM: 2b6b42b4fa23523fcd52be61436f4e1c3102eba0
 
 COCOAPODS: 1.11.2

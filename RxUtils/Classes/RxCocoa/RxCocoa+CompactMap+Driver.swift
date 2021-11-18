@@ -8,7 +8,6 @@
 
 import Foundation
 import RxCocoa
-import RxOptional
 import RxSwift
 
 public extension SharedSequenceConvertibleType where SharingStrategy == DriverSharingStrategy {
