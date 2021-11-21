@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0D1C2CCB24C961A700699A15 /* RxCocoa+Do+Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C2CCA24C961A700699A15 /* RxCocoa+Do+Driver.swift */; };
+		0D210AA9274B04DE000F68DF /* RoutableLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D210AA8274B04DE000F68DF /* RoutableLogger.framework */; };
 		0D210C7624409F20002F5304 /* RxSwiftExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D210C7524409F20002F5304 /* RxSwiftExt.framework */; };
 		0D2A2F2F268590AE00D5EB21 /* RxSwiftExt.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0D210C7524409F20002F5304 /* RxSwiftExt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0D2A2F30268590BA00D5EB21 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B89DEB5F58DE4DE076F19770 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -109,6 +110,7 @@
 
 /* Begin PBXFileReference section */
 		0D1C2CCA24C961A700699A15 /* RxCocoa+Do+Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxCocoa+Do+Driver.swift"; sourceTree = "<group>"; };
+		0D210AA8274B04DE000F68DF /* RoutableLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RoutableLogger.framework; path = ../Carthage/Build/iOS/RoutableLogger.framework; sourceTree = "<group>"; };
 		0D210C7424409A12002F5304 /* carthageUpdate.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = carthageUpdate.command; path = Scripts/Carthage/carthageUpdate.command; sourceTree = "<group>"; };
 		0D210C7524409F20002F5304 /* RxSwiftExt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwiftExt.framework; path = ../Carthage/Build/iOS/RxSwiftExt.framework; sourceTree = "<group>"; };
 		0D2A2F2E2685894600D5EB21 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Package.swift; path = ../Package.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 			files = (
 				0D210C7624409F20002F5304 /* RxSwiftExt.framework in Frameworks */,
 				E26D80C32268FFA4001F80BB /* RxCocoa.framework in Frameworks */,
+				0D210AA9274B04DE000F68DF /* RoutableLogger.framework in Frameworks */,
 				E26D80C42268FFA4001F80BB /* RxSwift.framework in Frameworks */,
 				0DF810FA2445B00A00A25A81 /* RxRelay.framework in Frameworks */,
 			);
@@ -426,6 +429,7 @@
 				0DF810F92445B00A00A25A81 /* RxRelay.framework */,
 				B89DEB5F58DE4DE076F19770 /* RxSwift.framework */,
 				0D210C7524409F20002F5304 /* RxSwiftExt.framework */,
+				0D210AA8274B04DE000F68DF /* RoutableLogger.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

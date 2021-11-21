@@ -37,4 +37,5 @@ A helpful collection of RxSwift utils.
   s.dependency 'RxSwift', '~> 6'
   s.dependency 'RxCocoa', '~> 6'
   s.dependency 'RxSwiftExt', '~> 6'
+  s.dependency 'RoutableLogger', '>= 9.1.5'
 end
