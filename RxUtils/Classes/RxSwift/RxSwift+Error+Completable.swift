@@ -34,4 +34,11 @@ public extension PrimitiveSequence where Trait == RxSwift.CompletableTrait, Elem
             .retryIf(`if`)
             .asCompletable()
     }
+    
+    /// Reports an error if a sequence receives an error. Crashes during debug.
+    func assertNoErrors(file: String = #file, function: String = #function, line: UInt = #line) -> Completable {
+        asObservable()
+            .assertNoErrors(file: file, function: function, line: line)
+            .asCompletable()
+    }
 }

@@ -28,4 +28,11 @@ public extension PrimitiveSequence where Trait == SingleTrait {
             .retryIf(`if`)
             .asSingle()
     }
+    
+    /// Reports an error if a sequence receives an error. Crashes during debug.
+    func assertNoErrors(file: String = #file, function: String = #function, line: UInt = #line) -> Single<Element> {
+        asObservable()
+            .assertNoErrors(file: file, function: function, line: line)
+            .asSingle()
+    }
 }

@@ -9,6 +9,7 @@
 import Foundation
 import RxSwift
 import RxSwiftExt
+import RoutableLogger
 
 public extension ObservableType {
     /// Maps error into other error.
@@ -46,6 +47,15 @@ public extension ObservableType {
                         throw error
                     }
                 }
+        }
+    }
+    
+    /// Reports an error if a sequence receives an error. Crashes during debug.
+    func assertNoErrors(file: String = #file, function: String = #function, line: UInt = #line) -> Observable<Element> {
+        doOnError {
+            let message = "Unexpected rx sequence error"
+            RoutableLogger.logError(message, error: $0, file: file, function: function, line: line)
+            assertionFailure(message)
         }
     }
 }
