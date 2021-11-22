@@ -7,34 +7,37 @@ use_frameworks!
 
 
 target 'RxUtils_Example' do
-    pod 'RxUtils', :path => '../'
-
-    target 'RxUtils_Tests' do
-        inherit! :search_paths
-
-        pod 'Quick'
-        pod 'Nimble'
-    end
+  pod 'APExtensions', :git => 'https://github.com/APUtils/APExtensions'
+  pod 'RxUtils', :path => '../'
+  
+  target 'RxUtils_Tests' do
+    inherit! :search_paths
+    
+    pod 'Nimble'
+    pod 'Quick'
+    pod 'RxNimble'
+    pod 'RxTest'
+  end
 end
 
 
 post_install do |installer|
-    # Add podInstall.command and podUpdate.command shell scripts to Pods project
-    pods_project = installer.pods_project
-    pods_project.new_file "../Scripts/Cocoapods/podInstall.command"
-    pods_project.new_file "../Scripts/Cocoapods/podUpdate.command"
-    
-    # Silence Pods project warning
-    installer.pods_project.build_configurations.each do |config|
-      config.build_settings['CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED'] = 'YES'
-      config.build_settings['CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER'] = 'YES'
+  # Add podInstall.command and podUpdate.command shell scripts to Pods project
+  pods_project = installer.pods_project
+  pods_project.new_file "../Scripts/Cocoapods/podInstall.command"
+  pods_project.new_file "../Scripts/Cocoapods/podUpdate.command"
+  
+  # Silence Pods project warning
+  installer.pods_project.build_configurations.each do |config|
+    config.build_settings['CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED'] = 'YES'
+    config.build_settings['CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER'] = 'YES'
+  end
+  
+  # Silence deployment target warnings
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings.delete 'IPHONEOS_DEPLOYMENT_TARGET'
+      config.build_settings.delete 'ARCHS'
     end
-    
-    # Silence deployment target warnings
-    installer.pods_project.targets.each do |target|
-      target.build_configurations.each do |config|
-        config.build_settings.delete 'IPHONEOS_DEPLOYMENT_TARGET'
-        config.build_settings.delete 'ARCHS'
-      end
-    end
+  end
 end
