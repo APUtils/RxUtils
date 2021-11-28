@@ -15,6 +15,11 @@ import RxSwiftExt
 
 public extension PrimitiveSequence where Trait == SingleTrait {
     
+    /// Projects each element of an observable sequence into Any
+    func mapToAny() -> Single<Any> {
+        return map { $0 }
+    }
+    
     /// Projects each element of an observable sequence into Void
     func mapToVoid() -> Single<Void> {
         return map { _ in () }

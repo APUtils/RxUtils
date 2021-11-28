@@ -62,6 +62,11 @@ public extension ObservableType {
             }
     }
     
+    /// Projects each element of an observable sequence into Any
+    func mapToAny() -> Observable<Any> {
+        return map { $0 }
+    }
+    
     /// Projects each element of an observable sequence into Void
     func mapToVoid() -> Observable<Void> {
         return map { _ in () }

@@ -13,6 +13,11 @@ import RxSwift
 
 public extension PrimitiveSequence where Trait == MaybeTrait {
     
+    /// Projects each element of an observable sequence into Any
+    func mapToAny() -> Maybe<Any> {
+        return map { $0 }
+    }
+    
     /// Projects each element of an observable sequence into Void
     func mapToVoid() -> Maybe<Void> {
         return map { _ in () }
