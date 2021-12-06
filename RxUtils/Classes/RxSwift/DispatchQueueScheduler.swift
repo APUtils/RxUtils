@@ -6,6 +6,7 @@
 //  Copyright © 2021 Anton Plebanovich. All rights reserved.
 //
 
+import Dispatch
 import Foundation
 import RxSwift
 
@@ -26,9 +27,11 @@ public final class DispatchQueueScheduler: SchedulerType {
     /// Constructs new `DispatchQueueScheduler` that wraps `queue`.
     ///
     /// - parameter queue: Target dispatch queue.
+    /// - parameter alwaysAsync: If `true` work is always performed async.
+    /// Otherwise, if already on `queue` just performs work.
     /// - parameter leeway: The amount of time, in nanoseconds, that the system will defer the timer.
-    public init(queue: DispatchQueue, leeway: DispatchTimeInterval = DispatchTimeInterval.nanoseconds(0)) {
-        configuration = DispatchQueueConfiguration(queue: queue, leeway: leeway)
+    public init(queue: DispatchQueue, alwaysAsync: Bool = true, leeway: DispatchTimeInterval = DispatchTimeInterval.nanoseconds(0)) {
+        configuration = DispatchQueueConfiguration(queue: queue, alwaysAsync: alwaysAsync, leeway: leeway)
     }
     
     /**
@@ -71,6 +74,7 @@ public final class DispatchQueueScheduler: SchedulerType {
 /// - note: Copy & pasted from the `RxSwift`.
 public struct DispatchQueueConfiguration {
     public let queue: DispatchQueue
+    public let alwaysAsync: Bool
     public let leeway: DispatchTimeInterval
 }
 
@@ -78,12 +82,18 @@ public extension DispatchQueueConfiguration {
     func schedule<StateType>(_ state: StateType, action: @escaping (StateType) -> Disposable) -> Disposable {
         let cancel = SingleAssignmentDisposable()
         
-        queue.async {
+        let work: () -> Void = {
             if cancel.isDisposed {
                 return
             }
             
             cancel.setDisposable(action(state))
+        }
+        
+        if alwaysAsync {
+            queue.async(execute: work)
+        } else {
+            queue.performAnyncIfNeeded(execute: work)
         }
         
         return cancel
@@ -159,4 +169,43 @@ public extension DispatchQueueConfiguration {
 
 public extension DispatchQueueScheduler {
     static let main = DispatchQueueScheduler(queue: .main)
+}
+
+// ******************************* MARK: - DispatchQueue
+
+private var c_keyAssociationKey = 0
+
+private extension DispatchQueue {
+    
+    private var key: DispatchSpecificKey<Void> {
+        get {
+            if let key = objc_getAssociatedObject(self, &c_keyAssociationKey) as? DispatchSpecificKey<Void> {
+                return key
+            } else {
+                let key = DispatchSpecificKey<Void>()
+                setSpecific(key: key, value: ())
+                objc_setAssociatedObject(self, &c_keyAssociationKey, key, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+                return key
+            }
+        }
+    }
+    
+    /// Performs `work` on `self` asynchronously in not already on `self`.
+    /// Otherwise, just performs `work`.
+    func performAnyncIfNeeded(execute work: @escaping () -> Void) {
+        if DispatchQueue.getSpecific(key: key) != nil {
+            work()
+        } else {
+            async { work() }
+        }
+    }
+    
+    /// Performs `work` on `self` synchronously. Just performs `work` if already on `self`.
+    func performSync<T>(execute work: () throws -> T) rethrows -> T {
+        if DispatchQueue.getSpecific(key: key) != nil {
+            return try work()
+        } else {
+            return try sync { try work() }
+        }
+    }
 }
