@@ -115,6 +115,10 @@ public extension UIApplication {
     
     enum KeychainState: Equatable, Comparable {
         case readable
+        
+        /// Keychain is not readable at the moment.
+        /// Usually with `status: -25308 (User interaction is not allowed)`.
+        /// The meaning of the `status` might be checked at the https://www.osstatus.com/
         case notReadable(status: OSStatus)
         
         public var isReadable: Bool {
