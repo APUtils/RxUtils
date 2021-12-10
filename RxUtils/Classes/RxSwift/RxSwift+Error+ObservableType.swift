@@ -21,7 +21,7 @@ public extension ObservableType {
     /// Maps error into other error.
     /// - parameter error: Error to transform to.
     func mapErrorTo(_ error: Error) -> Observable<Element> {
-        return self.catch { error -> Observable<Element> in .error(error) }
+        return self.catch { _ -> Observable<Element> in .error(error) }
     }
     
     /// Catches error and just completes if `check` passes.

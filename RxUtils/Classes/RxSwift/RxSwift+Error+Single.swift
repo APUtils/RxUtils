@@ -19,7 +19,7 @@ public extension PrimitiveSequence where Trait == SingleTrait {
     /// Maps error into other error.
     /// - parameter error: Error to transform to.
     func mapErrorTo(_ error: Error) -> Single<Element> {
-        return self.catch { error -> Single<Element> in .error(error) }
+        return self.catch { _ -> Single<Element> in .error(error) }
     }
     
     /// Retries sequence if condition is met.

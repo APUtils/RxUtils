@@ -20,7 +20,7 @@ public extension PrimitiveSequence where Trait == RxSwift.CompletableTrait, Elem
     /// Maps error into other error.
     /// - parameter error: Error to transform to.
     func mapErrorTo(_ error: Error) -> Completable {
-        return self.catch { error -> Completable in .error(error) }
+        return self.catch { _ -> Completable in .error(error) }
     }
     
     /// Just completes a sequence on an error.
