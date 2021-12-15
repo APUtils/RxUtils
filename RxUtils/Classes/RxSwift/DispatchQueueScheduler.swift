@@ -168,6 +168,12 @@ public extension DispatchQueueConfiguration {
 // ******************************* MARK: - Main
 
 public extension DispatchQueueScheduler {
+    
+    /// Always async queue with background priority
+    static let background = DispatchQueueScheduler(queue: backgroundQueue)
+    private static let backgroundQueue = DispatchQueue(label: "DispatchQueueScheduler_Background", qos: .background)
+    
+    /// The dispatch queue scheduler associated with the main queue and thread of the current process.
     static let main = DispatchQueueScheduler(queue: .main)
 }
 

@@ -6,6 +6,7 @@
 //  Copyright © 2019 Anton Plebanovich. All rights reserved.
 //
 
+import APExtensions
 import Foundation
 import RxSwift
 
@@ -117,6 +118,23 @@ public extension ObservableType where Element: Collection {
      */
     func filterMany(_ predicate: @escaping (Element.Element) throws -> Bool) -> Observable<[Element.Element]> {
         map { try $0.filter(predicate) }
+    }
+}
+
+// ******************************* MARK: - ObservableType<[Element]?>
+
+public extension ObservableType where Element: OptionalType, Element.Wrapped: Collection {
+    
+    /**
+     Projects each element of an optional observable collection into a new form.
+     
+     - parameter transform: A transform function to apply to each element of the source collection.
+     - returns: An observable collection whose elements are the result of invoking the transform function on each element of source.
+     */
+    func mapMany<Result>(_ transform: @escaping (Element.Wrapped.Element) throws -> Result) -> Observable<[Result]?> {
+        return map { collection -> [Result]? in
+            try collection.value?.map(transform)
+        }
     }
 }
 
