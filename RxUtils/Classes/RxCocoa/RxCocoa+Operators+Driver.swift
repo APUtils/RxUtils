@@ -22,4 +22,27 @@ public extension SharedSequenceConvertibleType where SharingStrategy == DriverSh
             collection.map(transform)
         }
     }
+    
+    /// Combines element with previous element. Previous element is `nil` on first element.
+    func withPrevious() -> Driver<(Element?, Element)> {
+        var _previous: Element?
+        
+        // Recursive is slower and we don't need it here
+        let _lock = NSLock()
+        
+        return map { element -> (previous: Element?, current: Element) in
+            _lock.lock(); defer { _lock.unlock() }
+            defer { _previous = element }
+            return (_previous, element)
+        }
+    }
+    
+    /// Combines element with previous element. First element with `nil` previous is ignored.
+    func withRequiredPrevious() -> Driver<(Element, Element)> {
+        self.withPrevious()
+            .compactMap { previous, current -> (Element, Element)? in
+                guard let previous = previous else { return nil }
+                return (previous, current)
+            }
+    }
 }
