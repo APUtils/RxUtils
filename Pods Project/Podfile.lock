@@ -75,7 +75,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   APExtensions:
-    :commit: 63ae71492b84619a521c368010019482b93ac006
+    :commit: 77f106ce4c68a0e6fc95014077d5d745416ef79b
     :git: https://github.com/APUtils/APExtensions
 
 SPEC CHECKSUMS:
