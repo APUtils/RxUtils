@@ -93,18 +93,41 @@ final class BackgroundSafeTimer_Spec: QuickSpec {
                 
                 context("and timer is periodic") {
                     it("should properly reschedule timer on wake up event") {
-                        let events = runSimulation(dueTime: .seconds(2),
-                                                   period: .seconds(500),
+                        let events = runSimulation(dueTime: .seconds(50),
+                                                   period: .seconds(100),
                                                    suspendTimeRange: nil,
-                                                   wakeUpTimes: [204])
+                                                   wakeUpTimes: [225, 275, 325])
                         
-                        expect(events.count) == 2
+                        expect(events.count) == 8
                         
-                        expect(events.first?.time) == 202
+                        expect(events.first?.time) == 250
                         expect(events.first?.value.isNext) == true
                         
-                        expect(events.second?.time) == 702 // 200 + 2 + 500
+                        expect(events.second?.time) == 350
                         expect(events.second?.value.isNext) == true
+                        
+                        expect(events.third?.time) == 450
+                        expect(events.third?.value.isNext) == true
+                    }
+                    
+                    context("and event was emitted before due time") {
+                        it("should emit missed event after suspension finish on wake up event and properly reschedule timer") {
+                            let events = runSimulation(dueTime: .seconds(100),
+                                                       period: .seconds(300),
+                                                       suspendTimeRange: 50..<200,
+                                                       wakeUpTimes: [400])
+                            
+                            expect(events.count) == 3
+                            
+                            expect(events.first?.time) == 400 + kObserveOnDelay
+                            expect(events.first?.value.isNext) == true
+                            
+                            expect(events.second?.time) == 600
+                            expect(events.second?.value.isNext) == true
+                            
+                            expect(events.third?.time) == 900
+                            expect(events.third?.value.isNext) == true
+                        }
                     }
                     
                     context("and repeated event was emitted during suspension") {

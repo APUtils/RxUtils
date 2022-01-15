@@ -18,8 +18,7 @@ public extension ObservableType where Element == Void {
     /**
      Returns an observable sequence that periodically produces a value after the specified initial relative due time has elapsed, using the specified scheduler to run timers.
      
-     It works around the issue of broken timer in the background.
-     Please check [MUI-6876](https://turvojira.atlassian.net/browse/MUI-6876) or specs for more info.
+     It works around the issue of broken timer in the background. Please check specs for more info.
      
      - seealso: [timer operator on reactivex.io](http://reactivex.io/documentation/operators/timer.html)
      
@@ -53,7 +52,8 @@ public extension ObservableType where Element == Void {
                 recursiveLock.lock(); defer { recursiveLock.unlock() }
                 
                 var emitNow = false
-                var fixedDueTime = dueTimeTimeInterval - scheduler.now.timeIntervalSince(scheduleDate)
+                let timeFromSchedule = scheduler.now.timeIntervalSince(scheduleDate)
+                var fixedDueTime = dueTimeTimeInterval - timeFromSchedule
                 
                 if fixedDueTime < 0 {
                     // Initial due time elapsed and so event should be emited.
