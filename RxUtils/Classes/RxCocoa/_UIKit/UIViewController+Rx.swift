@@ -10,6 +10,8 @@ import Foundation
 import RxSwift
 import UIKit
 
+// ******************************* MARK: - View State
+
 public extension Reactive where Base: UIViewController {
     
     /// Reactive wrapper for `viewDidLoad` method invoke.
@@ -52,5 +54,23 @@ public extension Reactive where Base: UIViewController {
     var viewDidDisappear: Observable<Bool> {
         return methodInvoked(#selector(UIViewController.viewDidDisappear(_:)))
             .map { $0.first as? Bool ?? false }
+    }
+}
+
+// ******************************* MARK: - Presentation
+
+public extension Reactive where Base: UIViewController {
+    
+    /// Present controller in the main thread
+    func present(_ vc: UIViewController, animated: Bool = true) -> Completable {
+        Completable
+            .create { observer in
+                base.present(vc, animated: animated) {
+                    observer(.completed)
+                }
+                
+                return Disposables.create()
+            }
+            .subscribe(on: MainScheduler.instance)
     }
 }

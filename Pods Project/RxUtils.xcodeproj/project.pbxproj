@@ -88,7 +88,6 @@
 				0D3CD3652746CD36000AFFB6 /* checkBuild.command */,
 				0D3CD3662746CD36000AFFB6 /* podCheck.command */,
 				0D3CD3672746CD36000AFFB6 /* podPush.command */,
-				0D1340BD27082CDD006385C4 /* RxUtils.podspec */,
 			);
 			name = _Scripts;
 			sourceTree = "<group>";
@@ -172,6 +171,7 @@
 				0D3CD3692746CDC5000AFFB6 /* DEPLOY PROCESS.md */,
 				0D3CD3682746CD4E000AFFB6 /* Package.swift */,
 				0D3CD36B2746CE69000AFFB6 /* README.md */,
+				0D1340BD27082CDD006385C4 /* RxUtils.podspec */,
 			);
 			name = _;
 			sourceTree = "<group>";
