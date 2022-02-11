@@ -28,4 +28,14 @@ public extension PrimitiveSequence where Trait == SingleTrait {
     func subscribeOnFailure(_ onFailure: @escaping (Error) -> Void) -> Disposable {
         return subscribe(onFailure: onFailure)
     }
+    
+    /**
+     Subscribes a disposed handler for this sequence.
+     - parameter onDisposed: Action to invoke upon any type of termination of sequence (if the sequence has
+     gracefully completed, errored, or if the generation is canceled by disposing subscription).
+     - returns: Subscription object used to unsubscribe from the observable sequence.
+     */
+    func subscribeOnDisposed(_ onDisposed: @escaping () -> Void) -> Disposable {
+        return subscribe(onDisposed: onDisposed)
+    }
 }
