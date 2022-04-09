@@ -4,6 +4,7 @@
 import APExtensions
 import Foundation
 import RxCocoa
+import RxSwift
 
 public extension SharedSequenceConvertibleType where Element: Occupiable {
   /**
@@ -37,4 +38,22 @@ public extension SharedSequenceConvertibleType where Element: Occupiable {
       return SharedSequence<SharingStrategy, Element>.just(element)
     }
   }
+}
+
+public extension PrimitiveSequence where Trait == SingleTrait, Element: Occupiable {
+    
+    /**
+     Filters out empty elements.
+     
+     - returns: `Driver` of source `Driver`'s elements, with empty elements filtered out.
+     */
+    
+    func filterEmpty() -> Maybe<Element> {
+        return flatMapMaybe { element -> Maybe<Element> in
+            guard element.isNotEmpty else {
+                return Maybe<Element>.empty()
+            }
+            return Maybe<Element>.just(element)
+        }
+    }
 }

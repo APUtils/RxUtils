@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import RoutableLogger
 
 public extension ObservableConvertibleType {
     
@@ -68,7 +69,7 @@ public extension ObservableConvertibleType {
                         .doOnNext { _ in
                             _recursiveLock.lock(); defer { _recursiveLock.unlock() }
                             if _subscribeOnTheSameQueue {
-                                assertionFailure("Events and execution should not happen on the same queue or `flatMapThrottle` won't work.")
+                                RoutableLogger.logError("Events and execution should not happen on the same queue or `flatMapThrottle` won't work.")
                             }
                         }
                         .flatMap { executeNext(element: $0) }
