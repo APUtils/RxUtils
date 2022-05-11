@@ -31,9 +31,30 @@ private extension Int {
 }
 
 public extension TimeInterval {
+    
     /// Transforms `self` into `RxTimeInterval`.
     var asRxTimeInterval: RxTimeInterval {
-        .nanoseconds(Int(self * 1000000000.0))
+        var value = self
+        if value._isCeil {
+            return .seconds(Int(value))
+        }
+        
+        value *= 1000
+        if value._isCeil {
+            return .milliseconds(Int(value))
+        }
+        
+        value *= 1000
+        if value._isCeil {
+            return .microseconds(Int(value))
+        }
+        
+        return .nanoseconds(Int(value * 1000))
+    }
+    
+    /// Returns `true` if `self` is ceil. Returns `false` otherwise.
+    private var _isCeil: Bool {
+        floor(self) == self
     }
 }
 
