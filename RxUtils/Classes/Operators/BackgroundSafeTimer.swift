@@ -34,12 +34,15 @@ public extension ObservableType where Element == Void {
         period: RxSwift.RxTimeInterval?,
         scheduler: SchedulerType,
         possiblyWakedUp: Observable<Void> = UIApplication.shared.rx.didLeaveBackground.subscribe(on: ConcurrentMainScheduler.instance),
+        file: String = #file,
+        function: String = #function,
+        line: UInt = #line,
         timerScheduler: @escaping (_ dueTime: RxSwift.RxTimeInterval,
                                    _ period: RxSwift.RxTimeInterval?,
                                    _ scheduler: SchedulerType) -> Observable<Int> = Observable<Int>.timer(_:period:scheduler:)) -> Observable<Void> {
         
         let recursiveLock = NSRecursiveLock()
-        var scheduleDate: Date!
+        var dueDate: Date!
         let dueTimeTimeInterval = dueTime.asTimeInterval
         let periodTimeInterval = period?.asTimeInterval
         var lastEventDate: Date?
@@ -52,9 +55,7 @@ public extension ObservableType where Element == Void {
                 recursiveLock.lock(); defer { recursiveLock.unlock() }
                 
                 var emitNow = false
-                let timeFromSchedule = scheduler.now.timeIntervalSince(scheduleDate)
-                var fixedDueTime = dueTimeTimeInterval - timeFromSchedule
-                
+                var fixedDueTime = dueDate.timeIntervalSince(scheduler.now)
                 if fixedDueTime < 0 {
                     // Initial due time elapsed and so event should be emited.
                     // We need to check if we should emit event right now or skip.
@@ -66,7 +67,7 @@ public extension ObservableType where Element == Void {
                             }
                             
                         } else {
-                            RoutableLogger.logError("Unexpected timer reschedule after first event emit", data: ["dueTime": dueTime, "period": period, "now": scheduler.now, "scheduleDate": scheduleDate])
+                            RoutableLogger.logError("Unexpected timer reschedule after first event emit", data: ["dueTime": dueTime, "period": period, "now": scheduler.now, "dueDate": dueDate], file: file, function: function, line: line)
                         }
                         
                     } else {
@@ -84,7 +85,7 @@ public extension ObservableType where Element == Void {
                             .observe(on: scheduler)
                         
                     } else {
-                        RoutableLogger.logError("Unexpected timer reschedule state", data: ["dueTime": dueTime, "period": period, "now": scheduler.now, "scheduleDate": scheduleDate, "emitNow": emitNow])
+                        RoutableLogger.logError("Unexpected timer reschedule state", data: ["dueTime": dueTime, "period": period, "now": scheduler.now, "dueDate": dueDate, "emitNow": emitNow], file: file, function: function, line: line)
                         
                         return .empty()
                     }
@@ -93,6 +94,7 @@ public extension ObservableType where Element == Void {
                     // First event not yet fired so just schedule new timer with positive fixed due time
                 }
                 
+                RoutableLogger.logVerbose("\(file.fileName):\(line) | Scheduling background safe timer with \(fixedDueTime.hundredthString) due time interval", file: file, function: function, line: line)
                 var timer = timerScheduler(fixedDueTime.asRxTimeInterval,
                                            period,
                                            scheduler)
@@ -125,7 +127,7 @@ public extension ObservableType where Element == Void {
         // The initial timer is created after we subscribe instead of when we call the method
         // so we need to update `scheduleDate`.
             .doOnSubscribe {
-                scheduleDate = scheduler.now
+                dueDate = scheduler.now.addingTimeInterval(dueTimeTimeInterval)
             }
     }
 }
