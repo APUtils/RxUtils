@@ -33,12 +33,7 @@ private extension Int {
 public extension TimeInterval {
     /// Transforms `self` into `RxTimeInterval`.
     var asRxTimeInterval: RxTimeInterval {
-        switch self {
-        case 0.0..<0.001: return .nanoseconds(Int(self * 1000000000.0))
-        case 0.001..<1.0: return .microseconds(Int(self * 1000000.0))
-        case 1.0..<1000.0: return .milliseconds(Int(self * 1000))
-        default: return .seconds(Int(self))
-        }
+        .nanoseconds(Int(self * 1000000000.0))
     }
 }
 
