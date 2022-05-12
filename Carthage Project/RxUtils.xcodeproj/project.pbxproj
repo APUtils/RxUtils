@@ -75,7 +75,7 @@
 		E2E4B848228EAE3600107EEB /* RxSwift+Weak+Subscribe+ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E4B83D228EAE3600107EEB /* RxSwift+Weak+Subscribe+ObservableType.swift */; };
 		E2E4B849228EAE3600107EEB /* RxSwift+Subscribe+ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E4B83E228EAE3600107EEB /* RxSwift+Subscribe+ObservableType.swift */; };
 		E2E4B84A228EAE3600107EEB /* RxSwift+Do+ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E4B83F228EAE3600107EEB /* RxSwift+Do+ObservableType.swift */; };
-		E2E4B84C228EAE3600107EEB /* RxSwift+Error+ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E4B841228EAE3600107EEB /* RxSwift+Error+ObservableType.swift */; };
+		E2E4B84C228EAE3600107EEB /* RxSwift+Error+ObservableConvertibleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E4B841228EAE3600107EEB /* RxSwift+Error+ObservableConvertibleType.swift */; };
 		E2E4B84D228EAE3600107EEB /* RxSwift+Deffered+ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E4B842228EAE3600107EEB /* RxSwift+Deffered+ObservableType.swift */; };
 		E2F369422407C978004DDD17 /* RxSwift+Operators+Maybe.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F369412407C978004DDD17 /* RxSwift+Operators+Maybe.swift */; };
 		E2FD624422F03FF7000F9971 /* RxSwift+Weak+CatchError+ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FD624322F03FF7000F9971 /* RxSwift+Weak+CatchError+ObservableType.swift */; };
@@ -190,7 +190,7 @@
 		E2E4B83D228EAE3600107EEB /* RxSwift+Weak+Subscribe+ObservableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxSwift+Weak+Subscribe+ObservableType.swift"; sourceTree = "<group>"; };
 		E2E4B83E228EAE3600107EEB /* RxSwift+Subscribe+ObservableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxSwift+Subscribe+ObservableType.swift"; sourceTree = "<group>"; };
 		E2E4B83F228EAE3600107EEB /* RxSwift+Do+ObservableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxSwift+Do+ObservableType.swift"; sourceTree = "<group>"; };
-		E2E4B841228EAE3600107EEB /* RxSwift+Error+ObservableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxSwift+Error+ObservableType.swift"; sourceTree = "<group>"; };
+		E2E4B841228EAE3600107EEB /* RxSwift+Error+ObservableConvertibleType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxSwift+Error+ObservableConvertibleType.swift"; sourceTree = "<group>"; };
 		E2E4B842228EAE3600107EEB /* RxSwift+Deffered+ObservableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxSwift+Deffered+ObservableType.swift"; sourceTree = "<group>"; };
 		E2F369412407C978004DDD17 /* RxSwift+Operators+Maybe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+Operators+Maybe.swift"; sourceTree = "<group>"; };
 		E2FD624322F03FF7000F9971 /* RxSwift+Weak+CatchError+ObservableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+Weak+CatchError+ObservableType.swift"; sourceTree = "<group>"; };
@@ -401,7 +401,7 @@
 				E2E4B83F228EAE3600107EEB /* RxSwift+Do+ObservableType.swift */,
 				E275E08D22A1853B00E9900C /* RxSwift+Do+Single.swift */,
 				0D85A2972449E2EB0061FDDD /* RxSwift+Error+Completable.swift */,
-				E2E4B841228EAE3600107EEB /* RxSwift+Error+ObservableType.swift */,
+				E2E4B841228EAE3600107EEB /* RxSwift+Error+ObservableConvertibleType.swift */,
 				E212C9AC23A2409400147166 /* RxSwift+Error+Single.swift */,
 				0DFC79F4272FBFD60035DD43 /* RxSwift+FlatMapThrottle.swift */,
 				0D36C8A6274138700061D2F0 /* RxSwift+Operators+Completable.swift */,
@@ -648,7 +648,7 @@
 				0D36C8A7274138700061D2F0 /* RxSwift+Operators+Completable.swift in Sources */,
 				E2E4B843228EAE3600107EEB /* UIApplication+Rx.swift in Sources */,
 				E2E4B848228EAE3600107EEB /* RxSwift+Weak+Subscribe+ObservableType.swift in Sources */,
-				E2E4B84C228EAE3600107EEB /* RxSwift+Error+ObservableType.swift in Sources */,
+				E2E4B84C228EAE3600107EEB /* RxSwift+Error+ObservableConvertibleType.swift in Sources */,
 				E2E4B846228EAE3600107EEB /* RxSwift+Weak+FlatMap+ObservableType.swift in Sources */,
 				0DFC79EE272FBF790035DD43 /* UIView+Rx.swift in Sources */,
 			);
