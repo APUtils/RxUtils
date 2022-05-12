@@ -94,7 +94,7 @@ public extension ObservableType where Element == Void {
                     // First event not yet fired so just schedule new timer with positive fixed due time
                 }
                 
-                RoutableLogger.logVerbose("\(file.fileName):\(line) | Scheduling background safe timer with \(fixedDueTime.hundredthString) due time interval", file: file, function: function, line: line)
+                RoutableLogger.logVerbose("\(file._fileName):\(line) | Scheduling background safe timer with \(fixedDueTime._hundredthString) due time interval", file: file, function: function, line: line)
                 var timer = timerScheduler(fixedDueTime.asRxTimeInterval,
                                            period,
                                            scheduler)
