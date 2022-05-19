@@ -73,16 +73,21 @@ public extension ObservableType {
         return map { _ in () }
     }
     
-    /// Creates sequence that can not be disposed
+    /// Creates sequence that can not be disposed.
+    /// - parameter disposeBag: Optional dispose bag that will be used to perform long-lasted subscription.
     /// - note: Please keep in mind that subscription is not disposed if sequence never ends.
     /// This may lead to infinite memory grow. 
-    func preventDisposal() -> Observable<Element> {
+    func preventDisposal(disposeBag: DisposeBag? = nil) -> Observable<Element> {
         return .create { observer in
             let recursiveLock = NSRecursiveLock()
             var observer: AnyObserver<Self.Element>? = observer
-            _ = self.subscribe { event in
+            let disposable = self.subscribe { event in
                 recursiveLock.lock(); defer { recursiveLock.unlock() }
                 observer?.on(event)
+            }
+            
+            if let disposeBag = disposeBag {
+                disposeBag.insert(disposable)
             }
             
             return Disposables.create {
