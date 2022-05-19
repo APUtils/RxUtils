@@ -14,3 +14,9 @@ public final class NopeScheduler: ImmediateSchedulerType {
         return action(state)
     }
 }
+
+// ******************************* MARK: - Sigletone
+
+public extension NopeScheduler {
+    static let instance = NopeScheduler()
+}
