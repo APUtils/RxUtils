@@ -143,6 +143,14 @@ public extension UIApplication {
             case .notReadable(let status): return status
             }
         }
+        
+        public var statusMessage: String? {
+            if #available(iOS 11.3, *) {
+                return SecCopyErrorMessageString(status, nil) as String?
+            } else {
+                return nil
+            }
+        }
     }
     
     fileprivate var keychainState: KeychainState {
