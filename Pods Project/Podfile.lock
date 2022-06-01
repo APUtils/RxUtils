@@ -2,21 +2,21 @@ PODS:
   - APExtensions (10.1.8):
     - APExtensions/Core (= 10.1.8)
     - APExtensions/Storyboard (= 10.1.8)
-    - APExtensions/ViewConfiguration (= 10.1.8)
+    - APExtensions/ViewModel (= 10.1.8)
   - APExtensions/Core (10.1.8):
     - RoutableLogger
   - APExtensions/Occupiable (10.1.8)
   - APExtensions/OptionalType (10.1.8)
   - APExtensions/Storyboard (10.1.8)
-  - APExtensions/ViewConfiguration (10.1.8)
+  - APExtensions/ViewModel (10.1.8)
   - Nimble (9.2.1)
-  - Quick (4.0.0)
+  - Quick (5.0.1)
   - RoutableLogger (9.1.12)
-  - RxBlocking (6.2.0):
-    - RxSwift (= 6.2.0)
-  - RxCocoa (6.2.0):
-    - RxRelay (= 6.2.0)
-    - RxSwift (= 6.2.0)
+  - RxBlocking (6.5.0):
+    - RxSwift (= 6.5.0)
+  - RxCocoa (6.5.0):
+    - RxRelay (= 6.5.0)
+    - RxSwift (= 6.5.0)
   - RxNimble (5.1.2):
     - RxNimble/RxBlocking (= 5.1.2)
   - RxNimble/Core (5.1.2):
@@ -25,9 +25,9 @@ PODS:
   - RxNimble/RxBlocking (5.1.2):
     - RxBlocking
     - RxNimble/Core
-  - RxRelay (6.2.0):
-    - RxSwift (= 6.2.0)
-  - RxSwift (6.2.0)
+  - RxRelay (6.5.0):
+    - RxSwift (= 6.5.0)
+  - RxSwift (6.5.0)
   - RxSwiftExt (6.0.1):
     - RxSwiftExt/Core (= 6.0.1)
     - RxSwiftExt/RxCocoa (= 6.0.1)
@@ -36,8 +36,8 @@ PODS:
   - RxSwiftExt/RxCocoa (6.0.1):
     - RxCocoa (~> 6.0)
     - RxSwiftExt/Core
-  - RxTest (6.2.0):
-    - RxSwift (= 6.2.0)
+  - RxTest (6.5.0):
+    - RxSwift (= 6.5.0)
   - RxUtils (3.0.0):
     - APExtensions/Occupiable (~> 10.1.6)
     - APExtensions/OptionalType (~> 10.1.6)
@@ -75,21 +75,21 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   APExtensions:
-    :commit: 77f106ce4c68a0e6fc95014077d5d745416ef79b
+    :commit: bd0afb4998ba373decd6be44edb5973218b6a395
     :git: https://github.com/APUtils/APExtensions
 
 SPEC CHECKSUMS:
-  APExtensions: 779d37ae592fd4f4b3f7ad91aa840a634ee89adf
+  APExtensions: c67bbacc1e39e07d0ed63f24905ba1013bf13988
   Nimble: e7e615c0335ee4bf5b0d786685451e62746117d5
-  Quick: 6473349e43b9271a8d43839d9ba1c442ed1b7ac4
+  Quick: 749aa754fd1e7d984f2000fe051e18a3a9809179
   RoutableLogger: 9ad367e9a79df59c3cf5a1707ba9598ffbae8784
-  RxBlocking: 0b29f7d2079109a8de49c411381bed7c33ef1eeb
-  RxCocoa: 4baf94bb35f2c0ab31bc0cb9f1900155f646ba42
+  RxBlocking: 04b5fd28bb5ea49f7d64b80db8bbfe50d9cc1c7d
+  RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxNimble: 60c8162b1518306a11d0c272a65ade133b209670
-  RxRelay: e72dbfd157807478401ef1982e1c61c945c94b2f
-  RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f
+  RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
+  RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   RxSwiftExt: d61c4b9b06e0a448041b1c659e0f1b5c5a035afc
-  RxTest: 0c692fa672b694373ba86d2b00033595297a2831
+  RxTest: eb2d23adefc5a5ebf5779c7792fa3edfe6ebcc17
   RxUtils: fa77d59c99f8797db5092f523f08feeee809a36b
 
 PODFILE CHECKSUM: 0deea46f84129aff914bac9c11358959832caeb1
