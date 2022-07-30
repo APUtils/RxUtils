@@ -24,6 +24,13 @@
 		0D3CD3602746C22A000AFFB6 /* Observable+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3CD35B2746C22A000AFFB6 /* Observable+Optional.swift */; };
 		0D3CD3612746C22A000AFFB6 /* SharedSequence+Occupiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3CD35C2746C22A000AFFB6 /* SharedSequence+Occupiable.swift */; };
 		0D3CD3622746C22A000AFFB6 /* SharedSequence+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3CD35D2746C22A000AFFB6 /* SharedSequence+Optional.swift */; };
+		0D3E0ACE2895D06B001FBC6D /* EventsProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3E0ACD2895D06B001FBC6D /* EventsProcessor.swift */; };
+		0D3E0AD12895D075001FBC6D /* ObservableObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3E0AD02895D075001FBC6D /* ObservableObserver.swift */; };
+		0D3E0ADD2895D480001FBC6D /* Locale+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3E0AD92895D480001FBC6D /* Locale+Extension.swift */; };
+		0D3E0ADE2895D480001FBC6D /* NumberFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3E0ADA2895D480001FBC6D /* NumberFormatter+Extension.swift */; };
+		0D3E0ADF2895D480001FBC6D /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3E0ADB2895D480001FBC6D /* Double+Extension.swift */; };
+		0D3E0AE02895D480001FBC6D /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3E0ADC2895D480001FBC6D /* String+Extension.swift */; };
+		0D3E0AE22895D4AF001FBC6D /* NopeScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3E0AE12895D4AF001FBC6D /* NopeScheduler.swift */; };
 		0D85A2982449E2EB0061FDDD /* RxSwift+Error+Completable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D85A2972449E2EB0061FDDD /* RxSwift+Error+Completable.swift */; };
 		0D86103F2741517F00C07D44 /* RxTimeInterval+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D86103E2741517F00C07D44 /* RxTimeInterval+Extension.swift */; };
 		0D8610412741520100C07D44 /* RxCocoa+Operators+Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8610402741520100C07D44 /* RxCocoa+Operators+Driver.swift */; };
@@ -126,6 +133,13 @@
 		0D3CD35D2746C22A000AFFB6 /* SharedSequence+Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SharedSequence+Optional.swift"; sourceTree = "<group>"; };
 		0D3CD3632746C249000AFFB6 /* Cartfile.private */ = {isa = PBXFileReference; lastKnownFileType = text; name = Cartfile.private; path = ../Cartfile.private; sourceTree = "<group>"; };
 		0D3CD3642746C249000AFFB6 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Cartfile; path = ../Cartfile; sourceTree = "<group>"; };
+		0D3E0ACD2895D06B001FBC6D /* EventsProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsProcessor.swift; sourceTree = "<group>"; };
+		0D3E0AD02895D075001FBC6D /* ObservableObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableObserver.swift; sourceTree = "<group>"; };
+		0D3E0AD92895D480001FBC6D /* Locale+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Locale+Extension.swift"; sourceTree = "<group>"; };
+		0D3E0ADA2895D480001FBC6D /* NumberFormatter+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Extension.swift"; sourceTree = "<group>"; };
+		0D3E0ADB2895D480001FBC6D /* Double+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		0D3E0ADC2895D480001FBC6D /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		0D3E0AE12895D4AF001FBC6D /* NopeScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NopeScheduler.swift; sourceTree = "<group>"; };
 		0D85A2972449E2EB0061FDDD /* RxSwift+Error+Completable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+Error+Completable.swift"; sourceTree = "<group>"; };
 		0D86103E2741517F00C07D44 /* RxTimeInterval+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxTimeInterval+Extension.swift"; sourceTree = "<group>"; };
 		0D8610402741520100C07D44 /* RxCocoa+Operators+Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxCocoa+Operators+Driver.swift"; sourceTree = "<group>"; };
@@ -229,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				0D1B98C328361603007234C1 /* DispatchQueueScheduler.swift */,
+				0D3E0AE12895D4AF001FBC6D /* NopeScheduler.swift */,
 			);
 			path = Schedulers;
 			sourceTree = "<group>";
@@ -251,6 +266,25 @@
 				0D3CD35D2746C22A000AFFB6 /* SharedSequence+Optional.swift */,
 			);
 			path = RxOptional;
+			sourceTree = "<group>";
+		};
+		0D3E0ACF2895D075001FBC6D /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				0D3E0AD02895D075001FBC6D /* ObservableObserver.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		0D3E0AD82895D480001FBC6D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0D3E0AD92895D480001FBC6D /* Locale+Extension.swift */,
+				0D3E0ADA2895D480001FBC6D /* NumberFormatter+Extension.swift */,
+				0D3E0ADB2895D480001FBC6D /* Double+Extension.swift */,
+				0D3E0ADC2895D480001FBC6D /* String+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		1834AC72A69DC91E1F3B8EDA /* _Carthage */ = {
@@ -320,7 +354,9 @@
 			isa = PBXGroup;
 			children = (
 				E22FD59823914FFA005948EF /* Error */,
+				0D3E0AD82895D480001FBC6D /* Extensions */,
 				0D2A94BD274B37FD00E393E1 /* Operators */,
+				0D3E0ACF2895D075001FBC6D /* Protocols */,
 				E2E4B835228EAE3600107EEB /* RxCocoa */,
 				0D3CD3582746C22A000AFFB6 /* RxOptional */,
 				E2E4B837228EAE3600107EEB /* RxSwift */,
@@ -401,6 +437,7 @@
 			isa = PBXGroup;
 			children = (
 				E2E4B83A228EAE3600107EEB /* _Weak */,
+				0D3E0ACD2895D06B001FBC6D /* EventsProcessor.swift */,
 				0DFC79F3272FBFD60035DD43 /* RxSwift+Alert.swift */,
 				E25AD22222DC8CD300BD13B4 /* RxSwift+CompareWithPrevious+ObservableType.swift */,
 				E2E4B842228EAE3600107EEB /* RxSwift+Deffered+ObservableType.swift */,
@@ -513,7 +550,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1310;
+				LastUpgradeCheck = 1340;
 				ORGANIZATIONNAME = "Anton Plebanovich";
 				TargetAttributes = {
 					E202681222117D03004CC28A = {
@@ -609,6 +646,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2FD624422F03FF7000F9971 /* RxSwift+Weak+CatchError+ObservableType.swift in Sources */,
+				0D3E0ADD2895D480001FBC6D /* Locale+Extension.swift in Sources */,
+				0D3E0ACE2895D06B001FBC6D /* EventsProcessor.swift in Sources */,
 				E286EA87229408E900868FF7 /* RxCocoa+Weak+Map+Driver.swift in Sources */,
 				E286EA822293FFD100868FF7 /* RxSwift+Weak+Map+ObservableType.swift in Sources */,
 				E275E07D22A0360000E9900C /* RxSwift+Weak+Do+Single.swift in Sources */,
@@ -618,14 +657,18 @@
 				E24FE50722D8EC0E00D1F71F /* RxCocoa+Weak+Subscribe+Driver.swift in Sources */,
 				E275E08E22A1853B00E9900C /* RxSwift+Do+Single.swift in Sources */,
 				E2E4B849228EAE3600107EEB /* RxSwift+Subscribe+ObservableType.swift in Sources */,
+				0D3E0AD12895D075001FBC6D /* ObservableObserver.swift in Sources */,
 				E27D3FD223A7BAA20032D279 /* RxSwift+Subscribe+Single.swift in Sources */,
 				0D86103F2741517F00C07D44 /* RxTimeInterval+Extension.swift in Sources */,
 				0DAAD1F9241C005D00E7D8B1 /* RxSwift+Subscribe+Completable.swift in Sources */,
 				0D85A2982449E2EB0061FDDD /* RxSwift+Error+Completable.swift in Sources */,
 				0D3CD3612746C22A000AFFB6 /* SharedSequence+Occupiable.swift in Sources */,
+				0D3E0ADE2895D480001FBC6D /* NumberFormatter+Extension.swift in Sources */,
 				0DAAD1F7241BFFE400E7D8B1 /* RxSwift+Subscribe+Maybe.swift in Sources */,
 				0D36C8A3274135CB0061D2F0 /* UILabel+Rx.swift in Sources */,
+				0D3E0AE22895D4AF001FBC6D /* NopeScheduler.swift in Sources */,
 				E24D66B02333CAF6006AC0A6 /* UIDevice+Rx.swift in Sources */,
+				0D3E0AE02895D480001FBC6D /* String+Extension.swift in Sources */,
 				E27889FC2344DCFB0064A336 /* NSProcessInfo+Rx+Utils.swift in Sources */,
 				E212C9AD23A2409400147166 /* RxSwift+Error+Single.swift in Sources */,
 				E286EA842294037500868FF7 /* RxCocoa+CompactMap+Driver.swift in Sources */,
@@ -648,6 +691,7 @@
 				0D3CD35F2746C22A000AFFB6 /* RxOptionalError.swift in Sources */,
 				0D3CD35E2746C22A000AFFB6 /* Observable+Occupiable.swift in Sources */,
 				E2C3134322DDF21600D6797A /* RxCocoa+Signal.swift in Sources */,
+				0D3E0ADF2895D480001FBC6D /* Double+Extension.swift in Sources */,
 				0D2A94BF274B383000E393E1 /* BackgroundSafeTimer.swift in Sources */,
 				0DFC79F6272FBFD60035DD43 /* RxSwift+Alert.swift in Sources */,
 				E221254022F1E50600DCD338 /* RxSwift+WithPrevious+ObservableType.swift in Sources */,

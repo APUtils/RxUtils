@@ -1,5 +1,5 @@
 github "APUtils/APExtensions" "28d048aa14cc9b7addb6ab3e31e2bb237fd3c513"
 github "APUtils/LogsManager" "9.1.19"
-github "CocoaLumberjack/CocoaLumberjack" "3.7.2"
-github "ReactiveX/RxSwift" "6.2.0"
+github "CocoaLumberjack/CocoaLumberjack" "3.7.4"
+github "ReactiveX/RxSwift" "6.5.0"
 github "RxSwiftCommunity/RxSwiftExt" "6.1.0"

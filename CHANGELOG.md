@@ -3,6 +3,45 @@ All notable changes to this project will be documented in this file.
 `RxUtils` adheres to [Semantic Versioning](http://semver.org/).
 
 
+## [4.0.0](https://github.com/APUtils/RxUtils/releases/tag/4.0.0)
+Released on 2022-07-30.
+
+#### Added
+- BackgroundSafeTimer operator
+- Completable .assertNoErrors()
+- DispatchQueueScheduler alwaysAsync init parameter
+- EventsProcessor
+- KeychainState.notReadable(status:) doc
+- NopeScheduler
+- ObservableObserver
+- ObservableObserverType
+- RoutableLogger dependency
+- [Completable] subscribeOnDisposed(_:)
+- [Driver] withPrevious()
+- [Driver] withRequiredPrevious()
+- [Maybe] mapToAny()
+- [Maybe] subscribeOnDisposed(_:)
+- [ObservableType] .assertNoErrors()
+- [ObservableType] mapToAny()
+- [Single] .assertNoErrors()
+- [Single] filterEmpty()
+- [Single] mapToAny()
+- [Single] subscribeOnDisposed(_:)
+- [UIApplication.KeychainState] statusMessage
+- [UIViewController] present(_:animated:)
+- {DispatchQueueScheduler} background
+- {ObservableType<[Element]?>} mapMany(_:)
+
+#### Changed
+- Do not check `isFirstUnlockHappened` below 100 MB of free space
+- preventDisposal() -> preventDisposal(disposeBag:)
+- RxSwift+Error+ObservableType -> RxSwift+Error+ObservableConvertibleType
+- Simplified and more robust `asRxTimeInterval` conversion
+
+#### Fixed
+- Fixed background timer schedule drift
+- mapToError fix
+
 ## [3.0.0](https://github.com/APUtils/RxUtils/releases/tag/3.0.0)
 Released on 11/18/2021.
 

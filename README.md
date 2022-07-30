@@ -22,7 +22,7 @@ Please check [official guide](https://github.com/Carthage/Carthage#if-youre-buil
 Cartfile:
 
 ```
-github "APUtils/RxUtils" ~> 3.0
+github "APUtils/RxUtils" ~> 3.1
 ```
 
 #### CocoaPods
@@ -31,7 +31,7 @@ RxUtils is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'RxUtils', '~> 3.0'
+pod 'RxUtils', '~> 3.1'
 ```
 
 #### Swift Package Manager
