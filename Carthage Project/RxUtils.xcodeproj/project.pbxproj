@@ -83,7 +83,7 @@
 		E2E4B849228EAE3600107EEB /* RxSwift+Subscribe+ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E4B83E228EAE3600107EEB /* RxSwift+Subscribe+ObservableType.swift */; };
 		E2E4B84A228EAE3600107EEB /* RxSwift+Do+ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E4B83F228EAE3600107EEB /* RxSwift+Do+ObservableType.swift */; };
 		E2E4B84C228EAE3600107EEB /* RxSwift+Error+ObservableConvertibleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E4B841228EAE3600107EEB /* RxSwift+Error+ObservableConvertibleType.swift */; };
-		E2E4B84D228EAE3600107EEB /* RxSwift+Deffered+ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E4B842228EAE3600107EEB /* RxSwift+Deffered+ObservableType.swift */; };
+		E2E4B84D228EAE3600107EEB /* RxSwift+Deferred+ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E4B842228EAE3600107EEB /* RxSwift+Deferred+ObservableType.swift */; };
 		E2F369422407C978004DDD17 /* RxSwift+Operators+Maybe.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F369412407C978004DDD17 /* RxSwift+Operators+Maybe.swift */; };
 		E2FD624422F03FF7000F9971 /* RxSwift+Weak+CatchError+ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FD624322F03FF7000F9971 /* RxSwift+Weak+CatchError+ObservableType.swift */; };
 /* End PBXBuildFile section */
@@ -205,7 +205,7 @@
 		E2E4B83E228EAE3600107EEB /* RxSwift+Subscribe+ObservableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxSwift+Subscribe+ObservableType.swift"; sourceTree = "<group>"; };
 		E2E4B83F228EAE3600107EEB /* RxSwift+Do+ObservableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxSwift+Do+ObservableType.swift"; sourceTree = "<group>"; };
 		E2E4B841228EAE3600107EEB /* RxSwift+Error+ObservableConvertibleType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxSwift+Error+ObservableConvertibleType.swift"; sourceTree = "<group>"; };
-		E2E4B842228EAE3600107EEB /* RxSwift+Deffered+ObservableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxSwift+Deffered+ObservableType.swift"; sourceTree = "<group>"; };
+		E2E4B842228EAE3600107EEB /* RxSwift+Deferred+ObservableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxSwift+Deferred+ObservableType.swift"; sourceTree = "<group>"; };
 		E2F369412407C978004DDD17 /* RxSwift+Operators+Maybe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+Operators+Maybe.swift"; sourceTree = "<group>"; };
 		E2FD624322F03FF7000F9971 /* RxSwift+Weak+CatchError+ObservableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+Weak+CatchError+ObservableType.swift"; sourceTree = "<group>"; };
 		E3A3C326AA2806CD63667A60 /* .travis.yml */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = .travis.yml; path = ../.travis.yml; sourceTree = "<group>"; };
@@ -440,7 +440,7 @@
 				0D3E0ACD2895D06B001FBC6D /* EventsProcessor.swift */,
 				0DFC79F3272FBFD60035DD43 /* RxSwift+Alert.swift */,
 				E25AD22222DC8CD300BD13B4 /* RxSwift+CompareWithPrevious+ObservableType.swift */,
-				E2E4B842228EAE3600107EEB /* RxSwift+Deffered+ObservableType.swift */,
+				E2E4B842228EAE3600107EEB /* RxSwift+Deferred+ObservableType.swift */,
 				0DB80C8D241BC7DC00D67133 /* RxSwift+Do+Completable.swift */,
 				0DAAD1F4241BFF3400E7D8B1 /* RxSwift+Do+Maybe.swift */,
 				E2E4B83F228EAE3600107EEB /* RxSwift+Do+ObservableType.swift */,
@@ -686,7 +686,7 @@
 				E2F369422407C978004DDD17 /* RxSwift+Operators+Maybe.swift in Sources */,
 				0DAAD1F5241BFF3400E7D8B1 /* RxSwift+Do+Maybe.swift in Sources */,
 				0DFC79EF272FBF790035DD43 /* UIScrollView+Rx.swift in Sources */,
-				E2E4B84D228EAE3600107EEB /* RxSwift+Deffered+ObservableType.swift in Sources */,
+				E2E4B84D228EAE3600107EEB /* RxSwift+Deferred+ObservableType.swift in Sources */,
 				0D1C2CCB24C961A700699A15 /* RxCocoa+Do+Driver.swift in Sources */,
 				0D3CD35F2746C22A000AFFB6 /* RxOptionalError.swift in Sources */,
 				0D3CD35E2746C22A000AFFB6 /* Observable+Occupiable.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  RxSwift+Deffered+ObservableType.swift
+//  RxSwift+Deferred+ObservableType.swift
 //  RxUtils
 //
 //  Created by Anton Plebanovich on 4/12/19.
