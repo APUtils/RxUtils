@@ -9,7 +9,7 @@ PODS:
   - APExtensions/OptionalType (10.1.8)
   - APExtensions/Storyboard (10.1.8)
   - APExtensions/ViewModel (10.1.8)
-  - Nimble (9.2.1)
+  - Nimble (10.0.0)
   - Quick (5.0.1)
   - RoutableLogger (11.0.0)
   - RxBlocking (6.5.0):
@@ -17,12 +17,12 @@ PODS:
   - RxCocoa (6.5.0):
     - RxRelay (= 6.5.0)
     - RxSwift (= 6.5.0)
-  - RxNimble (5.1.2):
-    - RxNimble/RxBlocking (= 5.1.2)
-  - RxNimble/Core (5.1.2):
-    - Nimble (~> 9.2)
+  - RxNimble (6.0.0):
+    - RxNimble/RxBlocking (= 6.0.0)
+  - RxNimble/Core (6.0.0):
+    - Nimble (~> 10.0)
     - RxSwift (~> 6.0)
-  - RxNimble/RxBlocking (5.1.2):
+  - RxNimble/RxBlocking (6.0.0):
     - RxBlocking
     - RxNimble/Core
   - RxRelay (6.5.0):
@@ -38,7 +38,7 @@ PODS:
     - RxSwiftExt/Core
   - RxTest (6.5.0):
     - RxSwift (= 6.5.0)
-  - RxUtils (3.1.0):
+  - RxUtils (4.0.0):
     - APExtensions/Occupiable (~> 10.1.6)
     - APExtensions/OptionalType (~> 10.1.6)
     - RoutableLogger (>= 9.1.5)
@@ -75,22 +75,22 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   APExtensions:
-    :commit: 852b62abd1515c8ec11dec7b2d7213dec1ec7d61
+    :commit: acead08d2ff2128a0021e7dc3d59a689a575f5f1
     :git: https://github.com/APUtils/APExtensions
 
 SPEC CHECKSUMS:
   APExtensions: c67bbacc1e39e07d0ed63f24905ba1013bf13988
-  Nimble: e7e615c0335ee4bf5b0d786685451e62746117d5
+  Nimble: 5316ef81a170ce87baf72dd961f22f89a602ff84
   Quick: 749aa754fd1e7d984f2000fe051e18a3a9809179
   RoutableLogger: 70188daca734d067967e4f464450582ca189b4d5
   RxBlocking: 04b5fd28bb5ea49f7d64b80db8bbfe50d9cc1c7d
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
-  RxNimble: 60c8162b1518306a11d0c272a65ade133b209670
+  RxNimble: 04caf11bd7e8f7669d68ef69b8fdfe41552c1ef2
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   RxSwiftExt: d61c4b9b06e0a448041b1c659e0f1b5c5a035afc
   RxTest: eb2d23adefc5a5ebf5779c7792fa3edfe6ebcc17
-  RxUtils: 7e01a35915fbc8cd7dc23c5af3a15368391c91d8
+  RxUtils: b27cb3104d0091565dd80445007a125af0d94309
 
 PODFILE CHECKSUM: 0deea46f84129aff914bac9c11358959832caeb1
 
