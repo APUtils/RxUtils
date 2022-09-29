@@ -199,7 +199,7 @@ public extension UIApplication {
         writeQuery[String(kSecAttrAccessible)] = String(kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly)
         
         var result: AnyObject?
-        let status = SecItemAdd(writeQuery as CFDictionary, &result)
+        return SecItemAdd(writeQuery as CFDictionary, &result)
     }
     
     fileprivate func readItem() -> OSStatus {
