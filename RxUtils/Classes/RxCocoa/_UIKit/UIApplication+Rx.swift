@@ -154,39 +154,65 @@ public extension UIApplication {
     }
     
     fileprivate var keychainState: KeychainState {
+        let readStatus = readItem()
+        if readStatus == errSecSuccess {
+            // Exists. Delete and add.
+            let deleteStatus = deleteItem()
+            if deleteStatus == errSecSuccess {
+                return addItemAndReturnState()
+                
+            } else {
+                return .notReadable(status: deleteStatus)
+            }
+            
+        } else if readStatus == errSecItemNotFound {
+            // Not exists. Add
+            return addItemAndReturnState()
+            
+        } else {
+            return .notReadable(status: readStatus)
+        }
+    }
+    
+    fileprivate var commonQuery: [String: Any] {
         var commonQuery: [String: Any] = [:]
         commonQuery[String(kSecClass)] = String(kSecClassGenericPassword)
         commonQuery[String(kSecAttrSynchronizable)] = kSecAttrSynchronizableAny
         commonQuery[String(kSecAttrService)] = "RxUtils_service"
         commonQuery[String(kSecAttrAccount)] = "RxUtils_is_keychain_accessible_key"
         
+        return commonQuery
+    }
+    
+    fileprivate func addItemAndReturnState() -> KeychainState {
+        let addStatus = addItem()
+        if addStatus == errSecSuccess {
+            return .readable
+        } else {
+            return .notReadable(status: addStatus)
+        }
+    }
+    
+    fileprivate func addItem() -> OSStatus {
+        var writeQuery: [String: Any] = commonQuery
+        writeQuery[String(kSecValueData)] = "value".data(using: .utf8, allowLossyConversion: true)
+        writeQuery[String(kSecAttrAccessible)] = String(kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly)
+        
+        var result: AnyObject?
+        return SecItemAdd(writeQuery as CFDictionary, &result)
+    }
+    
+    fileprivate func readItem() -> OSStatus {
         var readQuery: [String: Any] = commonQuery
         readQuery[String(kSecMatchLimit)] = kSecMatchLimitOne
         readQuery[String(kSecReturnData)] = kCFBooleanTrue
         
         var result: AnyObject?
-        let status = SecItemCopyMatching(readQuery as CFDictionary, &result)
-        
-        if status == errSecSuccess {
-            return .readable
-            
-        } else if status == errSecItemNotFound {
-            // Add
-            var writeQuery: [String: Any] = commonQuery
-            writeQuery[String(kSecValueData)] = "value".data(using: .utf8, allowLossyConversion: true)
-            writeQuery[String(kSecAttrAccessible)] = String(kSecAttrAccessibleAfterFirstUnlock)
-            
-            var result: AnyObject?
-            let status = SecItemAdd(writeQuery as CFDictionary, &result)
-            if status == errSecSuccess {
-                return .readable
-            } else {
-                return .notReadable(status: status)
-            }
-            
-        } else {
-            return .notReadable(status: status)
-        }
+        return SecItemCopyMatching(readQuery as CFDictionary, &result)
+    }
+    
+    fileprivate func deleteItem() -> OSStatus {
+        return SecItemDelete(commonQuery as CFDictionary)
     }
 }
 
