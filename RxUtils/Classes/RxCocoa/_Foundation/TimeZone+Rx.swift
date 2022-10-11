@@ -16,7 +16,7 @@ public extension Reactive where Base == TimeZone {
     /// The time zone currently used by the system.
     /// Starts with current system time zone.
     /// - note: Observation happens on the main thread.
-    static var currentTimeZone: Observable<TimeZone> {
+    static var current: Observable<TimeZone> {
         return NotificationCenter.default.rx.notification(NSNotification.Name.NSSystemTimeZoneDidChange)
             .map { _ in TimeZone.current }
             .startWithDeferred { TimeZone.current }
