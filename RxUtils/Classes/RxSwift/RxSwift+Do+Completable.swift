@@ -55,7 +55,7 @@ public extension PrimitiveSequence where Trait == CompletableTrait, Element == N
      - parameter onCompleted: Action to invoke upon graceful termination of the observable sequence. can be either because sequence terminates for some reason or observer subscription being disposed.
      - returns: The source sequence with the side-effecting behavior applied.
      */
-    func doOnCompleted(_ onCompleted: @escaping () -> Void) -> Completable {
+    func doOnCompleted(_ onCompleted: @escaping () throws -> Void) -> Completable {
         return self.do(onCompleted: onCompleted)
     }
 
