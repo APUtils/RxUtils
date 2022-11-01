@@ -29,32 +29,32 @@ public extension Completable {
     }
     
     /// Concatenates the second observable sequence to `self` upon successful termination of `self` and deffers its computation.
-    func andThenDeferred<Element>(_ deffered: @escaping () -> Single<Element>) -> Single<Element> {
+    func andThenDeferred<Element>(_ deferred: @escaping () -> Single<Element>) -> Single<Element> {
         andThen(
-            Single<Element>.deferred(deffered)
+            Single<Element>.deferred(deferred)
         )
     }
     
     /// Concatenates the second observable sequence to `self` upon successful termination of `self` and deffers its computation.
-    func andThenDeferred<Element>(_ deffered: @escaping () -> Observable<Element>) -> Observable<Element> {
+    func andThenDeferred<Element>(_ deferred: @escaping () -> Observable<Element>) -> Observable<Element> {
         andThen(
             Observable<Element>.deferred {
-                deffered().asObservable()
+                deferred().asObservable()
             }
         )
     }
     
     /// Concatenates the second observable sequence to `self` upon successful termination of `self` and deffers its computation.
-    func andThenDeferred(_ deffered: @escaping () -> Completable) -> Completable {
+    func andThenDeferred(_ deferred: @escaping () -> Completable) -> Completable {
         andThen(
-            Completable.deferred(deffered)
+            Completable.deferred(deferred)
         )
     }
     
     /// Concatenates the second observable sequence to `self` upon successful termination of `self` and deffers its computation.
-    func andThenDeferred<Element>(_ deffered: @escaping () -> Maybe<Element>) -> Maybe<Element> {
+    func andThenDeferred<Element>(_ deferred: @escaping () -> Maybe<Element>) -> Maybe<Element> {
         andThen(
-            Maybe<Element>.deferred(deffered)
+            Maybe<Element>.deferred(deferred)
         )
     }
 }
