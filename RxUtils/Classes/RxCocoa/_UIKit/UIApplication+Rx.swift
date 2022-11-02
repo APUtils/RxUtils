@@ -1,6 +1,6 @@
 //
 //  UIApplication+Rx.swift
-//  Turvo Driver
+//  RxUtils
 //
 //  Created by Anton Plebanovich on 4/12/19.
 //  Copyright © 2019 Anton Plebanovich. All rights reserved.
