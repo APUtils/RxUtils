@@ -12,6 +12,30 @@ import RxSwiftExt
 
 public extension Completable {
     
+    /// Creates sequence that can not be disposed.
+    /// - parameter disposeBag: Optional dispose bag that will be used to perform long-lasted subscription.
+    /// - note: Please keep in mind that subscription is not disposed if sequence never ends.
+    /// This may lead to infinite memory grow.
+    func preventDisposal(disposeBag: DisposeBag? = nil) -> Completable {
+        return Completable.create { observer in
+            let recursiveLock = NSRecursiveLock()
+            var observer: CompletableObserver? = observer
+            let disposable = self.subscribe { event in
+                recursiveLock.lock(); defer { recursiveLock.unlock() }
+                observer?(event)
+            }
+            
+            if let disposeBag = disposeBag {
+                disposeBag.insert(disposable)
+            }
+            
+            return Disposables.create {
+                recursiveLock.lock(); defer { recursiveLock.unlock() }
+                observer = nil
+            }
+        }
+    }
+    
     /**
      Repeats the source completable sequence using given behavior in case of an error or until it successfully terminated
      - parameter behavior: Behavior that will be used in case of an error
