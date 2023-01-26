@@ -1,17 +1,18 @@
 PODS:
-  - APExtensions (10.1.8):
-    - APExtensions/Core (= 10.1.8)
-    - APExtensions/Storyboard (= 10.1.8)
-    - APExtensions/ViewModel (= 10.1.8)
-  - APExtensions/Core (10.1.8):
+  - APExtensions (11.0.1):
+    - APExtensions/Core (= 11.0.1)
+    - APExtensions/Storyboard (= 11.0.1)
+    - APExtensions/ViewModel (= 11.0.1)
+  - APExtensions/Core (11.0.1):
     - RoutableLogger
-  - APExtensions/Occupiable (10.1.8)
-  - APExtensions/OptionalType (10.1.8)
-  - APExtensions/Storyboard (10.1.8)
-  - APExtensions/ViewModel (10.1.8)
+  - APExtensions/Occupiable (11.0.1)
+  - APExtensions/OptionalType (11.0.1)
+  - APExtensions/Storyboard (11.0.1):
+    - RoutableLogger
+  - APExtensions/ViewModel (11.0.1)
   - Nimble (10.0.0)
   - Quick (5.0.1)
-  - RoutableLogger (11.0.0)
+  - RoutableLogger (12.0.2)
   - RxBlocking (6.5.0):
     - RxSwift (= 6.5.0)
   - RxCocoa (6.5.0):
@@ -38,9 +39,9 @@ PODS:
     - RxSwiftExt/Core
   - RxTest (6.5.0):
     - RxSwift (= 6.5.0)
-  - RxUtils (4.0.0):
-    - APExtensions/Occupiable (~> 10.1.6)
-    - APExtensions/OptionalType (~> 10.1.6)
+  - RxUtils (4.1.0):
+    - APExtensions/Occupiable (~> 11)
+    - APExtensions/OptionalType (~> 11)
     - RoutableLogger (>= 9.1.5)
     - RxCocoa (~> 6)
     - RxSwift (~> 6)
@@ -75,14 +76,14 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   APExtensions:
-    :commit: acead08d2ff2128a0021e7dc3d59a689a575f5f1
+    :commit: aa433d531d127128987216945c16b0a8f865f1b3
     :git: https://github.com/APUtils/APExtensions
 
 SPEC CHECKSUMS:
-  APExtensions: c67bbacc1e39e07d0ed63f24905ba1013bf13988
+  APExtensions: 292b0b2bec52042c18c6c523e606ae27477093c0
   Nimble: 5316ef81a170ce87baf72dd961f22f89a602ff84
   Quick: 749aa754fd1e7d984f2000fe051e18a3a9809179
-  RoutableLogger: 70188daca734d067967e4f464450582ca189b4d5
+  RoutableLogger: 5437307106ecb12ede54836f575348694d1a7f19
   RxBlocking: 04b5fd28bb5ea49f7d64b80db8bbfe50d9cc1c7d
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxNimble: 04caf11bd7e8f7669d68ef69b8fdfe41552c1ef2
@@ -90,8 +91,8 @@ SPEC CHECKSUMS:
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   RxSwiftExt: d61c4b9b06e0a448041b1c659e0f1b5c5a035afc
   RxTest: eb2d23adefc5a5ebf5779c7792fa3edfe6ebcc17
-  RxUtils: b27cb3104d0091565dd80445007a125af0d94309
+  RxUtils: e541af828679cf37eccc71e5fc3f47bb42624ca6
 
-PODFILE CHECKSUM: 0deea46f84129aff914bac9c11358959832caeb1
+PODFILE CHECKSUM: 62eda8ce157d4a2934f84fa84c738c3c08fa81fb
 
 COCOAPODS: 1.11.3

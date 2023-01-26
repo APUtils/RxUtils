@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'RxUtils'
-  s.version          = '4.0.0'
+  s.version          = '4.1.0'
   s.summary          = 'RxSwift utils'
 
 # This description is used to generate tags and improve search results.
@@ -32,8 +32,8 @@ A helpful collection of RxSwift utils.
   s.source_files = 'RxUtils/Classes/**/*'
   s.frameworks = 'Foundation', 'UIKit'
   
-  s.dependency 'APExtensions/Occupiable', '~> 10.1.6'
-  s.dependency 'APExtensions/OptionalType', '~> 10.1.6'
+  s.dependency 'APExtensions/Occupiable', '~> 11'
+  s.dependency 'APExtensions/OptionalType', '~> 11'
   s.dependency 'RxSwift', '~> 6'
   s.dependency 'RxCocoa', '~> 6'
   s.dependency 'RxSwiftExt', '~> 6'

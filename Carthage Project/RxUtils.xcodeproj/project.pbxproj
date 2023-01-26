@@ -17,6 +17,7 @@
 		0D2A2F33268590FF00D5EB21 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DF810F92445B00A00A25A81 /* RxRelay.framework */; };
 		0D2A2F34268590FF00D5EB21 /* RxRelay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0DF810F92445B00A00A25A81 /* RxRelay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0D2A94BF274B383000E393E1 /* BackgroundSafeTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2A94BE274B383000E393E1 /* BackgroundSafeTimer.swift */; };
+		0D2B44AF2982A80D00C0FAEB /* TimeZone+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2B44AE2982A80D00C0FAEB /* TimeZone+Rx.swift */; };
 		0D36C8A3274135CB0061D2F0 /* UILabel+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D36C8A2274135CB0061D2F0 /* UILabel+Rx.swift */; };
 		0D36C8A7274138700061D2F0 /* RxSwift+Operators+Completable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D36C8A6274138700061D2F0 /* RxSwift+Operators+Completable.swift */; };
 		0D3CD35E2746C22A000AFFB6 /* Observable+Occupiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3CD3592746C22A000AFFB6 /* Observable+Occupiable.swift */; };
@@ -124,6 +125,7 @@
 		0D210C7524409F20002F5304 /* RxSwiftExt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwiftExt.framework; path = ../Carthage/Build/iOS/RxSwiftExt.framework; sourceTree = "<group>"; };
 		0D2A2F2E2685894600D5EB21 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Package.swift; path = ../Package.swift; sourceTree = "<group>"; };
 		0D2A94BE274B383000E393E1 /* BackgroundSafeTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundSafeTimer.swift; sourceTree = "<group>"; };
+		0D2B44AE2982A80D00C0FAEB /* TimeZone+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TimeZone+Rx.swift"; sourceTree = "<group>"; };
 		0D36C8A2274135CB0061D2F0 /* UILabel+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Rx.swift"; sourceTree = "<group>"; };
 		0D36C8A6274138700061D2F0 /* RxSwift+Operators+Completable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+Operators+Completable.swift"; sourceTree = "<group>"; };
 		0D3CD3592746C22A000AFFB6 /* Observable+Occupiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Occupiable.swift"; sourceTree = "<group>"; };
@@ -370,6 +372,7 @@
 			isa = PBXGroup;
 			children = (
 				E27889FB2344DCFB0064A336 /* NSProcessInfo+Rx+Utils.swift */,
+				0D2B44AE2982A80D00C0FAEB /* TimeZone+Rx.swift */,
 			);
 			path = _Foundation;
 			sourceTree = "<group>";
@@ -691,6 +694,7 @@
 				0D3CD35F2746C22A000AFFB6 /* RxOptionalError.swift in Sources */,
 				0D3CD35E2746C22A000AFFB6 /* Observable+Occupiable.swift in Sources */,
 				E2C3134322DDF21600D6797A /* RxCocoa+Signal.swift in Sources */,
+				0D2B44AF2982A80D00C0FAEB /* TimeZone+Rx.swift in Sources */,
 				0D3E0ADF2895D480001FBC6D /* Double+Extension.swift in Sources */,
 				0D2A94BF274B383000E393E1 /* BackgroundSafeTimer.swift in Sources */,
 				0DFC79F6272FBFD60035DD43 /* RxSwift+Alert.swift in Sources */,
@@ -888,6 +892,7 @@
 				);
 				INFOPLIST_FILE = RxUtils/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -918,6 +923,7 @@
 				);
 				INFOPLIST_FILE = RxUtils/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -37,6 +37,7 @@
 		0D3CD3692746CDC5000AFFB6 /* DEPLOY PROCESS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = "DEPLOY PROCESS.md"; path = "../DEPLOY PROCESS.md"; sourceTree = "<group>"; };
 		0D3CD36A2746CDC5000AFFB6 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
 		0D3CD36B2746CE69000AFFB6 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		0DA174A42982E4FA00044351 /* carthageUpdate.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = carthageUpdate.command; path = "../Carthage Project/Scripts/Carthage/carthageUpdate.command"; sourceTree = "<group>"; };
 		1B41999E41F6956B1E01FBBD /* Pods_RxUtils_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxUtils_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* RxUtils_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxUtils_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -85,6 +86,7 @@
 		0D3CD36C2746D0EA000AFFB6 /* _Scripts */ = {
 			isa = PBXGroup;
 			children = (
+				0DA174A42982E4FA00044351 /* carthageUpdate.command */,
 				0D3CD3652746CD36000AFFB6 /* checkBuild.command */,
 				0D3CD3662746CD36000AFFB6 /* podCheck.command */,
 				0D3CD3672746CD36000AFFB6 /* podPush.command */,

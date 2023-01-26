@@ -2,3 +2,4 @@ github "APUtils/APExtensions" "carthage-old"
 github "APUtils/LogsManager" "9.1.19"
 github "ReactiveX/RxSwift" ~> 6.0
 github "RxSwiftCommunity/RxSwiftExt" ~> 6.0
+github "CocoaLumberjack/CocoaLumberjack" "3.7.4"

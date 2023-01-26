@@ -3,6 +3,19 @@ All notable changes to this project will be documented in this file.
 `RxUtils` adheres to [Semantic Versioning](http://semver.org/).
 
 
+## [4.1.0](https://github.com/APUtils/RxUtils/releases/tag/4.1.0)
+Released on 2023-01-26.
+
+#### Added
+- [Completable] andThenDeffered(_:)
+- [Completable] preventDisposal(disposeBag:)
+- [TimeZone] rx.current
+
+#### Changed
+- Check read-write keychain status
+- [Completable] made `doOnCompleted` throwable
+
+
 ## [4.0.0](https://github.com/APUtils/RxUtils/releases/tag/4.0.0)
 Released on 2022-07-30.
 
