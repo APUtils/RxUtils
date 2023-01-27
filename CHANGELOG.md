@@ -3,7 +3,7 @@ All notable changes to this project will be documented in this file.
 `RxUtils` adheres to [Semantic Versioning](http://semver.org/).
 
 
-## [4.1.0](https://github.com/APUtils/RxUtils/releases/tag/4.1.0)
+## [4.1.2](https://github.com/APUtils/RxUtils/releases/tag/4.1.2)
 Released on 2023-01-26.
 
 #### Added
@@ -14,6 +14,7 @@ Released on 2023-01-26.
 #### Changed
 - Check read-write keychain status
 - [Completable] made `doOnCompleted` throwable
+- Min iOS version 11.0
 
 
 ## [4.0.0](https://github.com/APUtils/RxUtils/releases/tag/4.0.0)
