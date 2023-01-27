@@ -40,12 +40,12 @@ PODS:
   - RxTest (6.5.0):
     - RxSwift (= 6.5.0)
   - RxUtils (4.1.0):
-    - APExtensions/Occupiable (~> 11)
-    - APExtensions/OptionalType (~> 11)
+    - APExtensions/Occupiable (>= 11)
+    - APExtensions/OptionalType (>= 11)
     - RoutableLogger (>= 9.1.5)
-    - RxCocoa (~> 6)
-    - RxSwift (~> 6)
-    - RxSwiftExt (~> 6)
+    - RxCocoa (>= 6)
+    - RxSwift (>= 6)
+    - RxSwiftExt (>= 6)
 
 DEPENDENCIES:
   - APExtensions (from `https://github.com/APUtils/APExtensions`)
@@ -91,7 +91,7 @@ SPEC CHECKSUMS:
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   RxSwiftExt: d61c4b9b06e0a448041b1c659e0f1b5c5a035afc
   RxTest: eb2d23adefc5a5ebf5779c7792fa3edfe6ebcc17
-  RxUtils: e541af828679cf37eccc71e5fc3f47bb42624ca6
+  RxUtils: 0eb6a1098531e20eb99d9e567d791847bb6166e5
 
 PODFILE CHECKSUM: 62eda8ce157d4a2934f84fa84c738c3c08fa81fb
 
