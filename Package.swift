@@ -6,10 +6,10 @@ import PackageDescription
 let package = Package(
     name: "RxUtils",
     platforms: [
-        .iOS(.v9),
-        .tvOS(.v9),
-        .macOS(.v10_11),
-        .watchOS(.v3)
+        .iOS(.v11),
+        .tvOS(.v11),
+        .macOS(.v10_13),
+        .watchOS(.v4)
     ],
     products: [
         .library(
