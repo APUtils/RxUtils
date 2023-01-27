@@ -22,7 +22,7 @@ Please check [official guide](https://github.com/Carthage/Carthage#if-youre-buil
 Cartfile:
 
 ```
-github "APUtils/RxUtils" ~> 3.1
+github "APUtils/RxUtils" ~> 4.1
 ```
 
 #### CocoaPods
@@ -31,7 +31,7 @@ RxUtils is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'RxUtils', '~> 3.1'
+pod 'RxUtils', '~> 4.1'
 ```
 
 #### Swift Package Manager
@@ -42,7 +42,7 @@ Once you have your Swift package set up, adding `RxUtils` as a dependency is as 
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/APUtils/RxUtils.git", .upToNextMajor(from: "2.0.1"))
+    .package(url: "https://github.com/APUtils/RxUtils.git", .upToNextMajor(from: "4.1.2"))
 ]
 ```
 
