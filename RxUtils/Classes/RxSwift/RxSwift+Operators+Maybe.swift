@@ -13,6 +13,14 @@ import RxSwift
 
 public extension PrimitiveSequence where Trait == MaybeTrait {
     
+    /// Converts `self` to `Completable` trait, ignoring its emitted value if
+    /// one exists.
+    ///
+    /// - returns: Completable trait that represents `self`.
+    func asCompletable() -> Completable {
+        asObservable().ignoreElements().asCompletable()
+    }
+    
     /// Projects each element of an observable sequence into Any
     func mapToAny() -> Maybe<Any> {
         return map { $0 }
@@ -51,6 +59,21 @@ public extension PrimitiveSequence where Trait == MaybeTrait {
     /// Wraps element into optional
     func wrapIntoOptional() -> Maybe<Element?> {
         return map { $0 }
+    }
+    
+    /**
+     Projects each element of an observable sequence to an observable sequence and merges the resulting observable sequences into one observable sequence.
+     
+     - seealso: [flatMap operator on reactivex.io](http://reactivex.io/documentation/operators/flatmap.html)
+     
+     - parameter selector: A transform function to apply to each element.
+     - returns: An observable sequence whose elements are the result of invoking the one-to-many transform function on each element of the input sequence.
+     */
+    func flatMap<Result>(_ selector: @escaping (Element) throws -> Single<Result>) -> Maybe<Result> {
+        self.flatMap { (element: Element) -> Maybe<Result> in
+            let single = try selector(element)
+            return single.asMaybe()
+        }
     }
     
     /**
