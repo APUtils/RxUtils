@@ -6,7 +6,11 @@
 //  Copyright © 2021 Anton Plebanovich. All rights reserved.
 //
 
+#if SPM
+import APExtensionsOptionalType
+#else
 import APExtensions
+#endif
 import Foundation
 import RxCocoa
 import RxSwift

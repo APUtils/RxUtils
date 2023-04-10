@@ -1,7 +1,11 @@
 
 // Taken from https://github.com/RxSwiftCommunity/RxOptional
 
+#if SPM
+import APExtensionsOptionalType
+#else
 import APExtensions
+#endif
 import Foundation
 import RxSwift
 

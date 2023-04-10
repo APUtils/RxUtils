@@ -28,30 +28,21 @@ if [ "${swift_files_count}" -ne "${swift_files_in_project_count}" ]; then
 fi
 echo ""
 
-# TODO: Add support later
-#echo -e "Building Swift Package..."
-#swift build -Xswiftc "-sdk" -Xswiftc "`xcrun --sdk iphonesimulator --show-sdk-path`" -Xswiftc "-target" -Xswiftc "x86_64-apple-ios14.4-simulator"
-#echo ""
+echo -e "\nBuilding Swift Package for iOS..."
+swift build -Xswiftc "-sdk" -Xswiftc "`xcrun --sdk iphonesimulator --show-sdk-path`" -Xswiftc "-target" -Xswiftc "x86_64-apple-ios16.4-simulator"
 
-echo -e "Building Pods project..."
+echo -e "\nBuilding Pods project..."
 set -o pipefail && xcodebuild -workspace "Pods Project/RxUtils.xcworkspace" -scheme "RxUtils-Example" -configuration "Release" -sdk iphonesimulator | xcpretty
-echo ""
 
-echo -e "Building Carthage dependencies..."
+echo -e "\nBuilding Carthage dependencies..."
 bash "./Carthage Project/Scripts/Carthage/carthageInstallTests.command"
-echo ""
 
-echo -e "Building Carthage project..."
+echo -e "\nBuilding Carthage project..."
 . "./Carthage Project/Scripts/Carthage/utils.sh"
 applyXcode12Workaround
 set -o pipefail && xcodebuild -project "${carthage_xcodeproj_path}" -sdk iphonesimulator -target "Example" | xcpretty
-echo ""
 
-echo -e "Building with Carthage..."
-carthage build --no-skip-current --platform iOS,tvOS --cache-builds
-echo ""
-
-echo -e "Performing tests..."
+echo -e "\nPerforming tests..."
 simulator_id="$(xcrun simctl list devices available iPhone | grep " SE " | tail -1 | sed -e "s/.*(\([0-9A-Z-]*\)).*/\1/")"
 if [ -n "${simulator_id}" ]; then
     echo "Using iPhone SE simulator with ID: '${simulator_id}'"

@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file.
 `RxUtils` adheres to [Semantic Versioning](http://semver.org/).
 
+## [4.2.0](https://github.com/APUtils/RxUtils/releases/tag/4.2.0)
+Released on 2023-04-10.
+
+#### Added
+- SPM support
+- [Maybe] asCompletable()
+- [Maybe] flatMap(_:) for Single
+
 
 ## [4.1.2](https://github.com/APUtils/RxUtils/releases/tag/4.1.2)
 Released on 2023-01-26.

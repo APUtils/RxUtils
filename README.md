@@ -15,6 +15,13 @@ Clone the repo and then open `Carthage Project/RxUtils.xcodeproj`
 
 ## Installation
 
+#### Swift Package Manager
+
+- In Xcode select `File` > `Add Packages...`
+- Copy and paste the following into the search: `https://github.com/APUtils/RxUtils`
+- Tap `Add Package`
+- Select `RxUtils` and tap `Add Package`
+
 #### Carthage **DEPRECATED**
 
 Please check [official guide](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos)
@@ -22,7 +29,7 @@ Please check [official guide](https://github.com/Carthage/Carthage#if-youre-buil
 Cartfile:
 
 ```
-github "APUtils/RxUtils" ~> 4.1
+github "APUtils/RxUtils" ~> 4.2
 ```
 
 #### CocoaPods
@@ -31,19 +38,7 @@ RxUtils is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'RxUtils', '~> 4.1'
-```
-
-#### Swift Package Manager
-
-The Swift Package Manager is a tool for automating the distribution of Swift code and is integrated into the swift compiler.
-
-Once you have your Swift package set up, adding `RxUtils` as a dependency is as easy as adding it to the dependencies value of your `Package.swift`.
-
-```swift
-dependencies: [
-    .package(url: "https://github.com/APUtils/RxUtils.git", .upToNextMajor(from: "4.1.2"))
-]
+pod 'RxUtils', '~> 4.2'
 ```
 
 ## Usage

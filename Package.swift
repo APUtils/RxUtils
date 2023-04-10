@@ -7,9 +7,9 @@ let package = Package(
     name: "RxUtils",
     platforms: [
         .iOS(.v11),
-        .tvOS(.v11),
         .macOS(.v10_13),
-        .watchOS(.v4)
+        .tvOS(.v11),
+        .watchOS(.v4),
     ],
     products: [
         .library(
@@ -17,16 +17,26 @@ let package = Package(
             targets: ["RxUtils"]),
     ],
     dependencies: [
+        .package(url: "https://github.com/anton-plebanovich/RoutableLogger.git", .upToNextMajor(from: "1.0.0")),
+        .package(url: "https://github.com/APUtils/APExtensions.git", .upToNextMajor(from: "12.0.0")),
         .package(url: "https://github.com/ReactiveX/RxSwift.git", .upToNextMajor(from: "6.0.0")),
         .package(url: "https://github.com/RxSwiftCommunity/RxSwiftExt.git", .upToNextMajor(from: "6.0.0")),
-        // TODO: Doesn't work yet
-        .package(url: "https://github.com/APUtils/APExtensions.git", .upToNextMajor(from: "10.1.6"))
     ],
     targets: [
         .target(
             name: "RxUtils",
-            dependencies: ["RxSwift", "RxSwiftExt", "APExtensions"],
+            dependencies: [
+                "RxSwift",
+                "RxSwiftExt",
+                .product(name: "APExtensionsOccupiable", package: "APExtensions"),
+                .product(name: "APExtensionsOptionalType", package: "APExtensions"),
+                .product(name: "RoutableLogger", package: "RoutableLogger"),
+            ],
             path: "RxUtils/Classes",
-            exclude: []),
+            exclude: [],
+            swiftSettings: [
+                .define("SPM"),
+            ]
+        ),
     ]
 )

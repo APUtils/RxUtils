@@ -1,8 +1,13 @@
 
 // Taken from https://github.com/RxSwiftCommunity/RxOptional
 
+#if SPM
+import APExtensionsOptionalType
+#else
 import APExtensions
+#endif
 import RxCocoa
+import RxSwift
 
 public extension SharedSequenceConvertibleType where Element: OptionalType {
   /**

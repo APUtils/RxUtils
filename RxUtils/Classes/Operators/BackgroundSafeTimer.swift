@@ -6,9 +6,11 @@
 //  Copyright © 2021 Anton Plebanovich. All rights reserved.
 //
 
+import Foundation
 import RxCocoa
 import RxSwift
 import RoutableLogger
+import UIKit
 
 // ******************************* MARK: - ObservableType
 
