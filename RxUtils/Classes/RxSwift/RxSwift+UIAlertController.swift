@@ -1,5 +1,5 @@
 //
-//  RxSwift+Alert.swift
+//  RxSwift+UIAlertController.swift
 //  Pods
 //
 //  Created by Anton Plebanovich on 2.10.21.
@@ -189,6 +189,40 @@ public extension Reactive where Base: UIAlertController {
                 alertVC.present(animated: true) { error in
                     if let error = error {
                         observer(.failure(error))
+                    }
+                }
+                
+                return Disposables.create {
+                    alertVC.dismiss(animated: true, completion: nil)
+                }
+            })
+            .subscribe(on: ConcurrentMainScheduler.instance)
+    }
+    
+    /// Shows an alert in a separate window.
+    /// - note: Subscription is happening on the main thread.
+    static func showPicker(title: String?,
+                           message: String?,
+                           cancelTitle: String?,
+                           actionTitles: [String]) -> Maybe<String> {
+        
+        Maybe<String>
+            .create(subscribe: { observer in
+                let alertVC = AlertController(title: title, message: message, preferredStyle: .actionSheet)
+                
+                alertVC.add(action: .init(title: cancelTitle ?? "Cancel", style: .cancel)) {
+                    observer(.completed)
+                }
+                
+                actionTitles.forEach { actionTitle in
+                    alertVC.add(action: .init(title: actionTitle, style: .default), handler: {
+                        observer(.success(actionTitle))
+                    })
+                }
+                
+                alertVC.present(animated: true) { error in
+                    if let error = error {
+                        observer(.error(error))
                     }
                 }
                 
