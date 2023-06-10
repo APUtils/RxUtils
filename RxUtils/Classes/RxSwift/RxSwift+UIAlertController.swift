@@ -199,38 +199,37 @@ public extension Reactive where Base: UIAlertController {
             .subscribe(on: ConcurrentMainScheduler.instance)
     }
     
-    /// Shows an alert in a separate window.
+    /// Shows a picker alert in a separate window.
     /// - note: Subscription is happening on the main thread.
     static func showPicker(title: String?,
                            message: String?,
                            cancelTitle: String?,
-                           actionTitles: [String]) -> Maybe<String> {
+                           actionTitles: [String]) -> Maybe<(Int, String)> {
         
-        Maybe<String>
-            .create(subscribe: { observer in
-                let alertVC = AlertController(title: title, message: message, preferredStyle: .actionSheet)
-                
-                alertVC.add(action: .init(title: cancelTitle ?? "Cancel", style: .cancel)) {
-                    observer(.completed)
+        Maybe.create(subscribe: { observer in
+            let alertVC = AlertController(title: title, message: message, preferredStyle: .actionSheet)
+            
+            alertVC.add(action: .init(title: cancelTitle ?? "Cancel", style: .cancel)) {
+                observer(.completed)
+            }
+            
+            actionTitles.enumerated().forEach { index, actionTitle in
+                alertVC.add(action: .init(title: actionTitle, style: .default), handler: {
+                    observer(.success((index, actionTitle)))
+                })
+            }
+            
+            alertVC.present(animated: true) { error in
+                if let error = error {
+                    observer(.error(error))
                 }
-                
-                actionTitles.forEach { actionTitle in
-                    alertVC.add(action: .init(title: actionTitle, style: .default), handler: {
-                        observer(.success(actionTitle))
-                    })
-                }
-                
-                alertVC.present(animated: true) { error in
-                    if let error = error {
-                        observer(.error(error))
-                    }
-                }
-                
-                return Disposables.create {
-                    alertVC.dismiss(animated: true, completion: nil)
-                }
-            })
-            .subscribe(on: ConcurrentMainScheduler.instance)
+            }
+            
+            return Disposables.create {
+                alertVC.dismiss(animated: true, completion: nil)
+            }
+        })
+        .subscribe(on: ConcurrentMainScheduler.instance)
     }
 }
 
