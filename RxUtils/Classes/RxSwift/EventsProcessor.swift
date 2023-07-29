@@ -1,6 +1,6 @@
 //
 //  EventsProcessor.swift
-//  Pods
+//  RxUtils
 //
 //  Created by Anton Plebanovich on 30.07.22.
 //  Copyright © 2022 Anton Plebanovich. All rights reserved.

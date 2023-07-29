@@ -1,6 +1,6 @@
 //
 //  RxSwift+SkipFirst.swift
-//  Pods
+//  RxUtils
 //
 //  Created by Anton Plebanovich on 12/17/20.
 //  Copyright © 2020 Anton Plebanovich. All rights reserved.

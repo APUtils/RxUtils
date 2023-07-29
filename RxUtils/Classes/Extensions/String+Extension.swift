@@ -1,6 +1,6 @@
 //
 //  String+Extension.swift
-//  Pods
+//  RxUtils
 //
 //  Created by Anton Plebanovich on 12.05.22.
 //  Copyright © 2022 Anton Plebanovich. All rights reserved.

@@ -1,6 +1,6 @@
 //
 //  NopeScheduler.swift
-//  Pods
+//  RxUtils
 //
 //  Created by Anton Plebanovich on 19.05.22.
 //  Copyright © 2022 Anton Plebanovich. All rights reserved.

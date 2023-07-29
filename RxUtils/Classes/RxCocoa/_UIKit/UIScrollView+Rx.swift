@@ -1,6 +1,6 @@
 //
 //  UIScrollView+Rx.swift
-//  Pods
+//  RxUtils
 //
 //  Created by Anton Plebanovich on 9.10.21.
 //  Copyright © 2021 Anton Plebanovich. All rights reserved.

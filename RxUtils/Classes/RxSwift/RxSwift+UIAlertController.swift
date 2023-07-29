@@ -1,6 +1,6 @@
 //
 //  RxSwift+UIAlertController.swift
-//  Pods
+//  RxUtils
 //
 //  Created by Anton Plebanovich on 2.10.21.
 //  Copyright © 2021 Anton Plebanovich. All rights reserved.

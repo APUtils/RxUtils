@@ -1,6 +1,6 @@
 //
 //  RxSwift+FlatMapThrottle.swift
-//  Pods
+//  RxUtils
 //
 //  Created by Anton Plebanovich on 22.09.21.
 //  Copyright © 2021 Anton Plebanovich. All rights reserved.
