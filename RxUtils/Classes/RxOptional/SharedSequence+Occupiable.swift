@@ -18,12 +18,7 @@ public extension SharedSequenceConvertibleType where Element: Occupiable {
    */
 
   func filterEmpty() -> SharedSequence<SharingStrategy, Element> {
-    return flatMap { element -> SharedSequence<SharingStrategy, Element> in
-      guard element.isNotEmpty else {
-        return SharedSequence<SharingStrategy, Element>.empty()
-      }
-      return SharedSequence<SharingStrategy, Element>.just(element)
-    }
+      filter { $0.isNotEmpty }
   }
 
   /**
@@ -53,11 +48,6 @@ public extension PrimitiveSequence where Trait == SingleTrait, Element: Occupiab
      */
     
     func filterEmpty() -> Maybe<Element> {
-        return flatMapMaybe { element -> Maybe<Element> in
-            guard element.isNotEmpty else {
-                return Maybe<Element>.empty()
-            }
-            return Maybe<Element>.just(element)
-        }
+        filter { $0.isNotEmpty }
     }
 }

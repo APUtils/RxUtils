@@ -17,12 +17,7 @@ public extension ObservableType where Element: Occupiable {
    */
 
   func filterEmpty() -> Observable<Element> {
-    return flatMap { element -> Observable<Element> in
-      guard element.isNotEmpty else {
-        return Observable<Element>.empty()
-      }
-      return Observable<Element>.just(element)
-    }
+      filter { $0.isNotEmpty }
   }
 
   /**
