@@ -119,10 +119,4 @@ public extension PrimitiveSequence where Trait == MaybeTrait, Element: Collectio
             .mapMany(transform)
             .asMaybe()
     }
-    
-    func filterMany(_ predicate: @escaping (Element.Element) throws -> Bool) -> Maybe<[Element.Element]> {
-        asObservable()
-            .filterMany(predicate)
-            .asMaybe()
-    }
 }
