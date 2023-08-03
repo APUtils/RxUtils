@@ -24,11 +24,6 @@ public extension PrimitiveSequence where Trait == SingleTrait {
         return map { $0 }
     }
     
-    /// Projects each element of an observable sequence into Void
-    func mapToVoid() -> Single<Void> {
-        return map { _ in () }
-    }
-    
     /// Creates sequence that can not be disposed.
     /// - parameter disposeBag: Optional dispose bag that will be used to perform long-lasted subscription.
     /// - note: Please keep in mind that subscription is not disposed if sequence never ends.

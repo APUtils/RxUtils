@@ -43,13 +43,3 @@ public extension SharedSequenceConvertibleType where SharingStrategy == SignalSh
         return emit(onDisposed: onDisposed)
     }
 }
-
-// ******************************* MARK: - Operators
-
-public extension SharedSequenceConvertibleType where SharingStrategy == SignalSharingStrategy {
-    
-    /// Projects each element of an signal sequence into Void
-    func mapToVoid() -> Signal<Void> {
-        return map { _ in () }
-    }
-}
