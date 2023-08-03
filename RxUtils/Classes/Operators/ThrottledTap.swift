@@ -40,11 +40,12 @@ public extension Reactive where Base: RxGestureView {
     /// - parameter dueTime: Throttling duration for each element.
     /// - parameter configuration: A closure that allows to fully configure the gesture recognizer
     func throttledTapGestureWhenRecognized(_ dueTime: RxTimeInterval = .milliseconds(500),
-                                           configuration: TapConfiguration? = nil) -> Observable<UITapGestureRecognizer> {
+                                           configuration: TapConfiguration? = nil) -> Observable<Void> {
         
         tapGesture(configuration: configuration)
             .when(.recognized)
             .throttle(dueTime, latest: false, scheduler: MainScheduler.instance)
+            .mapToVoid()
     }
 }
 #endif
