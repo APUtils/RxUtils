@@ -18,6 +18,9 @@ PODS:
   - RxCocoa (6.5.0):
     - RxRelay (= 6.5.0)
     - RxSwift (= 6.5.0)
+  - RxGesture (4.0.4):
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
   - RxNimble (6.0.0):
     - RxNimble/RxBlocking (= 6.0.0)
   - RxNimble/Core (6.0.0):
@@ -44,6 +47,7 @@ PODS:
     - APExtensions/OptionalType (>= 11)
     - RoutableLogger (>= 9.1.5)
     - RxCocoa (>= 6)
+    - RxGesture (>= 4)
     - RxSwift (>= 6)
     - RxSwiftExt (>= 6)
 
@@ -62,6 +66,7 @@ SPEC REPOS:
     - RoutableLogger
     - RxBlocking
     - RxCocoa
+    - RxGesture
     - RxNimble
     - RxRelay
     - RxSwift
@@ -86,12 +91,13 @@ SPEC CHECKSUMS:
   RoutableLogger: 5437307106ecb12ede54836f575348694d1a7f19
   RxBlocking: 04b5fd28bb5ea49f7d64b80db8bbfe50d9cc1c7d
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
+  RxGesture: f3efb47ed2d26a8082f7b660d4a59970e275a7f8
   RxNimble: 04caf11bd7e8f7669d68ef69b8fdfe41552c1ef2
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   RxSwiftExt: d61c4b9b06e0a448041b1c659e0f1b5c5a035afc
   RxTest: eb2d23adefc5a5ebf5779c7792fa3edfe6ebcc17
-  RxUtils: 3dd9b87ba7a50eb0e1ef33ca8e1c50f57d51902c
+  RxUtils: 6e4875f063e8a86b639ed258f8cc2cd36342b7ec
 
 PODFILE CHECKSUM: 62eda8ce157d4a2934f84fa84c738c3c08fa81fb
 

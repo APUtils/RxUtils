@@ -34,8 +34,9 @@ A helpful collection of RxSwift utils.
   
   s.dependency 'APExtensions/Occupiable', '>= 11'
   s.dependency 'APExtensions/OptionalType', '>= 11'
-  s.dependency 'RxSwift', '>= 6'
-  s.dependency 'RxCocoa', '>= 6'
-  s.dependency 'RxSwiftExt', '>= 6'
   s.dependency 'RoutableLogger', '>= 9.1.5'
+  s.dependency 'RxCocoa', '>= 6'
+  s.dependency 'RxGesture', '>= 4'
+  s.dependency 'RxSwift', '>= 6'
+  s.dependency 'RxSwiftExt', '>= 6'
 end
