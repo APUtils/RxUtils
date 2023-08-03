@@ -16,9 +16,9 @@ import RoutableLogger
 public extension PrimitiveSequence where Trait == MaybeTrait {
     
     /// Projects each element of an observable sequence into Void
-    func mapToVoid(file: String = #file, function: String = #function, line: UInt = #line) -> Maybe<Void> {
+    func mapToVoid() -> Maybe<Void> {
         asObservable()
-            .mapToVoid(file: file, function: function, line: line)
+            .mapToVoid()
             .asMaybe()
     }
 }
@@ -38,9 +38,9 @@ public extension PrimitiveSequence where Trait == MaybeTrait, Element == Void {
 public extension PrimitiveSequence where Trait == SingleTrait {
     
     /// Projects each element of an observable sequence into Void
-    func mapToVoid(file: String = #file, function: String = #function, line: UInt = #line) -> Single<Void> {
+    func mapToVoid() -> Single<Void> {
         asObservable()
-            .mapToVoid(file: file, function: function, line: line)
+            .mapToVoid()
             .asSingle()
     }
 }
@@ -60,9 +60,9 @@ public extension PrimitiveSequence where Trait == SingleTrait, Element == Void {
 public extension SharedSequenceConvertibleType where SharingStrategy == SignalSharingStrategy {
     
     /// Projects each element of an signal sequence into Void
-    func mapToVoid(file: String = #file, function: String = #function, line: UInt = #line) -> Signal<Void> {
+    func mapToVoid() -> Signal<Void> {
         asObservable()
-            .mapToVoid(file: file, function: function, line: line)
+            .mapToVoid()
             .asSignal(onErrorSignalWith: .empty())
     }
 }
@@ -82,7 +82,7 @@ public extension SharedSequenceConvertibleType where SharingStrategy == SignalSh
 public extension ObservableType {
     
     /// Projects each element of an observable sequence into Void
-    func mapToVoid(file: String = #file, function: String = #function, line: UInt = #line) -> Observable<Void> {
+    func mapToVoid() -> Observable<Void> {
         map { _ in () }
     }
 }
