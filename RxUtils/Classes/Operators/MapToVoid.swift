@@ -26,10 +26,10 @@ public extension PrimitiveSequence where Trait == MaybeTrait {
 public extension PrimitiveSequence where Trait == MaybeTrait, Element == Void {
     
     /// Projects each element of an observable sequence into Void
+    @available(*, deprecated, message: "`mapToVoid()` operator is used on already `Void` sequence")
     func mapToVoid(file: String = #file, function: String = #function, line: UInt = #line) -> Maybe<Element> {
-        asObservable()
-            .mapToVoid(file: file, function: function, line: line)
-            .asMaybe()
+        RoutableLogger.logError("`mapToVoid()` operator is used on already `Void` sequence", file: file, function: function, line: line)
+        return self
     }
 }
 
@@ -48,10 +48,10 @@ public extension PrimitiveSequence where Trait == SingleTrait {
 public extension PrimitiveSequence where Trait == SingleTrait, Element == Void {
     
     /// Projects each element of an observable sequence into Void
+    @available(*, deprecated, message: "`mapToVoid()` operator is used on already `Void` sequence")
     func mapToVoid(file: String = #file, function: String = #function, line: UInt = #line) -> Single<Void> {
-        asObservable()
-            .mapToVoid(file: file, function: function, line: line)
-            .asSingle()
+        RoutableLogger.logError("`mapToVoid()` operator is used on already `Void` sequence", file: file, function: function, line: line)
+        return self
     }
 }
 
@@ -70,10 +70,10 @@ public extension SharedSequenceConvertibleType where SharingStrategy == SignalSh
 public extension SharedSequenceConvertibleType where SharingStrategy == SignalSharingStrategy, Element == Void {
     
     /// Projects each element of an signal sequence into Void
+    @available(*, deprecated, message: "`mapToVoid()` operator is used on already `Void` sequence")
     func mapToVoid(file: String = #file, function: String = #function, line: UInt = #line) -> Signal<Void> {
-        asObservable()
-            .mapToVoid(file: file, function: function, line: line)
-            .asSignal(onErrorSignalWith: .empty())
+        RoutableLogger.logError("`mapToVoid()` operator is used on already `Void` sequence", file: file, function: function, line: line)
+        return asSignal()
     }
 }
 
@@ -90,6 +90,7 @@ public extension ObservableType {
 public extension ObservableType where Element == Void {
     
     /// Projects each element of an observable sequence into Void
+    @available(*, deprecated, message: "`mapToVoid()` operator is used on already `Void` sequence")
     func mapToVoid(file: String = #file, function: String = #function, line: UInt = #line) -> Observable<Element> {
         RoutableLogger.logError("`mapToVoid()` operator is used on already `Void` sequence", file: file, function: function, line: line)
         return asObservable()
