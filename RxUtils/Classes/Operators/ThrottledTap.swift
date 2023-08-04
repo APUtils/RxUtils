@@ -16,7 +16,7 @@ public extension Reactive where Base: UIButton {
     
     /// Reactive wrapper for `TouchUpInside` control event with applied throttle to prevent double clicks.
     /// - parameter dueTime: Throttling duration for each element.
-    func throttledTap(_ dueTime: RxTimeInterval = .milliseconds(500)) -> Observable<Void> {
+    func throttledTap(_ dueTime: RxTimeInterval = RxUtilsDefaults.tapThrottle) -> Observable<Void> {
         tap.throttle(dueTime, latest: false, scheduler: MainScheduler.instance)
     }
 }
@@ -27,7 +27,7 @@ public extension Reactive where Base: UIBarButtonItem {
     
     /// Reactive wrapper for target action pattern on `self` with applied throttle to prevent double clicks.
     /// - parameter dueTime: Throttling duration for each element.
-    func throttledTap(_ dueTime: RxTimeInterval = .milliseconds(500)) -> Observable<Void> {
+    func throttledTap(_ dueTime: RxTimeInterval = RxUtilsDefaults.tapThrottle) -> Observable<Void> {
         tap.throttle(dueTime, latest: false, scheduler: MainScheduler.instance)
     }
 }
@@ -39,7 +39,7 @@ public extension Reactive where Base: RxGestureView {
     /// Returns an observable `UITapGestureRecognizer` events sequence with applied throttle to prevent double clicks.
     /// - parameter dueTime: Throttling duration for each element.
     /// - parameter configuration: A closure that allows to fully configure the gesture recognizer
-    func throttledTapGestureWhenRecognized(_ dueTime: RxTimeInterval = .milliseconds(500),
+    func throttledTapGestureWhenRecognized(_ dueTime: RxTimeInterval = RxUtilsDefaults.tapThrottle,
                                            configuration: TapConfiguration? = nil) -> Observable<Void> {
         
         tapGesture(configuration: configuration)
@@ -51,7 +51,7 @@ public extension Reactive where Base: RxGestureView {
     /// Returns an observable `UITapGestureRecognizer` events sequence with applied throttle to prevent double clicks.
     /// - parameter dueTime: Throttling duration for each element.
     /// - parameter configuration: A closure that allows to fully configure the gesture recognizer
-    func throttledTapGestureWhenRecognizedWithRecognizer(_ dueTime: RxTimeInterval = .milliseconds(500),
+    func throttledTapGestureWhenRecognizedWithRecognizer(_ dueTime: RxTimeInterval = RxUtilsDefaults.tapThrottle,
                                                          configuration: TapConfiguration? = nil) -> Observable<UITapGestureRecognizer> {
         
         tapGesture(configuration: configuration)
