@@ -13,9 +13,9 @@ import RxSwift
 public extension PrimitiveSequence where Trait == CompletableTrait, Element == Never {
     
     /// Measures execution time between `onSubscribed` and `onCompleted` events
-    func measureExecutionTime(_ closure: @escaping (TimeInterval) -> Void) -> Completable {
+    func measureExecutionTime(start: (() -> Void)? = nil, end: @escaping (TimeInterval) -> Void) -> Completable {
         asObservable()
-            .measureExecutionTime(closure)
+            .measureExecutionTime(start: start, end: end)
             .asCompletable()
     }
 }
@@ -25,9 +25,9 @@ public extension PrimitiveSequence where Trait == CompletableTrait, Element == N
 public extension PrimitiveSequence where Trait == MaybeTrait {
     
     /// Measures execution time between `onSubscribed` and `onCompleted` events
-    func measureExecutionTime(_ closure: @escaping (TimeInterval) -> Void) -> Maybe<Element> {
+    func measureExecutionTime(start: (() -> Void)? = nil, end: @escaping (TimeInterval) -> Void) -> Maybe<Element> {
         asObservable()
-            .measureExecutionTime(closure)
+            .measureExecutionTime(start: start, end: end)
             .asMaybe()
     }
 }
@@ -37,9 +37,9 @@ public extension PrimitiveSequence where Trait == MaybeTrait {
 public extension PrimitiveSequence where Trait == SingleTrait {
     
     /// Measures execution time between `onSubscribed` and `onCompleted` events
-    func measureExecutionTime(_ closure: @escaping (TimeInterval) -> Void) -> Single<Element> {
+    func measureExecutionTime(start: (() -> Void)? = nil, end: @escaping (TimeInterval) -> Void) -> Single<Element> {
         asObservable()
-            .measureExecutionTime(closure)
+            .measureExecutionTime(start: start, end: end)
             .asSingle()
     }
 }
@@ -49,13 +49,16 @@ public extension PrimitiveSequence where Trait == SingleTrait {
 public extension ObservableType {
     
     /// Measures execution time between `onSubscribe` and `onCompleted` events
-    func measureExecutionTime(_ closure: @escaping (TimeInterval) -> Void) -> Observable<Element> {
+    func measureExecutionTime(start: (() -> Void)? = nil, end: @escaping (TimeInterval) -> Void) -> Observable<Element> {
         var date: Date?
         return self
             .doOnDispose {
                 guard let date else { return }
-                closure(-date.timeIntervalSinceNow)
+                end(-date.timeIntervalSinceNow)
             }
-            .doOnSubscribe { date = Date() }
+            .doOnSubscribe {
+                date = Date()
+                start?()
+            }
     }
 }
