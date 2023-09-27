@@ -23,11 +23,6 @@ public extension PrimitiveSequence where Trait == RxSwift.CompletableTrait, Elem
         return self.catch { _ -> Completable in .error(error) }
     }
     
-    /// Just completes a sequence on an error.
-    func catchErrorJustComplete() -> Completable {
-        self.catch { _ in Completable.empty() }
-    }
-    
     /// Retries sequence if condition is met.
     func retryIf(_ if: @escaping (Error) -> Bool) -> Completable {
         asObservable()

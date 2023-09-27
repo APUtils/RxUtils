@@ -25,14 +25,9 @@ public extension ObservableConvertibleType {
         asObservable().catch { _ -> Observable<Element> in .error(error) }
     }
     
-    /// Catches error and just completes sequence
-    func catchErrorJustComplete() -> Observable<Element> {
-        asObservable().catch { _ in Observable<Element>.empty() }
-    }
-    
     /// Catches error and just completes if `check` passes.
     /// - Parameter check: Check to execute on received error.
-    func catchErrorJustComplete(_ check: @escaping (Error) -> Bool) -> Observable<Element> {
+    func catchErrorJustCompleteIf(_ check: @escaping (Error) -> Bool) -> Observable<Element> {
         asObservable().catch { error -> Observable<Element> in
             if check(error) {
                 return .empty()
