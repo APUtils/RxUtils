@@ -278,3 +278,20 @@ public extension SharedSequenceConvertibleType where SharingStrategy == DriverSh
     }
 }
 
+// ******************************* MARK: - Did move to background
+
+public extension Reactive where Base: UIApplication {
+    
+    /// Triggers event each time the app moves to the background.
+    /// - note: Useful to flush pending data because the app might not have other opportunities.
+    /// - note: It doesn't trigger on the app start in the background.
+    var didMoveToBackground: Observable<Void> {
+        applicationState
+            .withRequiredPrevious()
+            .filter { (previous: UIApplication.State, current: UIApplication.State) in
+                current == UIApplication.State.background
+                && previous != UIApplication.State.background
+            }
+            .mapToVoid()
+    }
+}

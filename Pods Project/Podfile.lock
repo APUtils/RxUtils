@@ -1,23 +1,23 @@
 PODS:
-  - APExtensions (12.0.1):
-    - APExtensions/Core (= 12.0.1)
-    - APExtensions/Storyboard (= 12.0.1)
-    - APExtensions/ViewModel (= 12.0.1)
-  - APExtensions/Core (12.0.1):
+  - APExtensions (14.0.1):
+    - APExtensions/Core (= 14.0.1)
+    - APExtensions/Storyboard (= 14.0.1)
+    - APExtensions/ViewModel (= 14.0.1)
+  - APExtensions/Core (14.0.1):
     - RoutableLogger
-  - APExtensions/Occupiable (12.0.1)
-  - APExtensions/OptionalType (12.0.1)
-  - APExtensions/Storyboard (12.0.1):
+  - APExtensions/Occupiable (14.0.1)
+  - APExtensions/OptionalType (14.0.1)
+  - APExtensions/Storyboard (14.0.1):
     - RoutableLogger
-  - APExtensions/ViewModel (12.0.1)
+  - APExtensions/ViewModel (14.0.1)
   - Nimble (10.0.0)
   - Quick (5.0.1)
-  - RoutableLogger (12.0.2)
-  - RxBlocking (6.5.0):
-    - RxSwift (= 6.5.0)
-  - RxCocoa (6.5.0):
-    - RxRelay (= 6.5.0)
-    - RxSwift (= 6.5.0)
+  - RoutableLogger (12.3.3)
+  - RxBlocking (6.6.0):
+    - RxSwift (= 6.6.0)
+  - RxCocoa (6.6.0):
+    - RxRelay (= 6.6.0)
+    - RxSwift (= 6.6.0)
   - RxGesture (4.0.4):
     - RxCocoa (~> 6.0)
     - RxSwift (~> 6.0)
@@ -29,19 +29,19 @@ PODS:
   - RxNimble/RxBlocking (6.0.0):
     - RxBlocking
     - RxNimble/Core
-  - RxRelay (6.5.0):
-    - RxSwift (= 6.5.0)
-  - RxSwift (6.5.0)
-  - RxSwiftExt (6.0.1):
-    - RxSwiftExt/Core (= 6.0.1)
-    - RxSwiftExt/RxCocoa (= 6.0.1)
-  - RxSwiftExt/Core (6.0.1):
+  - RxRelay (6.6.0):
+    - RxSwift (= 6.6.0)
+  - RxSwift (6.6.0)
+  - RxSwiftExt (6.2.1):
+    - RxSwiftExt/Core (= 6.2.1)
+    - RxSwiftExt/RxCocoa (= 6.2.1)
+  - RxSwiftExt/Core (6.2.1):
     - RxSwift (~> 6.0)
-  - RxSwiftExt/RxCocoa (6.0.1):
+  - RxSwiftExt/RxCocoa (6.2.1):
     - RxCocoa (~> 6.0)
     - RxSwiftExt/Core
-  - RxTest (6.5.0):
-    - RxSwift (= 6.5.0)
+  - RxTest (6.6.0):
+    - RxSwift (= 6.6.0)
   - RxUtils (4.2.0):
     - APExtensions/Occupiable (>= 11)
     - APExtensions/OptionalType (>= 11)
@@ -81,24 +81,24 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   APExtensions:
-    :commit: f8c12db45650825cf10bebc374a148e448fdff1e
+    :commit: 9a20c58031e4be809fe79cea51f2d293076a2bcb
     :git: https://github.com/APUtils/APExtensions
 
 SPEC CHECKSUMS:
-  APExtensions: d71f05f2b48e6a564c9c07b4cd65c2b616ac9295
+  APExtensions: cbc845eab2425fbbb80e6eaee8d51425bda42e5e
   Nimble: 5316ef81a170ce87baf72dd961f22f89a602ff84
   Quick: 749aa754fd1e7d984f2000fe051e18a3a9809179
-  RoutableLogger: 5437307106ecb12ede54836f575348694d1a7f19
-  RxBlocking: 04b5fd28bb5ea49f7d64b80db8bbfe50d9cc1c7d
-  RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
+  RoutableLogger: ff5425f9ec26ec79241a591a1ed16a7a69d70b2f
+  RxBlocking: fbd1f8501443024f686e556f36dac79b0d5f4d7c
+  RxCocoa: 44a80de90e25b739b5aeaae3c8c371a32e3343cc
   RxGesture: f3efb47ed2d26a8082f7b660d4a59970e275a7f8
   RxNimble: 04caf11bd7e8f7669d68ef69b8fdfe41552c1ef2
-  RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
-  RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
-  RxSwiftExt: d61c4b9b06e0a448041b1c659e0f1b5c5a035afc
-  RxTest: eb2d23adefc5a5ebf5779c7792fa3edfe6ebcc17
+  RxRelay: 45eaa5db8ee4fb50e5ebd57deec0159e97fa51e6
+  RxSwift: a4b44f7d24599f674deebd1818eab82e58410632
+  RxSwiftExt: 43aaacb6a4d3c69c55e9d1cf4f79920043d13583
+  RxTest: a23f26bb53a5e146a0a69db4f0fa0b69001ce7f4
   RxUtils: 6e4875f063e8a86b639ed258f8cc2cd36342b7ec
 
 PODFILE CHECKSUM: 62eda8ce157d4a2934f84fa84c738c3c08fa81fb
 
-COCOAPODS: 1.12.1
+COCOAPODS: 1.13.0
