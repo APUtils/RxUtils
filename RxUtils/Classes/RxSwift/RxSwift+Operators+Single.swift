@@ -93,7 +93,7 @@ public extension PrimitiveSequence where Trait == SingleTrait {
      - returns: Single sequence that will be automatically repeat if error occurred
      */
     func retry(_ behavior: RepeatBehavior,
-               scheduler: SchedulerType = MainScheduler.instance,
+               scheduler: SchedulerType = ConcurrentMainScheduler.instance,
                shouldRetry: RetryPredicate? = nil) -> Single<Element> {
         
         asObservable()

@@ -1,5 +1,5 @@
 //
-//  CatchErrorJustComplete.swift
+//  CatchJustComplete.swift
 //  Pods
 //
 //  Created by Anton Plebanovich on 27.09.23.
@@ -17,9 +17,9 @@ public extension PrimitiveSequence where Trait == RxSwift.CompletableTrait, Elem
      - parameter onError: Additional optional closure to execute on error
      - returns: A completable sequence that never errors and completes when an error occurs in the underlying sequence
      */
-    func catchErrorJustComplete(_ onError: ((Error) -> Void)? = nil) -> Completable {
+    func catchJustComplete(_ onError: ((Error) -> Void)? = nil) -> Completable {
         asObservable()
-            .catchErrorJustComplete(onError)
+            .catchJustComplete(onError)
             .asCompletable()
     }
 }
@@ -33,9 +33,9 @@ public extension PrimitiveSequence where Trait == MaybeTrait {
      - parameter onError: Additional optional closure to execute on error
      - returns: A maybe sequence that never errors and completes when an error occurs in the underlying sequence
      */
-    func catchErrorJustComplete(_ onError: ((Error) -> Void)? = nil) -> Maybe<Element> {
+    func catchJustComplete(_ onError: ((Error) -> Void)? = nil) -> Maybe<Element> {
         asObservable()
-            .catchErrorJustComplete(onError)
+            .catchJustComplete(onError)
             .asMaybe()
     }
 }
@@ -49,9 +49,9 @@ public extension ObservableConvertibleType {
      - parameter onError: Additional optional closure to execute on error
      - returns: An observable sequence that never errors and completes when an error occurs in the underlying sequence
      */
-    func catchErrorJustComplete(_ onError: ((Error) -> Void)? = nil) -> Observable<Element> {
+    func catchJustComplete(_ onError: ((Error) -> Void)? = nil) -> Observable<Element> {
         asObservable()
-            .catchErrorJustComplete(onError)
+            .catchJustComplete(onError)
     }
 }
 
@@ -64,9 +64,9 @@ public extension PrimitiveSequence where Trait == SingleTrait {
      - parameter onError: Additional optional closure to execute on error
      - returns: A maybe sequence that never errors and completes when an error occurs in the underlying sequence
      */
-    func catchErrorJustComplete(_ onError: ((Error) -> Void)? = nil) -> Maybe<Element> {
+    func catchJustComplete(_ onError: ((Error) -> Void)? = nil) -> Maybe<Element> {
         asMaybe()
-            .catchErrorJustComplete(onError)
+            .catchJustComplete(onError)
     }
 }
 
@@ -79,7 +79,7 @@ public extension ObservableType {
      - parameter onError: Additional optional closure to execute on error
      - returns: An observable sequence that never errors and completes when an error occurs in the underlying sequence
      */
-    func catchErrorJustComplete(_ onError: ((Error) -> Void)?) -> Observable<Element> {
+    func catchJustComplete(_ onError: ((Error) -> Void)? = nil) -> Observable<Element> {
         `catch` { error in
             onError?(error)
             return Observable.empty()

@@ -44,7 +44,7 @@ public extension Completable {
      - returns: Completable sequence that will be automatically repeat if error occurred
      */
     func retry(_ behavior: RepeatBehavior,
-               scheduler: SchedulerType = MainScheduler.instance,
+               scheduler: SchedulerType = ConcurrentMainScheduler.instance,
                shouldRetry: RetryPredicate? = nil) -> Completable {
         
         asObservable()

@@ -112,7 +112,7 @@ public extension Reactive where Base: UIApplication {
     var isKeychainReadable: Observable<Base.KeychainState> {
         Observable<Int>.timer(.seconds(1),
                          period: .seconds(1),
-                         scheduler: MainScheduler.instance)
+                         scheduler: ConcurrentMainScheduler.instance)
             .map { [base] _ in base.keychainState }
             .startWithDeferred { [base] in base.keychainState }
             .distinctUntilChanged()

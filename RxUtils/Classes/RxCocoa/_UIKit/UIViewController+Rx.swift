@@ -71,6 +71,6 @@ public extension Reactive where Base: UIViewController {
                 
                 return Disposables.create()
             }
-            .subscribe(on: MainScheduler.instance)
+            .subscribe(on: ConcurrentMainScheduler.instance)
     }
 }

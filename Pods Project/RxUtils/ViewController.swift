@@ -67,7 +67,7 @@ class ViewController: UIViewController {
     @IBAction fileprivate func onShowAlertTap(_ sender: Any) {
 //        _ = Single.just(())
 //            .showContinueAlert(message: "Are you sure want to continue?")
-//            .timeout(.seconds(5), scheduler: MainScheduler.instance)
+//            .timeout(.seconds(5), scheduler: ConcurrentMainScheduler.instance)
 //            .debug("showContinueAlert")
 //            .subscribe()
         
