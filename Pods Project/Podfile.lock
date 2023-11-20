@@ -1,15 +1,18 @@
 PODS:
-  - APExtensions (14.0.1):
-    - APExtensions/Core (= 14.0.1)
-    - APExtensions/Storyboard (= 14.0.1)
-    - APExtensions/ViewModel (= 14.0.1)
-  - APExtensions/Core (14.0.1):
+  - APExtensions (14.1.1):
+    - APExtensions/Core (= 14.1.1)
+    - APExtensions/Dispatch (= 14.1.1)
+    - APExtensions/Storyboard (= 14.1.1)
+    - APExtensions/ViewModel (= 14.1.1)
+  - APExtensions/Core (14.1.1):
     - RoutableLogger
-  - APExtensions/Occupiable (14.0.1)
-  - APExtensions/OptionalType (14.0.1)
-  - APExtensions/Storyboard (14.0.1):
+  - APExtensions/Dispatch (14.1.1):
     - RoutableLogger
-  - APExtensions/ViewModel (14.0.1)
+  - APExtensions/Occupiable (14.1.1)
+  - APExtensions/OptionalType (14.1.1)
+  - APExtensions/Storyboard (14.1.1):
+    - RoutableLogger
+  - APExtensions/ViewModel (14.1.1)
   - Nimble (10.0.0)
   - Quick (5.0.1)
   - RoutableLogger (12.3.3)
@@ -43,6 +46,7 @@ PODS:
   - RxTest (6.6.0):
     - RxSwift (= 6.6.0)
   - RxUtils (4.2.0):
+    - APExtensions/Dispatch
     - APExtensions/Occupiable (>= 11)
     - APExtensions/OptionalType (>= 11)
     - RoutableLogger (>= 9.1.5)
@@ -81,11 +85,11 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   APExtensions:
-    :commit: 9a20c58031e4be809fe79cea51f2d293076a2bcb
+    :commit: fa9d0d2d6507324e78c83af3254457efef0255b8
     :git: https://github.com/APUtils/APExtensions
 
 SPEC CHECKSUMS:
-  APExtensions: cbc845eab2425fbbb80e6eaee8d51425bda42e5e
+  APExtensions: 82c75dcd17db568a21a21f801101a8913cc8604f
   Nimble: 5316ef81a170ce87baf72dd961f22f89a602ff84
   Quick: 749aa754fd1e7d984f2000fe051e18a3a9809179
   RoutableLogger: ff5425f9ec26ec79241a591a1ed16a7a69d70b2f
@@ -97,8 +101,8 @@ SPEC CHECKSUMS:
   RxSwift: a4b44f7d24599f674deebd1818eab82e58410632
   RxSwiftExt: 43aaacb6a4d3c69c55e9d1cf4f79920043d13583
   RxTest: a23f26bb53a5e146a0a69db4f0fa0b69001ce7f4
-  RxUtils: 6e4875f063e8a86b639ed258f8cc2cd36342b7ec
+  RxUtils: 454f360bff10b2ddb0fffef9d5ca4acce8ec6069
 
 PODFILE CHECKSUM: 62eda8ce157d4a2934f84fa84c738c3c08fa81fb
 
-COCOAPODS: 1.13.0
+COCOAPODS: 1.14.3

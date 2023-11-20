@@ -32,6 +32,7 @@ A helpful collection of RxSwift utils.
   s.source_files = 'RxUtils/Classes/**/*'
   s.frameworks = 'Foundation', 'UIKit'
   
+  s.dependency 'APExtensions/Dispatch'
   s.dependency 'APExtensions/Occupiable', '>= 11'
   s.dependency 'APExtensions/OptionalType', '>= 11'
   s.dependency 'RoutableLogger', '>= 9.1.5'
