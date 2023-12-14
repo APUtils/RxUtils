@@ -18,7 +18,7 @@ fileprivate let kObserveOnDelay: Int = 1
 
 final class BackgroundSafeTimer_Spec: QuickSpec {
     
-    override func spec() {
+    override static func spec() {
         describe("backgroundSafeTimer") {
             context("when initial event not yet emitted") {
                 it("should properly reschedule timer on wake up event") {

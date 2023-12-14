@@ -13,8 +13,8 @@ PODS:
   - APExtensions/Storyboard (14.1.1):
     - RoutableLogger
   - APExtensions/ViewModel (14.1.1)
-  - Nimble (10.0.0)
-  - Quick (5.0.1)
+  - Nimble (13.0.0)
+  - Quick (7.3.0)
   - RoutableLogger (12.3.3)
   - RxBlocking (6.6.0):
     - RxSwift (= 6.6.0)
@@ -24,12 +24,12 @@ PODS:
   - RxGesture (4.0.4):
     - RxCocoa (~> 6.0)
     - RxSwift (~> 6.0)
-  - RxNimble (6.0.0):
-    - RxNimble/RxBlocking (= 6.0.0)
-  - RxNimble/Core (6.0.0):
-    - Nimble (~> 10.0)
+  - RxNimble (6.3.1):
+    - RxNimble/RxBlocking (= 6.3.1)
+  - RxNimble/Core (6.3.1):
+    - Nimble (~> 13.0)
     - RxSwift (~> 6.0)
-  - RxNimble/RxBlocking (6.0.0):
+  - RxNimble/RxBlocking (6.3.1):
     - RxBlocking
     - RxNimble/Core
   - RxRelay (6.6.0):
@@ -85,24 +85,24 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   APExtensions:
-    :commit: fa9d0d2d6507324e78c83af3254457efef0255b8
+    :commit: 3230a990c7a8f96c7eeb8d56fab2e9c8cef2cadb
     :git: https://github.com/APUtils/APExtensions
 
 SPEC CHECKSUMS:
   APExtensions: 82c75dcd17db568a21a21f801101a8913cc8604f
-  Nimble: 5316ef81a170ce87baf72dd961f22f89a602ff84
-  Quick: 749aa754fd1e7d984f2000fe051e18a3a9809179
+  Nimble: 97d90931cca412a23224ff29e258809f75c258f7
+  Quick: d32871931c05547cb4e0bc9009d66a18b50d8558
   RoutableLogger: ff5425f9ec26ec79241a591a1ed16a7a69d70b2f
   RxBlocking: fbd1f8501443024f686e556f36dac79b0d5f4d7c
   RxCocoa: 44a80de90e25b739b5aeaae3c8c371a32e3343cc
   RxGesture: f3efb47ed2d26a8082f7b660d4a59970e275a7f8
-  RxNimble: 04caf11bd7e8f7669d68ef69b8fdfe41552c1ef2
+  RxNimble: bac9a18fdde597508356e704b34047f45f5b3ade
   RxRelay: 45eaa5db8ee4fb50e5ebd57deec0159e97fa51e6
   RxSwift: a4b44f7d24599f674deebd1818eab82e58410632
   RxSwiftExt: 43aaacb6a4d3c69c55e9d1cf4f79920043d13583
   RxTest: a23f26bb53a5e146a0a69db4f0fa0b69001ce7f4
   RxUtils: 454f360bff10b2ddb0fffef9d5ca4acce8ec6069
 
-PODFILE CHECKSUM: 62eda8ce157d4a2934f84fa84c738c3c08fa81fb
+PODFILE CHECKSUM: 6b6e17ef5960e46cd5a5dc711fe1d8fada58a751
 
 COCOAPODS: 1.14.3
