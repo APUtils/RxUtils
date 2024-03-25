@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'RxUtils'
-  s.version          = '4.2.0'
+  s.version          = '4.3.0'
   s.summary          = 'RxSwift utils'
 
 # This description is used to generate tags and improve search results.
@@ -30,6 +30,7 @@ A helpful collection of RxSwift utils.
 
   s.ios.deployment_target = '11.0'
   s.source_files = 'RxUtils/Classes/**/*'
+  s.resource_bundle = {"RxUtils.privacy"=>"Pod/Privacy/RxUtils/PrivacyInfo.xcprivacy"}
   s.frameworks = 'Foundation', 'UIKit'
   
   s.dependency 'APExtensions/Dispatch'

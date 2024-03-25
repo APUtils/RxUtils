@@ -1,20 +1,32 @@
 PODS:
-  - APExtensions (14.1.1):
-    - APExtensions/Core (= 14.1.1)
-    - APExtensions/Dispatch (= 14.1.1)
-    - APExtensions/Storyboard (= 14.1.1)
-    - APExtensions/ViewModel (= 14.1.1)
-  - APExtensions/Core (14.1.1):
+  - APExtensions (14.2.0):
+    - APExtensions/Core (= 14.2.0)
+    - APExtensions/Dispatch (= 14.2.0)
+    - APExtensions/Occupiable (= 14.2.0)
+    - APExtensions/OptionalType (= 14.2.0)
+    - APExtensions/Storyboard (= 14.2.0)
+    - APExtensions/ViewModel (= 14.2.0)
+  - APExtensions/Core (14.2.0):
     - RoutableLogger
-  - APExtensions/Dispatch (14.1.1):
+  - APExtensions/Dispatch (14.2.0):
     - RoutableLogger
-  - APExtensions/Occupiable (14.1.1)
-  - APExtensions/OptionalType (14.1.1)
-  - APExtensions/Storyboard (14.1.1):
+  - APExtensions/Occupiable (14.2.0)
+  - APExtensions/OptionalType (14.2.0)
+  - APExtensions/Storyboard (14.2.0):
     - RoutableLogger
-  - APExtensions/ViewModel (14.1.1)
-  - Nimble (13.0.0)
-  - Quick (7.3.0)
+  - APExtensions/ViewModel (14.2.0)
+  - CwlCatchException (2.2.0):
+    - CwlCatchExceptionSupport (~> 2.2.0)
+  - CwlCatchExceptionSupport (2.2.0)
+  - CwlMachBadInstructionHandler (2.2.0)
+  - CwlPosixPreconditionTesting (2.2.0)
+  - CwlPreconditionTesting (2.2.1):
+    - CwlCatchException (~> 2.2.0)
+    - CwlMachBadInstructionHandler (~> 2.2.0)
+    - CwlPosixPreconditionTesting (~> 2.2.0)
+  - Nimble (13.2.1):
+    - CwlPreconditionTesting (~> 2.2.0)
+  - Quick (7.5.0)
   - RoutableLogger (12.3.3)
   - RxBlocking (6.6.0):
     - RxSwift (= 6.6.0)
@@ -45,7 +57,7 @@ PODS:
     - RxSwiftExt/Core
   - RxTest (6.6.0):
     - RxSwift (= 6.6.0)
-  - RxUtils (4.2.0):
+  - RxUtils (4.3.0):
     - APExtensions/Dispatch
     - APExtensions/Occupiable (>= 11)
     - APExtensions/OptionalType (>= 11)
@@ -65,6 +77,11 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - CwlCatchException
+    - CwlCatchExceptionSupport
+    - CwlMachBadInstructionHandler
+    - CwlPosixPreconditionTesting
+    - CwlPreconditionTesting
     - Nimble
     - Quick
     - RoutableLogger
@@ -85,13 +102,18 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   APExtensions:
-    :commit: 3230a990c7a8f96c7eeb8d56fab2e9c8cef2cadb
+    :commit: fb724d3eef5448f881d904ff02c7b9247090da28
     :git: https://github.com/APUtils/APExtensions
 
 SPEC CHECKSUMS:
-  APExtensions: 82c75dcd17db568a21a21f801101a8913cc8604f
-  Nimble: 97d90931cca412a23224ff29e258809f75c258f7
-  Quick: d32871931c05547cb4e0bc9009d66a18b50d8558
+  APExtensions: c91c6e186ace20b0955607aed7dfae912e8c840f
+  CwlCatchException: 51bf8319009a31104ea6f0568730d1ecc25b6454
+  CwlCatchExceptionSupport: 1345d6adb01a505933f2bc972dab60dcb9ce3e50
+  CwlMachBadInstructionHandler: ea1030428925d9bf340882522af30712fb4bf356
+  CwlPosixPreconditionTesting: a125dee731883f2582715f548c6b6c92c7fde145
+  CwlPreconditionTesting: ccfd08aca58d14e04062b2a3dd2fd52e09857453
+  Nimble: 9e81a67096dab1d1f5160d7a3f8fa7a1eeec38fd
+  Quick: 2b651168441479b949ba987f3cee41a9cc53aa32
   RoutableLogger: ff5425f9ec26ec79241a591a1ed16a7a69d70b2f
   RxBlocking: fbd1f8501443024f686e556f36dac79b0d5f4d7c
   RxCocoa: 44a80de90e25b739b5aeaae3c8c371a32e3343cc
@@ -101,8 +123,8 @@ SPEC CHECKSUMS:
   RxSwift: a4b44f7d24599f674deebd1818eab82e58410632
   RxSwiftExt: 43aaacb6a4d3c69c55e9d1cf4f79920043d13583
   RxTest: a23f26bb53a5e146a0a69db4f0fa0b69001ce7f4
-  RxUtils: 454f360bff10b2ddb0fffef9d5ca4acce8ec6069
+  RxUtils: d3e2f4cfe0b921222be0112699c7bc5d2a19dec7
 
 PODFILE CHECKSUM: 6b6e17ef5960e46cd5a5dc711fe1d8fada58a751
 
-COCOAPODS: 1.14.3
+COCOAPODS: 1.15.2

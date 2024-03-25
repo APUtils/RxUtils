@@ -2,6 +2,37 @@
 All notable changes to this project will be documented in this file.
 `RxUtils` adheres to [Semantic Versioning](http://semver.org/).
 
+## [4.3.0](https://github.com/APUtils/RxUtils/releases/tag/4.3.0)
+Released on 2024-03-25.
+
+#### Added
+- [Assert] operators
+- [BehaviorRelay] `asBinder()`
+- [CatchAndReturn] closure-variant operators
+- [ControlEvent] `merge` operator
+- [filterMany] for optional collections
+- [Maybe] distinctUntilChangedWeakly()
+- [Maybe] distinctWeakly()
+- [ObservableType] distinctUntilChangedWeakly()
+- [ObservableType] distinctWeakly()
+- [Single] distinctUntilChangedWeakly()
+- [Single] distinctWeakly()
+- [SortMany] Operator
+- [ThrottledTap] added
+- [TimeMeasure] measureExecutionTime(_:)
+- [UIAlertController] `showPicker(title:message:cancelTitle:actionTitles:)`
+- [UIApplication] `didMoveToBackground`
+- [UNUserNotificationCenter] reactive support
+- `catchErrorJustComplete` operator with optional `onError` closure for `Single` and `Maybe`
+
+#### Changed
+- catchErrorJustComplete > catchAndComplete
+- iOS 13.0 for example project
+- Use `ConcurrentMainScheduler.instance` instead of `MainScheduler.instance`
+- [MapToVoid] operator rework to log double `Void` mappings
+- [UIAlertController] Return index and title as picker result
+
+
 ## [4.2.0](https://github.com/APUtils/RxUtils/releases/tag/4.2.0)
 Released on 2023-04-10.
 
