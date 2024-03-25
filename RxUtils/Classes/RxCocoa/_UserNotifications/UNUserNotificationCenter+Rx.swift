@@ -18,7 +18,10 @@ public extension Reactive where Base: UNUserNotificationCenter {
     var authorized: Observable<Bool> {
         _authorizationStatus
             .map { authorizationStatus in
-                var authorized = authorizationStatus == .authorized || authorizationStatus == .provisional
+                var authorized = authorizationStatus == .authorized
+                if #available(iOS 12.0, *) {
+                    authorized = authorized || authorizationStatus == .provisional
+                }
                 if #available(iOS 14.0, *) {
                     authorized = authorized || authorizationStatus == .ephemeral
                 }
