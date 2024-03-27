@@ -6,7 +6,13 @@
 //  Copyright © 2023 Anton Plebanovich. All rights reserved.
 //
 
+#if SPM
+import APExtensionsDispatch
+import APExtensionsOccupiable
+import APExtensionsOptionalType
+#else
 import APExtensions
+#endif
 import Dispatch
 import RxSwift
 

@@ -6,6 +6,7 @@
 //  Copyright © 2023 Anton Plebanovich. All rights reserved.
 //
 
+import Foundation
 import RxSwift
 
 // ******************************* MARK: - Maybe

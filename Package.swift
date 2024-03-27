@@ -1,4 +1,4 @@
-// swift-tools-version:5.1
+// swift-tools-version:5.10
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -6,10 +6,10 @@ import PackageDescription
 let package = Package(
     name: "RxUtils",
     platforms: [
-        .iOS(.v11),
-        .macOS(.v10_13),
-        .tvOS(.v11),
-        .watchOS(.v4),
+        .iOS(.v12),
+//        .macOS(.v10_13),
+//        .tvOS(.v12),
+//        .watchOS(.v4),
     ],
     products: [
         .library(
@@ -18,22 +18,30 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/anton-plebanovich/RoutableLogger.git", .upToNextMajor(from: "1.0.0")),
-        .package(url: "https://github.com/APUtils/APExtensions.git", .upToNextMajor(from: "12.0.0")),
+        .package(url: "https://github.com/APUtils/APExtensions.git", .upToNextMajor(from: "14.0.0")),
         .package(url: "https://github.com/ReactiveX/RxSwift.git", .upToNextMajor(from: "6.0.0")),
+        .package(url: "https://github.com/RxSwiftCommunity/RxGesture.git", .upToNextMajor(from: "4.0.0")),
         .package(url: "https://github.com/RxSwiftCommunity/RxSwiftExt.git", .upToNextMajor(from: "6.0.0")),
     ],
     targets: [
         .target(
             name: "RxUtils",
             dependencies: [
-                "RxSwift",
+                "RxGesture",
                 "RxSwiftExt",
+                .product(name: "APExtensionsDispatch", package: "APExtensions"),
                 .product(name: "APExtensionsOccupiable", package: "APExtensions"),
                 .product(name: "APExtensionsOptionalType", package: "APExtensions"),
                 .product(name: "RoutableLogger", package: "RoutableLogger"),
+                .product(name: "RxCocoa", package: "RxSwift"),
+                .product(name: "RxSwift", package: "RxSwift"),
             ],
-            path: "RxUtils/Classes",
+            path: "RxUtils",
             exclude: [],
+            sources: ["Classes"],
+            resources: [
+                .process("Privacy/RxUtils/PrivacyInfo.xcprivacy")
+            ],
             swiftSettings: [
                 .define("SPM"),
             ]
