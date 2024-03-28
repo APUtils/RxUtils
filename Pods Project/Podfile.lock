@@ -27,7 +27,7 @@ PODS:
   - Nimble (13.2.1):
     - CwlPreconditionTesting (~> 2.2.0)
   - Quick (7.5.0)
-  - RoutableLogger (12.3.3)
+  - RoutableLogger (12.4.0)
   - RxBlocking (6.6.0):
     - RxSwift (= 6.6.0)
   - RxCocoa (6.6.0):
@@ -58,14 +58,14 @@ PODS:
   - RxTest (6.6.0):
     - RxSwift (= 6.6.0)
   - RxUtils (4.3.0):
-    - APExtensions/Dispatch
-    - APExtensions/Occupiable (>= 11)
-    - APExtensions/OptionalType (>= 11)
-    - RoutableLogger (>= 9.1.5)
-    - RxCocoa (>= 6)
-    - RxGesture (>= 4)
-    - RxSwift (>= 6)
-    - RxSwiftExt (>= 6)
+    - APExtensions/Dispatch (~> 14.0)
+    - APExtensions/Occupiable (~> 14.0)
+    - APExtensions/OptionalType (~> 14.0)
+    - RoutableLogger (~> 12.0)
+    - RxCocoa (~> 6.0)
+    - RxGesture (~> 4.0)
+    - RxSwift (~> 6.0)
+    - RxSwiftExt (~> 6.0)
 
 DEPENDENCIES:
   - APExtensions (from `https://github.com/APUtils/APExtensions`)
@@ -102,11 +102,11 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   APExtensions:
-    :commit: fb724d3eef5448f881d904ff02c7b9247090da28
+    :commit: 7cead7483a09dcf0de15264361f809014166d995
     :git: https://github.com/APUtils/APExtensions
 
 SPEC CHECKSUMS:
-  APExtensions: c91c6e186ace20b0955607aed7dfae912e8c840f
+  APExtensions: 06c059d069034fb32db789432ee889274b453435
   CwlCatchException: 51bf8319009a31104ea6f0568730d1ecc25b6454
   CwlCatchExceptionSupport: 1345d6adb01a505933f2bc972dab60dcb9ce3e50
   CwlMachBadInstructionHandler: ea1030428925d9bf340882522af30712fb4bf356
@@ -114,7 +114,7 @@ SPEC CHECKSUMS:
   CwlPreconditionTesting: ccfd08aca58d14e04062b2a3dd2fd52e09857453
   Nimble: 9e81a67096dab1d1f5160d7a3f8fa7a1eeec38fd
   Quick: 2b651168441479b949ba987f3cee41a9cc53aa32
-  RoutableLogger: ff5425f9ec26ec79241a591a1ed16a7a69d70b2f
+  RoutableLogger: 5c0d14daf01b023d1506e5a426b53418daac3f8b
   RxBlocking: fbd1f8501443024f686e556f36dac79b0d5f4d7c
   RxCocoa: 44a80de90e25b739b5aeaae3c8c371a32e3343cc
   RxGesture: f3efb47ed2d26a8082f7b660d4a59970e275a7f8
@@ -123,7 +123,7 @@ SPEC CHECKSUMS:
   RxSwift: a4b44f7d24599f674deebd1818eab82e58410632
   RxSwiftExt: 43aaacb6a4d3c69c55e9d1cf4f79920043d13583
   RxTest: a23f26bb53a5e146a0a69db4f0fa0b69001ce7f4
-  RxUtils: d3e2f4cfe0b921222be0112699c7bc5d2a19dec7
+  RxUtils: ec15bd6332ffef0ad938451e83f1523c0c16a261
 
 PODFILE CHECKSUM: 6b6e17ef5960e46cd5a5dc711fe1d8fada58a751
 
