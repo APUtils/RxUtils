@@ -17,7 +17,7 @@ let package = Package(
             targets: ["RxUtils"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/anton-plebanovich/RoutableLogger.git", .upToNextMajor(from: "1.0.0")),
+        .package(url: "https://github.com/anton-plebanovich/RoutableLogger", .upToNextMajor(from: "1.0.0")),
         .package(url: "https://github.com/APUtils/APExtensions.git", .upToNextMajor(from: "14.0.0")),
         .package(url: "https://github.com/ReactiveX/RxSwift.git", .upToNextMajor(from: "6.0.0")),
         .package(url: "https://github.com/RxSwiftCommunity/RxGesture.git", .upToNextMajor(from: "4.0.0")),

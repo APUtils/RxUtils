@@ -40,12 +40,12 @@ A helpful collection of RxSwift utils.
   s.resource_bundle = {"RxUtils.privacy"=>"RxUtils/Privacy/RxUtils/PrivacyInfo.xcprivacy"}
   s.frameworks = 'Foundation', 'UIKit'
   
-  s.dependency 'APExtensions/Dispatch'
-  s.dependency 'APExtensions/Occupiable', '>= 11'
-  s.dependency 'APExtensions/OptionalType', '>= 11'
-  s.dependency 'RoutableLogger', '>= 9.1.5'
-  s.dependency 'RxCocoa', '>= 6'
-  s.dependency 'RxGesture', '>= 4'
-  s.dependency 'RxSwift', '>= 6'
-  s.dependency 'RxSwiftExt', '>= 6'
+  s.dependency 'APExtensions/Dispatch', '~> 14.0'
+  s.dependency 'APExtensions/Occupiable', '~> 14.0'
+  s.dependency 'APExtensions/OptionalType', '~> 14.0'
+  s.dependency 'RoutableLogger', '~> 12.0'
+  s.dependency 'RxCocoa', '~> 6.0'
+  s.dependency 'RxGesture', '~> 4.0'
+  s.dependency 'RxSwift', '~> 6.0'
+  s.dependency 'RxSwiftExt', '~> 6.0'
 end
