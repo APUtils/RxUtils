@@ -1,5 +1,5 @@
 {
-  "originHash" : "21f098f744c3307e8ae1b4decc1ee5a85abea4b9358688f8fd76e4edf116e377",
+  "originHash" : "c767efae50477ab9611231be469d39195ef9337b53c385dbaa4266b0fc6c399d",
   "pins" : [
     {
       "identity" : "apextensions",
@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/anton-plebanovich/RoutableLogger.git",
       "state" : {
-        "revision" : "754e0972cbf364e3bdfc27a0ad618eae50b6ef4c",
-        "version" : "1.0.0"
+        "revision" : "15961a556f5e8263e5ce777836f4bdf927839ae5",
+        "version" : "1.0.1"
       }
     },
     {

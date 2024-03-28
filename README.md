@@ -1,6 +1,5 @@
 # RxUtils
 
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
 [![Version](https://img.shields.io/cocoapods/v/RxUtils.svg?style=flat)](http://cocoapods.org/pods/RxUtils)
 [![License](https://img.shields.io/cocoapods/l/RxUtils.svg?style=flat)](http://cocoapods.org/pods/RxUtils)
@@ -11,7 +10,7 @@ A helpful collection of RxSwift utils.
 
 ## Example
 
-Clone the repo and then open `Carthage Project/RxUtils.xcodeproj`
+Clone the repo and then open `Pods Project/RxUtils.xcodeproj`
 
 ## Installation
 
@@ -22,23 +21,13 @@ Clone the repo and then open `Carthage Project/RxUtils.xcodeproj`
 - Tap `Add Package`
 - Select `RxUtils` and tap `Add Package`
 
-#### Carthage **DEPRECATED**
-
-Please check [official guide](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos)
-
-Cartfile:
-
-```
-github "APUtils/RxUtils" ~> 4.2
-```
-
 #### CocoaPods
 
 RxUtils is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'RxUtils', '~> 4.2'
+pod 'RxUtils', '~> 4.3'
 ```
 
 ## Usage

@@ -37,7 +37,6 @@
 		0D3CD3692746CDC5000AFFB6 /* DEPLOY PROCESS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = "DEPLOY PROCESS.md"; path = "../DEPLOY PROCESS.md"; sourceTree = "<group>"; };
 		0D3CD36A2746CDC5000AFFB6 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
 		0D3CD36B2746CE69000AFFB6 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		0DA174A42982E4FA00044351 /* carthageUpdate.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = carthageUpdate.command; path = "../Carthage Project/Scripts/Carthage/carthageUpdate.command"; sourceTree = "<group>"; };
 		1B41999E41F6956B1E01FBBD /* Pods_RxUtils_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxUtils_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* RxUtils_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxUtils_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,6 +52,7 @@
 		6F1FFB665902FBC72CA8742C /* Pods_RxUtils_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxUtils_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71E44F1F4207254045C14E4C /* Pods-RxUtils_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxUtils_Tests.debug.xcconfig"; path = "Target Support Files/Pods-RxUtils_Tests/Pods-RxUtils_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		81A9208DDC45EF701524F69F /* Pods-RxUtils_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxUtils_Example.release.xcconfig"; path = "Target Support Files/Pods-RxUtils_Example/Pods-RxUtils_Example.release.xcconfig"; sourceTree = "<group>"; };
+		E2CF2C2F2BB57F5C003B98EB /* packageUpdate.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = packageUpdate.command; path = ../packageUpdate.command; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,8 +86,8 @@
 		0D3CD36C2746D0EA000AFFB6 /* _Scripts */ = {
 			isa = PBXGroup;
 			children = (
-				0DA174A42982E4FA00044351 /* carthageUpdate.command */,
 				0D3CD3652746CD36000AFFB6 /* checkBuild.command */,
+				E2CF2C2F2BB57F5C003B98EB /* packageUpdate.command */,
 				0D3CD3662746CD36000AFFB6 /* podCheck.command */,
 				0D3CD3672746CD36000AFFB6 /* podPush.command */,
 			);
