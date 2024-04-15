@@ -57,7 +57,7 @@ PODS:
     - RxSwiftExt/Core
   - RxTest (6.6.0):
     - RxSwift (= 6.6.0)
-  - RxUtils (4.3.0):
+  - RxUtils (4.3.2):
     - APExtensions/Dispatch (~> 14.0)
     - APExtensions/Occupiable (~> 14.0)
     - APExtensions/OptionalType (~> 14.0)
@@ -123,7 +123,7 @@ SPEC CHECKSUMS:
   RxSwift: a4b44f7d24599f674deebd1818eab82e58410632
   RxSwiftExt: 43aaacb6a4d3c69c55e9d1cf4f79920043d13583
   RxTest: a23f26bb53a5e146a0a69db4f0fa0b69001ce7f4
-  RxUtils: ec15bd6332ffef0ad938451e83f1523c0c16a261
+  RxUtils: e40d1ccfeb0eb54a10a958df556c6383f757079d
 
 PODFILE CHECKSUM: 6b6e17ef5960e46cd5a5dc711fe1d8fada58a751
 
