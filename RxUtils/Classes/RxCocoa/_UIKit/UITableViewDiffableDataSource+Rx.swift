@@ -11,12 +11,12 @@ import RxSwift
 import UIKit
 import RoutableLogger
 
-extension UITableViewDiffableDataSource {
+public extension UITableViewDiffableDataSource {
     struct Rx { let base: UITableViewDiffableDataSource<SectionIdentifierType, ItemIdentifierType> }
     var rx: Rx { Rx(base: self) }
 }
 
-extension UITableViewDiffableDataSource.Rx {
+public extension UITableViewDiffableDataSource.Rx {
     func apply(
         _ snapshot: NSDiffableDataSourceSnapshot<SectionIdentifierType, ItemIdentifierType>,
         animatingDifferences: Bool = true,
