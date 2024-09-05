@@ -295,3 +295,20 @@ public extension Reactive where Base: UIApplication {
             .mapToVoid()
     }
 }
+
+// ******************************* MARK: - Did leave active
+
+public extension Reactive where Base: UIApplication {
+    
+    /// Triggers event each time the app leaves active state.
+    /// - note: Useful to flush pending data because the app might not have other opportunities. It triggers earlier than `didMoveToBackground` so we have more time.
+    var didLeaveActive: Observable<Void> {
+        applicationState
+            .withRequiredPrevious()
+            .filter { (previous: UIApplication.State, current: UIApplication.State) in
+                current != UIApplication.State.active
+                && previous == UIApplication.State.active
+            }
+            .mapToVoid()
+    }
+}
