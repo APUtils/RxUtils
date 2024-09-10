@@ -159,7 +159,7 @@ public extension SharedSequenceConvertibleType where SharingStrategy == DriverSh
      */
     static func backgroundSafeTimer(
         _ dueTime: RxSwift.RxTimeInterval,
-        period: RxSwift.RxTimeInterval?,
+        period: RxSwift.RxTimeInterval? = nil,
         possiblyWakedUp: Observable<Void> = UIApplication.shared.rx.didLeaveBackground.subscribe(on: ConcurrentMainScheduler.instance),
         file: String = #file,
         function: String = #function,
