@@ -43,6 +43,11 @@ public extension ObservableType where Element == Void {
                                    _ period: RxSwift.RxTimeInterval?,
                                    _ scheduler: SchedulerType) -> Observable<Int> = Observable<Int>.timer(_:period:scheduler:)) -> Observable<Void> {
         
+        var period = period
+        if period == .never {
+            period = nil
+        }
+        
         let recursiveLock = NSRecursiveLock()
         var dueDate: Date!
         let dueTimeTimeInterval = dueTime.asTimeInterval

@@ -41,6 +41,23 @@ final class BackgroundSafeTimer_Spec: QuickSpec {
                     expect(events.second?.time) == 202
                     expect(events.second?.value.isCompleted) == true
                 }
+                
+                context("and period is .never") {
+                    it("should properly reschedule timer on wake up event") {
+                        let events = runSimulation(dueTime: .seconds(2),
+                                                   period: .never,
+                                                   suspendTimeRange: nil,
+                                                   wakeUpTimes: [201])
+                        
+                        expect(events.count) == 2
+                        
+                        expect(events.first?.time) == 202
+                        expect(events.first?.value.isNext) == true
+                        
+                        expect(events.second?.time) == 202
+                        expect(events.second?.value.isCompleted) == true
+                    }
+                }
             }
             
             context("when initial event was emitted during suspension") {
