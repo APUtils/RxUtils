@@ -33,7 +33,7 @@ public extension ObservableType where Element == Void {
      */
     static func backgroundSafeTimer(
         _ dueTime: RxSwift.RxTimeInterval,
-        period: RxSwift.RxTimeInterval?,
+        period: RxSwift.RxTimeInterval? = nil,
         scheduler: SchedulerType,
         possiblyWakedUp: Observable<Void> = UIApplication.shared.rx.didLeaveBackground.subscribe(on: ConcurrentMainScheduler.instance),
         file: String = #file,
