@@ -15,6 +15,7 @@
 		607FACEC1AFB9204008FA782 /* BackgroundSafeTimer_Spec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* BackgroundSafeTimer_Spec.swift */; };
 		6B452169EAB85857DB45994D /* Pods_RxUtils_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B41999E41F6956B1E01FBBD /* Pods_RxUtils_Tests.framework */; };
 		C2E686DA7063107DA466DD56 /* Pods_RxUtils_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F1FFB665902FBC72CA8742C /* Pods_RxUtils_Example.framework */; };
+		E202A51D2C90666A000B351A /* TimeInterval_Spec.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202A51C2C90666A000B351A /* TimeInterval_Spec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		6F1FFB665902FBC72CA8742C /* Pods_RxUtils_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxUtils_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71E44F1F4207254045C14E4C /* Pods-RxUtils_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxUtils_Tests.debug.xcconfig"; path = "Target Support Files/Pods-RxUtils_Tests/Pods-RxUtils_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		81A9208DDC45EF701524F69F /* Pods-RxUtils_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxUtils_Example.release.xcconfig"; path = "Target Support Files/Pods-RxUtils_Example/Pods-RxUtils_Example.release.xcconfig"; sourceTree = "<group>"; };
+		E202A51C2C90666A000B351A /* TimeInterval_Spec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeInterval_Spec.swift; sourceTree = "<group>"; };
 		E2CF2C2F2BB57F5C003B98EB /* packageUpdate.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = packageUpdate.command; path = ../packageUpdate.command; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -154,6 +156,7 @@
 				0D2A94C1274B3BFC00E393E1 /* Shared */,
 				607FACE91AFB9204008FA782 /* _Supporting Files */,
 				607FACEB1AFB9204008FA782 /* BackgroundSafeTimer_Spec.swift */,
+				E202A51C2C90666A000B351A /* TimeInterval_Spec.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -253,7 +256,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 1530;
+				LastUpgradeCheck = 1540;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
@@ -437,6 +440,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D2A94C3274B3C2300E393E1 /* Event+Tests.swift in Sources */,
+				E202A51D2C90666A000B351A /* TimeInterval_Spec.swift in Sources */,
 				607FACEC1AFB9204008FA782 /* BackgroundSafeTimer_Spec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
