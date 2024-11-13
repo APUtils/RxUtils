@@ -48,15 +48,15 @@ class ViewController: UIViewController {
         Observable<Int>.timer(.seconds(0), period: .seconds(1), scheduler: processingScheduler)
             .observe(on: processingScheduler)
             .doOnNext { print("Process - \($0)") }
-            .flatMapThrottle(scheduler: executeScheduler) { i -> Observable<Int> in
-                Observable.just(i)
-                    .doOnNext { print("Execute - \($0).1") }
-                    .doOnNext { _ in sleep(1) }
-                    .doOnNext { print("Execute - \($0).2") }
-                    .doOnNext { _ in sleep(1) }
-                    .doOnNext { print("Execute - \($0).3") }
-                    .doOnNext { _ in sleep(1) }
-                    .doOnNext { print("Execute - \($0).4") }
+            .flatMapThrottle(scheduler: executeScheduler) { i -> Single<Int> in
+                Single.just(i)
+                    .doOnSuccess { print("Execute - \($0).1") }
+                    .doOnSuccess { _ in sleep(1) }
+                    .doOnSuccess { print("Execute - \($0).2") }
+                    .doOnSuccess { _ in sleep(1) }
+                    .doOnSuccess { print("Execute - \($0).3") }
+                    .doOnSuccess { _ in sleep(1) }
+                    .doOnSuccess { print("Execute - \($0).4") }
             }
             .subscribeOnNext {
                 print("Finish - \($0)")
