@@ -12,15 +12,32 @@ import RoutableLogger
 
 public extension ObservableConvertibleType {
     
+    /// Throttles coming events until operation is executed and transforms resulted sequence to `Completable`
+    /// Schedules the next operation if there is buffered element.
+    /// - note: Buffer size is 1.
+    /// - note: Schedules all executions on `scheduler`.
+    /// - warning: Execution and processing shouldn't happen on the same queue or it won't work.
+    func flatMapThrottleCompletable(
+        scheduler: DispatchQueueScheduler,
+        selector: @escaping (Self.Element) throws -> Completable
+    ) -> Completable {
+        
+        flatMapThrottle(scheduler: scheduler, selector: { (element) -> Single<Void> in
+            try selector(element).andThenDeferred { Single.just(()) }
+        })
+        .ignoreElements()
+        .asCompletable()
+    }
+    
     /// Throttles coming events until operation is executed.
     /// Schedules the next operation if there is buffered element.
     /// - note: Buffer size is 1.
     /// - note: Schedules all executions on `scheduler`.
     /// - warning: Execution and processing shouldn't happen on the same queue or it won't work.
-    func flatMapThrottle<Source: ObservableConvertibleType>(
+    func flatMapThrottle<T>(
         scheduler: DispatchQueueScheduler,
-        selector: @escaping (Self.Element) throws -> Source
-    ) -> Observable<Source.Element> {
+        selector: @escaping (Self.Element) throws -> Single<T>
+    ) -> Observable<T> {
         
         var _throttledElement: Element? = nil
         var _executing: Bool = false
@@ -30,7 +47,7 @@ public extension ObservableConvertibleType {
         
         scheduler.configuration.queue.setSpecific(key: _backgroundQueueKey, value: ())
         
-        func executeNext(element: Source.Element) -> Observable<Source.Element> {
+        func executeNext(element: T) -> Observable<T> {
             _recursiveLock.lock(); defer { _recursiveLock.unlock() }
             
             if let throttledElement = _throttledElement {
@@ -48,7 +65,7 @@ public extension ObservableConvertibleType {
         }
         
         return asObservable()
-            .flatMap { element -> Observable<Source.Element> in
+            .flatMap { element -> Observable<T> in
                 _recursiveLock.lock(); defer { _recursiveLock.unlock() }
                 
                 if _executing {
