@@ -93,7 +93,7 @@ public extension TimeInterval {
 
 // ******************************* MARK: - CustomStringConvertible
 
-extension RxTimeInterval: CustomStringConvertible {
+extension RxTimeInterval: @retroactive CustomStringConvertible {
     public var description: String {
         switch self {
         case .seconds(let seconds): return "\(seconds) seconds"

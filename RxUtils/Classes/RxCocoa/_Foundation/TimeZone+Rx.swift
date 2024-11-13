@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-extension TimeZone: ReactiveCompatible {}
+extension TimeZone: @retroactive ReactiveCompatible {}
 
 public extension Reactive where Base == TimeZone {
     
