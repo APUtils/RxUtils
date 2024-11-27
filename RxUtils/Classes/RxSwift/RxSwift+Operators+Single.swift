@@ -19,6 +19,11 @@ import RxSwiftExt
 
 public extension PrimitiveSequence where Trait == SingleTrait {
     
+    /// Projects each element of a single sequence into an optional form and filters all optional results.
+    func compactMap<Result>(_ transform: @escaping (Element) throws -> Result?) -> Maybe<Result> {
+        map { try transform($0) }.filterNil()
+    }
+    
     /// Projects each element of an observable sequence into Any
     func mapToAny() -> Single<Any> {
         return map { $0 }
