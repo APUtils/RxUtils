@@ -15,24 +15,24 @@ PODS:
   - APExtensions/Storyboard (14.2.0):
     - RoutableLogger
   - APExtensions/ViewModel (14.2.0)
-  - CwlCatchException (2.2.0):
-    - CwlCatchExceptionSupport (~> 2.2.0)
-  - CwlCatchExceptionSupport (2.2.0)
-  - CwlMachBadInstructionHandler (2.2.0)
-  - CwlPosixPreconditionTesting (2.2.0)
-  - CwlPreconditionTesting (2.2.1):
-    - CwlCatchException (~> 2.2.0)
-    - CwlMachBadInstructionHandler (~> 2.2.0)
-    - CwlPosixPreconditionTesting (~> 2.2.0)
-  - Nimble (13.2.1):
+  - CwlCatchException (2.2.1):
+    - CwlCatchExceptionSupport (~> 2.2.1)
+  - CwlCatchExceptionSupport (2.2.1)
+  - CwlMachBadInstructionHandler (2.2.2)
+  - CwlPosixPreconditionTesting (2.2.2)
+  - CwlPreconditionTesting (2.2.2):
+    - CwlCatchException (~> 2.2.1)
+    - CwlMachBadInstructionHandler (~> 2.2.2)
+    - CwlPosixPreconditionTesting (~> 2.2.2)
+  - Nimble (13.6.2):
     - CwlPreconditionTesting (~> 2.2.0)
-  - Quick (7.5.0)
+  - Quick (7.6.2)
   - RoutableLogger (12.4.0)
-  - RxBlocking (6.6.0):
-    - RxSwift (= 6.6.0)
-  - RxCocoa (6.6.0):
-    - RxRelay (= 6.6.0)
-    - RxSwift (= 6.6.0)
+  - RxBlocking (6.8.0):
+    - RxSwift (= 6.8.0)
+  - RxCocoa (6.8.0):
+    - RxRelay (= 6.8.0)
+    - RxSwift (= 6.8.0)
   - RxGesture (4.0.4):
     - RxCocoa (~> 6.0)
     - RxSwift (~> 6.0)
@@ -44,9 +44,9 @@ PODS:
   - RxNimble/RxBlocking (6.3.1):
     - RxBlocking
     - RxNimble/Core
-  - RxRelay (6.6.0):
-    - RxSwift (= 6.6.0)
-  - RxSwift (6.6.0)
+  - RxRelay (6.8.0):
+    - RxSwift (= 6.8.0)
+  - RxSwift (6.8.0)
   - RxSwiftExt (6.2.1):
     - RxSwiftExt/Core (= 6.2.1)
     - RxSwiftExt/RxCocoa (= 6.2.1)
@@ -55,8 +55,8 @@ PODS:
   - RxSwiftExt/RxCocoa (6.2.1):
     - RxCocoa (~> 6.0)
     - RxSwiftExt/Core
-  - RxTest (6.6.0):
-    - RxSwift (= 6.6.0)
+  - RxTest (6.8.0):
+    - RxSwift (= 6.8.0)
   - RxUtils (4.3.2):
     - APExtensions/Dispatch (~> 14.0)
     - APExtensions/Occupiable (~> 14.0)
@@ -102,29 +102,29 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   APExtensions:
-    :commit: 7cead7483a09dcf0de15264361f809014166d995
+    :commit: 51f4acba6d82ac0e8fd8886fc1ebb06025f3901a
     :git: https://github.com/APUtils/APExtensions
 
 SPEC CHECKSUMS:
   APExtensions: 06c059d069034fb32db789432ee889274b453435
-  CwlCatchException: 51bf8319009a31104ea6f0568730d1ecc25b6454
-  CwlCatchExceptionSupport: 1345d6adb01a505933f2bc972dab60dcb9ce3e50
-  CwlMachBadInstructionHandler: ea1030428925d9bf340882522af30712fb4bf356
-  CwlPosixPreconditionTesting: a125dee731883f2582715f548c6b6c92c7fde145
-  CwlPreconditionTesting: ccfd08aca58d14e04062b2a3dd2fd52e09857453
-  Nimble: 9e81a67096dab1d1f5160d7a3f8fa7a1eeec38fd
-  Quick: 2b651168441479b949ba987f3cee41a9cc53aa32
+  CwlCatchException: 7acc161b299a6de7f0a46a6ed741eae2c8b4d75a
+  CwlCatchExceptionSupport: 54ccab8d8c78907b57f99717fb19d4cc3bce02dc
+  CwlMachBadInstructionHandler: dae4fdd124d45c9910ac240287cc7b898f4502a1
+  CwlPosixPreconditionTesting: ecd095aa2129e740b44301c34571e8d85906fb88
+  CwlPreconditionTesting: 67a0047dd4de4382b93442c0e3f25207f984f35a
+  Nimble: 8cd9e713948ea6a61980e82d2bec937acec16b91
+  Quick: b8bec97cd4b9f21da0472d45580f763b801fc353
   RoutableLogger: 5c0d14daf01b023d1506e5a426b53418daac3f8b
-  RxBlocking: fbd1f8501443024f686e556f36dac79b0d5f4d7c
-  RxCocoa: 44a80de90e25b739b5aeaae3c8c371a32e3343cc
+  RxBlocking: a8b634fba6850913bc3df40bb73fd08b2dbf0f01
+  RxCocoa: 2d33c1e1e5d66492052ad46b11024ae287572880
   RxGesture: f3efb47ed2d26a8082f7b660d4a59970e275a7f8
   RxNimble: bac9a18fdde597508356e704b34047f45f5b3ade
-  RxRelay: 45eaa5db8ee4fb50e5ebd57deec0159e97fa51e6
-  RxSwift: a4b44f7d24599f674deebd1818eab82e58410632
+  RxRelay: 335c78b926a2aea8d863a6d25f1ed3b5ad8e8705
+  RxSwift: 4e28be97cbcfeee614af26d83415febbf2bf6f45
   RxSwiftExt: 43aaacb6a4d3c69c55e9d1cf4f79920043d13583
-  RxTest: a23f26bb53a5e146a0a69db4f0fa0b69001ce7f4
+  RxTest: d0fa1ec82feb41efa826a59173ec65eafbbe4aaf
   RxUtils: e40d1ccfeb0eb54a10a958df556c6383f757079d
 
 PODFILE CHECKSUM: 6b6e17ef5960e46cd5a5dc711fe1d8fada58a751
 
-COCOAPODS: 1.15.2
+COCOAPODS: 1.16.2
