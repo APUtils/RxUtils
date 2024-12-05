@@ -14,11 +14,7 @@ public final class OperationsQueue {
     
     var operations = BehaviorRelay<[UUID]>(value: [])
     
-    lazy var operationIdByID: Observable<[UUID: UUID]> = operations.map {
-        $0.reduce(into: [:]) { dictionary, element in
-            dictionary[element] = element
-        }
-    }
+    public init() {}
     
     public func addOperation(_ operation: Completable) -> Completable {
         let id = UUID()
