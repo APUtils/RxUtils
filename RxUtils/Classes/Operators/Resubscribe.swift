@@ -41,6 +41,7 @@ public extension ObservableConvertibleType {
     func resubscribeOnPossibleWakeUp(scheduler: SchedulerType,
                                      possiblyWakedUp: Observable<Void> = .possiblyWakedUp,
                                      throttleDueTime: RxTimeInterval = .seconds(60),
+                                     label: String? = nil,
                                      file: String = #file,
                                      function: String = #function,
                                      line: UInt = #line) -> Observable<Element> {
@@ -60,7 +61,7 @@ public extension ObservableConvertibleType {
                 .flatMapLatest { _ -> Observable<Element> in
                     _recursiveLock.lock(); defer { _recursiveLock.unlock() }
                     
-                    let label = file._fileName
+                    let label = label ?? file._fileName
                     if _initial {
                         _initial = false
                         RoutableLogger.logVerbose("Performing initial subscription on \(label):\(line)", file: file, function: function, line: line)
@@ -94,6 +95,7 @@ extension PrimitiveSequence where Trait == SingleTrait {
     /// resubscribe operation.
     func resubscribeOnPossibleWakeUp(scheduler: SchedulerType,
                                      possiblyWakedUp: Observable<Void> = .possiblyWakedUp,
+                                     label: String? = nil,
                                      file: String = #file,
                                      function: String = #function,
                                      line: UInt = #line) -> Single<Element> {
@@ -101,6 +103,7 @@ extension PrimitiveSequence where Trait == SingleTrait {
         asObservable()
             .resubscribeOnPossibleWakeUp(scheduler: scheduler,
                                          possiblyWakedUp: possiblyWakedUp,
+                                         label: label,
                                          file: file,
                                          function: function,
                                          line: line)
