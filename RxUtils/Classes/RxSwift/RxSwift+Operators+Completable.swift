@@ -12,6 +12,11 @@ import RxSwiftExt
 
 public extension Completable {
     
+    /// Transforms `Completable` sequence to an `Observable` sequence by just emitting element on completion.
+    func asObservableJustReturn<T>(_ element: T) -> Observable<T> {
+        andThen(.just(element))
+    }
+    
     /// Creates sequence that can not be disposed.
     /// - parameter disposeBag: Optional dispose bag that will be used to perform long-lasted subscription.
     /// - note: Please keep in mind that subscription is not disposed if sequence never ends.
