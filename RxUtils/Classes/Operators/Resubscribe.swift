@@ -79,7 +79,7 @@ public extension ObservableConvertibleType {
     }
 }
 
-extension PrimitiveSequence where Trait == SingleTrait {
+public extension PrimitiveSequence where Trait == SingleTrait {
     
     /// Restarts subscription on possibly waked up events.
     ///
