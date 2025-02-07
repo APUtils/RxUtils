@@ -254,6 +254,18 @@ public extension Reactive where Base: UIApplication {
     var didLeaveBackground: Observable<Void> {
         didLeaveBackgroundWithTimeInterval.mapToVoid()
     }
+    
+    /// Triggers event each time the app leaves the background and becomes active.
+    /// - note: Useful to use for a refresh logic that can only be performed during the `active` application state.
+    /// - note: It doesn't trigger on the app start so preventing excessive updates.
+    var didLeaveBackgroundAndBecameActive: Observable<Void> {
+        didLeaveBackground.flatMapLatest {
+            applicationState
+                .filter { $0 == .active }
+                .mapToVoid()
+                .asSafeSingle()
+        }
+    }
 }
 
 public extension ObservableType {
