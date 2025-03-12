@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import RxSwiftExt
 
 // ******************************* MARK: - Maybe
 
@@ -86,7 +87,7 @@ public extension PrimitiveSequence where Trait == MaybeTrait {
     }
     
     /**
-     Projects success element of a single trait sequence to an observable sequence.
+     Projects success element of a maybe trait sequence to an observable sequence.
      
      - seealso: [flatMap operator on reactivex.io](http://reactivex.io/documentation/operators/flatmap.html)
      
@@ -97,6 +98,22 @@ public extension PrimitiveSequence where Trait == MaybeTrait {
         asObservable()
             .flatMap(selector)
     }
+    
+    /**
+     Repeats the source maybe sequence using given behavior in case of an error or until it successfully terminated
+     - parameter behavior: Behavior that will be used in case of an error
+     - parameter scheduler: Scheduler that will be used for delaying subscription after error
+     - parameter shouldRetry: Custom optional closure for checking error (if returns true, repeat will be performed)
+     - returns: Maybe sequence that will be automatically repeat if error occurred
+     */
+    func retry(_ behavior: RepeatBehavior,
+               scheduler: SchedulerType = ConcurrentMainScheduler.instance,
+               shouldRetry: RetryPredicate? = nil) -> Maybe<Element> {
+        
+        asObservable()
+            .retry(behavior, scheduler: scheduler, shouldRetry: shouldRetry)
+            .asMaybe()
+    }
 }
 
 // ******************************* MARK: - Maybe<[Element]>
@@ -104,7 +121,7 @@ public extension PrimitiveSequence where Trait == MaybeTrait {
 public extension PrimitiveSequence where Trait == MaybeTrait, Element: Collection {
     
     /**
-     Projects each element of an single collection into a new form.
+     Projects each element of an maybe collection into a new form.
      
      - parameter transform: A transform function to apply to each element of the source collection.
      - returns: An observable collection whose elements are the result of invoking the transform function on each element of source.
