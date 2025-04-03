@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'RxUtils'
-  s.version          = '4.3.2'
+  s.version          = '5.0.0'
   s.summary          = 'RxSwift utils'
 
 # This description is used to generate tags and improve search results.
@@ -40,12 +40,12 @@ A helpful collection of RxSwift utils.
   s.resource_bundle = {"RxUtils.privacy"=>"RxUtils/Privacy/RxUtils/PrivacyInfo.xcprivacy"}
   s.frameworks = 'Foundation', 'UIKit'
   
-  s.dependency 'APExtensions/Dispatch', '~> 14.0'
-  s.dependency 'APExtensions/Occupiable', '~> 14.0'
-  s.dependency 'APExtensions/OptionalType', '~> 14.0'
-  s.dependency 'RoutableLogger', '~> 12.0'
-  s.dependency 'RxCocoa', '~> 6.0'
-  s.dependency 'RxGesture', '~> 4.0'
-  s.dependency 'RxSwift', '~> 6.0'
-  s.dependency 'RxSwiftExt', '~> 6.0'
+  s.dependency 'APExtensions/Dispatch', '>= 15.0'
+  s.dependency 'APExtensions/Occupiable', '>= 15.0'
+  s.dependency 'APExtensions/OptionalType', '>= 15.0'
+  s.dependency 'RoutableLogger', '>= 12.0'
+  s.dependency 'RxCocoa', '>= 6.0'
+  s.dependency 'RxGesture', '>= 4.0'
+  s.dependency 'RxSwift', '>= 6.0'
+  s.dependency 'RxSwiftExt', '>= 6.0'
 end
