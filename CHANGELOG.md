@@ -2,6 +2,38 @@
 All notable changes to this project will be documented in this file.
 `RxUtils` adheres to [Semantic Versioning](http://semver.org/).
 
+
+## [5.0.0](https://github.com/APUtils/RxUtils/releases/tag/5.0.0)
+Released on `2025-04-01`
+
+#### Added
+
+- [BackgroundSafeTimer] Default value for `period`
+- [BackgroundSafeTimer] Support for Driver
+- [BackgroundSafeTimer] `.never` `period` handle
+- [Completable] `asObservableJustReturn(_:)`
+- [Completable] `share(scope:)`
+- [Error] `asRxError`
+- [FlatMapThrottle] Restricted to `Single` operations
+- [FlatMapThrottle] `flatMapThrottleCompletable` method
+- [MapToCount] New operators `mapToCount`
+- [Maybe] `retry(_ behavior:scheduler:shouldRetry:)`
+- [ObservableType, ObservableConvertibleType] `distinctUntilChanged()` for tuple of 3 and 4 equatable elements
+- [ObservableType, ObservableConvertibleType] `distinctUntilChanged()` for tuple of equatable elements
+- [OperationsQueue] `addOperation(_:)
+- [Resubscribe] operator
+- [Resubscribe] public for `Single` extension
+- [Resubscribe] `label` parameter
+- [Single] `compactMap`
+- [Tests] `Resubscribe` operator tests
+- [TimeInterval] `asRxTimeInterval` crash fix
+- [TimeMeasure] `measureExecutionTimeOnNext(start:end:)`
+- [UIApplication] `didLeaveActive`
+- [UIApplication] `didLeaveBackgroundAndBecameActive`
+- [UITableViewDiffableDataSource] Public access
+- [UITableViewDiffableDataSource] Rx support
+
+
 ## [4.3.0](https://github.com/APUtils/RxUtils/releases/tag/4.3.0)
 Released on 2024-03-25.
 
