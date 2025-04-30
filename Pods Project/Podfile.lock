@@ -1,20 +1,20 @@
 PODS:
-  - APExtensions (15.0.0):
-    - APExtensions/Core (= 15.0.0)
-    - APExtensions/Dispatch (= 15.0.0)
-    - APExtensions/Occupiable (= 15.0.0)
-    - APExtensions/OptionalType (= 15.0.0)
-    - APExtensions/Storyboard (= 15.0.0)
-    - APExtensions/ViewModel (= 15.0.0)
-  - APExtensions/Core (15.0.0):
+  - APExtensions (15.0.1):
+    - APExtensions/Core (= 15.0.1)
+    - APExtensions/Dispatch (= 15.0.1)
+    - APExtensions/Occupiable (= 15.0.1)
+    - APExtensions/OptionalType (= 15.0.1)
+    - APExtensions/Storyboard (= 15.0.1)
+    - APExtensions/ViewModel (= 15.0.1)
+  - APExtensions/Core (15.0.1):
     - RoutableLogger
-  - APExtensions/Dispatch (15.0.0):
+  - APExtensions/Dispatch (15.0.1):
     - RoutableLogger
-  - APExtensions/Occupiable (15.0.0)
-  - APExtensions/OptionalType (15.0.0)
-  - APExtensions/Storyboard (15.0.0):
+  - APExtensions/Occupiable (15.0.1)
+  - APExtensions/OptionalType (15.0.1)
+  - APExtensions/Storyboard (15.0.1):
     - RoutableLogger
-  - APExtensions/ViewModel (15.0.0)
+  - APExtensions/ViewModel (15.0.1)
   - CwlCatchException (2.2.1):
     - CwlCatchExceptionSupport (~> 2.2.1)
   - CwlCatchExceptionSupport (2.2.1)
@@ -57,7 +57,7 @@ PODS:
     - RxSwiftExt/Core
   - RxTest (6.9.0):
     - RxSwift (= 6.9.0)
-  - RxUtils (5.0.0):
+  - RxUtils (5.0.1):
     - APExtensions/Dispatch (>= 15.0)
     - APExtensions/Occupiable (>= 15.0)
     - APExtensions/OptionalType (>= 15.0)
@@ -102,11 +102,11 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   APExtensions:
-    :commit: fc578689e8f792c0c9e87ce3150e241b0e1d976d
+    :commit: 9476102a11de25a5f725fbec379d21f1831985d1
     :git: https://github.com/APUtils/APExtensions
 
 SPEC CHECKSUMS:
-  APExtensions: d0692b34c786b9282e09b9cd519c58269f847c62
+  APExtensions: 1c783b402ac7100f54bc7073cf0e1621d3dcbc8d
   CwlCatchException: 7acc161b299a6de7f0a46a6ed741eae2c8b4d75a
   CwlCatchExceptionSupport: 54ccab8d8c78907b57f99717fb19d4cc3bce02dc
   CwlMachBadInstructionHandler: dae4fdd124d45c9910ac240287cc7b898f4502a1
@@ -123,7 +123,7 @@ SPEC CHECKSUMS:
   RxSwift: 31649ace6aceeb422e16ff71c60804f9c3281ed9
   RxSwiftExt: 43aaacb6a4d3c69c55e9d1cf4f79920043d13583
   RxTest: fa7749822359a10a19b9fa32b80dbe608e4ce44e
-  RxUtils: 550ca8910caf997ef84daa2389fb29f66d0d1994
+  RxUtils: 28442ced10d8cbeaa6faecdef4761b5c3dbd6044
 
 PODFILE CHECKSUM: 31d5372094aeb85bc79698ef824705f0d77f1db0
 
