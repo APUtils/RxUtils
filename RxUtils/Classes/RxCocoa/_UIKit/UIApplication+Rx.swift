@@ -6,6 +6,7 @@
 //  Copyright © 2019 Anton Plebanovich. All rights reserved.
 //
 
+import RoutableLogger
 import RxCocoa
 import RxSwift
 import UIKit
@@ -269,14 +270,23 @@ public extension Reactive where Base: UIApplication {
     }
 }
 
-public extension ObservableType {
+public extension ObservableConvertibleType {
     
     /// Produces duplicate events on app leave background so UI may be reloaded for example.
     @available(iOSApplicationExtension, unavailable)
-    func reloadOnLeaveBackground() -> Observable<Element> {
-        Observable.combineLatest(UIApplication.shared.rx.didLeaveBackgroundWithTimeInterval.startWith(0),
-                                 self)
-            .map { $1 }
+    func reloadOnLeaveBackground(file: String = #file, function: String = #function, line: UInt = #line) -> Observable<Element> {
+        Observable.combineLatest(
+            UIApplication.shared.rx
+                .didLeaveBackgroundWithTimeInterval
+                .startWith(0)
+                .doOnNext { timeInterval in
+                    if timeInterval > 0 {
+                        RoutableLogger.logVerbose("Reloading \(file._fileName):\(line) on leave background", file: file, function: function, line: line)
+                    }
+                },
+            asObservable()
+        )
+        .map { $1 }
     }
 }
 
@@ -284,9 +294,9 @@ public extension SharedSequenceConvertibleType where SharingStrategy == DriverSh
     
     /// Produces duplicate events on app leave background so UI may be reloaded for example.
     @available(iOSApplicationExtension, unavailable)
-    func reloadOnLeaveBackground() -> Driver<Element> {
+    func reloadOnLeaveBackground(file: String = #file, function: String = #function, line: UInt = #line) -> Driver<Element> {
         asObservable()
-            .reloadOnLeaveBackground()
+            .reloadOnLeaveBackground(file: file, function: function, line: line)
             .asDriver(onErrorDriveWith: .empty())
     }
 }
