@@ -237,11 +237,17 @@ public extension Reactive where Base: UIAlertController {
 private final class AlertController: UIAlertController {
     
     private lazy var alertWindow: UIWindow? = {
-        let alertWindow = UIWindow(frame: UIScreen.main.bounds)
-        alertWindow.windowLevel = .alert
-        alertWindow.rootViewController = AppearanceCaptureViewController()
+        let window: UIWindow
+        if #available(iOS 13.0, *), let windowScene = UIApplication.shared.connectedScenes.compactMap({ $0 as? UIWindowScene }).first {
+            window = UIWindow(windowScene: windowScene)
+        } else {
+            window = UIWindow(frame: UIScreen.main.bounds)
+        }
         
-        return alertWindow
+        window.windowLevel = .alert
+        window.rootViewController = AppearanceCaptureViewController()
+        
+        return window
     }()
     
     override func viewDidDisappear(_ animated: Bool) {
