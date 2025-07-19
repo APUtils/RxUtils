@@ -151,8 +151,8 @@ public extension ObservableConvertibleType {
 @available(iOSApplicationExtension, unavailable)
 public extension UIAlertController {
     struct Action: Equatable {
-        var title: String
-        var style: UIAlertAction.Style
+        public let title: String
+        public let style: UIAlertAction.Style
         
         public init(title: String, style: UIAlertAction.Style) {
             self.title = title
