@@ -9,6 +9,7 @@
 import RoutableLogger
 import RxCocoa
 import RxSwift
+import RxSwiftExt
 import UIKit
 
 public extension Reactive where Base: UIApplication {
@@ -38,8 +39,8 @@ public extension Reactive where Base: UIApplication {
                 return CompositeDisposable(didEnterBackgroundDisposable, didBecomeActiveDisposable, willResignActiveDisposable)
             }
             .startWithDeferred { [weak base] in base?.applicationState }
-            .subscribe(on: ConcurrentMainScheduler.instance)
             .distinctUntilChanged()
+            .subscribe(on: ConcurrentMainScheduler.instance)
     }
     
     /// Background refresh status observable.
@@ -48,18 +49,26 @@ public extension Reactive where Base: UIApplication {
         NotificationCenter.default.rx.notification(UIApplication.backgroundRefreshStatusDidChangeNotification)
             .compactMap { [weak base] _ in base?.backgroundRefreshStatus }
             .startWithDeferred { [weak base] in base?.backgroundRefreshStatus }
-            .subscribe(on: ConcurrentMainScheduler.instance)
             .distinctUntilChanged()
+            .subscribe(on: ConcurrentMainScheduler.instance)
     }
     
     /// Reactive wrapper for `isFirstUnlockHappened` property.
     /// Starts with the current value.
     /// Completes after emitting `true`.
     var isFirstUnlockHappened: Observable<Bool> {
-        NotificationCenter.default.rx.notification(UIApplication.protectedDataDidBecomeAvailableNotification)
+        let protectedDataDidBecomeAvailable = NotificationCenter.default.rx
+            .notification(UIApplication.protectedDataDidBecomeAvailableNotification)
             .mapTo(true)
+        
+        let didLeaveBackground = didLeaveBackground
+            .compactMap { [weak base] in base?.isFirstUnlockHappened }
+        
+        return Observable.merge(protectedDataDidBecomeAvailable, didLeaveBackground)
             .startWithDeferred { [weak base] in base?.isFirstUnlockHappened }
+            .distinctUntilChanged()
             .take(until: { $0 }, behavior: .inclusive)
+            .subscribe(on: ConcurrentMainScheduler.instance)
     }
     
     /// Reactive wrapper for `isProtectedDataAvailable` property.
@@ -71,10 +80,13 @@ public extension Reactive where Base: UIApplication {
         let unavailable = NotificationCenter.default.rx.notification(UIApplication.protectedDataWillBecomeUnavailableNotification)
             .mapTo(false)
         
-        return Observable.merge(available, unavailable)
+        let didLeaveBackground = didLeaveBackground
+            .compactMap { [weak base] in base?.isProtectedDataAvailable }
+        
+        return Observable.merge(available, unavailable, didLeaveBackground)
             .startWithDeferred { [weak base] in base?.isProtectedDataAvailable }
-            .subscribe(on: ConcurrentMainScheduler.instance)
             .distinctUntilChanged()
+            .subscribe(on: ConcurrentMainScheduler.instance)
     }
 }
 
