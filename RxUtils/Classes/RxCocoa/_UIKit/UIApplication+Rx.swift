@@ -61,10 +61,10 @@ public extension Reactive where Base: UIApplication {
             .notification(UIApplication.protectedDataDidBecomeAvailableNotification)
             .mapTo(true)
         
-        let didLeaveBackground = didLeaveBackground
+        let appStateChange = Observable.merge(didBecameActive, didBecameInactive)
             .compactMap { [weak base] in base?.isFirstUnlockHappened }
         
-        return Observable.merge(protectedDataDidBecomeAvailable, didLeaveBackground)
+        return Observable.merge(protectedDataDidBecomeAvailable, appStateChange)
             .startWithDeferred { [weak base] in base?.isFirstUnlockHappened }
             .distinctUntilChanged()
             .take(until: { $0 }, behavior: .inclusive)
@@ -80,10 +80,10 @@ public extension Reactive where Base: UIApplication {
         let unavailable = NotificationCenter.default.rx.notification(UIApplication.protectedDataWillBecomeUnavailableNotification)
             .mapTo(false)
         
-        let didLeaveBackground = didLeaveBackground
+        let appStateChange = Observable.merge(didBecameActive, didBecameInactive)
             .compactMap { [weak base] in base?.isProtectedDataAvailable }
         
-        return Observable.merge(available, unavailable, didLeaveBackground)
+        return Observable.merge(available, unavailable, appStateChange)
             .startWithDeferred { [weak base] in base?.isProtectedDataAvailable }
             .distinctUntilChanged()
             .subscribe(on: ConcurrentMainScheduler.instance)
