@@ -358,4 +358,11 @@ public extension Reactive where Base: UIApplication {
             .filter { $0 == .active }
             .mapToVoid()
     }
+    
+    /// Triggers event each time the app enters inactive state.
+    var didBecameInactive: Observable<Void> {
+        applicationState
+            .filter { $0 == .inactive }
+            .mapToVoid()
+    }
 }
