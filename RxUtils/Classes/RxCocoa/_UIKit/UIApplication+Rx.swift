@@ -347,3 +347,15 @@ public extension Reactive where Base: UIApplication {
             .mapToVoid()
     }
 }
+
+// ******************************* MARK: - States
+
+public extension Reactive where Base: UIApplication {
+    
+    /// Triggers event each time the app enters active state.
+    var didBecameActive: Observable<Void> {
+        applicationState
+            .filter { $0 == .active }
+            .mapToVoid()
+    }
+}
