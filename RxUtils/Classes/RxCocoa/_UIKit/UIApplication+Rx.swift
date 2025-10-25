@@ -140,7 +140,7 @@ public extension UIApplication {
         
         /// Keychain is not readable at the moment.
         /// Usually with `status: -25308 (User interaction is not allowed)`.
-        /// Other: `-25291 (Not available)`
+        /// Others: `-25291 (Not available)`, `-25300 (Not found)`
         /// The meaning of the `status` might be checked at the https://www.osstatus.com/
         case notReadable(status: OSStatus)
         
