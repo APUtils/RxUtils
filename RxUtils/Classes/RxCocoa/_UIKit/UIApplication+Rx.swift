@@ -106,9 +106,13 @@ public extension Reactive where Base: UIApplication {
 
 fileprivate extension UIApplication {
     
+    static var isFirstUnlockHappened: Bool?
+    
     /// Checks if the first unlock happened.
     /// - note: Returns `true` if there is low space on disk because check is not possible in that condition.
     var isFirstUnlockHappened: Bool {
+        if Self.isFirstUnlockHappened == true { return true }
+        
         // We can't create file if there is no space on disk so we skip the check for this case.
         if let systemAttributes = try? FileManager.default.attributesOfFileSystem(forPath: NSHomeDirectory()) {
             /// 200 MB - is not enough, using 400 MB
@@ -122,6 +126,7 @@ fileprivate extension UIApplication {
         let attributes = [FileAttributeKey.protectionKey: FileProtectionType.completeUntilFirstUserAuthentication]
         let isFirstUnlockHappened = FileManager.default.createFile(atPath: tempFilePath, contents: nil, attributes: attributes)
         if isFirstUnlockHappened {
+            Self.isFirstUnlockHappened = true
             return true
             
         } else {
