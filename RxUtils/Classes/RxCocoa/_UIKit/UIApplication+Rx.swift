@@ -64,7 +64,14 @@ public extension Reactive where Base: UIApplication {
         let appStateChange = Observable.merge(didBecameActive, didBecameInactive)
             .compactMap { [weak base] in base?.isFirstUnlockHappened }
         
-        return Observable.merge(protectedDataDidBecomeAvailable, appStateChange)
+        // It looks like iOS 26 does not emit notifications so check by timer also
+        let timer = Observable<Int>.timer(
+            .seconds(1),
+            period: .seconds(1),
+            scheduler: ConcurrentMainScheduler.instance,
+        ).compactMap { [weak base] _ in base?.isFirstUnlockHappened }
+        
+        return Observable.merge(protectedDataDidBecomeAvailable, appStateChange, timer)
             .startWithDeferred { [weak base] in base?.isFirstUnlockHappened }
             .distinctUntilChanged()
             .take(until: { $0 }, behavior: .inclusive)
@@ -83,7 +90,14 @@ public extension Reactive where Base: UIApplication {
         let appStateChange = Observable.merge(didBecameActive, didBecameInactive)
             .compactMap { [weak base] in base?.isProtectedDataAvailable }
         
-        return Observable.merge(available, unavailable, appStateChange)
+        // It looks like iOS 26 does not emit notifications so check by timer also
+        let timer = Observable<Int>.timer(
+            .seconds(1),
+            period: .seconds(1),
+            scheduler: ConcurrentMainScheduler.instance,
+        ).compactMap { [weak base] _ in base?.isProtectedDataAvailable }
+        
+        return Observable.merge(available, unavailable, appStateChange, timer)
             .startWithDeferred { [weak base] in base?.isProtectedDataAvailable }
             .distinctUntilChanged()
             .subscribe(on: ConcurrentMainScheduler.instance)
