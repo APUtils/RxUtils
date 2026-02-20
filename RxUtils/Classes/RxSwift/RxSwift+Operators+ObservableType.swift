@@ -22,14 +22,6 @@ public extension RxUtilsError {
 
 public extension ObservableType {
     
-    /// Same as `asSingle()` but completes right after gets the first element.
-    /// Ordinary `asSingle()` waits for the completion event.
-    func asSafeSingle() -> Single<Element> {
-        return self
-            .take(1)
-            .asSingle()
-    }
-    
     /// Prevent error emission if observable chain had element.
     func catchErrorIfHadElement() -> Observable<Element> {
         let _recursiveLock = NSRecursiveLock()
