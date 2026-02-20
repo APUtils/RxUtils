@@ -1,6 +1,6 @@
 //
 //  Resubscribe.swift
-//  Pods
+//  RxUtils
 //
 //  Created by Anton Plebanovich on 26.12.24.
 //  Copyright © 2024 Anton Plebanovich. All rights reserved.

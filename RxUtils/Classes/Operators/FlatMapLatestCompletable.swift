@@ -1,6 +1,6 @@
 //
 //  FlatMapLatestCompletable.swift
-//  Pods
+//  RxUtils
 //
 //  Created by Anton Plebanovich on 16.06.25.
 //  Copyright © 2025 Anton Plebanovich. All rights reserved.

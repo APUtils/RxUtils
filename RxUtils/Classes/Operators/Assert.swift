@@ -1,6 +1,6 @@
 //
 //  Assert.swift
-//  Pods
+//  RxUtils
 //
 //  Created by Anton Plebanovich on 20.11.23.
 //  Copyright © 2023 Anton Plebanovich. All rights reserved.

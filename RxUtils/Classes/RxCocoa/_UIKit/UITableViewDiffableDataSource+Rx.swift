@@ -1,6 +1,6 @@
 //
 //  UITableViewDiffableDataSource+Rx.swift
-//  Pods
+//  RxUtils
 //
 //  Created by Anton Plebanovich on 5.05.24.
 //  Copyright © 2024 Anton Plebanovich. All rights reserved.

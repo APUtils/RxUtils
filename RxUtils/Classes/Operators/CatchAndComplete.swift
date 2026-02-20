@@ -1,6 +1,6 @@
 //
 //  CatchAndComplete.swift
-//  Pods
+//  RxUtils
 //
 //  Created by Anton Plebanovich on 27.09.23.
 //  Copyright © 2023 Anton Plebanovich. All rights reserved.

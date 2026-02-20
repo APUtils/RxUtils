@@ -1,6 +1,6 @@
 //
 //  DistinctUntilChanged.swift
-//  Pods
+//  RxUtils
 //
 //  Created by Anton Plebanovich on 15.04.24.
 //  Copyright © 2024 Anton Plebanovich. All rights reserved.
