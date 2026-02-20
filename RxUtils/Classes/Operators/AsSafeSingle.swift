@@ -24,7 +24,7 @@ public extension ObservableType {
 
 // ******************************* MARK: - Driver<Element>
 
-extension SharedSequenceConvertibleType where SharingStrategy == DriverSharingStrategy {
+public extension SharedSequenceConvertibleType where SharingStrategy == DriverSharingStrategy {
     
     /// Same as `asSingle()` but completes right after gets the first element.
     /// Ordinary `asSingle()` waits for the completion event.
