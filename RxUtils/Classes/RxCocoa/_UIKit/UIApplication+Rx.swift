@@ -115,7 +115,7 @@ fileprivate extension UIApplication {
         
         // We can't create file if there is no space on disk so we skip the check for this case.
         if let systemAttributes = try? FileManager.default.attributesOfFileSystem(forPath: NSHomeDirectory()) {
-            /// 200 MB - is not enough, using 400 MB
+            /// 300 MB - is not enough, using 400 MB
             let freeSpace = (systemAttributes[FileAttributeKey.systemFreeSize] as? NSNumber)?.int64Value ?? 0
             if freeSpace < 400 * 1_048_576 {
                 RoutableLogger.logWarning("Not enough free disk space to check for first unlock")
