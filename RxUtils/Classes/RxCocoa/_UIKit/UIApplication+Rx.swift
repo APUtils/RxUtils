@@ -118,6 +118,7 @@ fileprivate extension UIApplication {
             /// 200 MB - is not enough, using 400 MB
             let freeSpace = (systemAttributes[FileAttributeKey.systemFreeSize] as? NSNumber)?.int64Value ?? 0
             if freeSpace < 400 * 1_048_576 {
+                RoutableLogger.logWarning("Not enough free disk space to check for first unlock")
                 return true
             }
         }
@@ -142,6 +143,7 @@ public extension Reactive where Base: UIApplication {
     /// Each second checks for the keychain readable state and fires an event if it changes.
     /// Starts with the current value.
     /// Completes after emitting `.readable`.
+    /// - warning: It might return `-25291 (Not available)` when no disk space left on device so it is better to check disk space in advance.
     var isKeychainReadable: Observable<Base.KeychainState> {
         Observable<Int>.timer(.seconds(1),
                          period: .seconds(1),
@@ -159,8 +161,9 @@ public extension UIApplication {
         case readable
         
         /// Keychain is not readable at the moment.
-        /// Usually with `status: -25308 (User interaction is not allowed)`.
-        /// Others: `-25291 (Not available)`, `-25300 (Not found)`
+        /// Usually with `status: -25308 (User interaction is not allowed)` - ?.
+        /// `-25291 (Not available)` - probably because no disk space
+        /// `-25300 (Not found)` - ?
         /// The meaning of the `status` might be checked at the https://www.osstatus.com/
         case notReadable(status: OSStatus)
         
