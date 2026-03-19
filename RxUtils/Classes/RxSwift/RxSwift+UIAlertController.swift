@@ -6,6 +6,7 @@
 //  Copyright © 2021 Anton Plebanovich. All rights reserved.
 //
 
+import RoutableLogger
 import RxSwift
 import UIKit
 
@@ -182,12 +183,14 @@ public extension Reactive where Base: UIAlertController {
                 
                 actions.forEach { action in
                     alertVC.add(action: action, handler: {
+                        RoutableLogger.logInfo("Alert action '\(action.title.description)' clicked")
                         observer(.success(action))
                     })
                 }
                 
                 alertVC.present(animated: true) { error in
                     if let error = error {
+                        RoutableLogger.logError("Alert present error", error: error)
                         observer(.failure(error))
                     }
                 }
@@ -210,17 +213,20 @@ public extension Reactive where Base: UIAlertController {
             let alertVC = AlertController(title: title, message: message, preferredStyle: .actionSheet)
             
             alertVC.add(action: .init(title: cancelTitle ?? "Cancel", style: .cancel)) {
+                RoutableLogger.logInfo("Picker cancel action clicked")
                 observer(.completed)
             }
             
             actionTitles.enumerated().forEach { index, actionTitle in
                 alertVC.add(action: .init(title: actionTitle, style: .default), handler: {
+                    RoutableLogger.logInfo("Picker action '\(actionTitle)' clicked")
                     observer(.success((index, actionTitle)))
                 })
             }
             
             alertVC.present(animated: true) { error in
                 if let error = error {
+                    RoutableLogger.logError("Picker present error", error: error)
                     observer(.error(error))
                 }
             }
@@ -268,6 +274,8 @@ private final class AlertController: UIAlertController {
     }
     
     func present(animated: Bool = true, completion: ((Error?) -> Void)? = nil) {
+        RoutableLogger.logInfo("Presenting alert with title: <\(title.description)>, message: <\(message.description)>, style: <\(preferredStyle.rawValue)>, actions: \(actions.map { $0.title.description })")
+        
         g_performInMain { [self] in
             guard let alertWindow = alertWindow,
                   let rootViewController = alertWindow.rootViewController else {
