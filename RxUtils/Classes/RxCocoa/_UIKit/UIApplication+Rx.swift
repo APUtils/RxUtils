@@ -389,3 +389,43 @@ public extension Reactive where Base: UIApplication {
             .mapToVoid()
     }
 }
+
+// ******************************* MARK: - Open URL
+
+public extension RxUtilsError {
+    static let canNotOpenURL: RxUtilsError = .init(code: 2, message: "Application can not open URL")
+    static let invalidURL: RxUtilsError = .init(code: 3, message: "Unable to compose URL from string")
+    static let failedToOpenURL: RxUtilsError = .init(code: 4, message: "Failed to open URL")
+}
+
+public extension Reactive where Base: UIApplication {
+    func openURL(_ urlString: String) -> Completable {
+        guard let url = URL(string: urlString) else {
+            RoutableLogger.logError("Unable to compose URL from string", data: ["urlString": urlString])
+            return .error(RxUtilsError.invalidURL)
+        }
+        
+        return openURL(url)
+    }
+    
+    func openURL(_ url: URL) -> Completable {
+        guard UIApplication.shared.canOpenURL(url) else {
+            RoutableLogger.logError("Application can not open URL", data: ["url": url])
+            return .error(RxUtilsError.canNotOpenURL)
+        }
+        
+        return Completable.create { observer in
+            UIApplication.shared.open(url, options: [:]) { success in
+                if success {
+                    RoutableLogger.logInfo("Success URL open \(url)")
+                    observer(.completed)
+                } else {
+                    RoutableLogger.logError("Failed to open URL", data: ["url": url])
+                    observer(.error(RxUtilsError.failedToOpenURL))
+                }
+            }
+            
+            return Disposables.create()
+        }
+    }
+}
