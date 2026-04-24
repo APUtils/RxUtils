@@ -9,6 +9,6 @@
 import Foundation
 
 public struct RxUtilsError: Error, Equatable, Codable {
-    var code: Int
-    var message: String
+    public let code: Int
+    public let message: String
 }
