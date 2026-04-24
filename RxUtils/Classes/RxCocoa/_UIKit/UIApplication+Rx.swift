@@ -401,7 +401,7 @@ public extension RxUtilsError {
 public extension Reactive where Base: UIApplication {
     func openURL(_ urlString: String) -> Completable {
         guard let url = URL(string: urlString) else {
-            RoutableLogger.logError("Unable to compose URL from string", data: ["urlString": urlString])
+            RoutableLogger.logError(RxUtilsError.invalidURL.message, data: ["urlString": urlString])
             return .error(RxUtilsError.invalidURL)
         }
         
@@ -410,7 +410,7 @@ public extension Reactive where Base: UIApplication {
     
     func openURL(_ url: URL) -> Completable {
         guard UIApplication.shared.canOpenURL(url) else {
-            RoutableLogger.logError("Application can not open URL", data: ["url": url])
+            RoutableLogger.logError(RxUtilsError.canNotOpenURL.message, data: ["url": url])
             return .error(RxUtilsError.canNotOpenURL)
         }
         
@@ -420,7 +420,7 @@ public extension Reactive where Base: UIApplication {
                     RoutableLogger.logInfo("Success URL open \(url)")
                     observer(.completed)
                 } else {
-                    RoutableLogger.logError("Failed to open URL", data: ["url": url])
+                    RoutableLogger.logError(RxUtilsError.failedToOpenURL.message, data: ["url": url])
                     observer(.error(RxUtilsError.failedToOpenURL))
                 }
             }
