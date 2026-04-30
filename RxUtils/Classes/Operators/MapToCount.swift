@@ -10,42 +10,6 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-// ******************************* MARK: - Maybe
-
-public extension PrimitiveSequence where Trait == MaybeTrait {
-    
-    /// Projects each element of an observable sequence into its occurrence number starting from 1
-    func mapToCount() -> Maybe<Int> {
-        asObservable()
-            .mapToCount()
-            .asMaybe()
-    }
-}
-
-// ******************************* MARK: - Single
-
-public extension PrimitiveSequence where Trait == SingleTrait {
-    
-    /// Projects each element of an observable sequence into its occurrence number starting from 1
-    func mapToCount() -> Single<Int> {
-        asObservable()
-            .mapToCount()
-            .asSingle()
-    }
-}
-
-// ******************************* MARK: - Signal
-
-public extension SharedSequenceConvertibleType where SharingStrategy == SignalSharingStrategy {
-    
-    /// Projects each element of an observable sequence into its occurrence number starting from 1
-    func mapToCount() -> Signal<Int> {
-        asObservable()
-            .mapToCount()
-            .asSignal(onErrorSignalWith: .empty())
-    }
-}
-
 // ******************************* MARK: - ObservableType
 
 public extension ObservableType {
@@ -58,6 +22,18 @@ public extension ObservableType {
             lock.withLock {
                 count += 1
                 return count
+            }
+        }
+    }
+    
+    /// Projects each element of an observable sequence into tuple of the element with its occurrence number starting from 1
+    func withCount() -> Observable<(Element, Int)> {
+        var count = 0
+        let lock = NSLock()
+        return map { element in
+            lock.withLock {
+                count += 1
+                return (element, count)
             }
         }
     }
