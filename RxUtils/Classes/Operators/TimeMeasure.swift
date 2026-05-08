@@ -23,7 +23,7 @@ public extension PrimitiveSequence where Trait == CompletableTrait, Element == N
     /// Measures execution time between `onSubscribe` event and the first `onNext` event
     func measureExecutionTimeOnNext(start: (() -> Void)? = nil, end: @escaping (TimeInterval) -> Void) -> Completable {
         asObservable()
-            .measureExecutionTimeOnNext(start: start, end: end)
+            .measureExecutionTimeOnNext(start: start, end: { duration, _ in end(duration) })
             .asCompletable()
     }
 }
@@ -40,7 +40,7 @@ public extension PrimitiveSequence where Trait == MaybeTrait {
     }
     
     /// Measures execution time between `onSubscribe` event and the first `onNext` event
-    func measureExecutionTimeOnNext(start: (() -> Void)? = nil, end: @escaping (TimeInterval) -> Void) -> Maybe<Element> {
+    func measureExecutionTimeOnNext(start: (() -> Void)? = nil, end: @escaping (TimeInterval, Element) -> Void) -> Maybe<Element> {
         asObservable()
             .measureExecutionTimeOnNext(start: start, end: end)
             .asMaybe()
@@ -59,7 +59,7 @@ public extension PrimitiveSequence where Trait == SingleTrait {
     }
     
     /// Measures execution time between `onSubscribe` event and the first `onNext` event
-    func measureExecutionTimeOnNext(start: (() -> Void)? = nil, end: @escaping (TimeInterval) -> Void) -> Single<Element> {
+    func measureExecutionTimeOnNext(start: (() -> Void)? = nil, end: @escaping (TimeInterval, Element) -> Void) -> Single<Element> {
         asObservable()
             .measureExecutionTimeOnNext(start: start, end: end)
             .asSingle()
@@ -85,12 +85,12 @@ public extension ObservableType {
     }
     
     /// Measures execution time between `onSubscribe` event and the first `onNext` event
-    func measureExecutionTimeOnNext(start: (() -> Void)? = nil, end: @escaping (TimeInterval) -> Void) -> Observable<Element> {
+    func measureExecutionTimeOnNext(start: (() -> Void)? = nil, end: @escaping (TimeInterval, Element) -> Void) -> Observable<Element> {
         var _date: Date?
         return self
-            .doOnNext { _ in
+            .doOnNext { element in
                 guard let date = _date else { return }
-                end(-date.timeIntervalSinceNow)
+                end(-date.timeIntervalSinceNow, element)
                 _date = nil
             }
             .doOnSubscribe {
