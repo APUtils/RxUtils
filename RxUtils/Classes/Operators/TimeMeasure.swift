@@ -19,13 +19,6 @@ public extension PrimitiveSequence where Trait == CompletableTrait, Element == N
             .measureExecutionTime(start: start, end: end)
             .asCompletable()
     }
-    
-    /// Measures execution time between `onSubscribe` event and the first `onNext` event
-    func measureExecutionTimeOnNext(start: (() -> Void)? = nil, end: @escaping (TimeInterval) -> Void) -> Completable {
-        asObservable()
-            .measureExecutionTimeOnNext(start: start, end: { duration, _ in end(duration) })
-            .asCompletable()
-    }
 }
 
 // ******************************* MARK: - Maybe
