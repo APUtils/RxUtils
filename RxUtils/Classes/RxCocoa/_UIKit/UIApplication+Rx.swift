@@ -113,6 +113,12 @@ fileprivate extension UIApplication {
     var isFirstUnlockHappened: Bool {
         if Self.isFirstUnlockHappened == true { return true }
         
+        // If application is not in the background - first unlock happened
+        if applicationState != .background {
+            Self.isFirstUnlockHappened = true
+            return true
+        }
+        
         // We can't create file if there is no space on disk so we skip the check for this case.
         if let systemAttributes = try? FileManager.default.attributesOfFileSystem(forPath: NSHomeDirectory()) {
             /// 300 MB - is not enough, using 400 MB
@@ -126,6 +132,8 @@ fileprivate extension UIApplication {
         let tempFilePath = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(UUID().uuidString).path
         let attributes = [FileAttributeKey.protectionKey: FileProtectionType.completeUntilFirstUserAuthentication]
         let isFirstUnlockHappened = FileManager.default.createFile(atPath: tempFilePath, contents: nil, attributes: attributes)
+        FileManager.default.safeRemoveItemIfExists(atPath: tempFilePath) // Remove temp file to prevent pollute
+        
         if isFirstUnlockHappened {
             Self.isFirstUnlockHappened = true
             return true
