@@ -73,4 +73,17 @@ public extension Reactive where Base: UIViewController {
             }
             .subscribe(on: ConcurrentMainScheduler.instance)
     }
+    
+    func remove(animated: Bool = true) -> Completable {
+        Completable.create { [weak base] observer in
+            if let base {
+                base.remove(animated: animated) { observer(.completed) }
+            } else {
+                observer(.completed)
+            }
+            
+            return Disposables.create()
+        }
+        .subscribe(on: ConcurrentMainScheduler.instance)
+    }
 }
