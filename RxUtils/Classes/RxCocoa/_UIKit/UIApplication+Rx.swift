@@ -269,42 +269,40 @@ public extension Reactive where Base: UIApplication {
     /// Event is a time interval that app spent in the background.
     /// - note: Useful to use for a refresh logic.
     /// - note: It doesn't trigger on the app start so preventing excessive updates.
-    var didLeaveBackgroundWithTimeInterval: Observable<TimeInterval> {
+    var didMoveAndLeaveBackgroundWithTimeInterval: Observable<TimeInterval> {
         
         var _date = Date()
         let _recursiveLock = NSRecursiveLock()
         
         return applicationState
-            .doOnNext { applicationState in
-                if applicationState == UIApplication.State.background {
+            // iOS 26 or scene-based app have new behavior: start in the `background` state.
+            // To have the same behavior as previously, we additionally make sure we moved into `background` before leaving.
+            .withRequiredPrevious()
+            .doOnNext { previous, new in
+                if new == UIApplication.State.background {
                     _recursiveLock.lock(); defer { _recursiveLock.unlock() }
                     _date = Date()
                 }
             }
-            .withRequiredPrevious()
             .filter { previous, _ in previous == UIApplication.State.background }
             .map { _ in
                 _recursiveLock.lock(); defer { _recursiveLock.unlock() }
                 return Date().timeIntervalSince(_date)
-            }
-            .doOnSubscribe {
-                _recursiveLock.lock(); defer { _recursiveLock.unlock() }
-                _date = Date()
             }
     }
     
     /// Triggers event each time the app leaves the background.
     /// - note: Useful to use for a refresh logic.
     /// - note: It doesn't trigger on the app start so preventing excessive updates.
-    var didLeaveBackground: Observable<Void> {
-        didLeaveBackgroundWithTimeInterval.mapToVoid()
+    var didMoveAndLeaveBackground: Observable<Void> {
+        didMoveAndLeaveBackgroundWithTimeInterval.mapToVoid()
     }
     
     /// Triggers event each time the app leaves the background and becomes active.
     /// - note: Useful to use for a refresh logic that can only be performed during the `active` application state.
     /// - note: It doesn't trigger on the app start so preventing excessive updates.
-    var didLeaveBackgroundAndBecameActive: Observable<Void> {
-        didLeaveBackground.flatMapLatest {
+    var didMoveAndLeaveBackgroundAndBecameActive: Observable<Void> {
+        didMoveAndLeaveBackground.flatMapLatest {
             applicationState
                 .filter { $0 == .active }
                 .mapToVoid()
@@ -317,10 +315,10 @@ public extension ObservableConvertibleType {
     
     /// Produces duplicate events on app leave background so UI may be reloaded for example.
     @available(iOSApplicationExtension, unavailable)
-    func reloadOnLeaveBackground(file: String = #file, function: String = #function, line: UInt = #line) -> Observable<Element> {
+    func reloadOnMoveAndLeaveBackground(file: String = #file, function: String = #function, line: UInt = #line) -> Observable<Element> {
         Observable.combineLatest(
             UIApplication.shared.rx
-                .didLeaveBackgroundWithTimeInterval
+                .didMoveAndLeaveBackgroundWithTimeInterval
                 .startWith(0)
                 .doOnNext { timeInterval in
                     if timeInterval > 0 {
@@ -337,9 +335,9 @@ public extension SharedSequenceConvertibleType where SharingStrategy == DriverSh
     
     /// Produces duplicate events on app leave background so UI may be reloaded for example.
     @available(iOSApplicationExtension, unavailable)
-    func reloadOnLeaveBackground(file: String = #file, function: String = #function, line: UInt = #line) -> Driver<Element> {
+    func reloadOnMoveAndLeaveBackground(file: String = #file, function: String = #function, line: UInt = #line) -> Driver<Element> {
         asObservable()
-            .reloadOnLeaveBackground(file: file, function: function, line: line)
+            .reloadOnMoveAndLeaveBackground(file: file, function: function, line: line)
             .asDriver(onErrorDriveWith: .empty())
     }
 }

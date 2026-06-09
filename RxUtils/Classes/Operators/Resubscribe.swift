@@ -13,9 +13,9 @@ import UIKit
 public extension Observable<Void> {
 #if DEBUG
     /// Changeble for unit tests
-    static var possiblyWakedUp: Observable<Void> = UIApplication.shared.rx.didLeaveBackground
+    static var possiblyWakedUp: Observable<Void> = UIApplication.shared.rx.didMoveAndLeaveBackground
 #else
-    static let possiblyWakedUp: Observable<Void> = UIApplication.shared.rx.didLeaveBackground
+    static let possiblyWakedUp: Observable<Void> = UIApplication.shared.rx.didMoveAndLeaveBackground
 #endif
 }
 
