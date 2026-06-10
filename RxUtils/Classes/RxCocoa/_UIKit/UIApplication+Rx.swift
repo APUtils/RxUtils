@@ -271,23 +271,24 @@ public extension Reactive where Base: UIApplication {
     /// - note: It doesn't trigger on the app start so preventing excessive updates.
     var didMoveAndLeaveBackgroundWithTimeInterval: Observable<TimeInterval> {
         
-        var _date = Date()
+        var _date: Date?
         let _recursiveLock = NSRecursiveLock()
         
         return applicationState
             // iOS 26 or scene-based app have new behavior: start in the `background` state.
             // To have the same behavior as previously, we additionally make sure we moved into `background` before leaving.
             .withRequiredPrevious()
-            .doOnNext { previous, new in
+            .compactMap { previous, new -> TimeInterval? in
                 if new == UIApplication.State.background {
                     _recursiveLock.lock(); defer { _recursiveLock.unlock() }
                     _date = Date()
+                    
+                } else if previous == UIApplication.State.background {
+                    _recursiveLock.lock(); defer { _recursiveLock.unlock() }
+                    if let _date { return Date().timeIntervalSince(_date) }
                 }
-            }
-            .filter { previous, _ in previous == UIApplication.State.background }
-            .map { _ in
-                _recursiveLock.lock(); defer { _recursiveLock.unlock() }
-                return Date().timeIntervalSince(_date)
+                
+                return nil
             }
     }
     
